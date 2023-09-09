@@ -1,0 +1,38 @@
+.card-container {
+  max-width: 300px;
+  padding: 30px;
+  background-color: #F5F5F5;
+}
+
+.course-card {
+  height: 100%;
+
+  .course-body-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.experience-banner {
+  padding: 40px 0;
+  background-color: #e7f5e5;
+
+  .experience-content {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+
+    .experience-box {
+      padding-top: 2rem;
+      text-align: center;
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

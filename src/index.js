@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import "./main.scss";
 
 // Common Layout
-import Demo from "./demo/Demo";
+// import Demo from "./demo/Demo";
 
 import Admin from "./pages/Admin";
 import Adminemail from "./pages/Adminemail";
@@ -75,11 +75,11 @@ import Chat from "./pages/Chat";
 import Email from "./pages/Email";
 import Emailopen from "./pages/Emailopen";
 
-import Hometwo from "./pages/Hometwo";
-import Homethree from "./pages/Homethree";
-import Homefive from "./pages/Homefive";
-import Homesix from "./pages/Homesix";
-import Homefour from "./pages/Homefour";
+import Home from "./pages/Home";
+// import Homethree from "./pages/Homethree";
+// import Homefive from "./pages/Homefive";
+// import Homesix from "./pages/Homesix";
+// import Homefour from "./pages/Homefour";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
@@ -89,7 +89,7 @@ class Root extends Component {
     return (
       <BrowserRouter basename={"/"}>
         <Routes>
-          <Route exact path={`${process.env.PUBLIC_URL}/`} element={<Demo />} />
+          <Route exact path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
 
           <Route
             exact
@@ -414,7 +414,7 @@ class Root extends Component {
             path={`${process.env.PUBLIC_URL}/course-details-2`}
             element={<Coursedetailstwo />}
           />
-
+          {/* 
           <Route
             exact
             path={`${process.env.PUBLIC_URL}/home-3`}
@@ -439,7 +439,7 @@ class Root extends Component {
             exact
             path={`${process.env.PUBLIC_URL}/home-2`}
             element={<Hometwo />}
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     );

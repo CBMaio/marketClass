@@ -10,7 +10,7 @@ class Header extends Component {
 
   render() {
     const navClass = `${this.state.isOpen ? ' show' : ''}`;
-    const { divClass, color = 'light' } = this.props;
+    const { divClass = '', color = 'light' } = this.props;
     let colorClass;
     if (color === 'dark') {
       colorClass = 'text-white';
@@ -22,9 +22,9 @@ class Header extends Component {
             <div className="col-lg-9 navbar pt-0 pb-0">
               <Link to="/">
                 <h1 className="fredoka-font ls-3 fw-700 text-current font-xxl">
-                  Elomoas
+                  MarketClass
                   <span className="d-block font-xsssss ls-1 text-grey-500 open-font ">
-                    Online Learning Course
+                    El camino hacia el éxito comienza aquí
                   </span>
                 </h1>
               </Link>
