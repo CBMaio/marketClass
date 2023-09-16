@@ -1,204 +1,204 @@
-import React, { Component, Fragment } from 'react';
-import Appfooter from '../components/Appfooter';
-import Navheader from '../components/Navheader';
-import Appheader from '../components/Appheader';
-import Profile from '../components/Profile';
-import Subscribe from '../components/Subscribe';
-import Slider from 'react-slick';
-import { Link } from 'react-router-dom';
-import Myclass from '../components/Myclass';
+import React, { Component, Fragment } from "react";
+import Appfooter from "../components/Appfooter";
+import Navheader from "../components/Navheader";
+import Appheader from "../components/Appheader";
+import Profile from "../components/Profile";
+import Subscribe from "../components/Subscribe";
+import Slider from "react-slick";
+import { Link } from "react-router-dom";
+import Myclass from "../components/Myclass";
 
 const latestList = [
   {
-    imageUrl: 'course.png',
-    title: 'Fundamentals for Scrum Master and Agile Projects ',
-    price: '670',
-    tag: 'Python',
-    lesson: '32 ',
-    status: 'alert-warning text-warning',
+    imageUrl: "course.png",
+    title: "Fundamentals for Scrum Master and Agile Projects ",
+    price: "670",
+    tag: "Python",
+    lesson: "32 ",
+    status: "alert-warning text-warning",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Automate the Boring Stuff with Python Programming',
-    price: '760',
-    tag: 'Bootstrap',
-    lesson: '14 ',
-    status: 'alert-primary text-primary',
+    imageUrl: "course.png",
+    title: "Automate the Boring Stuff with Python Programming",
+    price: "760",
+    tag: "Bootstrap",
+    lesson: "14 ",
+    status: "alert-primary text-primary",
   },
   {
-    imageUrl: 'course.png',
-    title: 'The Data Science Course Complete Data Science ',
-    price: '370',
-    tag: 'Develop',
-    lesson: '23 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "The Data Science Course Complete Data Science ",
+    price: "370",
+    tag: "Develop",
+    lesson: "23 ",
+    status: "alert-danger text-danger",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '2400',
-    tag: 'Python',
-    lesson: '32 ',
-    status: 'alert-warning text-warning',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "2400",
+    tag: "Python",
+    lesson: "32 ",
+    status: "alert-warning text-warning",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '40',
-    tag: 'Desinger',
-    lesson: '24 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "40",
+    tag: "Desinger",
+    lesson: "24 ",
+    status: "alert-danger text-danger",
   },
 ];
 const popularList = [
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '2400',
-    tag: 'Python',
-    lesson: '32 ',
-    status: 'alert-warning text-warning',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "2400",
+    tag: "Python",
+    lesson: "32 ",
+    status: "alert-warning text-warning",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '40',
-    tag: 'Desinger',
-    lesson: '24 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "40",
+    tag: "Desinger",
+    lesson: "24 ",
+    status: "alert-danger text-danger",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Java Programming Masterclass for Developers',
-    price: '60',
-    tag: 'Bootstrap',
-    lesson: '14 ',
-    status: 'alert-success text-success',
+    imageUrl: "course.png",
+    title: "Java Programming Masterclass for Developers",
+    price: "60",
+    tag: "Bootstrap",
+    lesson: "14 ",
+    status: "alert-success text-success",
   },
   {
-    imageUrl: 'course.png',
-    title: 'The Data Science Course Complete Data Science ',
-    price: '370',
-    tag: 'Develop',
-    lesson: '23 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "The Data Science Course Complete Data Science ",
+    price: "370",
+    tag: "Develop",
+    lesson: "23 ",
+    status: "alert-danger text-danger",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '450',
-    tag: 'Desinger',
-    lesson: '24 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "450",
+    tag: "Desinger",
+    lesson: "24 ",
+    status: "alert-danger text-danger",
   },
 ];
 
 const classesList = [
   {
-    imageUrl: 'user.png',
-    title: 'Bootstrap',
-    num: '32 Course',
-    bg: '#fcf1eb',
+    imageUrl: "user.png",
+    title: "Bootstrap",
+    num: "32 Course",
+    bg: "#fcf1eb",
   },
   {
-    imageUrl: 'user.png',
-    title: 'HTML',
-    num: '54 Course',
-    bg: '#fff9eb',
+    imageUrl: "user.png",
+    title: "HTML",
+    num: "54 Course",
+    bg: "#fff9eb",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Jquery',
-    num: '76 Course',
-    bg: '#e5f4fb',
+    imageUrl: "user.png",
+    title: "Jquery",
+    num: "76 Course",
+    bg: "#e5f4fb",
   },
   {
-    imageUrl: 'user.png',
-    title: 'SASS',
-    num: '76 Course',
-    bg: '#dcf4f8',
+    imageUrl: "user.png",
+    title: "SASS",
+    num: "76 Course",
+    bg: "#dcf4f8",
   },
   {
-    imageUrl: 'user.png',
-    title: 'React',
-    num: '23 Course',
-    bg: '#fcf1eb',
+    imageUrl: "user.png",
+    title: "React",
+    num: "23 Course",
+    bg: "#fcf1eb",
   },
 
   {
-    imageUrl: 'user.png',
-    title: 'JAVA',
-    num: '78 Course',
-    bg: '#fff9eb',
+    imageUrl: "user.png",
+    title: "JAVA",
+    num: "78 Course",
+    bg: "#fff9eb",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Python',
-    num: '65 Course',
-    bg: '#e5f4fb',
+    imageUrl: "user.png",
+    title: "Python",
+    num: "65 Course",
+    bg: "#e5f4fb",
   },
   {
-    imageUrl: 'user.png',
-    title: 'MongoDB',
-    num: '11 Course',
-    bg: '#fcf1eb',
+    imageUrl: "user.png",
+    title: "MongoDB",
+    num: "11 Course",
+    bg: "#fcf1eb",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Bootstrap',
-    num: '32 Course',
-    bg: '#fcf1eb',
+    imageUrl: "user.png",
+    title: "Bootstrap",
+    num: "32 Course",
+    bg: "#fcf1eb",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Bootstrap',
-    num: '32 Course',
-    bg: '#fff9eb',
+    imageUrl: "user.png",
+    title: "Bootstrap",
+    num: "32 Course",
+    bg: "#fff9eb",
   },
 ];
 
 const memberList = [
   {
-    imageUrl: 'user.png',
-    name: 'Aliqa Macale ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Aliqa Macale ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'John Steere ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "John Steere ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Mohannad Zitoun ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Mohannad Zitoun ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Aliqa Macale ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Aliqa Macale ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Hendrix Stamp ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Hendrix Stamp ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Mohannad Zitoun ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Mohannad Zitoun ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'John Steere ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "John Steere ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
 ];
 
@@ -251,12 +251,12 @@ class Default extends Component {
                     <div
                       className="card rounded-xxl p-lg--5 border-0 bg-no-repeat bg-image-contain banner-wrap"
                       style={{
-                        backgroundImage: `url("https://via.placeholder.com/1100x720.png")`,
+                        backgroundImage: `url('assets/images/illustration-elomoas.png')`,
                       }}
                     >
                       <div className="card-body p-4">
                         <h2 className="display3-size fw-400 display2-md-size sm-mt-7 sm-pt-10">
-                          Find a perfect{' '}
+                          Find a perfect{" "}
                           <b className="d-lg-block">Online Course</b>
                         </h2>
                         <h4 className="text-grey-500 font-xssss fw-500 ml-1 lh-24">

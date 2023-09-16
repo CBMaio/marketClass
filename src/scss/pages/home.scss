@@ -16,7 +16,7 @@
 
 .experience-banner {
   padding: 40px 0;
-  background-color: #e7f5e5;
+  background-color: #F3E5F5;
 
   .experience-content {
     display: grid;
@@ -35,4 +35,15 @@
       }
     }
   }
+}
+
+.slick-prev, .slick-next {
+  &.slick-disabled {
+    &::before {
+      color: var(--disabled);
+    }
+  }
+}
+.slick-prev:before, .slick-next:before {
+  color: var(--primary-purple);
 }

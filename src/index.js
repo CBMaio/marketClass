@@ -43,9 +43,9 @@ import Productthree from "./pages/Productthree";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 
-import Coursesgridone from "./pages/Coursesgridone";
-import Coursesgridtwo from "./pages/Coursesgridtwo";
-import Coursesgridthree from "./pages/Coursesgridthree";
+import Coursesgridone from "./pages/Coursesgrid";
+// import Coursesgridtwo from "./pages/Coursesgridtwo";
+// import Coursesgridthree from "./pages/Coursesgridthree";
 import Popupchat from "./pages/Popupchat";
 
 import Userprofile from "./pages/Userprofile";
@@ -381,10 +381,10 @@ class Root extends Component {
           />
           <Route
             exact
-            path={`${process.env.PUBLIC_URL}/courses-grid-1`}
+            path={`${process.env.PUBLIC_URL}/courses-grid`}
             element={<Coursesgridone />}
           />
-          <Route
+          {/* <Route
             exact
             path={`${process.env.PUBLIC_URL}/courses-grid-2`}
             element={<Coursesgridtwo />}
@@ -393,7 +393,7 @@ class Root extends Component {
             exact
             path={`${process.env.PUBLIC_URL}/courses-grid-3`}
             element={<Coursesgridthree />}
-          />
+          /> */}
           <Route
             exact
             path={`${process.env.PUBLIC_URL}/user-profile`}

@@ -1,59 +1,62 @@
-import React, { Component, Fragment } from 'react';
-import Header from '../components/Header';
+import React, { Component, Fragment } from "react";
+import Header from "../components/Header";
 
-import Footer from '../components/Footer';
-import Slider from 'react-slick';
+import Footer from "../components/Footer";
+import Slider from "react-slick";
+
+import "../scss/pages/about.scss";
+import "../scss/variables.scss";
 
 const brandList = [
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
-  { bimg: 'b-1.png' },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
+  { bimg: "b-1.png" },
 ];
 const feedbackList = [
   {
-    imageUrl: 'user.png',
-    name: 'Goria Coast',
-    status: 'Digital Marketing Executive',
-    des: 'Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.',
+    imageUrl: "student1.jpg",
+    name: "Goria Coast",
+    status: "Digital Marketing Executive",
+    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Thomas Smith',
-    status: 'Digital Marketing Executive',
-    des: 'Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.',
+    imageUrl: "student2.jpg",
+    name: "Thomas Smith",
+    status: "Digital Marketing Executive",
+    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Hurin Seary',
-    status: 'Digital Marketing Executive',
-    des: 'Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.',
+    imageUrl: "student3.jpg",
+    name: "Hurin Seary",
+    status: "Digital Marketing Executive",
+    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Goria Coast',
-    status: 'Digital Marketing Executive',
-    des: 'Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.',
+    imageUrl: "student1.jpg",
+    name: "Goria Coast",
+    status: "Digital Marketing Executive",
+    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Thomas Smith',
-    status: 'Digital Marketing Executive',
-    des: 'Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.',
+    imageUrl: "student2.jpg",
+    name: "Thomas Smith",
+    status: "Digital Marketing Executive",
+    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Hurin Seary',
-    status: 'Digital Marketing Executive',
-    des: 'Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.',
+    imageUrl: "student3.jpg",
+    name: "Hurin Seary",
+    status: "Digital Marketing Executive",
+    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
   },
 ];
 
@@ -81,13 +84,18 @@ class About extends Component {
     return (
       <Fragment>
         <Header />
+        <div className="container-fluid header-banner pb-lg--7 pt-lg--7 pt-5 pb-7">
+          <div className="container row m-auto">
+            <h1 className="m-auto fw-700 display1-size">About us</h1>
+          </div>
+        </div>
 
         <div className="about-wrapper pb-lg--7 pt-lg--7 pt-5 pb-7">
           <div className="container">
             <div className="row">
               <div className="col-lg-6">
                 <h2 className="text-grey-900 fw-700 display1-size display2-md-size pb-2 mb-0 mt-3 d-block lh-3">
-                  Choose the plan <br /> that's right for your business
+                  Choose the class <br /> that's right for you
                 </h2>
               </div>
             </div>
@@ -128,34 +136,27 @@ class About extends Component {
                 </ul>
               </div>
               <div className="col-lg-12 mt-3">
-                <a
-                  href="/about"
-                  className="video-bttn"
-                  data-toggle="modal"
-                  data-target="#Modalvideo"
-                >
-                  <img
-                    src="https://via.placeholder.com/1200x400.png"
-                    alt="about"
-                    className="img-fluid rounded-lg"
-                  />
-                </a>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aliquam mauris neque, condimentum ac orci ut, elementum
+                  efficitur nunc. Maecenas nec lorem vel nibh mattis euismod.
+                  Donec tincidunt libero tristique ligula euismod convallis.
+                  Cras eros urna, consectetur a lorem a, imperdiet malesuada
+                  turpis. Proin eget ante in felis molestie vulputate.
+                  Vestibulum ante ipsum primis in faucibus orci luctus et
+                  ultrices posuere cubilia curae; Nam eleifend est et ex ornare
+                  dignissim. Curabitur aliquet justo neque, non porttitor ipsum
+                  rutrum vel. Integer at consequat justo. Sed pulvinar velit sed
+                  orci rutrum maximus. Pellentesque condimentum ac enim vitae
+                  auctor. Quisque nec ullamcorper justo.
+                </p>
               </div>
               <div className="col-lg-12 mt-5 text-center pt-3">
                 <a
-                  href="/about"
-                  className="ml-1 mr-1 rounded-lg text-primary font-xss border-size-md border-primary fw-600 open-font p-3 w200 btn md-mb-2 mt-3"
+                  href="/register"
+                  className="ml-1 mr-1 rounded-lg bg-light-green text-green font-xss border-size-md border-0 fw-600 open-font p-3 w200 btn"
                 >
-                  Learn More
-                </a>
-                <h3 className="font-xss fw-600 text-grey-500 p-3 d-inline-block d-none-xs">
-                  or
-                </h3>
-                <a
-                  href="/about"
-                  className="ml-1 mr-1 rounded-lg alert-primary text-primary font-xss border-size-md border-0 fw-600 open-font p-3 w200 btn"
-                >
-                  Contact Us
+                  Get Started
                 </a>
               </div>
             </div>
@@ -167,7 +168,7 @@ class About extends Component {
             <div className="row">
               <div className="col-lg-5 mb-4">
                 <img
-                  src="https://via.placeholder.com/600x800.png"
+                  src="assets/images/about-us-professor.png"
                   alt="about"
                   className="rounded-lg img-fluid shadow-xs"
                 />
@@ -279,7 +280,7 @@ class About extends Component {
           </div>
         </div>
 
-        <div className="subscribe-wrapper pt-5 pt-lg--7">
+        <div className="subscribe-wrapper pb-lg--7 pb-5 pt-5 pt-lg--7">
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -315,7 +316,7 @@ class About extends Component {
           </div>
         </div>
 
-        <div className="brand-wrapper pb-lg--7 pt-lg--7 pb-5 pt-5">
+        {/* <div className="brand-wrapper pb-lg--7 pt-lg--7 pb-5 pt-5">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
@@ -333,7 +334,7 @@ class About extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <Footer bgColor="bg-dark" />
       </Fragment>

@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 
 class Forgot extends Component {
   render() {
@@ -9,13 +10,21 @@ class Forgot extends Component {
             <div
               className="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat"
               style={{
-                backgroundImage: `url("https://via.placeholder.com/800x950.png")`,
+                backgroundImage: `url('assets/images/register.jpg')`,
               }}
             ></div>
 
             <div className="col-xl-7 vh-lg-100 align-items-center d-flex bg-white rounded-lg overflow-hidden">
               <div className="card shadow-none border-0 ml-auto mr-auto login-card">
                 <div className="card-body rounded-0 text-left">
+                  <Link to="/">
+                    <h1 className="fredoka-font ls-3 fw-700 text-current font-xxl">
+                      MarketClass
+                      <span className="d-block font-xsssss ls-1 text-grey-500 open-font ">
+                        El camino hacia el éxito comienza aquí
+                      </span>
+                    </h1>
+                  </Link>
                   <h2 className="fw-700 display1-size display2-md-size mb-4">
                     Change <br />
                     your password

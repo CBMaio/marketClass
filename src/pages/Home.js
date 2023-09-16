@@ -59,7 +59,7 @@ const courseList = [
   {
     imageUrl: "python-course.png",
     title: "Complete Python Bootcamp From Zero to Hero in Python ",
-    // price: "2400",
+    price: "2400",
     tag: "Python",
     lesson: "32 ",
     status: "alert-warning text-warning",
@@ -67,7 +67,7 @@ const courseList = [
   {
     imageUrl: "digital-marketing.png",
     title: "Digital Marketing ",
-    // price: "40",
+    price: "40",
     tag: "Desinger",
     lesson: "24 ",
     status: "alert-danger text-danger",
@@ -75,7 +75,7 @@ const courseList = [
   {
     imageUrl: "java.png",
     title: "Java Programming Masterclass for Developers",
-    // price: "60",
+    price: "60",
     tag: "Bootstrap",
     lesson: "14 ",
     status: "alert-success text-success",
@@ -83,7 +83,7 @@ const courseList = [
   {
     imageUrl: "data-scientist.png",
     title: "The Data Science Course Complete Data Science ",
-    // price: "370",
+    price: "370",
     tag: "Develop",
     lesson: "23 ",
     status: "alert-danger text-danger",
@@ -91,7 +91,7 @@ const courseList = [
   {
     imageUrl: "python-course.png",
     title: "Complete Python Bootcamp From Zero to Hero in Python ",
-    // price: "450",
+    price: "450",
     tag: "Desinger",
     lesson: "24 ",
     status: "alert-danger text-danger",
@@ -99,7 +99,7 @@ const courseList = [
   {
     imageUrl: "scrum-master.png",
     title: "Fundamentals for Scrum Master and Agile Projects ",
-    // price: "670",
+    price: "670",
     tag: "Python",
     lesson: "32 ",
     status: "alert-warning text-warning",
@@ -148,7 +148,7 @@ const feedbackList = [
 class Home extends Component {
   render() {
     const brandsettings = {
-      arrows: false,
+      arrows: true,
       dots: false,
       infinite: false,
       speed: 300,
@@ -347,7 +347,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="how-to-work pb-lg--7">
+        <div className="how-to-work pb-lg--7 pb-5">
           <div className="container">
             <div className="row justify-content-center">
               <div className="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center mb-5">
@@ -389,7 +389,10 @@ class Home extends Component {
                         >
                           {value.tag}
                         </span>
-                        <span className="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"></span>
+                        <span className="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right">
+                          <span className="font-xsssss">$</span>
+                          {value.price}
+                        </span>
                         <h4 className="fw-700 font-xss mt-3 lh-28 mt-0">
                           <Link
                             to="/coursedetails"
@@ -462,6 +465,15 @@ class Home extends Component {
 
                 // End Single Demo
               ))}
+            </div>
+
+            <div className="row justify-content-center pt-5">
+              <a
+                href="/courses-grid"
+                className="ml-1 mr-1 rounded-lg bg-light-green text-green font-xss border-size-md border-0 fw-600 open-font p-3 w200 btn"
+              >
+                Ver todos los cursos
+              </a>
             </div>
           </div>
         </div>

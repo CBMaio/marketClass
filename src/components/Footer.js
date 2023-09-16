@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Footer extends Component {
   render() {
@@ -13,7 +13,7 @@ class Footer extends Component {
                 <div className="col-md-12 col-lg-4 col-sm-9 col-xs-12 md-mb-2">
                   <Link to="/">
                     <h1 className="fredoka-font ls-3 fw-700 text-current font-xxl">
-                      Elomoas
+                      MarketClass
                       <span className="d-block font-xsssss ls-1 text-grey-500 open-font ">
                         Online Learning Course
                       </span>

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Searcharea extends Component {
   render() {
     return (
       <div
         className="card rounded-xxl p-lg--5 border-0 bg-no-repeat"
-        style={{ backgroundColor: `#e4f7fe` }}
+        style={{ backgroundColor: `#f3e5f5` }}
       >
         <div className="card-body w-100 p-4">
           <div className="form-group mt-3 p-3 border-light border p-2 bg-white rounded-lg">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Pagination extends Component {
   render() {
@@ -25,7 +25,7 @@ class Pagination extends Component {
         </li>
         <li className="page-item m-1">
           <a
-            className="page-link rounded-lg btn-round-md p-0 fw-600 font-xssss shadow-xss bg-primary text-white border-0"
+            className="page-link rounded-lg btn-round-md p-0 fw-600 font-xssss shadow-xss bg-dark text-white border-0"
             href="/"
           >
             2

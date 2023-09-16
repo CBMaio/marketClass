@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 class Header extends Component {
   state = {
@@ -9,11 +9,11 @@ class Header extends Component {
   toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
 
   render() {
-    const navClass = `${this.state.isOpen ? ' show' : ''}`;
-    const { divClass = '', color = 'light' } = this.props;
+    const navClass = `${this.state.isOpen ? " show" : ""}`;
+    const { divClass = "", color = "light" } = this.props;
     let colorClass;
-    if (color === 'dark') {
-      colorClass = 'text-white';
+    if (color === "dark") {
+      colorClass = "text-white";
     }
     return (
       <div className={`header-wrapper pt-3 pb-3 shadow-xss ${divClass}`}>
@@ -41,7 +41,7 @@ class Header extends Component {
                 >
                   <Navbar id="basic-navbar-nav" className="w-100 d-block">
                     <Nav className={`${colorClass}`}>
-                      <NavDropdown title="Home" id="basic-nav-dropdown">
+                      {/* <NavDropdown title="Home" id="basic-nav-dropdown">
                         <NavDropdown.Item href="/home-2">
                           Home One
                         </NavDropdown.Item>
@@ -101,9 +101,9 @@ class Header extends Component {
                         <NavDropdown.Item href="/author-profile">
                           Author Profile
                         </NavDropdown.Item>
-                      </NavDropdown>
-                      <NavDropdown.Item href="/contact">
-                        Contact
+                      </NavDropdown> */}
+                      <NavDropdown.Item href="/about">
+                        About us
                       </NavDropdown.Item>
                     </Nav>
                   </Navbar>
@@ -111,7 +111,7 @@ class Header extends Component {
               </div>
             </div>
             <div className="col-lg-3 text-right d-none d-lg-block">
-              <Link
+              {/* <Link
                 to="#"
                 data-toggle="modal"
                 data-target="#ModalCart"
@@ -120,17 +120,17 @@ class Header extends Component {
                 <i className="ti-shopping-cart font-lg"></i>
                 <span className="font-xssss fw-500 d-block lh-1">Cart</span>
                 <span className="icon-count bg-current">3</span>
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to="#"
                 className={`float-right text-center mt-1 ml-4 text-grey-800 position-relative ${colorClass}`}
               >
                 <i className="ti-heart font-lg"></i>
                 <span className="font-xssss fw-500 d-block lh-1">Saved</span>
                 <span className="icon-count bg-current">2</span>
-              </Link>
+              </Link> */}
               <Link
-                to="#"
+                to="/login"
                 className={`float-right d-none d-lg-block text-center mt-1 ml-4 text-grey-800 ${colorClass}`}
               >
                 <i className="ti-user font-lg"></i>
