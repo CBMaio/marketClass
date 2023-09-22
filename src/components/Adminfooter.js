@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Adminfooter extends Component {
   render() {
@@ -12,7 +12,7 @@ class Adminfooter extends Component {
               </p>
             </div>
             <div className="col-md-6 text-center text-sm-right">
-              <img src="assets/images/payments.jpg" alt="payment" />
+              <img src="/assets/images/payments.jpg" alt="payment" />
             </div>
           </div>
         </div>

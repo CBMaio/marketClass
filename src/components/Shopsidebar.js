@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Shopsidebar extends Component {
   render() {
@@ -91,13 +91,13 @@ class Shopsidebar extends Component {
                   <div className="noUi-base">
                     <div
                       className="noUi-origin noUi-connect"
-                      style={{ left: '10%' }}
+                      style={{ left: "10%" }}
                     >
                       <div className="noUi-handle noUi-handle-lower"></div>
                     </div>
                     <div
                       className="noUi-origin noUi-background"
-                      style={{ left: '70%' }}
+                      style={{ left: "70%" }}
                     >
                       <div className="noUi-handle noUi-handle-upper"></div>
                     </div>
@@ -229,7 +229,7 @@ class Shopsidebar extends Component {
                 <div className="float-left card-image w-25 p-2 text-center bg-white rounded-lg">
                   <a href="/shop-1">
                     <img
-                      src="assets/images/product.png"
+                      src="/assets/images//product.png"
                       alt="banner"
                       className="w45 mt-1"
                     />
@@ -255,7 +255,7 @@ class Shopsidebar extends Component {
                 <div className="float-left card-image w-25 p-2 text-center bg-white rounded-lg">
                   <a href="/shop-1">
                     <img
-                      src="assets/images/product.png"
+                      src="/assets/images//product.png"
                       alt="banner"
                       className="w45 mt-1"
                     />
@@ -281,7 +281,7 @@ class Shopsidebar extends Component {
                 <div className="float-left card-image w-25 p-2 text-center bg-white rounded-lg">
                   <a href="/shop-1">
                     <img
-                      src="assets/images/product.png"
+                      src="/assets/images//product.png"
                       alt="banner"
                       className="w45 mt-1"
                     />
@@ -307,7 +307,7 @@ class Shopsidebar extends Component {
                 <div className="float-left card-image w-25 p-2 text-center bg-white rounded-lg">
                   <a href="/shop-1">
                     <img
-                      src="assets/images/product.png"
+                      src="/assets/images//product.png"
                       alt="banner"
                       className="w45 mt-1"
                     />

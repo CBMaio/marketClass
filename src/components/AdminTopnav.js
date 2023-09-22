@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Darkbutton from '../components/Darkbutton';
-import Sidebartoggle from '../components/Sidebartoggle';
+import React, { Component } from "react";
+import Darkbutton from "../components/Darkbutton";
+import Sidebartoggle from "../components/Sidebartoggle";
 
 class AdminTopnav extends Component {
   render() {
@@ -99,7 +99,7 @@ class AdminTopnav extends Component {
               aria-expanded="false"
             >
               <img
-                src="assets/images/user.png"
+                src="/assets/images/user.png"
                 alt="user"
                 className="w45 mt-n1 rounded-circle"
               />

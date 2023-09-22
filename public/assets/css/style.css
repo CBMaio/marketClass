@@ -17919,6 +17919,7 @@ select.sort {
 
 .sidebar-dark .nav-item .navi-link {
   color: rgba(233, 236, 239, 0.5);
+  color: white;
   display: flex;
 }
 

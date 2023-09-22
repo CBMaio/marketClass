@@ -72,7 +72,7 @@ class Login extends Component {
                   <div className="col-sm-12 p-0 text-left">
                     <div className="form-group mb-1">
                       <a
-                        href="/default"
+                        href="/welcome-admin"
                         className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                       >
                         Login

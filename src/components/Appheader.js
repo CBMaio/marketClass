@@ -59,7 +59,7 @@ class Appheader extends Component {
                 <h4 className="fw-700 font-xs mb-4">Notification</h4>
                 <div className="card bg-transparent-card w-100 border-0 pl-5 mb-3">
                   <img
-                    src="assets/images/user-8.png"
+                    src="/assets/images//user-8.png"
                     alt="user"
                     className="w40 position-absolute left-0"
                   />
@@ -75,7 +75,7 @@ class Appheader extends Component {
                 </div>
                 <div className="card bg-transparent-card w-100 border-0 pl-5 mb-3">
                   <img
-                    src="assets/images/user-4.png"
+                    src="/assets/images//user-4.png"
                     alt="user"
                     className="w40 position-absolute left-0"
                   />
@@ -92,7 +92,7 @@ class Appheader extends Component {
 
                 <div className="card bg-transparent-card w-100 border-0 pl-5 mb-3">
                   <img
-                    src="assets/images/user-7.png"
+                    src="/assets/images//user-7.png"
                     alt="user"
                     className="w40 position-absolute left-0"
                   />
@@ -108,7 +108,7 @@ class Appheader extends Component {
                 </div>
                 <div className="card bg-transparent-card w-100 border-0 pl-5">
                   <img
-                    src="assets/images/user-6.png"
+                    src="/assets/images//user-6.png"
                     alt="user"
                     className="w40 position-absolute left-0"
                   />
@@ -135,7 +135,7 @@ class Appheader extends Component {
           <li>
             <Link to="/default-user-profile">
               <img
-                src="assets/images/user.png"
+                src="/assets/images//user.png"
                 alt="user"
                 className="w40 mt--1 rounded-circle"
               />
@@ -238,7 +238,7 @@ class Appheader extends Component {
                     data-tab="chats"
                   >
                     <img
-                      src="assets/images/user.png"
+                      src="/assets/images//user.png"
                       alt="user"
                       className="w40 mr-2 rounded-circle"
                     />
@@ -253,7 +253,7 @@ class Appheader extends Component {
                     data-tab="chats"
                   >
                     <img
-                      src="assets/images/user.png"
+                      src="/assets/images//user.png"
                       alt="user"
                       className="w40 mr-2 rounded-circle"
                     />
@@ -268,7 +268,7 @@ class Appheader extends Component {
                     data-tab="chats"
                   >
                     <img
-                      src="assets/images/user.png"
+                      src="/assets/images//user.png"
                       alt="user"
                       className="w40 mr-2 rounded-circle"
                     />
@@ -283,7 +283,7 @@ class Appheader extends Component {
                     data-tab="chats"
                   >
                     <img
-                      src="assets/images/user.png"
+                      src="/assets/images//user.png"
                       alt="user"
                       className="w40 mr-2 rounded-circle"
                     />

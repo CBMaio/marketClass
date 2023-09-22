@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 const classList = [
   {
-    imageUrl: 'user.png',
-    title: 'Advanced Python Sass',
-    per: '87',
-    status: 'bg-warning',
+    imageUrl: "user.png",
+    title: "Advanced Python Sass",
+    per: "87",
+    status: "bg-warning",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Bootstrap SASS CSS ',
-    per: '96',
-    status: 'bg-success',
+    imageUrl: "user.png",
+    title: "Bootstrap SASS CSS ",
+    per: "96",
+    status: "bg-success",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Basic JAVA',
-    per: '95',
-    status: 'bg-primary',
+    imageUrl: "user.png",
+    title: "Basic JAVA",
+    per: "95",
+    status: "bg-primary",
   },
   {
-    imageUrl: 'user.png',
-    title: 'React JS',
-    per: '55',
-    status: 'bg-warning',
+    imageUrl: "user.png",
+    title: "React JS",
+    per: "55",
+    status: "bg-warning",
   },
 ];
 
@@ -49,7 +49,7 @@ class Myclass extends Component {
                   className="btn-round-lg rounded-lg bg-lightblue ml-3"
                 >
                   <img
-                    src={`assets/images/${value.imageUrl}`}
+                    src={`/assets/images/${value.imageUrl}`}
                     alt="icon"
                     className="p-1 w-100"
                   />

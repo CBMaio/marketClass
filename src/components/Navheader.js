@@ -91,7 +91,7 @@ class Navheader extends Component {
                   data-tab="chats"
                 >
                   <img
-                    src="assets/images/user.png"
+                    src="/assets/images//user.png"
                     alt="user"
                     className="w40 mr-2"
                   />
@@ -106,7 +106,7 @@ class Navheader extends Component {
                   data-tab="chats"
                 >
                   <img
-                    src="assets/images/user.png"
+                    src="/assets/images//user.png"
                     alt="user"
                     className="w40 mr-2"
                   />
@@ -121,7 +121,7 @@ class Navheader extends Component {
                   data-tab="chats"
                 >
                   <img
-                    src="assets/images/user.png"
+                    src="/assets/images//user.png"
                     alt="user"
                     className="w40 mr-2"
                   />
@@ -136,7 +136,7 @@ class Navheader extends Component {
                   data-tab="chats"
                 >
                   <img
-                    src="assets/images/user.png"
+                    src="/assets/images//user.png"
                     alt="user"
                     className="w40 mr-2"
                   />

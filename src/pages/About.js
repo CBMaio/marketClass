@@ -168,7 +168,7 @@ class About extends Component {
             <div className="row">
               <div className="col-lg-5 mb-4">
                 <img
-                  src="assets/images/about-us-professor.png"
+                  src="/assets/images//about-us-professor.png"
                   alt="about"
                   className="rounded-lg img-fluid shadow-xs"
                 />
@@ -230,7 +230,7 @@ class About extends Component {
                       <div className="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
                         <div className="card-body pl-0 pt-0">
                           <img
-                            src={`assets/images/${value.imageUrl}`}
+                            src={`/assets/images//${value.imageUrl}`}
                             alt="user"
                             className="w45 float-left mr-3"
                           />
@@ -246,27 +246,27 @@ class About extends Component {
                         </p>
                         <div className="star d-block w-100 text-right mt-4 mb-0">
                           <img
-                            src="assets/images/star.png"
+                            src="/assets/images//star.png"
                             alt="star"
                             className="w15 mr-1 float-left mr-2"
                           />
                           <img
-                            src="assets/images/star.png"
+                            src="/assets/images//star.png"
                             alt="star"
                             className="w15 mr-1 float-left mr-2"
                           />
                           <img
-                            src="assets/images/star.png"
+                            src="/assets/images//star.png"
                             alt="star"
                             className="w15 mr-1 float-left mr-2"
                           />
                           <img
-                            src="assets/images/star.png"
+                            src="/assets/images//star.png"
                             alt="star"
                             className="w15 mr-1 float-left mr-2"
                           />
                           <img
-                            src="assets/images/star.png"
+                            src="/assets/images//star.png"
                             alt="star"
                             className="w15 mr-1 float-left mr-2"
                           />
@@ -324,7 +324,7 @@ class About extends Component {
                   {brandList.map((value, index) => (
                     <div key={index}>
                       <img
-                        src={`assets/images/${value.bimg}`}
+                        src={`/assets/images//${value.bimg}`}
                         alt="avater"
                         className="w100"
                       />
