@@ -8,6 +8,7 @@ const Adminsidebar = () => {
 
   const toggleCourseOptions = () =>
     setDisplayCouseOptions(!displayCourseOptions);
+
   return (
     <ul
       className="navbar-nav bg-gradient-primary sidebar sidebar-dark scroll-bar"
@@ -17,7 +18,7 @@ const Adminsidebar = () => {
         to={"/"}
         className="sidebar-brand d-flex align-items-start justify-content-start"
       >
-        <span className="d-inline-block fredoka-font ls-3 fw-600 text-success font-xl logo-text mb-0 text-capitalize lh-1">
+        <span className="d-inline-block fredoka-font ls-3 fw-600 font-xl logo-text mb-0 text-capitalize lh-1 aside-title">
           MarketClass
         </span>
         <button className="ms-auto mt-2 d-lg-none" id="sidebarClose">

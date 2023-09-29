@@ -1,3 +1,16 @@
 li.nav-item .navi-link {
   cursor: pointer;
+
+  i {
+    color: white !important;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
 }
+
+.aside-title {
+  color: var(--light-purple100);
+}
+

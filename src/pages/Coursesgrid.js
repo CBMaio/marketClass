@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Searcharea from "../components/Searcharea";
@@ -7,27 +8,6 @@ import Pagination from "../components/Pagination";
 import CourseList from "../features/courses/CourseList";
 
 const Coursesgrid = () => {
-  const [courseData, setCourseData] = useState([]);
-
-  const getData = () => {
-    fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (myJson) {
-        setCourseData(myJson);
-      });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <Fragment>
       <Header />

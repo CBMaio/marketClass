@@ -1,12 +1,33 @@
-import { useDispatch } from "react-redux";
-import { nanoid } from "@reduxjs/toolkit";
-import { courseAdded } from "./coursesSlice";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { courseUpdated, selectCourseById } from "./coursesSlice";
 
 const EditCourseForm = () => {
-  const dispatch = useDispatch();
+  const { courseId } = useParams();
+  const course = useSelector((state) => selectCourseById(state, courseId));
+
+  const [title, setTile] = useState(course?.title || "");
+  const [description, setDescription] = useState(course?.description || "");
+
+  const dispath = useDispatch();
+  const navigate = useNavigate();
+
+  const onTitleChanged = (e) => setTile(e.target.value);
+  const onDescriptionChanged = (e) => setDescription(e.target.value);
 
   const saveCourse = () => {
-    dispatch(courseAdded({}));
+    if (title && description) {
+      dispath(
+        courseUpdated({
+          id: courseId,
+          title,
+          description,
+        })
+      );
+      navigate(`/course-detail/${courseId}`);
+    }
   };
 
   return (
@@ -36,6 +57,8 @@ const EditCourseForm = () => {
                       type="text"
                       required
                       placeholder="Title"
+                      value={title}
+                      onChange={onTitleChanged}
                     />
                   </div>
                 </div>
@@ -92,6 +115,8 @@ const EditCourseForm = () => {
                       required
                       rows="6"
                       placeholder="Course Description *"
+                      value={description}
+                      onChange={onDescriptionChanged}
                     ></textarea>
                   </div>
                 </div>

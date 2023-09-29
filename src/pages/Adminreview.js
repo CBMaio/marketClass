@@ -1,141 +1,142 @@
-import React, { Component, Fragment } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React, { Component, Fragment } from "react";
+import { Modal, Button } from "react-bootstrap";
 
-import Adminsidebar from '../components/Adminsidebar';
-import AdminTopnav from '../components/AdminTopnav';
-import Adminfooter from '../components/Adminfooter';
-import Pagination from '../components/Pagination';
+import Adminsidebar from "../components/Adminsidebar";
+import AdminTopnav from "../components/AdminTopnav";
+import Adminfooter from "../components/Adminfooter";
+import Pagination from "../components/Pagination";
+import CommentList from "../features/comments/CommentList";
 
 const productlList = [
   {
-    id: '0901',
-    name: 'Hurin Seary',
-    email: 'marvin@example.com',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    color: 'warning',
-    status: 'Pending',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star-disable.png',
-    star5: 'star-disable.png',
+    id: "0901",
+    name: "Hurin Seary",
+    email: "marvin@example.com",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    color: "warning",
+    status: "Pending",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star-disable.png",
+    star5: "star-disable.png",
   },
   {
-    id: '2323',
-    name: 'Victor Exrixon',
-    email: 'leslie@example.com',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    color: 'warning',
-    status: 'Pending',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star.png',
-    star5: 'star.png',
+    id: "2323",
+    name: "Victor Exrixon",
+    email: "leslie@example.com",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    color: "warning",
+    status: "Pending",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star.png",
+    star5: "star.png",
   },
   {
-    id: '1233',
-    name: 'Surfiya Zakir',
-    email: 'esther@example.com',
-    title: 'Java Programming Masterclass for Developers',
-    color: 'danger',
-    status: 'Canceled',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star.png',
-    star5: 'star.png',
+    id: "1233",
+    name: "Surfiya Zakir",
+    email: "esther@example.com",
+    title: "Java Programming Masterclass for Developers",
+    color: "danger",
+    status: "Canceled",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star.png",
+    star5: "star.png",
   },
   {
-    id: '1233',
-    name: 'Goria Coast',
-    email: 'esther@example.com',
-    title: 'The Data Science Course Complete Data Science ',
-    color: 'danger',
-    status: 'Canceled',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star.png',
-    star5: 'star.png',
+    id: "1233",
+    name: "Goria Coast",
+    email: "esther@example.com",
+    title: "The Data Science Course Complete Data Science ",
+    color: "danger",
+    status: "Canceled",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star.png",
+    star5: "star.png",
   },
   {
-    id: '2323',
-    name: 'Hurin Seary',
-    email: 'jenny@example.com',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    color: 'success',
-    status: 'Received',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star-disable.png',
-    star5: 'star-disable.png',
+    id: "2323",
+    name: "Hurin Seary",
+    email: "jenny@example.com",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    color: "success",
+    status: "Received",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star-disable.png",
+    star5: "star-disable.png",
   },
   {
-    id: '0901',
-    name: 'Victor Exrixon',
-    email: 'marvin@example.com',
-    title: 'Fundamentals for Scrum Master and Agile Projects ',
-    color: 'warning',
-    status: 'Pending',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star-disable.png',
-    star5: 'star-disable.png',
+    id: "0901",
+    name: "Victor Exrixon",
+    email: "marvin@example.com",
+    title: "Fundamentals for Scrum Master and Agile Projects ",
+    color: "warning",
+    status: "Pending",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star-disable.png",
+    star5: "star-disable.png",
   },
   {
-    id: '2323',
-    name: 'Surfiya Zakir',
-    email: 'leslie@example.com',
-    title: 'Automate the Boring Stuff with Python Programming',
-    color: 'warning',
-    status: 'Pending',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star-disable.png',
-    star5: 'star-disable.png',
+    id: "2323",
+    name: "Surfiya Zakir",
+    email: "leslie@example.com",
+    title: "Automate the Boring Stuff with Python Programming",
+    color: "warning",
+    status: "Pending",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star-disable.png",
+    star5: "star-disable.png",
   },
   {
-    id: '1233',
-    name: 'Goria Coast',
-    email: 'esther@example.com',
-    title: 'The Data Science Course Complete Data Science ',
-    color: 'danger',
-    status: 'Canceled',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star.png',
-    star5: 'star.png',
+    id: "1233",
+    name: "Goria Coast",
+    email: "esther@example.com",
+    title: "The Data Science Course Complete Data Science ",
+    color: "danger",
+    status: "Canceled",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star.png",
+    star5: "star.png",
   },
   {
-    id: '1233',
-    name: 'Goria Coast',
-    email: 'esther@example.com',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    color: 'danger',
-    status: 'Canceled',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star.png',
-    star5: 'star.png',
+    id: "1233",
+    name: "Goria Coast",
+    email: "esther@example.com",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    color: "danger",
+    status: "Canceled",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star.png",
+    star5: "star.png",
   },
   {
-    id: '2323',
-    name: 'Hurin Seary',
-    email: 'jenny@example.com',
-    title: 'Fundamentals for Scrum Master and Agile Projects ',
-    color: 'success',
-    status: 'Received',
-    star1: 'star.png',
-    star2: 'star.png',
-    star3: 'star.png',
-    star4: 'star.png',
-    star5: 'star.png',
+    id: "2323",
+    name: "Hurin Seary",
+    email: "jenny@example.com",
+    title: "Fundamentals for Scrum Master and Agile Projects ",
+    color: "success",
+    status: "Received",
+    star1: "star.png",
+    star2: "star.png",
+    star3: "star.png",
+    star4: "star.png",
+    star5: "star.png",
   },
 ];
 
@@ -158,8 +159,9 @@ class Adminreview extends Component {
           <div id="content-wrapper" className="d-flex flex-column">
             <div id="content">
               <AdminTopnav />
+              <CommentList />
 
-              <div className="container px-3 py-4">
+              {/* <div className="container px-3 py-4">
                 <div className="row">
                   <div className="col-lg-12 mt-4">
                     <div className="card border-0 mt-2 rounded-10">
@@ -187,7 +189,6 @@ class Adminreview extends Component {
                             <thead className="bg-greylight rounded-10 ovh">
                               <tr>
                                 <th className="border-0"></th>
-                                <th className="border-0"></th>
                                 <th className="border-0" scope="col">
                                   Name
                                 </th>
@@ -210,16 +211,6 @@ class Adminreview extends Component {
                               {productlList.map((value, index) => (
                                 <tr key={index}>
                                   <td>
-                                    <div className="form-check mt-1">
-                                      <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        value="option1"
-                                      />
-                                      <label className="text-grey-500 font-xssss"></label>
-                                    </div>
-                                  </td>
-                                  <td>
                                     <b>{value.title}</b>
                                   </td>
 
@@ -233,7 +224,7 @@ class Adminreview extends Component {
                                         className="float-start mr-1 w15"
                                       />
                                     ) : (
-                                      ''
+                                      ""
                                     )}
                                     {value.star2 ? (
                                       <img
@@ -242,7 +233,7 @@ class Adminreview extends Component {
                                         className="float-start mr-1 w15"
                                       />
                                     ) : (
-                                      ''
+                                      ""
                                     )}
                                     {value.star3 ? (
                                       <img
@@ -251,7 +242,7 @@ class Adminreview extends Component {
                                         className="float-start mr-1 w15"
                                       />
                                     ) : (
-                                      ''
+                                      ""
                                     )}
                                     {value.star4 ? (
                                       <img
@@ -260,7 +251,7 @@ class Adminreview extends Component {
                                         className="float-start mr-1 w15"
                                       />
                                     ) : (
-                                      ''
+                                      ""
                                     )}
                                     {value.star4 ? (
                                       <img
@@ -269,7 +260,7 @@ class Adminreview extends Component {
                                         className="float-start mr-1 w15"
                                       />
                                     ) : (
-                                      ''
+                                      ""
                                     )}
                                   </td>
                                   <td>
@@ -289,7 +280,7 @@ class Adminreview extends Component {
                                         this.handleModel();
                                       }}
                                     >
-                                      <i className="ti-trash  font-xs text-danger"></i>
+                                      <i className="ti-trash font-xs text-danger"></i>
                                     </Button>
                                     <Modal
                                       {...this.props}
@@ -340,7 +331,7 @@ class Adminreview extends Component {
                     <Pagination divClass="pagination justify-content-center mt-5" />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <Adminfooter />
             </div>

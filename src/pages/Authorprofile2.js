@@ -1,276 +1,276 @@
-import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Upperheader from '../components/Upperheader';
-import Footer from '../components/Footer';
-import { Tab, Tabs } from 'react-bootstrap';
+import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Upperheader from "../components/Upperheader";
+import Footer from "../components/Footer";
+import { Tab, Tabs } from "react-bootstrap";
 
 const memberList = [
   {
-    imageUrl: 'user.png',
-    name: 'Aliqa Macale ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Aliqa Macale ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'John Steere ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "John Steere ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Mohannad Zitoun ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Mohannad Zitoun ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Aliqa Macale ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Aliqa Macale ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Hendrix Stamp ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Hendrix Stamp ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Mohannad Zitoun ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Mohannad Zitoun ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'John Steere ',
-    email: 'support@gmail.com',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "John Steere ",
+    email: "support@gmail.com",
+    bgimage: "course.png",
   },
 ];
 const liveList = [
   {
-    imageUrl: 'user.png',
-    name: 'Aliqa Macale ',
-    email: 'support@gmail.com',
-    status: 'LIVE',
-    statusColor: 'bg-danger',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Aliqa Macale ",
+    email: "support@gmail.com",
+    status: "LIVE",
+    statusColor: "bg-danger",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'John Steere ',
-    email: 'support@gmail.com',
-    status: 'OFFLINE',
-    statusColor: 'bg-dark',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "John Steere ",
+    email: "support@gmail.com",
+    status: "OFFLINE",
+    statusColor: "bg-dark",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Mohannad Zitoun ',
-    email: 'support@gmail.com',
-    status: 'LIVE',
-    statusColor: 'bg-danger',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Mohannad Zitoun ",
+    email: "support@gmail.com",
+    status: "LIVE",
+    statusColor: "bg-danger",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Aliqa Macale ',
-    email: 'support@gmail.com',
-    status: 'OFFLINE',
-    statusColor: 'bg-dark',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Aliqa Macale ",
+    email: "support@gmail.com",
+    status: "OFFLINE",
+    statusColor: "bg-dark",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Hendrix Stamp ',
-    email: 'support@gmail.com',
-    status: 'LIVE',
-    statusColor: 'bg-danger',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Hendrix Stamp ",
+    email: "support@gmail.com",
+    status: "LIVE",
+    statusColor: "bg-danger",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'Mohannad Zitoun ',
-    email: 'support@gmail.com',
-    status: 'LIVE',
-    statusColor: 'bg-danger',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "Mohannad Zitoun ",
+    email: "support@gmail.com",
+    status: "LIVE",
+    statusColor: "bg-danger",
+    bgimage: "course.png",
   },
   {
-    imageUrl: 'user.png',
-    name: 'John Steere ',
-    email: 'support@gmail.com',
-    status: 'LIVE',
-    statusColor: 'bg-danger',
-    bgimage: 'course.png',
+    imageUrl: "user.png",
+    name: "John Steere ",
+    email: "support@gmail.com",
+    status: "LIVE",
+    statusColor: "bg-danger",
+    bgimage: "course.png",
   },
 ];
 
 const channelList = [
   {
-    imageUrl: 'user.png',
-    title: 'Mobile Product Design',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!',
-    tag1: 'FULL TIME',
-    tag2: 'DESINER',
-    tag3: '30 MIN',
+    imageUrl: "user.png",
+    title: "Mobile Product Design",
+    des: "Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!",
+    tag1: "FULL TIME",
+    tag2: "DESINER",
+    tag3: "30 MIN",
   },
   {
-    imageUrl: 'user.png',
-    title: 'HTML Developer',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!',
-    tag1: '',
-    tag2: 'DESINER',
-    tag3: '30 MIN',
+    imageUrl: "user.png",
+    title: "HTML Developer",
+    des: "Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!",
+    tag1: "",
+    tag2: "DESINER",
+    tag3: "30 MIN",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Advanced CSS and Sass',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!',
-    tag1: 'FULL TIME',
-    tag2: 'DEVELOPER',
-    tag3: '21 HOUR',
+    imageUrl: "user.png",
+    title: "Advanced CSS and Sass",
+    des: "Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!",
+    tag1: "FULL TIME",
+    tag2: "DEVELOPER",
+    tag3: "21 HOUR",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Modern React with Redux',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!',
-    tag1: 'HALF TIME',
-    tag2: 'DESINER',
-    tag3: '5 HOUNRS',
+    imageUrl: "user.png",
+    title: "Modern React with Redux",
+    des: "Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!",
+    tag1: "HALF TIME",
+    tag2: "DESINER",
+    tag3: "5 HOUNRS",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Node JS',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!',
-    tag1: 'HALF TIME',
-    tag2: 'CODER',
-    tag3: '45 MIN',
+    imageUrl: "user.png",
+    title: "Node JS",
+    des: "Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!",
+    tag1: "HALF TIME",
+    tag2: "CODER",
+    tag3: "45 MIN",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Mobile Product Design',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!',
-    tag1: 'FULL TIME',
-    tag2: 'DESINER',
-    tag3: '30 MIN',
+    imageUrl: "user.png",
+    title: "Mobile Product Design",
+    des: "Learn new secrets to creating awesome Microsoft Access databases and VBA coding not covered in any of my other courses!",
+    tag1: "FULL TIME",
+    tag2: "DESINER",
+    tag3: "30 MIN",
   },
 ];
 const badgeList = [
   {
-    imageUrl: 'user.png',
-    title: 'Bronze User',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases',
-    tag: 'UNLOCK',
-    per: '100',
+    imageUrl: "user.png",
+    title: "Bronze User",
+    des: "Learn new secrets to creating awesome Microsoft Access databases",
+    tag: "UNLOCK",
+    per: "100",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Platinum  User',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases',
-    tag: '95 / 100',
-    per: '95',
+    imageUrl: "user.png",
+    title: "Platinum  User",
+    des: "Learn new secrets to creating awesome Microsoft Access databases",
+    tag: "95 / 100",
+    per: "95",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Ultra Powered',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases',
-    tag: '90 / 100',
-    per: '90',
+    imageUrl: "user.png",
+    title: "Ultra Powered",
+    des: "Learn new secrets to creating awesome Microsoft Access databases",
+    tag: "90 / 100",
+    per: "90",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Bronze User',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases',
-    tag: '85 / 100',
-    per: '85',
+    imageUrl: "user.png",
+    title: "Bronze User",
+    des: "Learn new secrets to creating awesome Microsoft Access databases",
+    tag: "85 / 100",
+    per: "85",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Gold User',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases',
-    tag: 'UNLOCK',
-    per: '82',
+    imageUrl: "user.png",
+    title: "Gold User",
+    des: "Learn new secrets to creating awesome Microsoft Access databases",
+    tag: "UNLOCK",
+    per: "82",
   },
   {
-    imageUrl: 'user.png',
-    title: 'Silver User',
-    des: 'Learn new secrets to creating awesome Microsoft Access databases',
-    tag: 'UNLOCK',
-    per: '98',
+    imageUrl: "user.png",
+    title: "Silver User",
+    des: "Learn new secrets to creating awesome Microsoft Access databases",
+    tag: "UNLOCK",
+    per: "98",
   },
 ];
 
 const courseList = [
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '2400',
-    tag: 'Python',
-    lesson: '32 ',
-    status: 'alert-warning text-warning',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "2400",
+    tag: "Python",
+    lesson: "32 ",
+    status: "alert-warning text-warning",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '40',
-    tag: 'Desinger',
-    lesson: '24 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "40",
+    tag: "Desinger",
+    lesson: "24 ",
+    status: "alert-danger text-danger",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Java Programming Masterclass for Developers',
-    price: '60',
-    tag: 'Bootstrap',
-    lesson: '14 ',
-    status: 'alert-success text-success',
+    imageUrl: "course.png",
+    title: "Java Programming Masterclass for Developers",
+    price: "60",
+    tag: "Bootstrap",
+    lesson: "14 ",
+    status: "alert-success text-success",
   },
   {
-    imageUrl: 'course.png',
-    title: 'The Data Science Course Complete Data Science ',
-    price: '370',
-    tag: 'Develop',
-    lesson: '23 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "The Data Science Course Complete Data Science ",
+    price: "370",
+    tag: "Develop",
+    lesson: "23 ",
+    status: "alert-danger text-danger",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Complete Python Bootcamp From Zero to Hero in Python ',
-    price: '450',
-    tag: 'Desinger',
-    lesson: '24 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "Complete Python Bootcamp From Zero to Hero in Python ",
+    price: "450",
+    tag: "Desinger",
+    lesson: "24 ",
+    status: "alert-danger text-danger",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Fundamentals for Scrum Master and Agile Projects ',
-    price: '670',
-    tag: 'Python',
-    lesson: '32 ',
-    status: 'alert-warning text-warning',
+    imageUrl: "course.png",
+    title: "Fundamentals for Scrum Master and Agile Projects ",
+    price: "670",
+    tag: "Python",
+    lesson: "32 ",
+    status: "alert-warning text-warning",
   },
   {
-    imageUrl: 'course.png',
-    title: 'Automate the Boring Stuff with Python Programming',
-    price: '760',
-    tag: 'Bootstrap',
-    lesson: '14 ',
-    status: 'alert-primary text-primary',
+    imageUrl: "course.png",
+    title: "Automate the Boring Stuff with Python Programming",
+    price: "760",
+    tag: "Bootstrap",
+    lesson: "14 ",
+    status: "alert-primary text-primary",
   },
   {
-    imageUrl: 'course.png',
-    title: 'The Data Science Course Complete Data Science ',
-    price: '370',
-    tag: 'Develop',
-    lesson: '23 ',
-    status: 'alert-danger text-danger',
+    imageUrl: "course.png",
+    title: "The Data Science Course Complete Data Science ",
+    price: "370",
+    tag: "Develop",
+    lesson: "23 ",
+    status: "alert-danger text-danger",
   },
 ];
 
-class Userprofile extends Component {
+class Authorprofile2 extends Component {
   render() {
     return (
       <Fragment>
@@ -282,27 +282,26 @@ class Userprofile extends Component {
             <div className="row">
               <div className="col-lg-12">
                 <div className="middle-sidebar-left">
-                  <div
-                    className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-3"
-                    style={{
-                      backgroundImage: `url("https://via.placeholder.com/1200x500.png")`,
-                    }}
-                  >
-                    <div className="card-body p-lg-5 p-4 bg-black-08">
+                  <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-3">
+                    <div
+                      className="card-body position-relative h200 bg-gradiant-bottom bg-image-cover bg-image-center"
+                      style={{
+                        backgroundImage: `url("https://via.placeholder.com/1200x500.png")`,
+                      }}
+                    ></div>
+                    <div className="card-body d-block w-100 pl-lg-5 pl-4 pr-4">
+                      <figure className="avatar ml-0 mb-0 mt--6 position-relative w90 z-index-1">
+                        <img
+                          src="assets/images/user.png"
+                          alt="avater"
+                          className="float-right p-1 bg-white rounded-circle w-100"
+                        />
+                      </figure>
                       <div className="clearfix"></div>
                       <div className="row">
-                        <div className="col-lg-12 pl-xl-5 pt-xl-5">
-                          <figure className="avatar ml-0 mb-4 position-relative w100 z-index-1">
-                            <img
-                              src="assets/images/user.png"
-                              alt="avater"
-                              className="float-right p-1 bg-white rounded-circle w-100"
-                            />
-                          </figure>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 pl-xl-5 pb-xl-5 pb-3">
-                          <h4 className="fw-700 font-md text-white mt-3 mb-1">
-                            Hendrix Stamp
+                        <div className="col-xl-6 md-mb-2">
+                          <h4 className="fw-700 font-xs mt-3 mb-1">
+                            Aliqa Macale
                             <i className="ti-check font-xssss btn-round-xs bg-success text-white ml-1"></i>
                           </h4>
                           <span className="font-xssss fw-600 text-grey-500 d-inline-block ml-0">
@@ -318,9 +317,69 @@ class Userprofile extends Component {
                           <span className="font-xssss fw-600 text-grey-500 d-inline-block ml-1">
                             HTML5
                           </span>
+                        </div>
+                        <div className="col-xl-3 md-mb-2">
+                          <ul className="d-flex align-items-center mt-2 float-left">
+                            <li className="mr-2">
+                              <a
+                                href="/default-author-profile"
+                                className="btn-round-md bg-facebook"
+                              >
+                                <i className="font-xs ti-facebook text-white"></i>
+                              </a>
+                            </li>
+                            <li className="mr-2">
+                              <a
+                                href="/default-author-profile"
+                                className="btn-round-md bg-twiiter"
+                              >
+                                <i className="font-xs ti-twitter-alt text-white"></i>
+                              </a>
+                            </li>
+                            <li className="mr-2">
+                              <a
+                                href="/default-author-profile"
+                                className="btn-round-md bg-linkedin"
+                              >
+                                <i className="font-xs ti-linkedin text-white"></i>
+                              </a>
+                            </li>
+                            <li className="mr-2">
+                              <a
+                                href="/default-author-profile"
+                                className="btn-round-md bg-instagram"
+                              >
+                                <i className="font-xs ti-instagram text-white"></i>
+                              </a>
+                            </li>
+                            <li className="mr-2">
+                              <a
+                                href="/default-author-profile"
+                                className="btn-round-md bg-pinterest"
+                              >
+                                <i className="font-xs ti-pinterest text-white"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="col-xl-3 md-mb-2 pl-xl-4">
+                          <a
+                            href="/default-author-profile"
+                            className="mt-2 p-0 btn p-2 lh-24 w100 ml-1 ls-3 float-left d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white"
+                          >
+                            FOLLOW
+                          </a>
+                          <a
+                            href="/default-author-profile"
+                            className="btn-round-md ml-3 mt-2 d-inline-block float-left rounded-lg bg-greylight add-wishlist"
+                          >
+                            <i className="feather-bookmark font-sm text-grey-900"></i>
+                          </a>
+                        </div>
+                        <div className="col-xl-12">
                           <ul className="memberlist mt-3 mb-2 ml-0">
                             <li>
-                              <a href="/default-user-profile">
+                              <a href="/default-author-profile">
                                 <img
                                   src="assets/images/user.png"
                                   alt="user"
@@ -329,7 +388,7 @@ class Userprofile extends Component {
                               </a>
                             </li>
                             <li>
-                              <a href="/default-user-profile">
+                              <a href="/default-author-profile">
                                 <img
                                   src="assets/images/user.png"
                                   alt="user"
@@ -338,7 +397,7 @@ class Userprofile extends Component {
                               </a>
                             </li>
                             <li>
-                              <a href="/default-user-profile">
+                              <a href="/default-author-profile">
                                 <img
                                   src="assets/images/user.png"
                                   alt="user"
@@ -347,7 +406,7 @@ class Userprofile extends Component {
                               </a>
                             </li>
                             <li>
-                              <a href="/default-user-profile">
+                              <a href="/default-author-profile">
                                 <img
                                   src="assets/images/user.png"
                                   alt="user"
@@ -357,120 +416,46 @@ class Userprofile extends Component {
                             </li>
                             <li className="last-member">
                               <a
-                                href="/default-user-profile"
+                                href="/default-author-profile"
                                 className="bg-greylight fw-600 text-grey-500 text-center font-xssss ls-3"
                               >
                                 +2
                               </a>
                             </li>
+                            <li className="pl-4 w-auto">
+                              <a
+                                href="/default-author-profile"
+                                className="fw-500 text-grey-500 font-xssss"
+                              >
+                                Subscirbed Member
+                              </a>
+                            </li>
                           </ul>
                         </div>
-                        <div className="col-xl-4 col-lg-6 d-block">
-                          <h2 className="display5-size text-white fw-700 lh-1 mr-3">
-                            98
-                            <i className="feather-arrow-up-right text-success font-xl"></i>
-                          </h2>
-                          <h4 className="text-white font-sm fw-600 mt-0 lh-3">
-                            Your learning level points!
+                        <div className="col-11">
+                          <h4 className="text-grey-800 font-xsss mt-4 fw-700">
+                            About me
                           </h4>
+                          <p className="font-xssss fw-600 lh-28 text-grey-500 mb-0 pl-0">
+                            I have a Business Management degree from Bangalore
+                            University and a long time Excel expert. I create
+                            professional Excel reports/dashboards for clients
+                            and conduct Excel workshops for business
+                            professionals. Currently am a freelance motion
+                            graphics artist and a Music producer. I like to be
+                            productive and creative at work. I like to
+                            continuously increase my skills and stay in tuned
+                            with the technology industry.
+                          </p>
                         </div>
-                        <div className="col-xl-3 mt-4"></div>
                       </div>
                     </div>
                   </div>
-
                   <Tabs
-                    defaultActiveKey="profile"
+                    defaultActiveKey="video"
                     id="uncontrolled-tab-example"
                     className="mb-3 nav nav-tabs profile xs-p-4 d-flex align-items-center justify-content-between product-info-tab border-bottom-0 bg-white shadow-xss rounded-lg"
                   >
-                    <Tab eventKey="profile" title="Profile">
-                      <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-lg-4 p-2">
-                        <div className="card-body mb-lg-3 pb-0">
-                          <h2 className="fw-400 font-lg d-block">
-                            <b>About Me</b>
-                            <a
-                              href="/default-user-profile"
-                              className="float-right"
-                            >
-                              <i className="feather-edit text-grey-500 font-xs"></i>
-                            </a>
-                          </h2>
-                        </div>
-                        <div className="card-body pb-0">
-                          <div className="row">
-                            <div className="col-xl-12">
-                              <p className="font-xssss fw-600 lh-28 text-grey-500 pl-0">
-                                I have a Business Management degree from
-                                Bangalore University and a long time Excel
-                                expert. I create professional Excel
-                                reports/dashboards for clients and conduct Excel
-                                workshops for business professionals. Currently
-                                am a freelance motion graphics artist and a
-                                Music producer. I like to be productive and
-                                creative at work. I like to continuously
-                                increase my skills and stay in tuned with the
-                                technology industry.
-                              </p>
-                              <p className="font-xssss fw-600 lh-28 text-grey-500 pl-0">
-                                I have a Business Management degree from
-                                Bangalore University and a long time Excel
-                                expert. I create professional Excel
-                                reports/dashboards for clients and conduct Excel
-                                workshops for business professionals. Currently
-                                am a freelance motion graphics artist and a
-                                Music producer. I like to be productive and
-                                creative at work. I like to continuously
-                                increase my skills and stay in tuned with the
-                                technology industry.
-                              </p>
-                              <ul className="d-flex align-items-center mt-2 mb-3 float-left">
-                                <li className="mr-2">
-                                  <a
-                                    href="/default-user-profile"
-                                    className="btn-round-md bg-facebook"
-                                  >
-                                    <i className="font-xs ti-facebook text-white"></i>
-                                  </a>
-                                </li>
-                                <li className="mr-2">
-                                  <a
-                                    href="/default-user-profile"
-                                    className="btn-round-md bg-twiiter"
-                                  >
-                                    <i className="font-xs ti-twitter-alt text-white"></i>
-                                  </a>
-                                </li>
-                                <li className="mr-2">
-                                  <a
-                                    href="/default-user-profile"
-                                    className="btn-round-md bg-linkedin"
-                                  >
-                                    <i className="font-xs ti-linkedin text-white"></i>
-                                  </a>
-                                </li>
-                                <li className="mr-2">
-                                  <a
-                                    href="/default-user-profile"
-                                    className="btn-round-md bg-instagram"
-                                  >
-                                    <i className="font-xs ti-instagram text-white"></i>
-                                  </a>
-                                </li>
-                                <li className="mr-2">
-                                  <a
-                                    href="/default-user-profile"
-                                    className="btn-round-md bg-pinterest"
-                                  >
-                                    <i className="font-xs ti-pinterest text-white"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </Tab>
                     <Tab eventKey="video" title="VIDEO">
                       <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-lg-4 p-2">
                         <div className="card-body mb-lg-3 pb-0">
@@ -705,21 +690,21 @@ class Userprofile extends Component {
                                       {value.tag1}
                                     </span>
                                   ) : (
-                                    ''
+                                    ""
                                   )}
                                   {value.tag2 ? (
                                     <span className="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">
                                       {value.tag2}
                                     </span>
                                   ) : (
-                                    ''
+                                    ""
                                   )}
                                   {value.tag3 ? (
                                     <span className="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">
                                       {value.tag3}
                                     </span>
                                   ) : (
-                                    ''
+                                    ""
                                   )}
                                   <div className="clearfix"></div>
                                   <ul className="memberlist mt-4 mb-2">
@@ -832,8 +817,8 @@ class Userprofile extends Component {
                                     <p className="fw-500 font-xsssss text-grey-500 mt-0 mb-2">
                                       {value.email}
                                     </p>
-                                    <ul className="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                      <li className="mr-1 list-inline-item">
+                                    <ul className="text-center d-block mt-3 list-inline ml-0 mr-0 mb-3">
+                                      <li className="mr-1 mb-2 list-inline-item">
                                         <a
                                           href="/default-user-profile"
                                           className="btn-round-md bg-facebook"
@@ -841,7 +826,7 @@ class Userprofile extends Component {
                                           <i className="font-xs ti-facebook text-white"></i>
                                         </a>
                                       </li>
-                                      <li className="mr-1 list-inline-item">
+                                      <li className="mr-1 mb-2 list-inline-item">
                                         <a
                                           href="/default-user-profile"
                                           className="btn-round-md bg-twiiter"
@@ -849,7 +834,7 @@ class Userprofile extends Component {
                                           <i className="font-xs ti-twitter-alt text-white"></i>
                                         </a>
                                       </li>
-                                      <li className="mr-1 list-inline-item">
+                                      <li className="mr-1 mb-2 list-inline-item">
                                         <a
                                           href="/default-user-profile"
                                           className="btn-round-md bg-linkedin"
@@ -1062,4 +1047,4 @@ class Userprofile extends Component {
   }
 }
 
-export default Userprofile;
+export default Authorprofile2;

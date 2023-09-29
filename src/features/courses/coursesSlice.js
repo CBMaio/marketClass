@@ -1,65 +1,68 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, nanoid } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const initialState = [
-  {
-    id: 1,
-    name: "Introduction to Web Development",
-    category: "Web Development",
-    duration: 8,
-    frequency: "Weekly",
-    author: "John Doe",
-    price: 99.99,
-    image: "course1.jpg",
-    description:
-      "Learn the basics of web development and create your first website.",
-    requirements:
-      "No prior knowledge required. A computer and internet access are needed.",
-  },
-  {
-    id: 2,
-    name: "Python Programming for Beginners",
-    category: "Programming",
-    duration: 10,
-    frequency: "Weekly",
-    author: "Jane Smith",
-    price: 149.99,
-    image: "course2.jpg",
-    description:
-      "Start your programming journey with Python and build simple applications.",
-    requirements: "No prior programming experience needed.",
-  },
-  {
-    id: 3,
-    name: "Digital Marketing Fundamentals",
-    category: "Marketing",
-    duration: 6,
-    frequency: "Monthly",
-    author: "Emily Johnson",
-    price: 79.99,
-    image: "course3.jpg",
-    description:
-      "Explore the world of digital marketing and grow your online presence.",
-    requirements: "Basic computer skills are required.",
-  },
-];
+const initialState = {
+  data: [],
+  status: "idle",
+  error: null,
+};
+
+export const fetchCourses = createAsyncThunk(
+  "courses/fetchCourses",
+  async () => {
+    const response = await axios.get("data.json");
+    return response.data;
+  }
+);
+
+export const addNewCourse = createAsyncThunk(
+  "courses/addNewCourse",
+  async (initialCourse) => {
+    const response = {
+      ...initialCourse,
+      id: nanoid(),
+    };
+    return response;
+  }
+);
 
 const coursesSlice = createSlice({
   name: "courses",
   initialState,
   reducers: {
-    courseAdded(state, action) {
-      state.push(action.payload);
-    },
     courseUpdated(state, action) {
-      const { id, name, description } = action.payload;
-      const existingCourse = state.find((course) => course.id === id);
+      const { id, title, description } = action.payload;
+      const existingCourse = state.data.find((course) => `${course.id}` === id);
       if (existingCourse) {
-        existingCourse.name = name;
+        existingCourse.title = title;
         existingCourse.description = description;
       }
     },
   },
+  extraReducers(builder) {
+    builder
+      .addCase(fetchCourses.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(fetchCourses.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = state.data.concat(action.payload);
+      })
+      .addCase(fetchCourses.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(addNewCourse.fulfilled, (state, action) => {
+        state.data.push(action.payload);
+      });
+  },
 });
 
 export const { courseAdded, courseUpdated } = coursesSlice.actions;
+
 export default coursesSlice.reducer;
+
+export const selectAllCourses = (state) => state.courses.data;
+
+export const selectCourseById = (state, courseId) =>
+  state.courses.data.find((course) => `${course.id}` === courseId);

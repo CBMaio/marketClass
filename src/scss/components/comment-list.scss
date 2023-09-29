@@ -1,0 +1,20 @@
+.bg {
+  &-pending {
+    background-color: #ffead6;
+    border-color: #ffe1c5;
+    color: #844d19;
+  }
+
+  &-received {
+    background-color: #cff7e4;
+    border-color: #bcf4d9;
+    color: #08703d;
+  }
+
+  &-cancelled {
+    background-color: #facccc;
+    border-color: #f8b8b8;
+    color: #770101;
+  }
+}
+

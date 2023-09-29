@@ -52,8 +52,8 @@ import Coursesgridone from "./pages/Coursesgrid";
 // import Coursesgridthree from "./pages/Coursesgridthree";
 import Popupchat from "./pages/Popupchat";
 
-import Userprofile from "./pages/Userprofile";
-import Authorprofile from "./pages/Authorprofile";
+import AuthorProfile from "./pages/AuthorProfile";
+// import Authorprofile from "./pages/Authorprofile";
 import Coursedetails from "./pages/Coursedetails";
 import Coursedetailstwo from "./pages/Coursedetailstwo";
 
@@ -67,7 +67,7 @@ import Defaultlive from "./pages/Defaultlive";
 import Defaultcourseone from "./pages/Defaultcourseone";
 import Defaultcoursetwo from "./pages/Defaultcoursetwo";
 import Defaultuserprofile from "./pages/Defaultuserprofile";
-import Defaultauthorprofile from "./pages/Defaultauthorprofile";
+// import Defaultauthorprofile from "./pages/Defaultauthorprofile";
 import Defaultanalytics from "./pages/Defaultanalytics";
 
 import Accountinfo from "./pages/Accountinfo";
@@ -135,7 +135,7 @@ class Root extends Component {
 
             <Route
               exact
-              path={`${process.env.PUBLIC_URL}/edit-course`}
+              path={`${process.env.PUBLIC_URL}/edit-course/:courseId`}
               element={<EditCoursePage />}
             />
             <Route
@@ -343,11 +343,11 @@ class Root extends Component {
               path={`${process.env.PUBLIC_URL}/default-analytics`}
               element={<Defaultanalytics />}
             />
-            <Route
+            {/* <Route
               exact
               path={`${process.env.PUBLIC_URL}/default-author-profile`}
               element={<Defaultauthorprofile />}
-            />
+            /> */}
             <Route
               exact
               path={`${process.env.PUBLIC_URL}/popup-chat`}
@@ -412,14 +412,14 @@ class Root extends Component {
           /> */}
             <Route
               exact
-              path={`${process.env.PUBLIC_URL}/user-profile`}
-              element={<Userprofile />}
+              path={`${process.env.PUBLIC_URL}/author-profile/:providerId`}
+              element={<AuthorProfile />}
             />
-            <Route
+            {/* <Route
               exact
               path={`${process.env.PUBLIC_URL}/author-profile`}
               element={<Authorprofile />}
-            />
+            /> */}
             <Route
               exact
               path={`${process.env.PUBLIC_URL}/course-detail/:courseId`}

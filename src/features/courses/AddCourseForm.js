@@ -1,12 +1,30 @@
 import { useDispatch } from "react-redux";
-import { nanoid } from "@reduxjs/toolkit";
-import { courseAdded } from "./coursesSlice";
+import { addNewCourse } from "./coursesSlice";
+import { useState } from "react";
 
 const AddCourseForm = () => {
   const dispatch = useDispatch();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [addRequestStatus, setAddRequestStatus] = useState("idle");
 
-  const saveCourse = () => {
-    dispatch(courseAdded({}));
+  const onTitleHandle = (e) => setTitle(e.target.value);
+  const onDescriptioneHandle = (e) => setDescription(e.target.value);
+
+  const canSave = () => addRequestStatus === "idle";
+
+  const saveCourse = async () => {
+    if (!canSave) return;
+    try {
+      setAddRequestStatus("loading");
+      await dispatch(addNewCourse({ title, description })).unwrap();
+      setTitle("");
+      setDescription("");
+    } catch (error) {
+      console.error("Failed to save the course: ", error);
+    } finally {
+      setAddRequestStatus("idle");
+    }
   };
 
   return (
@@ -36,6 +54,7 @@ const AddCourseForm = () => {
                       type="text"
                       required
                       placeholder="Title"
+                      onChange={onTitleHandle}
                     />
                   </div>
                 </div>
@@ -92,6 +111,7 @@ const AddCourseForm = () => {
                       required
                       rows="6"
                       placeholder="Course Description *"
+                      onChange={onDescriptioneHandle}
                     ></textarea>
                   </div>
                 </div>
