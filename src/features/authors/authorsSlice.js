@@ -6,8 +6,8 @@ const initialState = {
   error: null,
 };
 
-export const fetchProviders = createAsyncThunk(
-  "providers/fetchProviders",
+export const fetchAuthors = createAsyncThunk(
+  "authors/fetchAuthors",
   async () => {
     const response = [
       {
@@ -93,26 +93,30 @@ export const fetchProviders = createAsyncThunk(
   }
 );
 
-const providersSlice = createSlice({
-  name: "providers",
+const authorsSlice = createSlice({
+  name: "authors",
   initialState,
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(fetchProviders.pending, (state, action) => {
+      .addCase(fetchAuthors.pending, (state, action) => {
         state.status = "loading";
       })
-      .addCase(fetchProviders.fulfilled, (state, action) => {
+      .addCase(fetchAuthors.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.data = state.data.concat(action.payload);
       });
   },
 });
 
-export const selectAllProviders = (state) => state.providers.data;
+export const selectAllAuthors = (state) => state.authors.data;
 
-export const selectProviderById = (state, providerId) => {
-  return state.providers.data.find((provider) => provider.id === providerId);
+export const selectAuthorById = (state, authorId) => {
+  return state.authors.data.find((authors) => authors.id === authorId);
 };
 
-export default providersSlice.reducer;
+export const selectedLoginAuthor = (state, authorId) => {
+  return state.authors.data.find((authors) => authors.id === authorId);
+};
+
+export default authorsSlice.reducer;

@@ -1,4 +1,9 @@
-import { createSlice, createAsyncThunk, nanoid } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createAsyncThunk,
+  nanoid,
+  createSelector,
+} from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
@@ -66,3 +71,9 @@ export const selectAllCourses = (state) => state.courses.data;
 
 export const selectCourseById = (state, courseId) =>
   state.courses.data.find((course) => `${course.id}` === courseId);
+
+export const selectCoursesByAuthor = createSelector(
+  [selectAllCourses, (state, authorId) => authorId],
+  (courses, authorId) =>
+    courses.filter((course) => `${course.author.id}` === authorId)
+);

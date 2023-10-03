@@ -34,7 +34,6 @@ import Blog from "./pages/Blog";
 import BlogSidebar from "./pages/BlogSidebar";
 import BlogSingle from "./pages/BlogSingle";
 import Contact from "./pages/Contact";
-import Contacttwo from "./pages/Contacttwo";
 import About from "./pages/About";
 import Service from "./pages/Service";
 import Price from "./pages/Price";
@@ -80,6 +79,7 @@ import Email from "./pages/Email";
 import Emailopen from "./pages/Emailopen";
 
 import Home from "./pages/Home";
+import CourseRegistration from "./pages/CourseRegistration";
 // import Homethree from "./pages/Homethree";
 // import Homefive from "./pages/Homefive";
 // import Homesix from "./pages/Homesix";
@@ -219,13 +219,13 @@ class Root extends Component {
             />
             <Route
               exact
-              path={`${process.env.PUBLIC_URL}/contact`}
+              path={`${process.env.PUBLIC_URL}/contact-2`}
               element={<Contact />}
             />
             <Route
               exact
-              path={`${process.env.PUBLIC_URL}/contact-2`}
-              element={<Contacttwo />}
+              path={`${process.env.PUBLIC_URL}/contact`}
+              element={<Contact />}
             />
             <Route
               exact
@@ -412,7 +412,7 @@ class Root extends Component {
           /> */}
             <Route
               exact
-              path={`${process.env.PUBLIC_URL}/author-profile/:providerId`}
+              path={`${process.env.PUBLIC_URL}/author-profile/:authorId`}
               element={<AuthorProfile />}
             />
             {/* <Route
@@ -434,6 +434,11 @@ class Root extends Component {
               exact
               path={`${process.env.PUBLIC_URL}/welcome-admin`}
               element={<WelcomeAdmin />}
+            />
+            <Route
+              exact
+              path={`${process.env.PUBLIC_URL}/course-registration/:courseId`}
+              element={<CourseRegistration />}
             />
 
             {/* 

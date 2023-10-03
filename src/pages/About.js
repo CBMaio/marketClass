@@ -80,6 +80,26 @@ class About extends Component {
       slidesToShow: 3,
       centerMode: false,
       variableWidth: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
     };
     return (
       <Fragment>
@@ -166,11 +186,11 @@ class About extends Component {
         <div className="how-to-work">
           <div className="container">
             <div className="row">
-              <div className="col-lg-5 mb-4">
+              <div className="col-lg-5 mb-4 text-center">
                 <img
                   src="/assets/images//about-us-professor.png"
                   alt="about"
-                  className="rounded-lg img-fluid shadow-xs"
+                  className="rounded-lg shadow-xs professor-img"
                 />
               </div>
               <div className="col-lg-6 offset-lg-1 page-title style1">
@@ -227,7 +247,7 @@ class About extends Component {
                 <Slider {...feedbacksettings}>
                   {feedbackList.map((value, index) => (
                     <div key={index} className="text-center py-4 px-3">
-                      <div className="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                      <div className="card w-100 p-3 p-lg-5 text-left border-0 shadow-xss rounded-lg">
                         <div className="card-body pl-0 pt-0">
                           <img
                             src={`/assets/images//${value.imageUrl}`}
@@ -315,26 +335,6 @@ class About extends Component {
             </div>
           </div>
         </div>
-
-        {/* <div className="brand-wrapper pb-lg--7 pt-lg--7 pb-5 pt-5">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <Slider {...brandsettings}>
-                  {brandList.map((value, index) => (
-                    <div key={index}>
-                      <img
-                        src={`/assets/images//${value.bimg}`}
-                        alt="avater"
-                        className="w100"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         <Footer bgColor="bg-dark" />
       </Fragment>

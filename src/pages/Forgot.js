@@ -1,10 +1,28 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import Modal from "../components/Modal";
 
-class Forgot extends Component {
-  render() {
-    return (
-      <Fragment>
+const Forgot = () => {
+  const [email, setEmail] = useState("");
+  const [submittedForm, setSubmittedForm] = useState(false);
+  const [exitMessage, setExitMessage] = useState({
+    title: "",
+    description: "",
+  });
+
+  const sendForm = () => {
+    if (!email) return;
+    setExitMessage({
+      title: "Petición enviada correctamente!",
+      description:
+        "Dentro de los próximos minutos recibirá un mail con las instrucciones para el cambio de contraseña. Muchas gracias!",
+    });
+    setSubmittedForm(true);
+  };
+
+  return (
+    <Fragment>
+      {!submittedForm ? (
         <div className="main-wrap">
           <div className="row">
             <div
@@ -29,46 +47,26 @@ class Forgot extends Component {
                     Change <br />
                     your password
                   </h2>
-                  <form>
+                  <form className="mb-4">
                     <div className="form-group icon-input mb-3">
                       <input
-                        type="Password"
+                        type="email"
                         className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
-                        placeholder="Old Password"
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
                       />
-                      <i className="font-sm ti-lock text-grey-500 pr-0"></i>
-                    </div>
-                    <div className="form-group icon-input mb-1">
-                      <input
-                        type="Password"
-                        className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
-                        placeholder="New Password"
-                      />
-                      <i className="font-sm ti-lock text-grey-500 pr-0"></i>
-                    </div>
-                    <div className="form-check text-left mb-3">
-                      <input
-                        type="checkbox"
-                        className="form-check-input mt-2"
-                        id="exampleCheck1"
-                      />
-                      <label
-                        className="form-check-label font-xssss text-grey-500"
-                        htmlFor="exampleCheck1"
-                      >
-                        Accept Term and Conditions
-                      </label>
+                      <i className="font-sm ti-email text-grey-500 pr-0"></i>
                     </div>
                   </form>
 
                   <div className="col-sm-12 p-0 text-left">
                     <div className="form-group mb-1">
-                      <a
-                        href="/login"
+                      <button
+                        onClick={sendForm}
                         className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                       >
-                        Change Password
-                      </a>
+                        Enviar
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -76,9 +74,14 @@ class Forgot extends Component {
             </div>
           </div>
         </div>
-      </Fragment>
-    );
-  }
-}
+      ) : (
+        <Modal
+          title={exitMessage.title}
+          description={exitMessage.description}
+        />
+      )}
+    </Fragment>
+  );
+};
 
 export default Forgot;

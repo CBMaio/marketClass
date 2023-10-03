@@ -20,6 +20,14 @@ const SingleCoursePage = () => {
         <div className="col-xl-8 col-xxl-9 col-lg-8 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
           <img src="/assets/images/course-default.avif" alt="course-img" />
         </div>
+        <div className="col-6 m-auto align-items-center border-0 pt-4 rounded-10 admin-form">
+          <Link
+            to={`/course-registration/${course.id}`}
+            className="col-12 form-control text-center style2-input text-white fw-600 bg-current border-0 p-0 "
+          >
+            Inscribirme
+          </Link>
+        </div>
         <div className="card d-block border-0 rounded-lg overflow-hidden dark-bg-transparent bg-transparent mt-4 pb-3">
           <div className="row">
             <div className="col-10">

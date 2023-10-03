@@ -24,9 +24,6 @@ const Coursesgrid = () => {
                 <span className="fw-500 ml-2 text-grey-500 font-xssss">
                   ( 23 course is found )
                 </span>
-                <Link to="/" className="float-right">
-                  <i className="feather-edit text-grey-500 font-xs"></i>
-                </Link>
               </h2>
             </div>
 

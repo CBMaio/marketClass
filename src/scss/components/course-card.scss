@@ -1,0 +1,21 @@
+.register-btn {
+  background-color: #EEEEEE;
+  border: 1px solid var(--dark-gray);
+  color: var(--dark-gray);
+
+  &:hover {
+    background-color: #E0E0E0;
+    border: 1px solid var(--primary-purple);
+    color: var(--primary-purple);
+  }
+
+  a {
+    color: var(--dark-gray);
+    padding: 6px 12px;
+    
+    &:hover {
+      color: var(--primary-purple);
+    }
+  }
+
+}

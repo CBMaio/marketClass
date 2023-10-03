@@ -59,7 +59,7 @@ const Register = () => {
                         />
                       </div>
                       <div className="form-group icon-input mb-3">
-                        <i className="font-sm ti-email text-grey-500 pr-0"></i>
+                        <i className="font-sm ti-face-smile text-grey-500 pr-0"></i>
                         <input
                           type="number"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
@@ -161,7 +161,7 @@ const Register = () => {
                     <div className="col-sm-12 p-0 text-left">
                       <div className="form-group mb-1">
                         <a
-                          href="/default"
+                          href="/welcome-admin"
                           className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                         >
                           Register

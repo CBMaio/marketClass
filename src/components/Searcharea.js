@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 class Searcharea extends Component {
@@ -38,17 +39,14 @@ class Searcharea extends Component {
                 </div>
               </div>
               <div className="col-lg-3">
-                <Link
-                  to="/defaultsearch"
-                  className="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase "
-                >
+                <Button className="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase ">
                   Search
-                </Link>
+                </Button>
               </div>
             </div>
           </div>
           <h4 className="text-grey-500 font-xssss fw-500 ml-1 lh-24">
-            <b className="text-grey-800 text-dark">Popular Search :</b>
+            <b className="text-grey-800 text-dark">Popular Search: </b>
             Designer, Developer, PHP, HTML, CSS, SCSS
           </h4>
         </div>

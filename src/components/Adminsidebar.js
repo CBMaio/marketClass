@@ -15,7 +15,7 @@ const Adminsidebar = () => {
       id="accordionSidebar"
     >
       <Link
-        to={"/"}
+        to={"/welcome-admin"}
         className="sidebar-brand d-flex align-items-start justify-content-start"
       >
         <span className="d-inline-block fredoka-font ls-3 fw-600 font-xl logo-text mb-0 text-capitalize lh-1 aside-title">
@@ -44,11 +44,6 @@ const Adminsidebar = () => {
                 Course List
               </NavLink>
             </li>
-            {/* <li className="nav-item">
-              <NavLink className="navi-link" to="/admin-productgrid">
-                Course grid
-              </NavLink>
-            </li> */}
             <li className="nav-item">
               <NavLink className="navi-link" to="/add-course">
                 Add Course
@@ -62,56 +57,8 @@ const Adminsidebar = () => {
           <i className="feather-slack mr-2"></i>
           <span>Sin publicar</span>
         </Link>
-        {/* <ul className="submenu">
-          <li className="nav-item">
-            <NavLink className="navi-link" to="/admin-venderlist">
-              Sin publicar
-            </NavLink>
-          </li>
-
-          <li className="nav-item">
-            <NavLink className="navi-link" to="/admin-venderview">
-              Channel Details
-            </NavLink>
-          </li>
-        </ul> */}
       </li>
-      {/* <li className="has-droupdown nav-item">
-        <Link to="#" className="navi-link">
-          <i className="feather-shopping-bag droupdown-toggle mr-2"></i>
-          <span>Order</span>
-        </Link>
-        <ul className="submenu">
-          <li className="nav-item">
-            <NavLink className="navi-link" to="/admin-order">
-              Order List
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="navi-link" to="/admin-orderview">
-              Order Status
-            </NavLink>
-          </li>
-        </ul>
-      </li> */}
-      {/* <li className="has-droupdown nav-item">
-        <Link to="#" className="navi-link">
-          <i className="feather-user droupdown-toggle mr-2"></i>
-          <span>Customer</span>
-        </Link>
-        <ul className="submenu">
-          <li className="nav-item">
-            <NavLink className="navi-link" to="/admin-customer">
-              Customer List
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="navi-link" to="/admin-customerview">
-              Customer Details
-            </NavLink>
-          </li>
-        </ul>
-      </li> */}
+
       <li className="nav-item">
         <NavLink className="navi-link" to="/admin-review">
           <i className="feather-message-circle mr-2"></i>
@@ -146,7 +93,7 @@ const Adminsidebar = () => {
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="navi-link" to="/forgot">
+        <NavLink className="navi-link" to="/password">
           <i className="feather-lock mr-2"></i>
           <span>Cambiar contraseña</span>
         </NavLink>

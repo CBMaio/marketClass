@@ -4,7 +4,7 @@ import { formatDistanceToNow, parseISO } from "date-fns";
 import Pagination from "../../components/Pagination";
 import { Modal, Button } from "react-bootstrap";
 
-import { selectAllProviders } from "../providers/providersSlice";
+import { selectAllAuthors } from "../authors/authorsSlice";
 import { fetchComments, selectAllComments } from "./commentsSlice";
 
 import "../../scss/components/comment-list.scss";
@@ -13,10 +13,8 @@ const CommentList = () => {
   const dispatch = useDispatch();
 
   const comments = useSelector(selectAllComments);
-  const providers = useSelector(selectAllProviders);
+  const authors = useSelector(selectAllAuthors);
   const commentsStatus = useSelector((state) => state.comments.status);
-
-  console.log(comments);
 
   useEffect(() => {
     if (commentsStatus === "idle") {
@@ -37,10 +35,11 @@ const CommentList = () => {
                 className="form-select ml-auto float-right border-0 font-xssss fw-600 text-grey-700 bg-transparent"
                 aria-label="Default select example"
               >
-                <option>Sort by latest</option>
-                <option defaultValue="1">Sort by popularity</option>
-                <option defaultValue="2">Sort by price : low to high</option>
-                <option defaultValue="3">Sort by price : high to low</option>
+                <option>Filtrar por</option>
+                <option defaultValue="1">Pendientes</option>
+                <option defaultValue="2">Aceptador</option>
+                <option defaultValue="3">Rechazados</option>
+                <option defaultValue="4">Ver todos</option>
               </select>
             </div>
             <div className="card-body p-4">

@@ -1,30 +1,31 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { Link } from "react-router-dom";
 import { selectAllCourses, fetchCourses } from "./coursesSlice";
-import { fetchProviders } from "../providers/providersSlice";
+import { fetchAuthors } from "../authors/authorsSlice";
 import CourseCard from "../../components/CourseCard";
 
-const CourseList = () => {
+const CourseList = ({ limit = false }) => {
   const dispatch = useDispatch();
   const courseData = useSelector(selectAllCourses);
 
   const coursesStatus = useSelector((state) => state.courses.status);
-  const providersStatus = useSelector((state) => state.providers.status);
+  const authorsStatus = useSelector((state) => state.authors.status);
 
   useEffect(() => {
     if (coursesStatus === "idle") {
       dispatch(fetchCourses());
     }
 
-    if (providersStatus === "idle") {
-      dispatch(fetchProviders());
+    if (authorsStatus === "idle") {
+      dispatch(fetchAuthors());
     }
-  }, [coursesStatus, providersStatus, dispatch]);
+  }, [coursesStatus, authorsStatus, dispatch]);
 
   return (
     courseData &&
-    courseData.map((course) => <CourseCard course={course} key={course.id} />)
+    courseData
+      .slice(0, limit || courseData.length)
+      .map((course) => <CourseCard course={course} key={course.id} />)
   );
 };
 

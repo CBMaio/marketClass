@@ -1,23 +1,20 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Tab, Tabs } from "react-bootstrap";
-import { selectAllCourses } from "../courses/coursesSlice";
-import { selectProviderById } from "./providersSlice";
+import { selectCoursesByAuthor } from "../courses/coursesSlice";
+import { selectAuthorById } from "./authorsSlice";
 import CourseCard from "../../components/CourseCard";
 
-const ProviderData = () => {
-  const { providerId } = useParams();
+const AuthorData = () => {
+  const { authorId } = useParams();
   const author = useSelector((state) =>
-    selectProviderById(state, Number(providerId))
+    selectAuthorById(state, Number(authorId))
   );
 
-  const coursesForPrivider = useSelector((state) => {
-    const allCourses = selectAllCourses(state);
-    return allCourses.filter((course) => `${course.author.id}` === providerId);
-  });
+  const coursesForAuthor = useSelector((state) =>
+    selectCoursesByAuthor(state, authorId)
+  );
 
-  console.log(author);
-  console.log(coursesForPrivider);
   if (!author) {
     return <section>Author not found!</section>;
   }
@@ -91,7 +88,7 @@ const ProviderData = () => {
                     </div>
                   </div>
                 </Tab>
-                <Tab eventKey="video" title="VIDEO">
+                <Tab eventKey="courses" title="COURSES">
                   <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-lg-4 p-2">
                     <div className="card-body mb-lg-3 pb-0">
                       <h2 className="fw-400 font-lg d-block">
@@ -100,7 +97,7 @@ const ProviderData = () => {
                     </div>
                     <div className="card-body pb-0">
                       <div className="row">
-                        {coursesForPrivider.map((value) => (
+                        {coursesForAuthor.map((value) => (
                           <CourseCard course={value} key={value.id} />
                         ))}
                       </div>
@@ -116,4 +113,4 @@ const ProviderData = () => {
   );
 };
 
-export default ProviderData;
+export default AuthorData;

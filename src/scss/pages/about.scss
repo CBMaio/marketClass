@@ -13,3 +13,10 @@
 .bg-light-green {
   background-color: #e7f5e5;
 }
+
+.professor-img {
+  @media (max-width: 990px) {
+    width: 50%;
+    margin: auto;
+  }
+}
