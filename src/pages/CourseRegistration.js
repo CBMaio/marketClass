@@ -63,7 +63,7 @@ const CourseRegistration = () => {
                 <div className="col-lg-10">
                   <div className="contact-wrap bg-white shadow-lg rounded-lg position-relative top-0">
                     <h1 className="text-grey-900 fw-700 display3-size mb-5 lh-1">
-                      Conectac your teacher
+                      Contact your teacher
                     </h1>
                     <form action="#">
                       <div className="row">

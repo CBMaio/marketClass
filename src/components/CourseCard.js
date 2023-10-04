@@ -25,42 +25,48 @@ const CourseCard = ({ course }) => {
           </Link>
         </div>
         <div className="card-body pt-0">
-          <span
-            className={`font-xsssss fw-700 pr-3 lh-32 text-uppercase rounded-lg ls-2 d-inline-block mr-1 ${status}`}
-          >
-            {category}
-          </span>
-          <span className="font-xss fw-700 pl-3  ls-2 lh-32 d-inline-block float-right">
-            <span className="font-xsssss">$</span> {price}
-          </span>
-          <h4 className="fw-700 font-xss mt-3 lh-28 mt-0">
-            <Link
-              to={`/course-detail/${id}`}
-              className="text-dark text-grey-900"
-            >
-              {title}
-            </Link>
-          </h4>
-          <h6 className="font-xssss text-grey-500 fw-600 ml-0 mt-2">
-            {frequency}
-          </h6>
-          <div className="memberlist mt-3 mb-2 ml-0 d-block">
-            <li className="w-auto">
-              <Link
-                to={`/author-profile/${author.id}`}
-                className="fw-500 text-grey-500 font-xssss"
+          <div className="card-body-top">
+            <div>
+              <span
+                className={`font-xsssss fw-700 pr-3 lh-32 text-uppercase rounded-lg ls-2 d-inline-block mr-1 ${status}`}
               >
-                Profesor: {author.name}
+                {category}
+              </span>
+              <span className="font-xss fw-700 pl-3  ls-2 lh-32 d-inline-block float-right">
+                <span className="font-xsssss">$</span> {price}
+              </span>
+            </div>
+            <h4 className="fw-700 font-xss mt-3 lh-28 mt-0">
+              <Link
+                to={`/course-detail/${id}`}
+                className="text-dark text-grey-900"
+              >
+                {title}
               </Link>
-            </li>
+            </h4>
+            <h6 className="font-xssss text-grey-500 fw-600 ml-0 mt-2">
+              {frequency}
+            </h6>
+            <div className="memberlist mt-3 mb-2 ml-0 d-block">
+              <li className="w-auto">
+                <Link
+                  to={`/author-profile/${author.id}`}
+                  className="fw-500 text-grey-500 font-xssss"
+                >
+                  Profesor: {author.name}
+                </Link>
+              </li>
+            </div>
           </div>
-          <div className="text-center mt-3 mb-2">
-            <Link
-              to={`/course-registration/${id}`}
-              className="w-100 p-1 font-xssss text-uppercase fw-600 rounded-lg float-right register-btn text-center"
-            >
-              Inscribirme
-            </Link>
+          <div className="card-body-bottom">
+            <div className="text-center mt-3 mb-2">
+              <Link
+                to={`/course-registration/${id}`}
+                className="w-100 p-1 font-xssss text-uppercase fw-600 rounded-lg float-right register-btn text-center"
+              >
+                Inscribirme
+              </Link>
+            </div>
           </div>
         </div>
       </div>

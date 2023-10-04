@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { courseUpdated, selectCourseById } from "./coursesSlice";
+import { tr } from "date-fns/locale";
 
 const EditCourseForm = () => {
   const { courseId } = useParams();
@@ -10,6 +11,7 @@ const EditCourseForm = () => {
 
   const [title, setTile] = useState(course?.title || "");
   const [description, setDescription] = useState(course?.description || "");
+  const [succeededEdit, setSucceededEdit] = useState(false);
 
   const dispath = useDispatch();
   const navigate = useNavigate();
@@ -26,15 +28,22 @@ const EditCourseForm = () => {
           description,
         })
       );
-      navigate(`/course-detail/${courseId}`);
+      setSucceededEdit(true);
+      window.scrollTo(0, 0);
     }
   };
 
   return (
     <div className="row">
-      <div className="col-lg-12 ">
+      <div className="col-lg-12">
         <div className="card border-0 px-4 pt-4 mt-2 rounded-lg admin-form">
           <div className="card-body d-block">
+            {succeededEdit && (
+              <div className="col-12  text-center font-xsss fw-700 p-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-4 mr-1">
+                <span>Curso editado con éxito!</span>
+              </div>
+            )}
+
             <h4 className="font-xss text-grey-800 mb-4 mt-0 fw-700">
               Course Information
             </h4>

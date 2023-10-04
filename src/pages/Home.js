@@ -7,93 +7,92 @@ import { Card } from "react-bootstrap";
 import "../scss/pages/home.scss";
 import CourseList from "../features/courses/CourseList";
 
-const categoryList = [
-  {
-    name: "Language",
-    img: "assets/images/language.svg",
-    description: "Descripción de la categoría 1",
-  },
-  {
-    name: "Graphic Design",
-    img: "assets/images/graphic-design.svg",
-    description: "Descripción de la categoría 2",
-  },
-  {
-    name: "Content Writing",
-    img: "assets/images/content-writing.svg",
-    description: "Descripción de la categoría 2",
-  },
-  {
-    name: "Finance",
-    img: "assets/images/finance.svg",
-    description: "Descripción de la categoría 2",
-  },
-];
-
-const iconList = [
-  {
-    title: "Get Certificate",
-    des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
-    icon: "ti-check",
-    color: "text-warning",
-    bgcolor: "alert-warning",
-  },
-  {
-    title: "Amazing instructor",
-    des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
-    icon: "ti-heart",
-    color: "text-secondary",
-    bgcolor: "alert-secondary",
-  },
-  {
-    title: "24/7 Supports",
-    des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
-    icon: "feather-box",
-    color: "text-success",
-    bgcolor: "alert-success",
-  },
-];
-
-const feedbackList = [
-  {
-    imageUrl: "student1.jpg",
-    name: "Goria Coast",
-    status: "Digital Marketing Executive",
-    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
-  },
-  {
-    imageUrl: "student2.jpg",
-    name: "Thomas Smith",
-    status: "Digital Marketing Executive",
-    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
-  },
-  {
-    imageUrl: "student3.jpg",
-    name: "Hurin Seary",
-    status: "Digital Marketing Executive",
-    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
-  },
-  {
-    imageUrl: "student1.jpg",
-    name: "Goria Coast",
-    status: "Digital Marketing Executive",
-    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
-  },
-  {
-    imageUrl: "student2.jpg",
-    name: "Thomas Smith",
-    status: "Digital Marketing Executive",
-    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
-  },
-  {
-    imageUrl: "student3.jpg",
-    name: "Hurin Seary",
-    status: "Digital Marketing Executive",
-    des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
-  },
-];
-
 const Home = () => {
+  const categoryList = [
+    {
+      name: "Language",
+      img: "assets/images/language.svg",
+      description: "Descripción de la categoría 1",
+    },
+    {
+      name: "Graphic Design",
+      img: "assets/images/graphic-design.svg",
+      description: "Descripción de la categoría 2",
+    },
+    {
+      name: "Content Writing",
+      img: "assets/images/content-writing.svg",
+      description: "Descripción de la categoría 2",
+    },
+    {
+      name: "Finance",
+      img: "assets/images/finance.svg",
+      description: "Descripción de la categoría 2",
+    },
+  ];
+
+  const iconList = [
+    {
+      title: "Get Certificate",
+      des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
+      icon: "ti-check",
+      color: "text-warning",
+      bgcolor: "alert-warning",
+    },
+    {
+      title: "Amazing instructor",
+      des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
+      icon: "ti-heart",
+      color: "text-secondary",
+      bgcolor: "alert-secondary",
+    },
+    {
+      title: "24/7 Supports",
+      des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
+      icon: "feather-box",
+      color: "text-success",
+      bgcolor: "alert-success",
+    },
+  ];
+
+  const feedbackList = [
+    {
+      imageUrl: "student1.jpg",
+      name: "Goria Coast",
+      status: "Digital Marketing Executive",
+      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+    },
+    {
+      imageUrl: "student2.jpg",
+      name: "Thomas Smith",
+      status: "Digital Marketing Executive",
+      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+    },
+    {
+      imageUrl: "student3.jpg",
+      name: "Hurin Seary",
+      status: "Digital Marketing Executive",
+      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+    },
+    {
+      imageUrl: "student1.jpg",
+      name: "Goria Coast",
+      status: "Digital Marketing Executive",
+      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+    },
+    {
+      imageUrl: "student2.jpg",
+      name: "Thomas Smith",
+      status: "Digital Marketing Executive",
+      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+    },
+    {
+      imageUrl: "student3.jpg",
+      name: "Hurin Seary",
+      status: "Digital Marketing Executive",
+      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+    },
+  ];
   const brandsettings = {
     arrows: true,
     dots: false,
@@ -189,7 +188,7 @@ const Home = () => {
                   <div className="col-6">
                     <a
                       href="/register"
-                      className="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase "
+                      className="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase create-account-btn"
                     >
                       Create an account
                     </a>

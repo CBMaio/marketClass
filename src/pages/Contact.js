@@ -16,8 +16,7 @@ const Contact = () => {
                 Get in touch with us{" "}
                 <span className="font-xsss text-grey-500 fw-600 d-block mt-3 pl-lg-5 pr-lg-5 lh-28">
                   Ask us a question by email and we will respond within a few
-                  days. Ask us a question by email and we will respond within a
-                  few days.{" "}
+                  days.
                 </span>
               </h1>
             </div>
@@ -40,7 +39,7 @@ const Contact = () => {
                         <input
                           type="text"
                           className="form-control style2-input bg-color-none text-grey-700"
-                          defaultValue="Name"
+                          placeholder="Name"
                         />
                       </div>
                     </div>
@@ -49,39 +48,32 @@ const Contact = () => {
                         <input
                           type="text"
                           className="form-control style2-input bg-color-none text-grey-700"
-                          defaultValue="Email"
+                          placeholder="Email"
                         />
                       </div>
                     </div>
 
                     <div className="col-12">
                       <div className="form-group mb-3 md-mb-2">
-                        <textarea className="w-100 h125 style2-textarea p-3 form-control">
-                          Message
-                        </textarea>
-                      </div>
-                      <div className="form-check text-left mt-3 float-left md-mb-2">
-                        <input
-                          type="checkbox"
-                          className="form-check-input mt-2"
-                          id="exampleCheck1"
+                        <textarea
+                          className="w-100 h125 style2-textarea p-3 form-control"
+                          placeholder="Message"
                         />
-                        <label
-                          className="form-check-label font-xsss text-grey-500 fw-500"
-                          htmlFor="exampleCheck1"
-                        >
-                          I agree to the term of this{" "}
-                          <a href="/contact" className="text-grey-600 fw-600">
-                            Privacy Policy
-                          </a>
-                        </label>
+                      </div>
+                      <div className="text-left mt-3 float-left md-mb-2">
+                        <div className="font-xsss text-grey-500 fw-500">
+                          Gracias por ser parte de{" "}
+                          <span className="text-grey-600 fw-600">
+                            nuestra comunidad
+                          </span>
+                        </div>
                       </div>
                       <div className="form-group">
                         <a
                           href="/contact"
                           className="rounded-lg style1-input float-right bg-current text-white text-center font-xss fw-500 border-2 border-0 p-0 w175"
                         >
-                          Submit
+                          Enviar
                         </a>
                       </div>
                     </div>

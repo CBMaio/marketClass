@@ -85,6 +85,17 @@
 .light-btn {
   background-color: var(--light-purple);
   color: var(--primary-purple);
+
+  &:hover {
+    color: var(--primary-purple);
+    opacity: .7;
+  }
+}
+
+.create-account-btn {
+  &:hover {
+    opacity: .7;
+  }
 }
 
 .outline-btn {

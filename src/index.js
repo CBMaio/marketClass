@@ -19,7 +19,7 @@ import Admincustomerview from "./pages/Admincustomerview";
 import Adminorder from "./pages/Adminorder";
 import Adminorderview from "./pages/Adminorderview";
 
-import Adminvenderlist from "./pages/Adminvenderlist";
+import AdminDraftList from "./pages/AdminDraftList";
 import Adminvenderview from "./pages/Adminvenderview";
 import Adminreview from "./pages/Adminreview";
 
@@ -88,6 +88,7 @@ import CourseRegistration from "./pages/CourseRegistration";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
+import ScrollToTop from "./components/ScrollToTop";
 
 class Root extends Component {
   render() {
@@ -160,8 +161,8 @@ class Root extends Component {
             />
             <Route
               exact
-              path={`${process.env.PUBLIC_URL}/admin-venderlist`}
-              element={<Adminvenderlist />}
+              path={`${process.env.PUBLIC_URL}/admin-draft-list`}
+              element={<AdminDraftList />}
             />
 
             <Route
@@ -468,6 +469,7 @@ class Root extends Component {
             element={<Hometwo />}
           /> */}
           </Routes>
+          <ScrollToTop />
         </BrowserRouter>
       </Provider>
     );

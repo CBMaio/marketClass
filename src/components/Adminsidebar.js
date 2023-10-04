@@ -53,7 +53,7 @@ const Adminsidebar = () => {
         )}
       </li>
       <li className="nav-item">
-        <Link to="/admin-venderlist" className="navi-link">
+        <Link to="/admin-draft-list" className="navi-link">
           <i className="feather-slack mr-2"></i>
           <span>Sin publicar</span>
         </Link>

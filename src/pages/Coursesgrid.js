@@ -8,6 +8,10 @@ import Pagination from "../components/Pagination";
 import CourseList from "../features/courses/CourseList";
 
 const Coursesgrid = () => {
+  const searchCourse = (query) => {
+    console.log(query);
+  };
+
   return (
     <Fragment>
       <Header />
@@ -16,7 +20,7 @@ const Coursesgrid = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 mb-4">
-              <Searcharea />
+              <Searcharea search={searchCourse} />
             </div>
             <div className="col-lg-12 pt-2 mb-4">
               <h2 className="fw-400 font-lg">

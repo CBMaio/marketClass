@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { fetchCourses, selectAllCourses } from "./coursesSlice";
 
-const MyCoursesList = () => {
+import "../../scss/components/draft-course-list.scss";
+
+const DraftCoursesList = () => {
   const dispatch = useDispatch();
   const courseData = useSelector(selectAllCourses);
   const coursesStatus = useSelector((state) => state.courses.status);
@@ -19,7 +21,7 @@ const MyCoursesList = () => {
     courseData &&
     courseData.map((value) => (
       <Fragment key={value.id}>
-        <tr className="my-course-line">
+        <tr className="draft-course-line">
           <td className="product-thumbnail text-start ps-0">
             <Link to={`/edit-course/${value.id}`} className="small-icon">
               <img
@@ -39,25 +41,28 @@ const MyCoursesList = () => {
           </td>
           <td>
             <span
-              className={`font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 d-inline-block mr-1 ${value.status}`}
+              className={`font-xsssss fw-700 pr-3 lh-32 text-uppercase rounded-lg ls-2 d-inline-block mr-1 ${value.status}`}
             >
               {value.category}
             </span>
           </td>
-          <td>
-            <b>{value.frequency}</b>
-          </td>
           <td className="product-remove text-right">
-            <Button className="bg-transparent border-0 pr-0 course-action">
-              <Link to={`/edit-course/${value.id}`}>
-                <i className="feather-edit mr-1 font-xs text-grey-500"></i>
-                <span className="button-legend">Editar</span>
-              </Link>
-            </Button>
-            <Button className="bg-transparent border-0 course-action">
-              <i className="ti-trash  font-xs text-danger"></i>
-              <span className="button-legend">Eliminar</span>
-            </Button>
+            <div>
+              <Button className="bg-transparent border-0 pr-0 course-action">
+                <i className="ti-export mr-1 font-xs text-grey-500" />
+                <span className="button-legend">Publicar</span>
+              </Button>
+              <Button className="bg-transparent border-0 pr-0 course-action">
+                <Link to={`/edit-course/${value.id}`}>
+                  <i className="feather-edit mr-1 font-xs text-grey-500"></i>
+                  <span className="button-legend">Editar</span>
+                </Link>
+              </Button>
+              <Button className="bg-transparent border-0 pr-0 course-action">
+                <i className="ti-trash font-xs text-danger"></i>
+                <span className="button-legend">Eliminar</span>
+              </Button>
+            </div>
           </td>
         </tr>
       </Fragment>
@@ -65,4 +70,4 @@ const MyCoursesList = () => {
   );
 };
 
-export default MyCoursesList;
+export default DraftCoursesList;

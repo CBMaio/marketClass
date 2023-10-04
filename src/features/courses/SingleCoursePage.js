@@ -165,7 +165,10 @@ const SingleCoursePage = () => {
                   </div>
                 </div>
                 <div className="card col-6 m-auto align-items-center border-0 p-4 mt-3 rounded-10 admin-form">
-                  <button className="col-12 form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">
+                  <button
+                    onClick={(e) => e.preventDefault()}
+                    className="col-12 form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
+                  >
                     Enviar
                   </button>
                 </div>

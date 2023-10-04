@@ -4,11 +4,10 @@ import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
 import Adminfooter from "../components/Adminfooter";
 import Pagination from "../components/Pagination";
-import MyCoursesList from "../features/courses/MyCoursesList";
-
 import "../scss/pages/admin-product-list.scss";
+import DraftCoursesList from "../features/courses/DraftCoursesList";
 
-const Adminproductlist = () => {
+const AdminDraftList = () => {
   return (
     <Fragment>
       <div id="wrapper">
@@ -24,7 +23,7 @@ const Adminproductlist = () => {
                   <div className="card border-0 mt-2 rounded-10">
                     <div className="card-body d-flex px-4 pb-0 pt-4">
                       <h4 className="font-xss text-grey-800 mt-3 fw-700">
-                        Mis cursos
+                        Lista de cursos sin publicar
                       </h4>
                     </div>
                     <div className="card-body p-4">
@@ -40,10 +39,7 @@ const Adminproductlist = () => {
                                 Price
                               </th>
                               <th className="border-0" scope="col">
-                                Tag
-                              </th>
-                              <th className="border-0" scope="col">
-                                Lesson
+                                Category
                               </th>
                               <th scope="col" className="text-right border-0">
                                 Action
@@ -51,7 +47,7 @@ const Adminproductlist = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            <MyCoursesList />
+                            <DraftCoursesList />
                           </tbody>
                         </table>
                       </div>
@@ -70,4 +66,4 @@ const Adminproductlist = () => {
   );
 };
 
-export default Adminproductlist;
+export default AdminDraftList;
