@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { categories } from "../utils";
 
 const Searcharea = ({ search }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchCategory, setSearchCategory] = useState(null);
+  const [searchCategory, setSearchCategory] = useState("all");
 
   const searchCourse = () => {
-    search(searchQuery);
+    search(searchQuery, searchCategory);
   };
 
   return (
@@ -32,22 +33,16 @@ const Searcharea = ({ search }) => {
             <div className="col-lg-4">
               <div className="form-group icon-input mb-0">
                 <i className="ti-package font-xs text-grey-400"></i>
-                <select className="style1-select bg-transparent border-0 pl-5">
-                  <option value="">All Categories</option>
-                  <option value="">Web Development</option>
-                  <option value="">Programming</option>
-                  <option value="">Marketing</option>
-                  <option value="">Design</option>
-                  <option value="">Data Science</option>
-                  <option value="">Photography</option>
-                  <option value="">Finance</option>
-                  <option value="">Art</option>
-                  <option value="">Business</option>
-                  <option value="">Health</option>
-                  <option value="">Language</option>
-                  <option value="">Cooking</option>
-                  <option value="">Environment</option>
-                  <option value="">Mobile Development</option>
+                <select
+                  className="style1-select bg-transparent border-0 pl-5"
+                  onChange={(e) => setSearchCategory(e.target.value)}
+                >
+                  <option value="all">All Categories</option>
+                  {categories.map(({ id, name }) => (
+                    <option key={id} value={name}>
+                      {name}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>

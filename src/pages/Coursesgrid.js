@@ -8,8 +8,12 @@ import Pagination from "../components/Pagination";
 import CourseList from "../features/courses/CourseList";
 
 const Coursesgrid = () => {
-  const searchCourse = (query) => {
-    console.log(query);
+  const [searchProductByQuery, setSearchProductByQuery] = useState(null);
+  const [searchProductByCategory, setSearchProductByCategory] = useState();
+
+  const searchCourse = (query, category) => {
+    setSearchProductByQuery(query);
+    setSearchProductByCategory(category);
   };
 
   return (
@@ -25,13 +29,13 @@ const Coursesgrid = () => {
             <div className="col-lg-12 pt-2 mb-4">
               <h2 className="fw-400 font-lg">
                 Search <b>Results</b>
-                <span className="fw-500 ml-2 text-grey-500 font-xssss">
-                  ( 23 course is found )
-                </span>
               </h2>
             </div>
 
-            <CourseList />
+            <CourseList
+              queryFilter={searchProductByQuery}
+              selectedCategory={searchProductByCategory}
+            />
 
             <div className="col-lg-12">
               <Pagination divClass="pagination justify-content-center d-flex pt-5" />

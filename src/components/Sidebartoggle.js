@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../scss/components/sidebar-toggle.scss";
+
 const Sidebartoggle = () => {
   let clickedClass = "feather-x";
   const body = document.body;
@@ -9,7 +11,6 @@ const Sidebartoggle = () => {
 
   if (localStorage) {
     theme = localStorage.getItem("theme");
-    console.log(theme);
   }
 
   if (theme === hiddenSidebar || theme === activeSidebar) {
