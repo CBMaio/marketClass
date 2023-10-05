@@ -92,11 +92,28 @@
   }
 }
 
-.create-account-btn {
-  &:hover {
-    opacity: .7;
+.header-container {
+  .banner-btn {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    height: 55px;
+    justify-content: center;
   }
-}
+  
+  .create-account-btn {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    height: 55px;
+    justify-content: center;
+  
+    &:hover {
+      opacity: .7;
+    }
+  }
+} 
+
 
 .outline-btn {
   border: 1px solid var(--primary-purple);

@@ -1,16 +1,41 @@
-li.nav-item .navi-link {
-  cursor: pointer;
+.admin-sidebar {
+  z-index: 9;
 
-  i {
-    color: white !important;
+  li.nav-item .navi-link {
+    cursor: pointer;
+
+    i {
+      color: white !important;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
   }
 
-  &:hover {
-    opacity: .7;
+  .aside-title {
+    color: var(--light-purple100);
+  }
+
+  &.is-open {
+    left: 0;
+  }
+
+  .mobile-item { 
+    @media (min-width: 1200px) {
+      display: none;
+    }
   }
 }
 
-.aside-title {
-  color: var(--light-purple100);
+.toggle-navbar-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 99;
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
 }
 

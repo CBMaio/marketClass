@@ -78,8 +78,6 @@ const Password = () => {
             </main>
           </div>
         </div>
-
-        <Appfooter />
       </div>
     </Fragment>
   );

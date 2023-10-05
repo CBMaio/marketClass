@@ -158,7 +158,7 @@ const Home = () => {
     <Fragment>
       <Header divclassName="shadow-none" />
 
-      <div className="banner-wrapper bg-after-fluid">
+      <div className="banner-wrapper bg-after-fluid header-container">
         <div className="container">
           <div className="row">
             <div className="col-xl-6 col-lg-5 order-lg-2 banner-container">
@@ -180,7 +180,7 @@ const Home = () => {
                   <div className="col-6">
                     <a
                       href="/courses-grid"
-                      className="w-100 d-block btn font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase light-btn"
+                      className="w-100 btn font-xssss fw-600 ls-3 banner-btn p-0 border-0 text-uppercase light-btn "
                     >
                       Search Courses
                     </a>
@@ -188,7 +188,7 @@ const Home = () => {
                   <div className="col-6">
                     <a
                       href="/register"
-                      className="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase create-account-btn"
+                      className="w-100 btn bg-current text-white font-xssss fw-600 ls-3  p-0 border-0 text-uppercase create-account-btn"
                     >
                       Create an account
                     </a>

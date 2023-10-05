@@ -6,8 +6,6 @@ import "../scss/components/admin-top-nav.scss";
 const AdminTopnav = () => {
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow-xs ">
-      <Sidebartoggle />
-
       <ul className="navbar-nav ml-auto">
         <li className="nav-item dropdown no-arrow mx-1 mr-4">
           <Link to="/admin-review" className="navi-link dropdown-toggle">
