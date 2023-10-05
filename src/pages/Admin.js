@@ -210,12 +210,12 @@ class Admin extends Component {
                       aria-label="Default select example"
                     >
                       <option>Sort by latest</option>
-                      <option defaultValue="1">Sort by popularity</option>
+                      <option defaultValue="1">Ordernar por popularidad</option>
                       <option defaultValue="2">
-                        Sort by price : low to high
+                        Ordenar por precio : Mas bajo primero
                       </option>
                       <option defaultValue="3">
-                        Sort by price : high to low
+                      Ordenar por precio : Mas alto primero
                       </option>
                     </select>
                   </div>
@@ -276,19 +276,19 @@ class Admin extends Component {
                     <div className="card border-0 mt-2 rounded-10">
                       <div className="card-body d-flex px-4 pt-4 pb-0">
                         <h4 className="font-xss text-grey-800 mt-3 fw-700">
-                          Order List
+                          Ordenar lista
                         </h4>
                         <select
                           className="form-select ml-auto float-right border-0 font-xssss fw-600 text-grey-700 bg-transparent"
                           aria-label="Default select example"
                         >
-                          <option>Sort by latest</option>
-                          <option defaultValue="1">Sort by popularity</option>
+                          <option>Ordenar por fecha</option>
+                          <option defaultValue="1">Ordernar por popularidad</option>
                           <option defaultValue="2">
-                            Sort by price : low to high
+                          Ordenar por precio : Mas bajo primero
                           </option>
                           <option defaultValue="3">
-                            Sort by price : high to low
+                          Ordenar por precio : Mas alto primero
                           </option>
                         </select>
                       </div>
@@ -299,7 +299,7 @@ class Admin extends Component {
                               <tr>
                                 <th className="border-0">ID</th>
                                 <th className="border-0" scope="col">
-                                  Name
+                                  Nombre
                                 </th>
                                 <th className="border-0" scope="col">
                                   Email
@@ -308,13 +308,13 @@ class Admin extends Component {
                                   Total
                                 </th>
                                 <th className="border-0" scope="col">
-                                  Status
+                                  Estado
                                 </th>
                                 <th className="border-0" scope="col">
-                                  Date
+                                  Fecha
                                 </th>
                                 <th scope="col" className="text-end border-0">
-                                  Action
+                                  Acción
                                 </th>
                               </tr>
                             </thead>
@@ -358,15 +358,15 @@ class Admin extends Component {
                     <div className="card w-100 p-3 border-0 mt-4 rounded-10 bg-white shadow-xs overflow-hidden">
                       <div className="card-body d-flex pb-0">
                         <h4 className="font-xss text-grey-800  mt-1 lh-22 fw-700">
-                          Statistics
+                          Estadísticas
                         </h4>
                         <h5 className="ml-auto mr-3 mt-2 text-grey-600 font-xssss fw-700">
                           <span className="btn-round-xss bg-warning mr-1"></span>
-                          Sale
+                          Ventas
                         </h5>
                         <h5 className="mt-2 text-grey-600 font-xssss fw-700">
                           <span className="btn-round-xss bg-success mr-1"></span>
-                          Earn
+                          Ganado
                         </h5>
                       </div>
                       <Chart
@@ -381,7 +381,7 @@ class Admin extends Component {
                           </h2>
                           <h4 className="text-grey-500 d-flex justify-content-center fw-600 ls-lg font-xsssss text-uppercase">
                             <span className="mr-2 bg-facebook btn-round-xss d-inline-block mt-0 me-2 rounded-circle"></span>
-                            this week
+                            esta semana
                           </h4>
                         </div>
                         <div className="col-6 mb-1 text-center">
@@ -390,7 +390,7 @@ class Admin extends Component {
                           </h2>
                           <h4 className="text-grey-500 d-flex justify-content-center fw-600 ls-lg font-xsssss text-uppercase">
                             <span className="mr-2 bg-instagram btn-round-xss d-inline-block mt-0 me-2 rounded-circle"></span>
-                            this month
+                            este mes
                           </h4>
                         </div>
                       </div>

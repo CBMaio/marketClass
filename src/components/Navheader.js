@@ -19,7 +19,7 @@ class Navheader extends Component {
               </Link>
             </div>
             <div className="nav-caption fw-600 font-xssss text-grey-500">
-              <span>New </span>Feeds
+              <span>Nuevos </span>Feeds
             </div>
             <ul className="mb-3">
               <li className="logo d-none d-xl-block d-lg-block"></li>
@@ -31,7 +31,7 @@ class Navheader extends Component {
                   data-tab="chats"
                 >
                   <i className="feather-tv mr-3"></i>
-                  <span>Course Feed</span>
+                  <span>Feed</span>
                 </NavLink>
               </li>
               <li>
@@ -42,7 +42,7 @@ class Navheader extends Component {
                   data-tab="friends"
                 >
                   <i className="feather-shopping-bag mr-3"></i>
-                  <span>Followers</span>
+                  <span>Seguidores</span>
                 </NavLink>
               </li>
               <li>
@@ -53,7 +53,7 @@ class Navheader extends Component {
                   data-tab="favorites"
                 >
                   <i className="feather-globe mr-3"></i>
-                  <span>Explore Channel</span>
+                  <span>Explorar</span>
                 </NavLink>
               </li>
               <li>
@@ -64,7 +64,7 @@ class Navheader extends Component {
                   data-tab="favorites"
                 >
                   <i className="feather-play-circle mr-3"></i>
-                  <span>Live Stream</span>
+                  <span>En vivo</span>
                 </NavLink>
               </li>
               <li className="flex-lg-brackets">
@@ -75,13 +75,13 @@ class Navheader extends Component {
                   className="nav-content-bttn open-font"
                 >
                   <i className="feather-video mr-3"></i>
-                  <span>Saved Course</span>
+                  <span>Cursos guardados</span>
                 </NavLink>
               </li>
             </ul>
 
             <div className="nav-caption fw-600 font-xssss text-grey-500">
-              <span>Following </span>Author
+              <span>Siguiendo </span>Autor
             </div>
             <ul className="mb-3">
               <li>
@@ -146,7 +146,7 @@ class Navheader extends Component {
               </li>
             </ul>
             <div className="nav-caption fw-600 font-xssss text-grey-500">
-              <span></span> Account
+              <span></span> Cuenta
             </div>
             <ul className="mb-3">
               <li className="logo d-none d-xl-block d-lg-block"></li>
@@ -156,7 +156,7 @@ class Navheader extends Component {
                   className="nav-content-bttn open-font h-auto pt-2 pb-2"
                 >
                   <i className="font-sm feather-settings mr-3 text-grey-500"></i>
-                  <span>Settings</span>
+                  <span>Ajustes</span>
                 </Link>
               </li>
               <li>
@@ -165,7 +165,7 @@ class Navheader extends Component {
                   className="nav-content-bttn open-font h-auto pt-2 pb-2"
                 >
                   <i className="font-sm feather-pie-chart mr-3 text-grey-500"></i>
-                  <span>Analytics</span>
+                  <span>Estadísticas</span>
                 </Link>
               </li>
               <li>
