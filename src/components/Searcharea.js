@@ -24,7 +24,7 @@ const Searcharea = ({ search }) => {
                 <input
                   type="text"
                   className="style1-input border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500 bg-transparent"
-                  placeholder="Search online courses.."
+                  placeholder="Buscar cursos online..."
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
@@ -57,8 +57,8 @@ const Searcharea = ({ search }) => {
           </div>
         </div>
         <h4 className="text-grey-500 font-xssss fw-500 ml-1 lh-24">
-          <b className="text-grey-800 text-dark">Popular Search: </b>
-          Designer, Developer, PHP, HTML, CSS, SCSS
+          <b className="text-grey-800 text-dark">Busquedas populares: </b>
+          Diseño, Programación, PHP, HTML, CSS, SCSS
         </h4>
       </div>
     </div>

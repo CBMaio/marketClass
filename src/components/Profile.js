@@ -48,7 +48,7 @@ class Profile extends Component {
           </h2>
           <h4 className="text-grey-500 font-xssss mt-0">
             <span className="d-inline-block bg-success btn-round-xss m-0"></span>
-            Available
+            Disponible
           </h4>
           <div className="clearfix"></div>
           <div className="col-12 text-center mt-4 mb-2">
@@ -68,7 +68,7 @@ class Profile extends Component {
               href="/"
               className="p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white"
             >
-              FOLLOW
+              SEGUIR
             </a>
           </div>
           <ul className="list-inline border-0 mt-4">
@@ -76,7 +76,7 @@ class Profile extends Component {
               <h4 className="fw-700 font-md">
                 500+
                 <span className="font-xsssss fw-500 mt-1 text-grey-500 d-block">
-                  Connections
+                  contactos
                 </span>
               </h4>
             </li>
@@ -84,7 +84,7 @@ class Profile extends Component {
               <h4 className="fw-700 font-md">
                 88.7 k
                 <span className="font-xsssss fw-500 mt-1 text-grey-500 d-block">
-                  Follower
+                  Seguidores
                 </span>
               </h4>
             </li>
@@ -92,7 +92,7 @@ class Profile extends Component {
               <h4 className="fw-700 font-md">
                 1,334
                 <span className="font-xsssss fw-500 mt-1 text-grey-500 d-block">
-                  Followings
+                  Seguidos
                 </span>
               </h4>
             </li>
@@ -100,7 +100,7 @@ class Profile extends Component {
 
           <div className="col-12 pl-0 mt-4 text-left">
             <h4 className="text-grey-800 font-xsss fw-700 mb-3 d-block">
-              My Skill
+              Mis habilidades
               <a href="/">
                 <i className="ti-angle-right font-xsssss text-grey-700 float-right "></i>
               </a>

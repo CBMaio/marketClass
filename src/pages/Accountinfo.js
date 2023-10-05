@@ -33,7 +33,7 @@ const Accountinfo = () => {
                         />
                       </figure>
                       <h2 className="fw-700 font-sm text-grey-900 mt-3">
-                        Admin Name
+                        John Doe
                       </h2>
                       <h4 className="text-grey-500 fw-500 mb-3 font-xsss mb-4">
                         Python Dev
@@ -46,7 +46,7 @@ const Accountinfo = () => {
                       <div className="col-lg-6 mb-3">
                         <div className="form-group">
                           <label className="mont-font fw-600 font-xsss">
-                            First Name
+                            Nombre
                           </label>
                           <input type="text" className="form-control" />
                         </div>
@@ -55,7 +55,7 @@ const Accountinfo = () => {
                       <div className="col-lg-6 mb-3">
                         <div className="form-group">
                           <label className="mont-font fw-600 font-xsss">
-                            Last Name
+                            Apellido
                           </label>
                           <input type="text" className="form-control" />
                         </div>
@@ -75,7 +75,7 @@ const Accountinfo = () => {
                       <div className="col-lg-6 mb-3">
                         <div className="form-group">
                           <label className="mont-font fw-600 font-xsss">
-                            Phone
+                            Teléfono
                           </label>
                           <input type="text" className="form-control" />
                         </div>
@@ -86,7 +86,7 @@ const Accountinfo = () => {
                       <div className="col-lg-12 mb-3">
                         <div className="form-group">
                           <label className="mont-font fw-600 font-xsss">
-                            Country
+                            País
                           </label>
                           <input type="text" className="form-control" />
                         </div>
@@ -95,7 +95,7 @@ const Accountinfo = () => {
                       <div className="col-lg-12 mb-3">
                         <div className="form-group">
                           <label className="mont-font fw-600 font-xsss">
-                            Address
+                            Dirección
                           </label>
                           <input type="text" className="form-control" />
                         </div>
@@ -106,7 +106,7 @@ const Accountinfo = () => {
                       <div className="col-lg-6 mb-3">
                         <div className="form-group">
                           <label className="mont-font fw-600 font-xsss">
-                            Twon / City
+                            Ciudad
                           </label>
                           <input type="text" className="form-control" />
                         </div>
@@ -115,7 +115,7 @@ const Accountinfo = () => {
                       <div className="col-lg-6 mb-3">
                         <div className="form-group">
                           <label className="mont-font fw-600 font-xsss">
-                            Postcode
+                            Código Postal
                           </label>
                           <input type="text" className="form-control" />
                         </div>
@@ -137,7 +137,7 @@ const Accountinfo = () => {
                               >
                                 <i className="ti-cloud-down large-icon mr-3 d-block"></i>
                                 <span className="js-fileName">
-                                  Drag and drop or click to replace
+                                  Haz click aquí para modificar
                                 </span>
                               </label>
                             </div>
@@ -147,12 +147,12 @@ const Accountinfo = () => {
 
                       <div className="col-lg-12 mb-3">
                         <label className="mont-font fw-600 font-xsss">
-                          Description
+                          Descripción
                         </label>
                         <textarea
                           className="form-control mb-0 p-3 bg-greylight lh-16"
                           rows="5"
-                          placeholder="Write your message..."
+                          placeholder="Escribe tu mensaje..."
                         ></textarea>
                       </div>
 
@@ -161,7 +161,7 @@ const Accountinfo = () => {
                           to="/account-information"
                           className="bg-current text-center text-white font-xsss fw-600 p-3 w175 rounded-lg d-inline-block"
                         >
-                          Save
+                          Guardar
                         </Link>
                       </div>
                     </div>

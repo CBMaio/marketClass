@@ -11,7 +11,7 @@ class Pagenav extends Component {
               <h1 className="text-grey-800 fw-700 display3-size">
                 {title}
                 <span className="font-xsss text-grey-600 fw-600 d-block mt-2">
-                  Home / {subtitle}
+                  Inicio / {subtitle}
                 </span>
               </h1>
             </div>

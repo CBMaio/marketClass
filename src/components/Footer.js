@@ -9,12 +9,12 @@ const Footer = () => {
           <div className="col-sm-12 lower-footer"></div>
           <div className="col-sm-6">
             <p className="copyright-text">
-              © 2023 copyright. All rights reserved.
+              © 2023 copyright. Todos los derechos reservados
             </p>
           </div>
           <div className="col-sm-6 text-right">
             <p className="float-right copyright-text">
-              In case of any concern, <Link to="/contact">contact us</Link>
+              Ante cualquier problema, <Link to="/contact">contactanos</Link>
             </p>
           </div>
         </div>

@@ -15,12 +15,12 @@ export const fetchAuthors = createAsyncThunk(
         name: "Jane Smith",
         email: "janesmith@gmail.com",
         experience:
-          "Jane Smith is a seasoned author with over 20 years of writing experience. She has written numerous best-selling novels and has received multiple literary awards for her work.",
+        "Jane Smith es una autora experimentada con más de 20 años de experiencia en la escritura. Ha escrito numerosas novelas exitosas y ha recibido múltiples premios literarios por su trabajo.",
         qualifications:
-          "Jane holds a Master's degree in Creative Writing from a prestigious university, where she honed her skills and developed her unique voice as a writer.",
+        "Jane posee una Maestría en Escritura Creativa de una prestigiosa universidad, donde perfeccionó sus habilidades y desarrolló su voz única como escritora.",
         interests:
-          "Jane's interests include historical fiction, travel writing, and exploring the intersection of technology and human emotions in her speculative fiction.",
-        key: "Master's degree in Creative Writing",
+        "Los intereses de Jane incluyen la ficción histórica, la escritura de viajes y explorar la intersección entre la tecnología y las emociones humanas en su ficción especulativa.",
+        key: "Maestría en Escritura Creativa",
         image: "",
       },
       {
@@ -28,12 +28,12 @@ export const fetchAuthors = createAsyncThunk(
         name: "John Doe",
         email: "johndoe@gmail.com",
         experience:
-          "John is a budding author with a fresh perspective. He started his writing career just five years ago but has quickly gained recognition for his thought-provoking essays and short stories.",
+         "John es un autor en ciernes con una perspectiva fresca. Comenzó su carrera como escritor hace apenas cinco años, pero rápidamente ha ganado reconocimiento por sus ensayos y relatos reflexivos.",
         qualifications:
-          "John has a degree in Philosophy, which has influenced his writing style and thematic choices. He believes in the power of philosophical inquiry in storytelling.",
+         "John tiene un título en Filosofía, lo cual ha influido en su estilo de escritura y en sus elecciones temáticas. Él cree en el poder de la indagación filosófica en la narración.",
         interests:
-          "John is passionate about exploring existentialism, ethics, and the human condition through his writing. He's also an advocate for environmental sustainability and incorporates these themes into his work.",
-        key: "Philosophy",
+         "John está apasionado por explorar el existencialismo, la ética y la condición humana a través de su escritura. También es defensor de la sostenibilidad ambiental e incorpora estos temas en su trabajo.",
+        key: "Filosofía",
         image: "",
       },
       {
@@ -41,53 +41,53 @@ export const fetchAuthors = createAsyncThunk(
         name: "Claire Martin",
         email: "clairemartin@gmail.com",
         experience:
-          "Claire is a renowned poet known for her emotionally charged verses. She has been writing poetry for more than three decades and has published several collections.",
+          "Claire es una renombrada poeta conocida por sus versos emocionalmente cargados. Ha estado escribiendo poesía durante más de tres décadas y ha publicado varias colecciones.",
         qualifications:
-          "Claire has a Bachelor's degree in Literature and has studied various forms of poetry from around the world. She often blends different poetic traditions in her work.",
+          "Claire tiene una licenciatura en Literatura y ha estudiado diversas formas de poesía de todo el mundo. A menudo fusiona diferentes tradiciones poéticas en su obra.",
         interests:
-          "Claire's interests revolve around themes of love, loss, identity, and the power of language. She draws inspiration from nature and classical literature.",
-        key: "Literature",
-        image: "",
+          "Los intereses de Claire giran en torno a temas como el amor, la pérdida, la identidad y el poder del lenguaje. Se inspira en la naturaleza y la literatura clásica.",
+        key: "Literatura",
+        image: ""
       },
       {
         id: 4,
         name: "David Smith",
         email: "davidsmith@gmail.com",
         experience:
-          "David is a science fiction author who has been writing for ten years. He gained recognition for his debut novel, which explored futuristic concepts of AI and transhumanism.",
+          "David es un autor de ciencia ficción que ha estado escribiendo durante diez años. Ganó reconocimiento por su novela debut, que exploró conceptos futuristas de IA y transhumanismo.",
         qualifications:
-          "David has a background in computer science and holds a Ph.D. in Artificial Intelligence. His technical knowledge informs his speculative fiction.",
+          "David tiene formación en informática y posee un doctorado en Inteligencia Artificial. Su conocimiento técnico informa su ficción especulativa.",
         interests:
-          "David is fascinated by the potential ethical and societal implications of emerging technologies. He often delves into themes of human-machine interaction and the consequences of technological advancement.",
-        key: "Computer Science, Artificial Intelligence",
-        image: "",
+          "David está fascinado por las posibles implicaciones éticas y sociales de las tecnologías emergentes. A menudo profundiza en temas de interacción entre humanos y máquinas y las consecuencias del avance tecnológico.",
+        key: "Informática, Inteligencia Artificial",
+        image: ""
       },
       {
         id: 5,
         name: "Sarah Wilson",
         email: "sarahwilson@gmail.com",
         experience:
-          "Sarah is a children's book author and illustrator. She has been creating delightful and imaginative stories for kids for over 15 years.",
+          "Sarah es autora e ilustradora de libros para niños. Ha estado creando historias encantadoras e imaginativas para niños durante más de 15 años.",
         qualifications:
-          "Sarah studied Fine Arts and Graphic Design, which allows her to not only write captivating stories but also bring them to life through her illustrations.",
+          "Sarah estudió Bellas Artes y Diseño Gráfico, lo que le permite no solo escribir historias cautivadoras, sino también dar vida a través de sus ilustraciones.",
         interests:
-          "Sarah is passionate about fostering creativity and curiosity in young readers. Her interests include fantasy worlds, magical creatures, and encouraging a love of reading in children.",
-        key: "Fine Arts, Graphic Design",
-        image: "",
+          "Sarah está apasionada por fomentar la creatividad y la curiosidad en los jóvenes lectores. Sus intereses incluyen mundos de fantasía, criaturas mágicas y fomentar el amor por la lectura en los niños.",
+        key: "Bellas Artes, Diseño Gráfico",
+        image: ""
       },
       {
         id: 6,
         name: "Alex Wilson",
         email: "alexwildon@gmail.com",
         experience:
-          "Alex is a non-fiction author specializing in history and biographies. He has authored several well-received books that shed light on lesser-known historical figures and events.",
+          "Alex es autor de no ficción especializado en historia y biografías. Ha escrito varios libros bien recibidos que arrojan luz sobre figuras y eventos históricos menos conocidos.",
         qualifications:
-          "Alex holds a Ph.D. in History and has conducted extensive research in archives around the world. His academic background ensures the accuracy and depth of his writing.",
+          "Alex tiene un doctorado en Historia y ha realizado una extensa investigación en archivos de todo el mundo. Su formación académica garantiza la precisión y profundidad de su escritura.",
         interests:
-          "Alex's interests revolve around uncovering hidden stories from the past, especially those related to social justice, forgotten heroes, and the impact of historical events on individuals and societies.",
-        key: "History",
-        image: "",
-      },
+          "Los intereses de Alex giran en torno a descubrir historias ocultas del pasado, especialmente aquellas relacionadas con la justicia social, héroes olvidados y el impacto de los eventos históricos en individuos y sociedades.",
+        key: "Historia",
+        image: ""
+      },      
     ];
     return response;
   }

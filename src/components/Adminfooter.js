@@ -7,15 +7,15 @@ const Adminfooter = () => {
         <div className="row">
           <div className="col-md-6 text-center text-sm-left xs-mb-3">
             <p className="text-grey-500 fw-500 font-xssss mb-0">
-              @ Copyright 2021 All rights reserved.
+              @ Copyright 2021 Todos los derechos reservados.
             </p>
           </div>
           <div className="col-sm-6 text-right">
             <p className="float-right copyright-text text-grey-500 fw-500 font-xssss mb-0">
-              In case of any concern,{" "}
+              Ante cualquier problema,{" "}
               <b>
                 <Link className="text-grey-500 " to="/contact">
-                  contact us
+                  contactanos
                 </Link>
               </b>
             </p>

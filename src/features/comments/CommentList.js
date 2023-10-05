@@ -47,9 +47,9 @@ const CommentList = () => {
                 <table className="table table-admin mb-0">
                   <thead className="bg-greylight rounded-10 ovh">
                     <tr>
-                      <th className="border-0">Course</th>
+                      <th className="border-0">Curso</th>
                       <th className="border-0" scope="col">
-                        Name
+                        Nombre
                       </th>
                       <th className="border-0" scope="col">
                         Email
@@ -58,11 +58,11 @@ const CommentList = () => {
                         Review
                       </th> */}
                       <th className="border-0" scope="col">
-                        Status
+                        Estado
                       </th>
 
                       <th scope="col" className="text-end border-0">
-                        Action
+                        Acción
                       </th>
                     </tr>
                   </thead>

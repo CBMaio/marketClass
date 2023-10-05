@@ -7,7 +7,7 @@ class Shopsidebar extends Component {
         <div className="bg-greyblue side-wrap rounded-lg p-4 mb-4">
           <div className="form-group mb-1">
             <label htmlFor="Search" className="fw-600 text-grey-900">
-              Search by Keyword
+              Buscar por palabra clave
             </label>
           </div>
           <div className="form-group icon-input mb-0">
@@ -23,7 +23,7 @@ class Shopsidebar extends Component {
         <div className="bg-greyblue side-wrap rounded-lg p-4 mb-4">
           <div className="form-group mb-0">
             <label htmlFor="Search" className="fw-600 text-grey-900">
-              Categories
+              Categorías
             </label>
           </div>
           <ul className="recent-post mt-2">

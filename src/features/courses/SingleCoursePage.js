@@ -42,14 +42,14 @@ const SingleCoursePage = () => {
         </div>
         <div className="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4 course-data-container">
           <h2 className="fw-700 font-sm mb-3 mt-1 pl-1 data-title mb-4">
-            Description
+            Descripción
           </h2>
           <h4 className="font-xssss fw-600 text-grey-600 mb-5 pl-30 position-relative lh-24">
             <i className="ti-check font-xssss btn-round-xs bg-dark-purple text-white position-absolute left-0 top-5"></i>
             {description}
           </h4>
           <h2 className="fw-700 font-sm mb-3 mt-1 pl-1 data-title mb-4">
-            Requirements
+            Requisitos
           </h2>
           <h4 className="font-xssss fw-600 text-grey-600 mb-3 pl-30 position-relative lh-24">
             <i className="ti-check font-xssss btn-round-xs bg-dark-purple text-white position-absolute left-0 top-5"></i>
@@ -77,7 +77,7 @@ const SingleCoursePage = () => {
                   </h6>
                   <h6 className="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0">
                     {/* TODO add comment date */}
-                    July 26 at 8:20 PM
+                   26 de Julio 8:20 PM
                   </h6>
                   <div className="star d-block w-100 text-left">
                     <img
@@ -132,7 +132,7 @@ const SingleCoursePage = () => {
                       className="form-control form_control"
                       type="text"
                       required
-                      placeholder="Username"
+                      placeholder="usuario"
                     />
                   </div>
                 </div>
@@ -160,7 +160,7 @@ const SingleCoursePage = () => {
                       className="form-control h150"
                       required
                       rows="6"
-                      placeholder="Course Description *"
+                      placeholder="Detalles *"
                     ></textarea>
                   </div>
                 </div>

@@ -16,7 +16,7 @@ const AuthorData = () => {
   );
 
   if (!author) {
-    return <section>Author not found!</section>;
+    return <section>Autor no encontrado!</section>;
   }
 
   const { name, email, key, experience, qualifications, interests, image } =
@@ -68,7 +68,7 @@ const AuthorData = () => {
                   <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-lg-4 p-2">
                     <div className="card-body mb-lg-3 pb-0">
                       <h2 className="fw-400 font-lg d-block">
-                        <b>About Me</b>
+                        <b>Sobre mí</b>
                       </h2>
                     </div>
                     <div className="card-body pb-0">
@@ -92,7 +92,7 @@ const AuthorData = () => {
                   <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-lg-4 p-2">
                     <div className="card-body mb-lg-3 pb-0">
                       <h2 className="fw-400 font-lg d-block">
-                        My <b>Courses</b>
+                        Mis <b>Cursos</b>
                       </h2>
                     </div>
                     <div className="card-body pb-0">

@@ -12,38 +12,38 @@ const About = () => {
     {
       imageUrl: "student1.jpg",
       name: "Goria Coast",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Diseñadora gráfica",
+      des: "MarketClass ha sido una revelación para mí. Los cursos son muy completos y están impartidos por expertos en la industria. Aprendí mucho y ahora me siento más segura en el mundo digital.",
     },
     {
       imageUrl: "student2.jpg",
       name: "Thomas Smith",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Desarrollador de software junior",
+      des: "¡Increíble! Los cursos de MarketClass me ayudaron a conseguir un nuevo empleo en el campo de la programación. La plataforma es fácil de usar y las lecciones son muy informativas.",
     },
     {
       imageUrl: "student3.jpg",
       name: "Hurin Seary",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Analista de datos",
+      des: "Me encanta cómo MarketClass simplifica el aprendizaje en tecnología. Las opciones de filtrado me ayudaron a encontrar el curso perfecto para mis necesidades.",
     },
     {
       imageUrl: "student1.jpg",
       name: "Goria Coast",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Administrador de sistemas",
+      des: "Como profesional de TI, siempre estoy en busca de actualizaciones. MarketClass me mantiene al día con las últimas tendencias y herramientas. ¡Muy recomendado!",
     },
     {
       imageUrl: "student2.jpg",
       name: "Thomas Smith",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Marketing digital",
+      des: "MarketClass no solo ofrece cursos de alta calidad, sino que también fomenta la comunidad. He conocido a personas increíbles a través de los foros de discusión.",
     },
     {
       imageUrl: "student3.jpg",
       name: "Hurin Seary",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Desarrollador web front-end",
+      des: "MarketClass es la clave para avanzar en mi carrera de desarrollo web. Los instructores son apasionados y están comprometidos con el éxito de los estudiantes. ¡No puedo esperar para seguir aprendiendo!",
     },
   ];
   const feedbacksettings = {
@@ -81,7 +81,7 @@ const About = () => {
       <Header />
       <div className="container-fluid header-banner pb-lg--7 pt-lg--7 pt-5 pb-7">
         <div className="container row m-auto">
-          <h1 className="m-auto fw-700 display1-size">About us</h1>
+          <h1 className="m-auto fw-700 display1-size">Sobre nosotros</h1>
         </div>
       </div>
 
@@ -90,31 +90,26 @@ const About = () => {
           <div className="row">
             <div className="col-lg-6">
               <h2 className="text-grey-900 fw-700 display1-size display2-md-size pb-2 mb-0 mt-3 d-block lh-3">
-                Choose the class <br /> that's right for you
+                Elegí la mejor clase<br /> para vos 
               </h2>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-6">
               <h4 className=" fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-0">
-                Quite simply the best theme weve ever purchased. The
-                customisation and flexibility are superb. Speed is awesome.
+              MarketClass es una plataforma educativa que ofrece cursos en línea y recursos para el desarrollo de habilidades.
               </h4>
             </div>
 
             <div className="col-lg-12 mt-3">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                mauris neque, condimentum ac orci ut, elementum efficitur nunc.
-                Maecenas nec lorem vel nibh mattis euismod. Donec tincidunt
-                libero tristique ligula euismod convallis. Cras eros urna,
-                consectetur a lorem a, imperdiet malesuada turpis. Proin eget
-                ante in felis molestie vulputate. Vestibulum ante ipsum primis
-                in faucibus orci luctus et ultrices posuere cubilia curae; Nam
-                eleifend est et ex ornare dignissim. Curabitur aliquet justo
-                neque, non porttitor ipsum rutrum vel. Integer at consequat
-                justo. Sed pulvinar velit sed orci rutrum maximus. Pellentesque
-                condimentum ac enim vitae auctor. Quisque nec ullamcorper justo.
+              En MarketClass, creemos en el poder de la educación para transformar carreras y abrir puertas al éxito en el mundo de la tecnología y los negocios. Fundada con la visión de ser un faro de conocimiento y excelencia, nuestra plataforma se ha convertido en un referente en la formación en línea.
+
+              Nuestra misión es proporcionar a estudiantes y profesionales las herramientas y los conocimientos necesarios para triunfar en un mundo cada vez más digitalizado y competitivo. Colaboramos con expertos en la industria para ofrecer cursos de alta calidad que aborden las tendencias actuales y las mejores prácticas.
+
+              En MarketClass, no solo impartimos conocimiento, también cultivamos la comunidad. Fomentamos la colaboración, el networking y el aprendizaje interactivo para que nuestros estudiantes se conviertan en profesionales preparados para los desafíos del mercado global.
+
+              Únete a nosotros en este emocionante viaje hacia el éxito. Tu camino comienza aquí, en MarketClass.
               </p>
             </div>
             <div className="col-lg-12 mt-5 text-center pt-3">
@@ -122,7 +117,7 @@ const About = () => {
                 href="/register"
                 className="ml-1 mr-1 rounded-lg bg-light-green text-green font-xss border-size-md border-0 fw-600 open-font p-3 w200 btn"
               >
-                Get Started
+                Comienza hoy!
               </a>
             </div>
           </div>
@@ -141,39 +136,34 @@ const About = () => {
             </div>
             <div className="col-lg-6 offset-lg-1 page-title style1">
               <h2 className="fw-700 text-grey-800 display1-size display2-md-size lh-3 pt-lg--5">
-                Online recharge and pay monthly bill easy way.
+                Explora nuestros cursos
               </h2>
               <p className="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0  mt-3 w-75 w-xs-90">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dol ad minim veniam, quis
-                nostrud exercitation
+              Descubre cómo mejorar tus habilidades y dominar el mundo digital.
               </p>
 
               <h4 className="fw-600 font-xs mt-5 mb-2">
                 <i className="ti-check btn-round-xs text-white bg-success mr-2 border"></i>
-                Choose what to do
+                Elige lo que deseas aprender
               </h4>
               <p className="fw-300 font-xsss lh-28 text-grey-500 mt-0 ml-4 pl-3 w-75 w-xs-90">
-                Looking for a cozy hotel to stay, a restaurant to eat, a museum
-                to visit or a mall to do some.
+                Ya sea que estés buscando cursos sobre programación, desarrollo web, análisis de datos o cualquier otra área de la tecnología.
               </p>
 
               <h4 className="fw-600 font-xs mt-4 mb-2">
                 <i className="ti-check btn-round-xs text-white bg-success mr-2 border"></i>
-                Find what you want
+                Encuentra lo que necesitas: 
               </h4>
               <p className="fw-300 font-xsss lh-28 text-grey-500 mt-0 ml-4 pl-3 w-75 w-xs-90">
-                Search and filter hundreds of listings, read reviews, explore
-                photos and find the perfect spot.
+              Explora y filtra entre cientos de opciones de cursos. Lee reseñas, examina detalles del contenido y encuentra la formación perfecta para tus objetivos.
               </p>
 
               <h4 className="fw-600 font-xs mt-4 mb-2">
                 <i className="ti-check btn-round-xs text-white bg-success mr-2 border"></i>
-                Explore amazing code
+                Explora oportunidades asombrosas: 
               </h4>
               <p className="fw-300 font-xsss lh-28 text-grey-500 mt-0 ml-4 pl-3 w-75 w-xs-90">
-                Go and have a good time or even make a booking directly from the
-                listing page.
+              Empieza a aprender y mejora tus habilidades directamente desde la página del curso. En MarketClass, te ayudamos a descubrir y aprovechar al máximo tu potencial en el mundo de la tecnología.
               </p>
             </div>
           </div>
@@ -185,7 +175,7 @@ const About = () => {
           <div className="row">
             <div className="col-lg-6 text-left mb-3 pb-0">
               <h2 className="text-grey-800 fw-700 font-xl lh-2">
-                Customer love what we do
+                Nuestros clientes aman lo que hacemos
               </h2>
             </div>
 
@@ -254,22 +244,19 @@ const About = () => {
                 <div className="row justify-content-center">
                   <div className="col-lg-10 text-center">
                     <h2 className="fw-700 text-white display2-size lh-3 mb-2 display2-md-size">
-                      Subscribe up to our newsletter
+                      Suscribite a nuestro boletín informativo
                     </h2>
                   </div>
                   <div className="col-lg-8 text-center">
                     <p className="font-xsss lh-28 text-white mb-0 d-none-xs">
-                      Lorem ipsum dolor sit amet consectetur adipisicing, elit.
-                      Neque facilis corporis perferendis, debitis error
-                      exercitationem reiciendis odio, tenetur tempora
-                      dignissimos deserunt eius repellat.
+                      Enviaremos semanalmente el boletín de noticias, para que estes informado de todas las novedades.
                     </p>
                   </div>
                   <div className="col-lg-6 text-center mt-4 mb-3">
                     <div className="form-group icon-right-input style2-input mb-0">
                       <input
                         type="text"
-                        placeholder="Enter Email Address"
+                        placeholder="Correo electrónico"
                         className="form-control style2 rounded-xl bg-greylight border-0 font-xsss fw-500 pl-3"
                       />
                       <i className="feather-mail text-dark primary font-lg m-1"></i>

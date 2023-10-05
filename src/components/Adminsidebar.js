@@ -49,24 +49,24 @@ const Adminsidebar = () => {
         <li className="nav-item">
           <NavLink className="navi-link" to="/welcome-admin">
             <i className="feather-home mr-2"></i>
-            <span>Home</span>
+            <span>Inicio</span>
           </NavLink>
         </li>
         <li className="nav-item" onClick={toggleCourseOptions}>
           <div className="navi-link">
             <i className="feather-video mr-2 droupdown-toggle"></i>
-            <span>Course</span>
+            <span>Cursos</span>
           </div>
           {displayCourseOptions && (
             <ul className="submenu active">
               <li className="nav-item">
                 <NavLink className="navi-link" to="/admin-productlist">
-                  Course List
+                  Ver todos
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="navi-link" to="/add-course">
-                  Add Course
+                  Añadir
                 </NavLink>
               </li>
             </ul>
@@ -98,7 +98,7 @@ const Adminsidebar = () => {
           </NavLink>
         </li> */}
 
-        <div className="sidebar-heading">Authentication</div>
+        <div className="sidebar-heading">Mi cuenta</div>
 
         {/* <li className="nav-item">
           <NavLink className="navi-link" to="/login">

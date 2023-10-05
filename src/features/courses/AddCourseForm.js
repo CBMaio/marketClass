@@ -33,7 +33,7 @@ const AddCourseForm = () => {
         <div className="card border-0 px-4 pt-4 mt-2 rounded-lg admin-form">
           <div className="card-body d-block">
             <h4 className="font-xss text-grey-800 mb-4 mt-0 fw-700">
-              Course Information
+              Información del curso
             </h4>
             <form
               className="contact_form"
@@ -46,14 +46,14 @@ const AddCourseForm = () => {
                 <div className="col-md-6">
                   <div className="form-group mb30">
                     <label htmlFor="product_sku" className="form-label">
-                      Title
+                      Título
                     </label>
                     <input
                       name="form_name"
                       className="form-control form_control"
                       type="text"
                       required
-                      placeholder="Title"
+                      placeholder="Título"
                       onChange={onTitleHandle}
                     />
                   </div>
@@ -61,14 +61,14 @@ const AddCourseForm = () => {
                 <div className="col-md-6">
                   <div className="form-group mb30">
                     <label htmlFor="product_sku" className="form-label">
-                      Category
+                      Categoría
                     </label>
                     <input
                       name="form_type"
                       required
                       className="form-control form_control"
                       type="text"
-                      placeholder="Type"
+                      placeholder="Categoría"
                     />
                   </div>
                 </div>
@@ -82,7 +82,7 @@ const AddCourseForm = () => {
                       required
                       className="form-control form_control"
                       type="text"
-                      placeholder="Type"
+                      placeholder="Duración"
                     />
                   </div>
                 </div>
@@ -96,21 +96,21 @@ const AddCourseForm = () => {
                       required
                       className="form-control form_control"
                       type="text"
-                      placeholder="Type"
+                      placeholder="Frecuencia"
                     />
                   </div>
                 </div>
                 <div className="col-sm-12">
                   <div className="form-group">
                     <label htmlFor="product_sku" className="form-label">
-                      Description
+                      Descripción
                     </label>
                     <textarea
                       name="form_message"
                       className="form-control h150"
                       required
                       rows="6"
-                      placeholder="Course Description *"
+                      placeholder="Descripción del curso *"
                       onChange={onDescriptioneHandle}
                     ></textarea>
                   </div>
@@ -119,13 +119,13 @@ const AddCourseForm = () => {
                 <div className="col-sm-12">
                   <div className="form-group">
                     <label htmlFor="product_sku" className="form-label">
-                      Requirements
+                      Requisitos
                     </label>
                     <textarea
                       name="form_message"
                       className="form-control h150"
                       rows="6"
-                      placeholder="Course Requirements"
+                      placeholder="Requisitos del curso"
                     ></textarea>
                   </div>
                 </div>
@@ -136,12 +136,12 @@ const AddCourseForm = () => {
         <div className="card border-0 px-4 pt-4 mt-2 rounded-lg admin-form">
           <div className="card-body d-block">
             <h4 className="font-xss text-grey-800 mb-4 mt-0 fw-700">
-              Upload Image
+              Subir imagen
             </h4>
             <div className="form-group mb30">
               <div
                 className="file-upload-wrapper"
-                data-text="Select your file!"
+                data-text="Seleccionar!"
               >
                 <input
                   name="file-upload-field"
@@ -154,7 +154,7 @@ const AddCourseForm = () => {
                 >
                   <i className="ti-cloud-down large-icon me-3 d-block"></i>
                   <span className="js-fileName">
-                    Drag and drop or click here
+                    Suelta una imagen o haz click aquí
                   </span>
                 </label>
               </div>
@@ -163,7 +163,7 @@ const AddCourseForm = () => {
         </div>
         <div className="card border-0 p-4 mt-3 rounded-10 admin-form">
           <div className="card-body d-block">
-            <h4 className="font-xss text-grey-800 mb-4 mt-0 fw-700">Price</h4>
+            <h4 className="font-xss text-grey-800 mb-4 mt-0 fw-700">Precio</h4>
             <form
               className="contact_form"
               name="contact_form"
@@ -174,13 +174,13 @@ const AddCourseForm = () => {
                 <div className="col-md-6">
                   <div className="form-group mb30">
                     <label htmlFor="product_sku" className="form-label">
-                      Price
+                      Precio
                     </label>
                     <input
                       name="form_name"
                       className="form-control form_control"
                       type="text"
-                      placeholder="Price ($)"
+                      placeholder="($)"
                     />
                   </div>
                 </div>
@@ -193,7 +193,7 @@ const AddCourseForm = () => {
             onClick={saveCourse}
             className="col-md-6 form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
           >
-            Save
+            Guardar
           </button>
         </div>
       </div>
