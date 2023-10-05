@@ -13,4 +13,11 @@
     text-align: center;
     color: var(--dark-gray);
   }
+
+  .modal-content {
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: fit-content;
+    }
+  }
 }

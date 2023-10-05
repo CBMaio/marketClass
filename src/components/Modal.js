@@ -5,16 +5,14 @@ import "../scss/components/custom-modal.scss";
 const Modal = ({ title, description }) => {
   return (
     <div className="custom-modal">
-      <div className="col-8 contact-wrap bg-white shadow-lg rounded-lg position-relative top-0">
+      <div className="col-8 contact-wrap bg-white shadow-lg rounded-lg position-relative top-0 modal-content">
         <h1 className="text-grey-900 fw-700 display3-size mb-5 lh-1 text-center">
           {title}
         </h1>
         <div className="row">
           <div className="col-12">
             <div className="mb-3 md-mb-2">
-              <div className="w-100 h125 p-3 modal-description">
-                {description}
-              </div>
+              <div className="w-100 p-3 modal-description">{description}</div>
             </div>
 
             <div className="form-group mb-0">

@@ -1,21 +1,32 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
 import Adminfooter from "../components/Adminfooter";
 import Pagination from "../components/Pagination";
 import MyCoursesList from "../features/courses/MyCoursesList";
+import { BREAKPOIN_SMALL } from "../utils";
 
 import "../scss/pages/admin-product-list.scss";
 
 const Adminproductlist = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < BREAKPOIN_SMALL);
+
+  const onResizeScrren = () => {
+    setIsMobile(window.innerWidth < BREAKPOIN_SMALL);
+  };
+
+  window.addEventListener("resize", () => onResizeScrren());
   return (
     <Fragment>
       <div id="wrapper">
         <Adminsidebar />
 
-        <div id="content-wrapper" className="d-flex flex-column">
-          <div id="content">
+        <div
+          id="content-wrapper"
+          className="d-flex flex-column admin-product-list-section"
+        >
+          <div id="content" className="admin-product-list-main">
             <AdminTopnav />
 
             <div className="container px-3 py-4">
@@ -27,16 +38,44 @@ const Adminproductlist = () => {
                         Mis cursos
                       </h4>
                     </div>
-                    <div className="card-body p-4">
-                      <div className="table-responsive">
-                        <table className="table table-admin mb-0">
-                          <thead className="bg-greylight rounded-10 ovh">
-                            <tr>
-                              <th className="border-0"></th>
-                              <th className="border-0" scope="col">
-                                Name
-                              </th>
-                              <th className="border-0" scope="col">
+                    <div className="card-body p-2">
+                      {!isMobile ? (
+                        <div className="table-responsive desktop-view">
+                          <table className="table table-admin mb-0">
+                            <thead className="bg-greylight rounded-10 ovh">
+                              <tr>
+                                <th className="border-0"></th>
+                                <th className="border-0" scope="col">
+                                  Name
+                                </th>
+                                <th className="border-0" scope="col">
+                                  Price
+                                </th>
+                                <th className="border-0" scope="col">
+                                  Tag
+                                </th>
+                                <th className="border-0" scope="col">
+                                  Lesson
+                                </th>
+                                <th scope="col" className="text-right border-0">
+                                  Action
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <MyCoursesList />
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : (
+                        <div className="table-responsive mobile-view">
+                          <div className="table table-admin mb-0">
+                            <div className="bg-greylight rounded-10 ovh">
+                              <div className="table-header">
+                                <div className="border-0 title-header">
+                                  Name
+                                </div>
+                                {/* <th className="border-0" scope="col">
                                 Price
                               </th>
                               <th className="border-0" scope="col">
@@ -47,14 +86,15 @@ const Adminproductlist = () => {
                               </th>
                               <th scope="col" className="text-right border-0">
                                 Action
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <MyCoursesList />
-                          </tbody>
-                        </table>
-                      </div>
+                              </th> */}
+                              </div>
+                            </div>
+                            <div>
+                              <MyCoursesList />
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <Pagination divClass="pagination justify-content-center mt-5" />

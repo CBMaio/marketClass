@@ -56,3 +56,5 @@ export const categories = [
     name: "Mobile Development",
   },
 ];
+
+export const BREAKPOIN_SMALL = 1024;
