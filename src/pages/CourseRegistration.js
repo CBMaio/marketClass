@@ -41,15 +41,13 @@ const CourseRegistration = () => {
               <div className="row justify-content-center">
                 <div className="col-lg-6 text-center">
                   <h1 className="text-grey-800 fw-700 display3-size mb-3 display4-md-size">
-                    Welcome to <br />
+                    Bienvenido al curso <br />
                     <span className="text-current">
                       {selectedCourse.title}{" "}
                     </span>
-                    <br />
-                    course
                     <span className="font-xsss text-grey-500 fw-600 d-block mt-3 pl-lg-5 pr-lg-5 lh-28">
-                      Ask us a question by email and we will respond within a
-                      few days.
+                      Ante cualquier duda, conectese con nosotros y le
+                      responderemos a la brevedead.
                     </span>
                   </h1>
                 </div>
@@ -63,7 +61,7 @@ const CourseRegistration = () => {
                 <div className="col-lg-10">
                   <div className="contact-wrap bg-white shadow-lg rounded-lg position-relative top-0">
                     <h1 className="text-grey-900 fw-700 display3-size mb-5 lh-1">
-                      Contact your teacher
+                      Contacta a tu profesor
                     </h1>
                     <form action="#">
                       <div className="row">
@@ -72,16 +70,16 @@ const CourseRegistration = () => {
                             <input
                               type="text"
                               className="form-control style2-input bg-color-none text-grey-700"
-                              defaultValue="Name"
+                              placeholder="Nombre"
                             />
                           </div>
                         </div>
                         <div className="col-lg-6 col-md-12">
                           <div className="form-group mb-3">
                             <input
-                              type="text"
+                              type="email"
                               className="form-control style2-input bg-color-none text-grey-700"
-                              defaultValue="Email"
+                              placeholder="Email"
                             />
                           </div>
                         </div>
@@ -89,7 +87,7 @@ const CourseRegistration = () => {
                         <div className="col-12">
                           <div className="form-group mb-3 md-mb-2">
                             <textarea
-                              defaultValue="Message"
+                              placeholder="Message"
                               className="w-100 h125 style2-textarea p-3 form-control"
                             />
                           </div>

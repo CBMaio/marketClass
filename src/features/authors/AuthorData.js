@@ -64,7 +64,7 @@ const AuthorData = () => {
                 id="uncontrolled-tab-example"
                 className="mb-3 nav nav-tabs profile xs-p-4 d-flex align-items-center justify-content-around product-info-tab border-bottom-0 bg-white shadow-xss rounded-lg"
               >
-                <Tab eventKey="profile" title="Profile">
+                <Tab eventKey="profile" title="Perfil">
                   <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-lg-4 p-2">
                     <div className="card-body mb-lg-3 pb-0">
                       <h2 className="fw-400 font-lg d-block">
@@ -88,7 +88,7 @@ const AuthorData = () => {
                     </div>
                   </div>
                 </Tab>
-                <Tab eventKey="courses" title="COURSES">
+                <Tab eventKey="courses" title="Cursos">
                   <div className="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-lg-4 p-2">
                     <div className="card-body mb-lg-3 pb-0">
                       <h2 className="fw-400 font-lg d-block">
