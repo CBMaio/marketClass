@@ -44,8 +44,8 @@ const Forgot = () => {
                     </h1>
                   </Link>
                   <h2 className="fw-700 display1-size display2-md-size mb-4">
-                    Change <br />
-                    your password
+                    Restablecer <br />
+                    contraseña
                   </h2>
                   <form className="mb-4">
                     <div className="form-group icon-input mb-3">

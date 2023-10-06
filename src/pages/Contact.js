@@ -13,10 +13,9 @@ const Contact = () => {
           <div className="row justify-content-center">
             <div className="col-lg-6 text-center">
               <h1 className="text-grey-800 fw-700 display3-size mb-3 display4-md-size">
-                Get in touch with us{" "}
+                Contactate con nosotros{" "}
                 <span className="font-xsss text-grey-500 fw-600 d-block mt-3 pl-lg-5 pr-lg-5 lh-28">
-                  Ask us a question by email and we will respond within a few
-                  days.
+                  Envíanos un correo electrónico y te responderemos a la brevedad.
                 </span>
               </h1>
             </div>
@@ -30,7 +29,7 @@ const Contact = () => {
             <div className="col-lg-10">
               <div className="contact-wrap bg-white shadow-lg rounded-lg position-relative top-0">
                 <h1 className="text-grey-900 fw-700 display3-size mb-5 lh-1">
-                  Comments
+                  Comentarios
                 </h1>
                 <form action="#">
                   <div className="row">
@@ -39,7 +38,7 @@ const Contact = () => {
                         <input
                           type="text"
                           className="form-control style2-input bg-color-none text-grey-700"
-                          placeholder="Name"
+                          placeholder="Nombre"
                         />
                       </div>
                     </div>
@@ -57,7 +56,7 @@ const Contact = () => {
                       <div className="form-group mb-3 md-mb-2">
                         <textarea
                           className="w-100 h125 style2-textarea p-3 form-control"
-                          placeholder="Message"
+                          placeholder="Mensaje"
                         />
                       </div>
                       <div className="text-left mt-3 float-left md-mb-2">

@@ -27,8 +27,8 @@ const Register = () => {
                   </h1>
                 </Link>
                 <h2 className="fw-700 display1-size display2-md-size mb-4">
-                  Create <br />
-                  your account
+                  Crea tu cuenta <br />
+                  
                 </h2>
                 {/* Fitst step */}
                 {step === 0 && (
@@ -39,7 +39,7 @@ const Register = () => {
                         <input
                           type="text"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
-                          placeholder="Your Name"
+                          placeholder="Tu Nombre"
                         />
                       </div>
                       <div className="form-group icon-input mb-3">
@@ -47,7 +47,7 @@ const Register = () => {
                         <input
                           type="text"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
-                          placeholder="Your Last Name"
+                          placeholder="Tu Apellido"
                         />
                       </div>
                       <div className="form-group icon-input mb-3">
@@ -55,7 +55,7 @@ const Register = () => {
                         <input
                           type="text"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
-                          placeholder="Your Email Address"
+                          placeholder="Tu correo"
                         />
                       </div>
                       <div className="form-group icon-input mb-3">
@@ -63,7 +63,7 @@ const Register = () => {
                         <input
                           type="number"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
-                          placeholder="Your Number"
+                          placeholder="Tu Número"
                         />
                       </div>
                     </form>
@@ -75,13 +75,13 @@ const Register = () => {
                           className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                           onClick={() => setStep(1)}
                         >
-                          Next
+                          Siguiente
                         </button>
                       </div>
                       <h6 className="text-grey-500 font-xssss fw-500 mt-0 mb-0 lh-32">
-                        Already have account{" "}
+                        Ya estas registrado?{" "}
                         <a href="/login" className="link fw-700 ml-1">
-                          Login
+                          Iniciar sesión
                         </a>
                       </h6>
                     </div>
@@ -116,7 +116,7 @@ const Register = () => {
                           onClick={() => setStep(2)}
                           className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                         >
-                          Next
+                          Siguiente
                         </button>
                       </div>
                     </div>
@@ -131,7 +131,7 @@ const Register = () => {
                         <input
                           type="Password"
                           className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
-                          placeholder="Password"
+                          placeholder="Contraseña"
                         />
                         <i className="font-sm ti-lock text-grey-500 pr-0"></i>
                       </div>
@@ -139,7 +139,7 @@ const Register = () => {
                         <input
                           type="Password"
                           className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
-                          placeholder="Confirm Password"
+                          placeholder="Confirmar Contraseña"
                         />
                         <i className="font-sm ti-lock text-grey-500 pr-0"></i>
                       </div>
@@ -153,7 +153,7 @@ const Register = () => {
                           className="form-check-label font-xssss text-grey-500"
                           htmlFor="exampleCheck1"
                         >
-                          Accept Term and Conditions
+                          Acepto los términos y condiciones
                         </label>
                       </div>
                     </form>
@@ -164,7 +164,7 @@ const Register = () => {
                           href="/welcome-admin"
                           className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                         >
-                          Register
+                          Registrarme
                         </a>
                       </div>
                     </div>
