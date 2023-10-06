@@ -10,45 +10,45 @@ import CourseList from "../features/courses/CourseList";
 const Home = () => {
   const categoryList = [
     {
-      name: "Language",
+      name: "Programación",
       img: "assets/images/language.svg",
-      description: "Descripción de la categoría 1",
+      description: "Domina el arte de la programación con nuestros cursos especializados.",
     },
     {
-      name: "Graphic Design",
+      name: "Diseño Gráfico",
       img: "assets/images/graphic-design.svg",
-      description: "Descripción de la categoría 2",
+      description: "Desarrolla tu creatividad y habilidades visuales con nuestros cursos de diseño gráfico.",
     },
     {
-      name: "Content Writing",
+      name: "Ciberseguridad",
       img: "assets/images/content-writing.svg",
-      description: "Descripción de la categoría 2",
+      description: "Aprende sobre técnicas de protección y estrategias de seguridad con nuestros cursos.",
     },
     {
-      name: "Finance",
+      name: "Data Science",
       img: "assets/images/finance.svg",
-      description: "Descripción de la categoría 2",
+      description: "Adquiere habilidades en análisis de datos, aprendizaje automático y visualización de datos.",
     },
   ];
 
   const iconList = [
     {
-      title: "Get Certificate",
-      des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
+      title: "Certifícate",
+      des: "Obtén reconocimiento por tu aprendizaje con nuestros certificados de finalización de cursos.",
       icon: "ti-check",
       color: "text-warning",
       bgcolor: "alert-warning",
     },
     {
-      title: "Amazing instructor",
-      des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
+      title: "Excelentes instructores",
+      des: "Nuestra plataforma cuenta con instructores altamente calificados y apasionados.",
       icon: "ti-heart",
       color: "text-secondary",
       bgcolor: "alert-secondary",
     },
     {
-      title: "24/7 Supports",
-      des: "Praesent porttitor nunc vitae lacus vehicula, nec mollis eros congue.",
+      title: "Soporte 24/7",
+      des: "Nuestro equipo de soporte está disponible para ti en todo momento.",
       icon: "feather-box",
       color: "text-success",
       bgcolor: "alert-success",
@@ -59,38 +59,38 @@ const Home = () => {
     {
       imageUrl: "student1.jpg",
       name: "Goria Coast",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Diseñadora gráfica",
+      des: "MarketClass ha sido una revelación para mí. Los cursos son muy completos y están impartidos por expertos en la industria. Aprendí mucho y ahora me siento más segura en el mundo digital.",
     },
     {
       imageUrl: "student2.jpg",
       name: "Thomas Smith",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Desarrollador de software junior",
+      des: "¡Increíble! Los cursos de MarketClass me ayudaron a conseguir un nuevo empleo en el campo de la programación. La plataforma es fácil de usar y las lecciones son muy informativas.",
     },
     {
       imageUrl: "student3.jpg",
       name: "Hurin Seary",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Analista de datos",
+      des: "Me encanta cómo MarketClass simplifica el aprendizaje en tecnología. Las opciones de filtrado me ayudaron a encontrar el curso perfecto para mis necesidades.",
     },
     {
       imageUrl: "student1.jpg",
       name: "Goria Coast",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Administrador de sistemas",
+      des: "Como profesional de TI, siempre estoy en busca de actualizaciones. MarketClass me mantiene al día con las últimas tendencias y herramientas. ¡Muy recomendado!",
     },
     {
       imageUrl: "student2.jpg",
       name: "Thomas Smith",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Marketing digital",
+      des: "MarketClass no solo ofrece cursos de alta calidad, sino que también fomenta la comunidad. He conocido a personas increíbles a través de los foros de discusión.",
     },
     {
       imageUrl: "student3.jpg",
       name: "Hurin Seary",
-      status: "Digital Marketing Executive",
-      des: "Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.",
+      status: "Desarrollador web front-end",
+      des: "MarketClass es la clave para avanzar en mi carrera de desarrollo web. Los instructores son apasionados y están comprometidos con el éxito de los estudiantes. ¡No puedo esperar para seguir aprendiendo!",
     },
   ];
   const brandsettings = {
@@ -170,10 +170,10 @@ const Home = () => {
             </div>
             <div className="col-xl-6 col-lg-7 order-lg-1 pt-lg--10 pb-lg--10 xl-p-5">
               <h2 className="display3-size display2-md-size fw-700">
-                Find the best perfect Online Course
+                Encuentra el curso online perfecto
               </h2>
               <h4 className="text-grey-500 font-xssss fw-500 ml-1 aos-init lh-24">
-                For only course you need to learn web development
+                Cientos de cursos para comenzar tu camino al éxito
               </h4>
               <div className="form-group mt-lg-5 p-3 border-light border p-2 bg-white rounded-lg">
                 <div className="row">
@@ -182,7 +182,7 @@ const Home = () => {
                       href="/courses-grid"
                       className="w-100 btn font-xssss fw-600 ls-3 banner-btn p-0 border-0 text-uppercase light-btn "
                     >
-                      Search Courses
+                      Buscar cursos
                     </a>
                   </div>
                   <div className="col-6">
@@ -190,14 +190,14 @@ const Home = () => {
                       href="/register"
                       className="w-100 btn bg-current text-white font-xssss fw-600 ls-3  p-0 border-0 text-uppercase create-account-btn"
                     >
-                      Create an account
+                      Crear una cuenta
                     </a>
                   </div>
                 </div>
               </div>
               <h4 className="text-grey-500 font-xssss fw-500 ml-1 lh-24">
-                <b className="text-grey-800">Popular Courses:</b> Designer,
-                Developer, PHP, HTML, CSS, SCSS
+                <b className="text-grey-800">Cursos Populares:</b> Diseño,
+                Programación, PHP, HTML, CSS, SCSS
               </h4>
             </div>
           </div>
@@ -209,12 +209,10 @@ const Home = () => {
           <div className="row justify-content-center">
             <div className="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center mb-5">
               <h2 className="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
-                Explore our Course Categories
+                Explorar las distintas categorías
               </h2>
               <p className="fw-300 font-xsss lh-28 text-grey-500">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dol ad minim veniam, quis
-                nostrud exercitation
+              Descubre un mundo de conocimiento al explorar las diversas categorías disponibles en MarketClass. Desde programación hasta análisis de datos y más, encontrarás cursos y recursos que se adaptan a tus intereses y objetivos de aprendizaje.
               </p>
             </div>
           </div>
@@ -249,12 +247,10 @@ const Home = () => {
           <div className="row justify-content-center">
             <div className="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
               <h2 className="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
-                How to work
+                Aprovecha al máximo nuesta plataforma
               </h2>
               <p className="fw-300 font-xsss lh-28 text-grey-500">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dol ad minim veniam, quis
-                nostrud exercitation
+              En MarketClass, te ofrecemos una experiencia de aprendizaje enriquecedora y flexible, diseñada para impulsar tu éxito en el mundo de la tecnología y la innovación.
               </p>
             </div>
           </div>
@@ -284,12 +280,10 @@ const Home = () => {
           <div className="row justify-content-center">
             <div className="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center mb-5">
               <h2 className="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
-                Online Popular Course
+                Cursos populares online
               </h2>
               <p className="fw-300 font-xsss lh-28 text-grey-500">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dol ad minim veniam, quis
-                nostrud exercitation
+              Descubre nuestra selección de cursos en línea altamente demandados. Amplía tus horizontes y adquiere habilidades relevantes con nuestros cursos líderes en el mercado.
               </p>
             </div>
           </div>
@@ -315,22 +309,22 @@ const Home = () => {
             <div className="experience-box">
               <img src="assets/images/students.png" alt="students icon" />
               <p>260K +</p>
-              <p>Worldwide Student</p>
+              <p>Estudiantes en todo el mundo</p>
             </div>
             <div className="experience-box">
               <img src="assets/images/experience.png" alt="students icon" />
               <p>24 +</p>
-              <p>Years Experience</p>
+              <p>Años de experiencia</p>
             </div>
             <div className="experience-box">
               <img src="assets/images/courses.png" alt="students icon" />
               <p>550 +</p>
-              <p>Professional Courses</p>
+              <p>Cursos profesionales</p>
             </div>
             <div className="experience-box">
               <img src="assets/images/reviews.png" alt="students icon" />
               <p>2M +</p>
-              <p>Amazing Review</p>
+              <p>Reseñas increíbles</p>
             </div>
           </div>
         </div>
@@ -341,7 +335,7 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-6 text-left mb-3 pb-0">
               <h2 className="text-grey-800 fw-700 font-xl lh-2">
-                Customer love what we do
+              Nuestros clientes aman lo que hacemos
               </h2>
             </div>
 

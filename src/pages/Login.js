@@ -31,8 +31,7 @@ const Login = () => {
                   </h1>
                 </Link>
                 <h2 className="fw-700 display1-size display2-md-size mb-3">
-                  Login into <br />
-                  your account
+                  Iniciar Sesión <br />
                 </h2>
                 <form>
                   <div className="form-group icon-input mb-3">
@@ -40,14 +39,14 @@ const Login = () => {
                     <input
                       type="text"
                       className="style2-input pl-5 form-control text-grey-900 font-xssss fw-600"
-                      placeholder="Email Address"
+                      placeholder="Correo electrónico"
                     />
                   </div>
                   <div className="form-group icon-input mb-1">
                     <input
                       type="Password"
                       className="style2-input pl-5 form-control text-grey-900 font-xssss ls-3"
-                      placeholder="Password"
+                      placeholder="Contraseña"
                     />
                     <i className="font-sm ti-lock text-grey-500 pr-0"></i>
                   </div>
@@ -61,13 +60,13 @@ const Login = () => {
                       className="form-check-label font-xssss text-grey-500"
                       htmlFor="exampleCheck1"
                     >
-                      Remember me
+                      Recuérdame
                     </label>
                     <a
                       href="/forgot"
                       className="fw-600 font-xssss text-grey-700 mt-1 float-right"
                     >
-                      Forgot your Password?
+                      Olvidaste tu contraseña?
                     </a>
                   </div>
                 </form>
@@ -78,13 +77,13 @@ const Login = () => {
                       onClick={validateUser}
                       className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                     >
-                      Login
+                      Iniciar sesión
                     </button>
                   </div>
                   <h6 className="text-grey-500 font-xssss fw-500 mt-0 mb-0 lh-32">
-                    Dont have account{" "}
+                    No tienes una cuenta?{" "}
                     <a href="/register" className="link fw-700 ml-1">
-                      Register
+                      Registrarme
                     </a>
                   </h6>
                 </div>

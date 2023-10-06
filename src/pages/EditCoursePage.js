@@ -18,7 +18,7 @@ const EditCoursePage = () => {
             <div className="container px-3 py-4">
               <div className="row">
                 <div className="col-lg-12 d-flex mb-4">
-                  <h2 className="text-grey-900 font-md fw-700">Edit Course</h2>
+                  <h2 className="text-grey-900 font-md fw-700">Editar curso</h2>
                   <i className="ml-auto feather-command font-lg text-grey-500"></i>
                 </div>
               </div>
