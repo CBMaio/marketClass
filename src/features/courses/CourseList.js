@@ -4,12 +4,7 @@ import { selectAllCourses, fetchCourses } from "./coursesSlice";
 import { fetchAuthors } from "../authors/authorsSlice";
 import CourseCard from "../../components/CourseCard";
 
-const CourseList = ({
-  limit = false,
-  queryFilter,
-  selectedCategory,
-  getCoursesLength,
-}) => {
+const CourseList = ({ limit = false, queryFilter, selectedCategory }) => {
   const [coursesToShow, setCoursesToShow] = useState([]);
   const dispatch = useDispatch();
   const courseData = useSelector(selectAllCourses);

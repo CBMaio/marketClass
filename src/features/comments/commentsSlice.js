@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const fetchComments = createAsyncThunk(
-  "comments/fetchNotifications",
+  "comments/fetchComments",
   async () => {
     const response = [
       {

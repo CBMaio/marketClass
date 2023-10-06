@@ -58,3 +58,9 @@ export const categories = [
 ];
 
 export const BREAKPOIN_SMALL = 1024;
+
+export const commentsStatus = {
+  PENDING: "rending",
+  RECEIVED: "received",
+  CANCELLED: "cancelled",
+};

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import Header from "../components/Header";
 
 import Footer from "../components/Footer";
@@ -90,26 +90,37 @@ const About = () => {
           <div className="row">
             <div className="col-lg-6">
               <h2 className="text-grey-900 fw-700 display1-size display2-md-size pb-2 mb-0 mt-3 d-block lh-3">
-                Elegí la mejor clase<br /> para vos 
+                Elegí la mejor clase
+                <br /> para vos
               </h2>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-6">
               <h4 className=" fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-0">
-              MarketClass es una plataforma educativa que ofrece cursos en línea y recursos para el desarrollo de habilidades.
+                MarketClass es una plataforma educativa que ofrece cursos en
+                línea y recursos para el desarrollo de habilidades.
               </h4>
             </div>
 
             <div className="col-lg-12 mt-3">
               <p>
-              En MarketClass, creemos en el poder de la educación para transformar carreras y abrir puertas al éxito en el mundo de la tecnología y los negocios. Fundada con la visión de ser un faro de conocimiento y excelencia, nuestra plataforma se ha convertido en un referente en la formación en línea.
-
-              Nuestra misión es proporcionar a estudiantes y profesionales las herramientas y los conocimientos necesarios para triunfar en un mundo cada vez más digitalizado y competitivo. Colaboramos con expertos en la industria para ofrecer cursos de alta calidad que aborden las tendencias actuales y las mejores prácticas.
-
-              En MarketClass, no solo impartimos conocimiento, también cultivamos la comunidad. Fomentamos la colaboración, el networking y el aprendizaje interactivo para que nuestros estudiantes se conviertan en profesionales preparados para los desafíos del mercado global.
-
-              Únete a nosotros en este emocionante viaje hacia el éxito. Tu camino comienza aquí, en MarketClass.
+                En MarketClass, creemos en el poder de la educación para
+                transformar carreras y abrir puertas al éxito en el mundo de la
+                tecnología y los negocios. Fundada con la visión de ser un faro
+                de conocimiento y excelencia, nuestra plataforma se ha
+                convertido en un referente en la formación en línea. Nuestra
+                misión es proporcionar a estudiantes y profesionales las
+                herramientas y los conocimientos necesarios para triunfar en un
+                mundo cada vez más digitalizado y competitivo. Colaboramos con
+                expertos en la industria para ofrecer cursos de alta calidad que
+                aborden las tendencias actuales y las mejores prácticas. En
+                MarketClass, no solo impartimos conocimiento, también cultivamos
+                la comunidad. Fomentamos la colaboración, el networking y el
+                aprendizaje interactivo para que nuestros estudiantes se
+                conviertan en profesionales preparados para los desafíos del
+                mercado global. Únete a nosotros en este emocionante viaje hacia
+                el éxito. Tu camino comienza aquí, en MarketClass.
               </p>
             </div>
             <div className="col-lg-12 mt-5 text-center pt-3">
@@ -139,7 +150,8 @@ const About = () => {
                 Explora nuestros cursos
               </h2>
               <p className="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0  mt-3 w-75 w-xs-90">
-              Descubre cómo mejorar tus habilidades y dominar el mundo digital.
+                Descubre cómo mejorar tus habilidades y dominar el mundo
+                digital.
               </p>
 
               <h4 className="fw-600 font-xs mt-5 mb-2">
@@ -147,23 +159,28 @@ const About = () => {
                 Elige lo que deseas aprender
               </h4>
               <p className="fw-300 font-xsss lh-28 text-grey-500 mt-0 ml-4 pl-3 w-75 w-xs-90">
-                Ya sea que estés buscando cursos sobre programación, desarrollo web, análisis de datos o cualquier otra área de la tecnología.
+                Ya sea que estés buscando cursos sobre programación, desarrollo
+                web, análisis de datos o cualquier otra área de la tecnología.
               </p>
 
               <h4 className="fw-600 font-xs mt-4 mb-2">
                 <i className="ti-check btn-round-xs text-white bg-success mr-2 border"></i>
-                Encuentra lo que necesitas: 
+                Encuentra lo que necesitas:
               </h4>
               <p className="fw-300 font-xsss lh-28 text-grey-500 mt-0 ml-4 pl-3 w-75 w-xs-90">
-              Explora y filtra entre cientos de opciones de cursos. Lee reseñas, examina detalles del contenido y encuentra la formación perfecta para tus objetivos.
+                Explora y filtra entre cientos de opciones de cursos. Lee
+                reseñas, examina detalles del contenido y encuentra la formación
+                perfecta para tus objetivos.
               </p>
 
               <h4 className="fw-600 font-xs mt-4 mb-2">
                 <i className="ti-check btn-round-xs text-white bg-success mr-2 border"></i>
-                Explora oportunidades asombrosas: 
+                Explora oportunidades asombrosas:
               </h4>
               <p className="fw-300 font-xsss lh-28 text-grey-500 mt-0 ml-4 pl-3 w-75 w-xs-90">
-              Empieza a aprender y mejora tus habilidades directamente desde la página del curso. En MarketClass, te ayudamos a descubrir y aprovechar al máximo tu potencial en el mundo de la tecnología.
+                Empieza a aprender y mejora tus habilidades directamente desde
+                la página del curso. En MarketClass, te ayudamos a descubrir y
+                aprovechar al máximo tu potencial en el mundo de la tecnología.
               </p>
             </div>
           </div>
@@ -249,7 +266,8 @@ const About = () => {
                   </div>
                   <div className="col-lg-8 text-center">
                     <p className="font-xsss lh-28 text-white mb-0 d-none-xs">
-                      Enviaremos semanalmente el boletín de noticias, para que estes informado de todas las novedades.
+                      Enviaremos semanalmente el boletín de noticias, para que
+                      estes informado de todas las novedades.
                     </p>
                   </div>
                   <div className="col-lg-6 text-center mt-4 mb-3">
