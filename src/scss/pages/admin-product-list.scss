@@ -68,6 +68,7 @@
     }
 
     .course-image-container {
+      cursor: pointer;
       padding: 14px;
       width: 100px;
    
@@ -77,6 +78,7 @@
     }
 
     .course-title-container {
+      cursor: pointer;
       font-size: 13px;
       padding-left: 14px;
     }
@@ -97,6 +99,40 @@
 
   .course-data-modal {
     background-color: white;
+    width: 90%;
+    
+    .close-btn {
+      cursor: pointer;
+    }
+
+    .course-modal-body {
+      .actions-container {
+        .light-filled-btn {
+          background-color: var(--light-purple);
+          border: 1px solid var(--primary-purple);
+          color: var(--primary-purple);
+        }
+
+        .filled-btn {
+          background-color: var(--primary-purple);
+          color: white;
+        }
+
+        .outline-btn {
+          background: white;
+          border: 1px solid var(--primary-purple);
+          color: var(--primary-purple);
+        }
+
+        .action-btn {
+          margin-bottom: 12px;
+
+          &:hover {
+            opacity: .6;
+          }
+        }
+      }
+    }
   }
 }
 

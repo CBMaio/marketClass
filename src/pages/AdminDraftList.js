@@ -1,20 +1,29 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
 import Adminfooter from "../components/Adminfooter";
 import Pagination from "../components/Pagination";
-import "../scss/pages/admin-product-list.scss";
 import DraftCoursesList from "../features/courses/DraftCoursesList";
+import { BREAKPOIN_SMALL } from "../utils";
+
+import "../scss/pages/admin-product-list.scss";
 
 const AdminDraftList = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < BREAKPOIN_SMALL);
+
+  const onResizeScrren = () => {
+    setIsMobile(window.innerWidth < BREAKPOIN_SMALL);
+  };
+
+  window.addEventListener("resize", () => onResizeScrren());
   return (
     <Fragment>
       <div id="wrapper">
         <Adminsidebar />
 
         <div id="content-wrapper" className="d-flex flex-column">
-          <div id="content">
+          <div id="content" className="admin-product-list-main">
             <AdminTopnav />
 
             <div className="container px-3 py-4">
@@ -27,30 +36,50 @@ const AdminDraftList = () => {
                       </h4>
                     </div>
                     <div className="card-body p-4">
-                      <div className="table-responsive">
-                        <table className="table table-admin mb-0">
-                          <thead className="bg-greylight rounded-10 ovh">
-                            <tr>
-                              <th className="border-0"></th>
-                              <th className="border-0" scope="col">
-                                Name
-                              </th>
-                              <th className="border-0" scope="col">
-                                Price
-                              </th>
-                              <th className="border-0" scope="col">
-                                Category
-                              </th>
-                              <th scope="col" className="text-right border-0">
-                                Action
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <DraftCoursesList />
-                          </tbody>
-                        </table>
-                      </div>
+                      {!isMobile ? (
+                        <div className="table-responsive desktop-view">
+                          <table className="table table-admin mb-0">
+                            <thead className="bg-greylight rounded-10 ovh">
+                              <tr>
+                                <th className="border-0"></th>
+                                <th className="border-0" scope="col">
+                                  Nombre
+                                </th>
+                                <th className="border-0" scope="col">
+                                  Precio
+                                </th>
+                                <th className="border-0" scope="col">
+                                  Categoria
+                                </th>
+                                <th className="border-0" scope="col">
+                                  Frecuencia
+                                </th>
+                                <th scope="col" className="text-right border-0">
+                                  Acciones
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <DraftCoursesList />
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : (
+                        <div className="table-responsive mobile-view">
+                          <div className="table table-admin mb-0">
+                            <div className="bg-greylight rounded-10 ovh">
+                              <div className="table-header">
+                                <div className="border-0 title-header">
+                                  Nombre
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <DraftCoursesList />
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <Pagination divClass="pagination justify-content-center mt-5" />

@@ -16,7 +16,7 @@ const WelcomeAdmin = () => {
             <AdminTopnav />
 
             <main className="main-section container px-3 py-4">
-              <h1>
+              <h1 className="col-12 display4-xs-size">
                 Bienvenido,
                 <br /> User!
               </h1>

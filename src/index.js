@@ -51,7 +51,7 @@ import Coursesgridone from "./pages/Coursesgrid";
 // import Coursesgridthree from "./pages/Coursesgridthree";
 import Popupchat from "./pages/Popupchat";
 
-import AuthorProfile from "./pages/Authorprofile";
+import AuthorProfile from "./pages/AuthorProfile";
 // import Authorprofile from "./pages/Authorprofile";
 import Coursedetails from "./pages/Coursedetails";
 import Coursedetailstwo from "./pages/Coursedetailstwo";

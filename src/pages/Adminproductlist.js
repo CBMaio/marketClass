@@ -46,19 +46,19 @@ const Adminproductlist = () => {
                               <tr>
                                 <th className="border-0"></th>
                                 <th className="border-0" scope="col">
-                                  Name
+                                  Nombre
                                 </th>
                                 <th className="border-0" scope="col">
-                                  Price
+                                  Precio
                                 </th>
                                 <th className="border-0" scope="col">
-                                  Tag
+                                  Categoria
                                 </th>
                                 <th className="border-0" scope="col">
-                                  Lesson
+                                  Frecuencia
                                 </th>
                                 <th scope="col" className="text-right border-0">
-                                  Action
+                                  Acciones
                                 </th>
                               </tr>
                             </thead>
@@ -73,20 +73,8 @@ const Adminproductlist = () => {
                             <div className="bg-greylight rounded-10 ovh">
                               <div className="table-header">
                                 <div className="border-0 title-header">
-                                  Name
+                                  Nombre
                                 </div>
-                                {/* <th className="border-0" scope="col">
-                                Price
-                              </th>
-                              <th className="border-0" scope="col">
-                                Tag
-                              </th>
-                              <th className="border-0" scope="col">
-                                Lesson
-                              </th>
-                              <th scope="col" className="text-right border-0">
-                                Action
-                              </th> */}
                               </div>
                             </div>
                             <div>

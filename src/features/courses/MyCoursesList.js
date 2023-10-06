@@ -81,21 +81,19 @@ const MyCoursesList = () => {
                 </td>
               </tr>
             ) : (
-              <div className="my-course-line mobile-view course-row">
+              <div
+                className="my-course-line mobile-view course-row"
+                onClick={() => openModalForSelectedCourse(value)}
+              >
                 <div className="product-thumbnail text-start ps-0 course-image-container">
-                  <Link to={`/edit-course/${value.id}`} className="small-icon">
-                    <img
-                      src="/assets/images/course-default.avif"
-                      alt="product"
-                      className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
-                    />
-                  </Link>
+                  <img
+                    src="/assets/images/course-default.avif"
+                    alt="product"
+                    className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
+                  />
                 </div>
 
-                <div
-                  className="course-title-container"
-                  onClick={() => openModalForSelectedCourse(value)}
-                >
+                <div className="course-title-container">
                   <b>{value.title}</b>
                 </div>
               </div>
@@ -105,7 +103,7 @@ const MyCoursesList = () => {
       {isOpenCourseModal && (
         <div className="course-data-overlay">
           <div className="course-data-modal p-4 rounded-lg">
-            <div onClick={closeCourseModal}>
+            <div className="close-btn" onClick={closeCourseModal}>
               <i className="text-white font-lg text-grey-400 feather-x"></i>
             </div>
             <div className="course-title pt-3">
@@ -123,28 +121,29 @@ const MyCoursesList = () => {
               <div>
                 <span>Categoria: </span>
                 <span>
-                  <b>$ {selectedCourse.category} </b>
+                  <b>{selectedCourse.category} </b>
                 </span>
               </div>
               <div>
                 <span>Frecuencia: </span>
                 <span>
-                  <b>$ {selectedCourse.frequency} </b>
+                  <b>{selectedCourse.frequency} </b>
                 </span>
               </div>
 
-              {/* <td className="product-remove text-right">
-                <Button className="bg-transparent border-0 pr-0 course-action">
-                  <Link to={`/edit-course/${selectedCourse.id}`}>
-                    <i className="feather-edit mr-1 font-xs text-grey-500"></i>
-                    <span className="button-legend">Editar</span>
+              <div className="mt-4 actions-container">
+                <Button className="col-12 bg-current border-0 action-btn filled-btn">
+                  <Link
+                    className="text-white"
+                    to={`/edit-course/${selectedCourse.id}`}
+                  >
+                    <span>Editar</span>
                   </Link>
                 </Button>
-                <Button className="bg-transparent border-0 course-action">
-                  <i className="ti-trash  font-xs text-danger"></i>
-                  <span className="button-legend">Eliminar</span>
+                <Button className="col-12 action-btn outline-btn">
+                  <span>Eliminar</span>
                 </Button>
-              </td> */}
+              </div>
             </div>
           </div>
         </div>
