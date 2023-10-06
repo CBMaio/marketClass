@@ -113,7 +113,7 @@ const DraftCoursesList = () => {
               <i className="text-white font-lg text-grey-400 feather-x"></i>
             </div>
             <div className="course-title pt-3">
-              <h1 className="text-grey-900 fw-700 mb-3 lh-1 text-center">
+              <h1 className="text-grey-900 fw-700 mb-3 lh-3 text-center">
                 {selectedCourse.title}
               </h1>
             </div>

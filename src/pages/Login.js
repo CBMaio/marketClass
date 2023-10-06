@@ -1,13 +1,31 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../scss/pages/login-register.scss";
 import "../scss/variables.scss";
 
 const Login = () => {
   const navigate = useNavigate();
-  const validateUser = () => {
+  const [showError, setShowError] = useState(false);
+
+  const validateUser = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const { email, password } = Object.fromEntries(formData.entries());
+
+    if (email !== "admin" || password !== "admin") {
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 1000);
+      return;
+    }
+
     navigate("/welcome-admin");
   };
+
   return (
     <Fragment>
       <div className="main-wrap">
@@ -33,32 +51,42 @@ const Login = () => {
                 <h2 className="fw-700 display1-size display2-md-size mb-3">
                   Iniciar Sesión <br />
                 </h2>
-                <form>
+                <form onSubmit={validateUser}>
                   <div className="form-group icon-input mb-3">
                     <i className="font-sm ti-email text-grey-500 pr-0"></i>
                     <input
                       type="text"
+                      required
                       className="style2-input pl-5 form-control text-grey-900 font-xssss fw-600"
                       placeholder="Correo electrónico"
+                      name="email"
                     />
                   </div>
                   <div className="form-group icon-input mb-1">
                     <input
                       type="Password"
+                      required
                       className="style2-input pl-5 form-control text-grey-900 font-xssss ls-3"
                       placeholder="Contraseña"
+                      name="password"
                     />
                     <i className="font-sm ti-lock text-grey-500 pr-0"></i>
                   </div>
+                  {showError && (
+                    <div className="font-xssss text-danger mb-2">
+                      Usuario o contraseña incorrectos
+                    </div>
+                  )}
+
                   <div className="form-check text-left mb-3">
                     <input
                       type="checkbox"
                       className="form-check-input mt-2"
-                      id="exampleCheck1"
+                      id="saveData"
                     />
                     <label
                       className="form-check-label font-xssss text-grey-500"
-                      htmlFor="exampleCheck1"
+                      htmlFor="saveData"
                     >
                       Recuérdame
                     </label>
@@ -69,24 +97,23 @@ const Login = () => {
                       Olvidaste tu contraseña?
                     </a>
                   </div>
-                </form>
-
-                <div className="col-sm-12 p-0 text-left">
-                  <div className="form-group mb-1">
-                    <button
-                      onClick={validateUser}
-                      className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
-                    >
-                      Iniciar sesión
-                    </button>
+                  <div className="col-sm-12 p-0 text-left">
+                    <div className="form-group mb-1">
+                      <button
+                        type="submit"
+                        className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
+                      >
+                        Iniciar sesión
+                      </button>
+                    </div>
+                    <h6 className="text-grey-500 font-xssss fw-500 mt-0 mb-0 lh-32">
+                      No tienes una cuenta?{" "}
+                      <a href="/register" className="link fw-700 ml-1">
+                        Registrarme
+                      </a>
+                    </h6>
                   </div>
-                  <h6 className="text-grey-500 font-xssss fw-500 mt-0 mb-0 lh-32">
-                    No tienes una cuenta?{" "}
-                    <a href="/register" className="link fw-700 ml-1">
-                      Registrarme
-                    </a>
-                  </h6>
-                </div>
+                </form>
               </div>
             </div>
           </div>
