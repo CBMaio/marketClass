@@ -21,7 +21,8 @@ export const fetchComments = createAsyncThunk(
           email: "user123@gmail.com",
         },
         status: "PENDIENTE",
-        content: "Por favor, inscríbeme en el curso.",
+        content:
+          "Este curso de introducción a la programación fue excelente para principiantes. Los conceptos se presentaron de manera clara y fácil de entender, lo que me ayudó a sentar una base sólida en la programación",
       },
       {
         id: 2,
@@ -60,7 +61,8 @@ export const fetchComments = createAsyncThunk(
           email: "user101@gmail.com",
         },
         status: "PENDIENTE",
-        content: "Cuándo comienza el curso?",
+        content:
+          "El curso de JavaScript avanzado me ayudó a llevar mis habilidades de programación al siguiente nivel. Los proyectos prácticos y desafiantes realmente consolidaron mis conocimientos.",
       },
       {
         id: 5,
@@ -86,7 +88,8 @@ export const fetchComments = createAsyncThunk(
           email: "user303@gmail.com",
         },
         status: "PENDIENTE",
-        content: "Necesito ayuda, no puedo acceder.",
+        content:
+          "El curso de Diseño de Bases de Datos fue una experiencia increíble. Aprendí a crear estructuras de datos eficientes y bien diseñadas que son fundamentales para cualquier proyecto de software.",
       },
       {
         id: 7,
@@ -125,7 +128,8 @@ export const fetchComments = createAsyncThunk(
           email: "user606@gmail.com",
         },
         status: "PENDIENTE",
-        content: "Puedo cambiarme de turno?",
+        content:
+          "El curso de Desarrollo Mobile fue emocionante y relevante. Aprendí a crear aplicaciones móviles de alta calidad desde cero, y ahora tengo las habilidades para desarrollar en iOS y Android.",
       },
       {
         id: 10,
@@ -164,7 +168,8 @@ export const fetchComments = createAsyncThunk(
           email: "user909@gmail.com",
         },
         status: "PENDIENTE",
-        content: "Cuándo es la próxima clase?",
+        content:
+          "Este curso de Estrategias de Digital Marketing me proporcionó una comprensión profunda de cómo impulsar el éxito en línea. Aprendí a diseñar campañas efectivas y atraer a la audiencia adecuada.",
       },
       {
         id: 13,
@@ -190,7 +195,8 @@ export const fetchComments = createAsyncThunk(
           email: "user111@gmail.com",
         },
         status: "PENDIENTE",
-        content: "Necesito ayuda!",
+        content:
+          "El curso proporcionó ejemplos del mundo real y casos de estudio que lo hicieron muy aplicable. Lo considero un recurso invaluable para quienes trabajan en el área",
       },
       {
         id: 15,

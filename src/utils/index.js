@@ -1,11 +1,11 @@
 export const categories = [
   {
     id: 1,
-    name: "Web Development",
+    name: "Desarrollo web",
   },
   {
     id: 2,
-    name: "Programming",
+    name: "Programación",
   },
   {
     id: 3,
@@ -13,47 +13,47 @@ export const categories = [
   },
   {
     id: 4,
-    name: "Design",
+    name: "Diseño",
   },
   {
     id: 5,
-    name: "Data Science",
+    name: "Ciencia de datos",
   },
   {
     id: 6,
-    name: "Photography",
+    name: "Fotografía",
   },
   {
     id: 7,
-    name: "Finance",
+    name: "Finanzas",
   },
   {
     id: 8,
-    name: "Art",
+    name: "Arte",
   },
   {
     id: 9,
-    name: "Business",
+    name: "Negocio",
   },
   {
     id: 10,
-    name: "Health",
+    name: "Salud",
   },
   {
     id: 11,
-    name: "Language",
+    name: "Idioma",
   },
   {
     id: 12,
-    name: "Cooking",
+    name: "Cocina",
   },
   {
     id: 13,
-    name: "Environment",
+    name: "Ambiente",
   },
   {
     id: 14,
-    name: "Mobile Development",
+    name: "Desarrollo Móvil",
   },
 ];
 

@@ -12,22 +12,26 @@ const Home = () => {
     {
       name: "Programación",
       img: "assets/images/language.svg",
-      description: "Domina el arte de la programación con nuestros cursos especializados.",
+      description:
+        "Domina el arte de la programación con nuestros cursos especializados.",
     },
     {
       name: "Diseño Gráfico",
       img: "assets/images/graphic-design.svg",
-      description: "Desarrolla tu creatividad y habilidades visuales con nuestros cursos de diseño gráfico.",
+      description:
+        "Desarrolla tu creatividad y habilidades visuales con nuestros cursos de diseño gráfico.",
     },
     {
       name: "Ciberseguridad",
       img: "assets/images/content-writing.svg",
-      description: "Aprende sobre técnicas de protección y estrategias de seguridad con nuestros cursos.",
+      description:
+        "Aprende sobre técnicas de protección y estrategias de seguridad con nuestros cursos.",
     },
     {
       name: "Data Science",
       img: "assets/images/finance.svg",
-      description: "Adquiere habilidades en análisis de datos, aprendizaje automático y visualización de datos.",
+      description:
+        "Adquiere habilidades en análisis de datos, aprendizaje automático y visualización de datos.",
     },
   ];
 
@@ -212,7 +216,10 @@ const Home = () => {
                 Explorar las distintas categorías
               </h2>
               <p className="fw-300 font-xsss lh-28 text-grey-500">
-              Descubre un mundo de conocimiento al explorar las diversas categorías disponibles en MarketClass. Desde programación hasta análisis de datos y más, encontrarás cursos y recursos que se adaptan a tus intereses y objetivos de aprendizaje.
+                Descubre un mundo de conocimiento al explorar las diversas
+                categorías disponibles en MarketClass. Desde programación hasta
+                análisis de datos y más, encontrarás cursos y recursos que se
+                adaptan a tus intereses y objetivos de aprendizaje.
               </p>
             </div>
           </div>
@@ -250,7 +257,9 @@ const Home = () => {
                 Aprovecha al máximo nuesta plataforma
               </h2>
               <p className="fw-300 font-xsss lh-28 text-grey-500">
-              En MarketClass, te ofrecemos una experiencia de aprendizaje enriquecedora y flexible, diseñada para impulsar tu éxito en el mundo de la tecnología y la innovación.
+                En MarketClass, te ofrecemos una experiencia de aprendizaje
+                enriquecedora y flexible, diseñada para impulsar tu éxito en el
+                mundo de la tecnología y la innovación.
               </p>
             </div>
           </div>
@@ -283,7 +292,9 @@ const Home = () => {
                 Cursos populares online
               </h2>
               <p className="fw-300 font-xsss lh-28 text-grey-500">
-              Descubre nuestra selección de cursos en línea altamente demandados. Amplía tus horizontes y adquiere habilidades relevantes con nuestros cursos líderes en el mercado.
+                Descubre nuestra selección de cursos en línea altamente
+                demandados. Amplía tus horizontes y adquiere habilidades
+                relevantes con nuestros cursos líderes en el mercado.
               </p>
             </div>
           </div>
@@ -335,7 +346,7 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-6 text-left mb-3 pb-0">
               <h2 className="text-grey-800 fw-700 font-xl lh-2">
-              Nuestros clientes aman lo que hacemos
+                Nuestros clientes aman lo que hacemos
               </h2>
             </div>
 
@@ -361,7 +372,7 @@ const Home = () => {
                       <p className="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0 ">
                         {value.des}
                       </p>
-                      <div className="star d-block w-100 text-right mt-4 mb-0">
+                      {/* <div className="star d-block w-100 text-right mt-4 mb-0">
                         <img
                           src="assets/images/star.png"
                           alt="star"
@@ -387,7 +398,7 @@ const Home = () => {
                           alt="star"
                           className="w15 mr-1 float-left mr-2"
                         />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}

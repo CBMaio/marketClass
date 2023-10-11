@@ -7,6 +7,7 @@ const AddCourseForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [addRequestStatus, setAddRequestStatus] = useState("idle");
+  const [succeededAdded, setSucceededAdded] = useState(false);
 
   const onTitleHandle = (e) => setTitle(e.target.value);
   const onDescriptioneHandle = (e) => setDescription(e.target.value);
@@ -20,10 +21,12 @@ const AddCourseForm = () => {
       await dispatch(addNewCourse({ title, description })).unwrap();
       setTitle("");
       setDescription("");
+      setSucceededAdded(true);
     } catch (error) {
       console.error("Failed to save the course: ", error);
     } finally {
       setAddRequestStatus("idle");
+      window.scrollTo(0, 0);
     }
   };
 
@@ -32,6 +35,11 @@ const AddCourseForm = () => {
       <div className="col-lg-12 ">
         <div className="card border-0 px-4 pt-4 mt-2 rounded-lg admin-form">
           <div className="card-body d-block">
+            {succeededAdded && (
+              <div className="col-12  text-center font-xsss fw-700 p-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-4 mr-1">
+                <span>Curso agregado con éxito!</span>
+              </div>
+            )}
             <h4 className="font-xss text-grey-800 mb-4 mt-0 fw-700">
               Información del curso
             </h4>
@@ -139,10 +147,7 @@ const AddCourseForm = () => {
               Subir imagen
             </h4>
             <div className="form-group mb30">
-              <div
-                className="file-upload-wrapper"
-                data-text="Seleccionar!"
-              >
+              <div className="file-upload-wrapper" data-text="Seleccionar!">
                 <input
                   name="file-upload-field"
                   type="file"

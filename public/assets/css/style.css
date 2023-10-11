@@ -1725,7 +1725,7 @@ input[type='checkbox'] {
 
 textarea {
   overflow: auto;
-  resize: vertical;
+  resize: none;
 }
 
 fieldset {

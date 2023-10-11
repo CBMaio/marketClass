@@ -15,11 +15,11 @@ export const fetchAuthors = createAsyncThunk(
         name: "Jane Smith",
         email: "janesmith@gmail.com",
         experience:
-        "Jane Smith es una autora experimentada con más de 20 años de experiencia en la escritura. Ha escrito numerosas novelas exitosas y ha recibido múltiples premios literarios por su trabajo.",
+          "Jane Smith es una autora experimentada con más de 20 años de experiencia en la escritura. Ha escrito numerosas novelas exitosas y ha recibido múltiples premios literarios por su trabajo.",
         qualifications:
-        "Jane posee una Maestría en Escritura Creativa de una prestigiosa universidad, donde perfeccionó sus habilidades y desarrolló su voz única como escritora.",
+          "Jane posee una Maestría en Escritura Creativa de una prestigiosa universidad, donde perfeccionó sus habilidades y desarrolló su voz única como escritora.",
         interests:
-        "Los intereses de Jane incluyen la ficción histórica, la escritura de viajes y explorar la intersección entre la tecnología y las emociones humanas en su ficción especulativa.",
+          "Los intereses de Jane incluyen la ficción histórica, la escritura de viajes y explorar la intersección entre la tecnología y las emociones humanas en su ficción especulativa.",
         key: "Maestría en Escritura Creativa",
         image: "",
       },
@@ -28,12 +28,12 @@ export const fetchAuthors = createAsyncThunk(
         name: "John Doe",
         email: "johndoe@gmail.com",
         experience:
-         "John es un autor en ciernes con una perspectiva fresca. Comenzó su carrera como escritor hace apenas cinco años, pero rápidamente ha ganado reconocimiento por sus ensayos y relatos reflexivos.",
+          "John es un autor en ciernes con una perspectiva fresca. Comenzó su carrera como escritor hace apenas cinco años, pero rápidamente ha ganado reconocimiento por sus ensayos y relatos reflexivos.",
         qualifications:
-         "John tiene un título en Filosofía, lo cual ha influido en su estilo de escritura y en sus elecciones temáticas. Él cree en el poder de la indagación filosófica en la narración.",
+          "John tiene un título en Filosofía, lo cual ha influido en su estilo de escritura y en sus elecciones temáticas. Él cree en el poder de la indagación filosófica en la narración.",
         interests:
-         "John está apasionado por explorar el existencialismo, la ética y la condición humana a través de su escritura. También es defensor de la sostenibilidad ambiental e incorpora estos temas en su trabajo.",
-        key: "Filosofía",
+          "John está apasionado por explorar el existencialismo, la ética y la condición humana a través de su escritura. También es defensor de la sostenibilidad ambiental e incorpora estos temas en su trabajo.",
+        key: "Ingeniero",
         image: "",
       },
       {
@@ -47,7 +47,7 @@ export const fetchAuthors = createAsyncThunk(
         interests:
           "Los intereses de Claire giran en torno a temas como el amor, la pérdida, la identidad y el poder del lenguaje. Se inspira en la naturaleza y la literatura clásica.",
         key: "Literatura",
-        image: ""
+        image: "",
       },
       {
         id: 4,
@@ -60,7 +60,7 @@ export const fetchAuthors = createAsyncThunk(
         interests:
           "David está fascinado por las posibles implicaciones éticas y sociales de las tecnologías emergentes. A menudo profundiza en temas de interacción entre humanos y máquinas y las consecuencias del avance tecnológico.",
         key: "Informática, Inteligencia Artificial",
-        image: ""
+        image: "",
       },
       {
         id: 5,
@@ -73,7 +73,7 @@ export const fetchAuthors = createAsyncThunk(
         interests:
           "Sarah está apasionada por fomentar la creatividad y la curiosidad en los jóvenes lectores. Sus intereses incluyen mundos de fantasía, criaturas mágicas y fomentar el amor por la lectura en los niños.",
         key: "Bellas Artes, Diseño Gráfico",
-        image: ""
+        image: "",
       },
       {
         id: 6,
@@ -86,8 +86,8 @@ export const fetchAuthors = createAsyncThunk(
         interests:
           "Los intereses de Alex giran en torno a descubrir historias ocultas del pasado, especialmente aquellas relacionadas con la justicia social, héroes olvidados y el impacto de los eventos históricos en individuos y sociedades.",
         key: "Historia",
-        image: ""
-      },      
+        image: "",
+      },
     ];
     return response;
   }

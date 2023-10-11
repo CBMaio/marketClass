@@ -217,7 +217,7 @@ const About = () => {
                       <p className="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0 ">
                         {value.des}
                       </p>
-                      <div className="star d-block w-100 text-right mt-4 mb-0">
+                      {/* <div className="star d-block w-100 text-right mt-4 mb-0">
                         <img
                           src="/assets/images//star.png"
                           alt="star"
@@ -243,7 +243,7 @@ const About = () => {
                           alt="star"
                           className="w15 mr-1 float-left mr-2"
                         />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}

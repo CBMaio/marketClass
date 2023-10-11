@@ -82,7 +82,7 @@ const AdminDraftList = () => {
                       )}
                     </div>
                   </div>
-                  <Pagination divClass="pagination justify-content-center mt-5" />
+                  {/* <Pagination divClass="pagination justify-content-center mt-5" /> */}
                 </div>
               </div>
             </div>

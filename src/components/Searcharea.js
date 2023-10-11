@@ -37,7 +37,7 @@ const Searcharea = ({ search }) => {
                   className="style1-select bg-transparent border-0 pl-5"
                   onChange={(e) => setSearchCategory(e.target.value)}
                 >
-                  <option value="all">All Categories</option>
+                  <option value="all">Ver todo</option>
                   {categories.map(({ id, name }) => (
                     <option key={id} value={name}>
                       {name}

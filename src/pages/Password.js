@@ -67,9 +67,12 @@ const Password = () => {
                     </div>
                     <div className="row">
                       <div className="col-lg-12 mb-0">
-                        <button className="bg-current text-center text-white font-xsss fw-600 p-3 w175 rounded-lg d-inline-block border-0">
+                        <div
+                          style={{ cursor: "pointer" }}
+                          className="bg-current text-center text-white font-xsss fw-600 p-3 w175 rounded-lg d-inline-block border-0"
+                        >
                           Guardar
-                        </button>
+                        </div>
                       </div>
                     </div>
                   </form>

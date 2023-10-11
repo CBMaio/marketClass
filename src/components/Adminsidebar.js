@@ -85,27 +85,15 @@ const Adminsidebar = () => {
             <span>Comentarios</span>
           </NavLink>
         </li>
-        {/* <li className="nav-item">
-          <NavLink className="navi-link" to="/admin-chat">
-            <i className="feather-message-square mr-2"></i>
-            <span>Chat</span>
+        <li className="nav-item">
+          <NavLink className="navi-link" to="/admin-requests">
+            <i className="feather-heart mr-2"></i>
+            <span>Contrataciones</span>
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="navi-link" to="/admin-email">
-            <i className="feather-mail mr-2"></i>
-            <span>Email</span>
-          </NavLink>
-        </li> */}
 
         <div className="sidebar-heading">Mi cuenta</div>
 
-        {/* <li className="nav-item">
-          <NavLink className="navi-link" to="/login">
-            <i className="feather-award mr-2"></i>
-            <span>Login Admin</span>
-          </NavLink>
-        </li> */}
         <li className="nav-item">
           <NavLink className="navi-link" to="/account-information">
             <i className="feather-user mr-2"></i>
@@ -125,20 +113,6 @@ const Adminsidebar = () => {
             <span>Salir</span>
           </NavLink>
         </li>
-        {/* 
-        <div className="mt-3"></div>
-
-        {/* <div className="sidebar-card d-lg-flex mt-auto p-4">
-          <p className="text-center mb-3 font-xsss text-grey-100 fw-500">
-            Become a <b>pro</b> <br /> Get more <b>features</b>
-          </p>
-          <NavLink
-            to="/admin"
-            className="bg-success text-white rounded-xl btn-cart w125 d-inline-block text-center font-xsssss p-3 fw-700 ls-3"
-          >
-            ANALYTICS
-          </NavLink>
-        </div> */}
       </ul>
     </>
   );

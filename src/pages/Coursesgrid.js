@@ -27,9 +27,7 @@ const Coursesgrid = () => {
               <Searcharea search={searchCourse} />
             </div>
             <div className="col-lg-12 pt-2 mb-4">
-              <h2 className="fw-400 font-lg">
-                Search <b>Results</b>
-              </h2>
+              <h2 className="fw-400 font-lg">Resultados</h2>
             </div>
 
             <CourseList
@@ -37,9 +35,9 @@ const Coursesgrid = () => {
               selectedCategory={searchProductByCategory}
             />
 
-            <div className="col-lg-12">
+            {/* <div className="col-lg-12">
               <Pagination divClass="pagination justify-content-center d-flex pt-5" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

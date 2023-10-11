@@ -77,9 +77,9 @@ const SingleCoursePage = () => {
                   </h6>
                   <h6 className="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0">
                     {/* TODO add comment date */}
-                   26 de Julio 8:20 PM
+                    26 de Julio 8:20 PM
                   </h6>
-                  <div className="star d-block w-100 text-left">
+                  {/* <div className="star d-block w-100 text-left">
                     <img
                       src="/assets/images/star.png"
                       alt="star"
@@ -105,7 +105,7 @@ const SingleCoursePage = () => {
                       alt="star"
                       className="w10"
                     />
-                  </div>
+                  </div> */}
                   <p className="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2">
                     {content}
                   </p>
@@ -132,7 +132,7 @@ const SingleCoursePage = () => {
                       className="form-control form_control"
                       type="text"
                       required
-                      placeholder="usuario"
+                      placeholder="Nombre"
                     />
                   </div>
                 </div>

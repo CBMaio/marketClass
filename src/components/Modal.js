@@ -20,7 +20,7 @@ const Modal = ({ title, description }) => {
                 to="/"
                 className="m-auto rounded-lg style1-input mb-0 bg-current text-white text-center font-xss fw-500 border-0 p-0 w175"
               >
-                Volver
+                Ir al inicio
               </Link>
             </div>
           </div>

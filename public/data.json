@@ -1,433 +1,433 @@
 [
     {
         "id": 1,
-        "title": "Introduction to Web Development",
-        "category": "Web Development",
+        "title": "Introducción al desarrollo web",
+        "category": "Desarrollo web",
         "duration": 8,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "John Doe",
             "id": 2
         },
         "price": 99.99,
         "image": "course1.jpg",
-        "description": "Learn the basics of web development and create your first website.",
-        "requirements": "No prior knowledge required. A computer and internet access are needed.",
+        "description": "Aprenda los conceptos básicos del desarrollo web y cree su primer sitio web.",
+        "requirements": "No se requieren conocimientos previos. Se necesita una computadora y acceso a Internet.",
         "comments": [
             {
                 "id": 1,
                 "user": "Alice",
                 "content":
-                    "I really enjoyed the Introduction to Web Development course by John Doe. It's a great starting point for beginners!"
+                    "Realmente disfruté el curso de Introducción al desarrollo web de John Doe. Es un gran punto de partida para principiantes.!"
                 },
                 {
                 "id": 2,
                 "user": "Bob",
                 "content":
-                    "The course is well-structured, and the explanations are clear. I found it very helpful."
+                    "El curso está bien estructurado y las explicaciones son claras. Lo encontré muy útil."
                 }
         ]
     },
     {
         "id": 2,
-        "title": "Python Programming for Beginners",
-        "category": "Programming",
+        "title": "Programación Python para principiantes",
+        "category": "Programación",
         "duration": 10,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "Jane Smith",
             "id": 1
         },
         "price": 149.99,
         "image": "course2.jpg",
-        "description": "Start your programming journey with Python and build simple applications.",
-        "requirements": "No prior programming experience needed.",
+        "description": "Comience su viaje de programación con Python y cree aplicaciones simples.",
+        "requirements": "No se necesita experiencia previa en programación.",
         "comments": [
             {
                 "id": 1,
                 "user": "Charlie",
                 "content":
-                  "Python Programming for Beginners with Jane Smith was an excellent choice for someone new to programming."
+                  "La programación Python para principiantes con Jane Smith fue una excelente opción para alguien nuevo en la programación."
               },
               {
                 "id": 2,
                 "user": "David",
                 "content":
-                  "Jane explains complex concepts in a simple way. I'm excited to continue learning Python."
+                  "Jane explica conceptos complejos de forma sencilla. Estoy emocionado de seguir aprendiendo Python."
               }
         ]
     },
     {
         "id": 3,
-        "title": "Digital Marketing Fundamentals",
+        "title": "Fundamentos del marketing digital",
         "category": "Marketing",
         "duration": 6,
-        "frequency": "Monthly",
+        "frequency": "Mensual",
         "author": {
             "name": "Jane Smith",
             "id": 1
         },
         "price": 79.99,
         "image": "course3.jpg",
-        "description": "Explore the world of digital marketing and grow your online presence.",
-        "requirements": "Basic computer skills are required.",
+        "description": "Explora el mundo del marketing digital y haz crecer tu presencia online.",
+        "requirements": "Se requieren conocimientos básicos de informática.",
         "comments": [
             {
                 "id": 1,
                 "user": "Eva",
                 "content":
-                  "Digital Marketing Fundamentals with Emily Johnson gave me insights into the world of online marketing. Highly recommended!"
+                  "Los Fundamentos del marketing digital con Emily Johnson me brindaron información sobre el mundo del marketing online. ¡Muy recomendable!"
               },
               {
                 "id": 2,
                 "user": "Frank",
                 "content":
-                  "I now understand the importance of digital marketing strategies. Emily's expertise shines through in the course."
+                  "Ahora entiendo la importancia de las estrategias de marketing digital. La experiencia de Emily se destaca en el curso."
               }
         ]
     },
     {
         "id": 4,
-        "title": "Graphic Design Masterclass",
-        "category": "Design",
+        "title": "Clase magistral de diseño gráfico",
+        "category": "Diseño",
         "duration": 12,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "David Smith",
             "id": 4
         },
         "price": 129.99,
         "image": "course4.jpg",
-        "description": "Unlock your creativity and become a skilled graphic designer.",
-        "requirements": "Access to graphic design software is recommended.",
+        "description": "Desbloquea tu creatividad y conviértete en un hábil diseñador gráfico.",
+        "requirements": "Se recomienda acceso a software de diseño gráfico.",
         "comments": [
             {
                 "id": 1,
                 "user": "Grace",
                 "content":
-                  "The Graphic Design Masterclass by David Smith is fantastic! I've improved my design skills significantly."
+                  "¡La Masterclass de Diseño Gráfico de David Smith es fantástica! He mejorado significativamente mis habilidades de diseño."
               },
               {
                 "id": 2,
                 "user": "Hank",
                 "content":
-                  "I can now create stunning graphics thanks to this course. David's teaching style is engaging."
+                  "Ahora puedo crear gráficos impresionantes gracias a este curso. El estilo de enseñanza de David es atractivo."
               }
         ]
     },
     {
         "id": 5,
-        "title": "Data Science Foundations",
-        "category": "Data Science",
+        "title": "Fundamentos de la ciencia de datos",
+        "category": "Ciencia de datos",
         "duration": 8,
-        "frequency": "Bi-weekly",
+        "frequency": "Cada dos semanas",
         "author": "John Doe",
         "price": 149.99,
         "image": "course5.jpg",
-        "description": "Dive into data science and harness the power of data for insights.",
-        "requirements": "Basic knowledge of mathematics and programming is helpful.",
+        "description": "Sumérjase en la ciencia de datos y aproveche el poder de los datos para obtener información valiosa.",
+        "requirements": "Es útil tener conocimientos básicos de matemáticas y programación.",
         "comments": [
             {
                 "id": 1,
                 "user": "Isabel",
                 "content":
-                  "Data Science Foundations by Sophia Adams is a challenging but rewarding course. It deepened my understanding of data analysis."
+                  "Data Science Foundations de Sophia Adams es un curso desafiante pero gratificante. Profundizó mi comprensión del análisis de datos."
               },
               {
                 "id": 2,
                 "user": "Jack",
                 "content":
-                  "Sophia's explanations are crystal clear. This course is a must for anyone interested in data science."
+                  "Las explicaciones de Sofía son muy claras. Este curso es imprescindible para cualquier persona interesada en la ciencia de datos."
               }
         ]
     },
     {
         "id": 6,
-        "title": "Photography Essentials",
-        "category": "Photography",
+        "title": "Esenciales de fotografía",
+        "category": "Fotografía",
         "duration": 6,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "David Smith",
             "id": 4
         },
         "price": 89.99,
         "image": "course6.jpg",
-        "description": "Capture stunning photos with your camera and master photography techniques.",
-        "requirements": "A digital camera or smartphone with a camera is required.",
+        "description": "Capture fotografías impresionantes con su cámara y domine las técnicas de fotografía.",
+        "requirements": "Se requiere una cámara digital o un teléfono inteligente con cámara.",
         "comments": [
             {
                 "id": 1,
                 "user": "Katie",
                 "content":
-                  "I've always wanted to improve my photography skills, and Michael Brown's Photography Essentials course helped me do just that."
+                  "Siempre quise mejorar mis habilidades fotográficas y el curso Photography Essentials de Michael Brown me ayudó a conseguirlo."
               },
               {
                 "id": 2,
                 "user": "Leo",
                 "content":
-                  "Michael's practical tips and demonstrations were incredibly helpful. I'm capturing better photos now."
+                  "Los consejos prácticos y las demostraciones de Michael fueron increíblemente útiles. Estoy capturando mejores fotos ahora."
               }
         ]
     },
     {
         "id": 7,
-        "title": "Financial Planning and Budgeting",
-        "category": "Finance",
+        "title": "Planificación financiera y presupuestación",
+        "category": "Finanzas",
         "duration": 8,
-        "frequency": "Monthly",
+        "frequency": "Mensual",
         "author": {
             "name": "Sarah Wilson",
             "id": 5
         },
         "price": 69.99,
         "image": "course7.jpg",
-        "description": "Learn how to manage your finances, budget effectively, and plan for the future.",
-        "requirements": "No prior financial knowledge required.",
+        "description": "Aprenda cómo administrar sus finanzas, presupuestar de manera efectiva y planificar para el futuro.",
+        "requirements": "No se requieren conocimientos financieros previos.",
         "comments":[
             {
                 "id": 1,
                 "user": "Mike",
                 "content":
-                  "Financial Planning and Budgeting with Sarah Wilson is a valuable course for managing personal finances."
+                  "Planificación financiera y elaboración de presupuestos con Sarah Wilson es un curso valioso para gestionar las finanzas personales."
               },
               {
                 "id": 2,
                 "user": "Nina",
                 "content":
-                  "I no longer stress about my finances thanks to this course. Sarah's guidance is practical and effective."
+                  "Ya no me estreso por mis finanzas gracias a este curso. La orientación de Sarah es práctica y eficaz."
               }
         ]
     },
     {
         "id": 8,
-        "title": "Art History and Appreciation",
-        "category": "Art",
+        "title": "Historia y apreciación del arte.",
+        "category": "Arte",
         "duration": 6,
-        "frequency": "Monthly",
+        "frequency": "Mensual",
         "author": {
             "name": "John Doe",
             "id": 2
         },
         "price": 49.99,
         "image": "course8.jpg",
-        "description": "Explore the world of art, from ancient civilizations to modern masterpieces.",
-        "requirements": "No prerequisites.",
+        "description": "Explora el mundo del arte, desde civilizaciones antiguas hasta obras maestras modernas.",
+        "requirements": "Sin requisitos previos.",
         "comments":[
             {
                 "id": 1,
                 "user": "Oliver",
                 "content":
-                  "Art History and Appreciation with Robert Johnson broadened my understanding of art. I now appreciate art on a deeper level."
+                  "Historia y apreciación del arte con Robert Johnson amplió mi comprensión del arte. Ahora aprecio el arte a un nivel más profundo."
               },
               {
                 "id": 2,
                 "user": "Pamela",
                 "content":
-                  "Robert's passion for art history is contagious. This course is a gem for art enthusiasts."
+                  "La pasión de Robert por la historia del arte es contagiosa. Este curso es una joya para los entusiastas del arte."
               }
         ]
     },
     {
         "id": 9,
-        "title": "Business Leadership Strategies",
-        "category": "Business",
+        "title": "Estrategias de liderazgo empresarial",
+        "category": "Negocio",
         "duration": 10,
-        "frequency": "Bi-weekly",
+        "frequency": "Cada dos semanas",
         "author": {
             "name": "John Doe",
             "id": 2
         },
         "price": 119.99,
         "image": "course9.jpg",
-        "description": "Develop leadership skills and strategies for success in the business world.",
-        "requirements": "No specific prerequisites.",
+        "description": "Desarrollar habilidades de liderazgo y estrategias para el éxito en el mundo empresarial.",
+        "requirements": "Sin requisitos previos específicos.",
         "comments":[
             {
                 "id": 1,
                 "user": "Quincy",
                 "content":
-                  "Business Leadership Strategies with Jennifer Lee is a must for aspiring leaders. I learned valuable leadership skills."
+                  "Estrategias de liderazgo empresarial con Jennifer Lee es imprescindible para los aspirantes a líderes. Aprendí valiosas habilidades de liderazgo."
               },
               {
                 "id": 2,
                 "user": "Rachel",
                 "content":
-                  "Jennifer's insights into leadership were eye-opening. I feel more confident in my leadership abilities now."
+                  "Las ideas de Jennifer sobre el liderazgo fueron reveladoras. Ahora me siento más seguro de mis habilidades de liderazgo."
               }
         ]
     },
     {
         "id": 10,
-        "title": "Yoga and Mindfulness Meditation",
-        "category": "Health",
+        "title": "Yoga y meditación de atención plena",
+        "category": "Salud",
         "duration": 6,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "David Smith",
             "id": 4
         },
         "price": 59.99,
         "image": "course10.jpg",
-        "description": "Improve your physical and mental well-being with yoga and mindfulness practices.",
-        "requirements": "No prior experience needed.",
+        "description": "Mejora tu bienestar físico y mental con prácticas de yoga y mindfulness.",
+        "requirements": "No se necesita experiencia previa.",
         "comments":[
             {
                 "id": 1,
                 "user": "Sam",
                 "content":
-                  "Yoga and Mindfulness Meditation with Megan Davis improved my mental and physical well-being. I'm more relaxed and focused."
+                  "El yoga y la meditación de atención plena con Megan Davis mejoraron mi bienestar físico y mental. Estoy más relajado y concentrado."
               },
               {
                 "id": 2,
                 "user": "Tina",
                 "content":
-                  "Megan's yoga sessions are soothing, and her mindfulness practices are effective. I highly recommend this course."
+                  "Las sesiones de yoga de Megan son relajantes y sus prácticas de atención plena son efectivas. Recomiendo mucho este curso."
               }
         ]
     },
     {
         "id": 11,
-        "title": "French Language Immersion",
-        "category": "Language",
+        "title": "Inmersión en lengua francesa",
+        "category": "Idioma",
         "duration": 12,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "Claire Martin",
             "id": 3
         },
         "price": 129.99,
         "image": "course11.jpg",
-        "description": "Learn French through immersive language lessons and cultural experiences.",
-        "requirements": "No previous language knowledge required.",
+        "description": "Aprenda francés a través de lecciones de idiomas inmersivas y experiencias culturales.",
+        "requirements": "No se requieren conocimientos previos del idioma.",
         "comments": [
             {
                 "id": 1,
                 "user": "Ursula",
                 "content":
-                  "Claire Martin's French Language Immersion course was a fun way to learn French. I feel more confident speaking French now."
+                  "El curso de inmersión en francés de Claire Martin fue una forma divertida de aprender francés. Ahora me siento más seguro hablando francés."
               },
               {
                 "id": 2,
                 "user": "Vince",
                 "content":
-                  "I enjoyed the cultural experiences in this course. Claire's teaching style makes learning French enjoyable."
+                  "Disfruté las experiencias culturales en este curso. El estilo de enseñanza de Claire hace que aprender francés sea agradable."
               }
         ]
     },
     {
         "id": 12,
-        "title": "Cooking Basics for Beginners",
-        "category": "Cooking",
+        "title": "Conceptos básicos de cocina para principiantes",
+        "category": "Cocina",
         "duration": 8,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "Claire Martin",
             "id": 3
         },
         "price": 79.99,
         "image": "course12.jpg",
-        "description": "Master essential cooking techniques and prepare delicious meals at home.",
-        "requirements": "No cooking experience necessary.",
+        "description": "Domina técnicas de cocina esenciales y prepara deliciosas comidas en casa.",
+        "requirements": "No se necesita experiencia en cocina.",
         "comments":[
             {
                 "id": 1,
                 "user": "Wendy",
                 "content":
-                  "Cooking Basics for Beginners with Daniel Smith helped me become a better cook. I can now prepare delicious meals confidently."
+                  "Conceptos básicos de cocina para principiantes con Daniel Smith me ayudó a convertirme en un mejor cocinero. Ahora puedo preparar comidas deliciosas con confianza."
               },
               {
                 "id": 2,
                 "user": "Xander",
                 "content":
-                  "Daniel's cooking techniques are easy to follow. This course is perfect for beginners like me."
+                  "Las técnicas de cocina de Daniel son fáciles de seguir. Este curso es perfecto para principiantes como yo"
               }
         ]
     },
     { 
         "id": 13,
-        "title": "Environmental Sustainability",
-        "category": "Environment",
+        "title": "Sostenibilidad del medio ambiente",
+        "category": "Ambiente",
         "duration": 6,
-        "frequency": "Monthly",
+        "frequency": "Mensual",
         "author": {
             "name": "Claire Martin",
             "id": 3
         },
         "price": 69.99,
         "image": "course13.jpg",
-        "description": "Learn about environmental issues and sustainable practices for a greener world.",
-        "requirements": "No prerequisites.",
+        "description": "Aprenda sobre cuestiones ambientales y prácticas sostenibles para un mundo más verde.",
+        "requirements": "Sin requisitos previos.",
         "comments":[
             {
                 "id": 1,
                 "user": "Yvonne",
                 "content":
-                  "Environmental Sustainability with Emma Johnson is a must for anyone interested in eco-friendly practices. I'm more conscious of my impact on the environment now."
+                  "Sostenibilidad ambiental con Emma Johnson es imprescindible para cualquier persona interesada en prácticas ecológicas. Ahora soy más consciente de mi impacto en el medio ambiente."
               },
               {
                 "id": 2,
                 "user": "Zach",
                 "content":
-                  "Emma's passion for sustainability is inspiring. This course motivates you to make positive changes for the planet."
+                  "La pasión de Emma por la sostenibilidad es inspiradora. Este curso te motiva a hacer cambios positivos para el planeta."
               }
         ]
     },
     {
         "id": 14,
-        "title": "Mobile App Development with React Native",
-        "category": "Mobile Development",
+        "title": "Desarrollo de aplicaciones móviles con React Native",
+        "category": "Desarrollo Móvil",
         "duration": 10,
-        "frequency": "Bi-weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "Alex Wilson",
             "id": 6
         },
         "price": 149.99,
         "image": "course14.jpg",
-        "description": "Build mobile apps using React Native and JavaScript.",
-        "requirements": "Basic knowledge of JavaScript is helpful.",
+        "description": "Cree aplicaciones móviles utilizando React Native y JavaScript.",
+        "requirements": "Es útil tener conocimientos básicos de JavaScript.",
         "comments":[
             {
                 "id": 1,
                 "user": "Alex",
                 "content":
-                  "Mobile App Development with React Native by Alex Wilson is a comprehensive course. I can now build mobile apps with confidence."
+                  "Desarrollo de aplicaciones móviles con React Native de Alex Wilson es un curso completo. Ahora puedo crear aplicaciones móviles con confianza."
               },
               {
                 "id": 2,
                 "user": "Betty",
                 "content":
-                  "Alex's explanations are clear, and the hands-on projects are challenging but rewarding. A great course for aspiring app developers."
+                  "Las explicaciones de Alex son claras y los proyectos prácticos son desafiantes pero gratificantes. Un gran curso para aspirantes a desarrolladores de aplicaciones."
               }
         ]
     },
     {
         "id": 15,
-        "title": "Creative Writing Workshop",
-        "category": "Writing",
+        "title": "Taller de escritura creativa",
+        "category": "Escritura",
         "duration": 8,
-        "frequency": "Weekly",
+        "frequency": "Semanal",
         "author": {
             "name": "Alex Wilson",
             "id": 6
         },
         "price": 89.99,
         "image": "course15.jpg",
-        "description": "Unlock your creativity and improve your writing skills through interactive workshops.",
-        "requirements": "No previous writing experience required.",
+        "description": "Desbloquea tu creatividad y mejora tus habilidades de escritura a través de talleres interactivos.",
+        "requirements": "No se requiere experiencia previa en escritura.",
         "comments": [
             {
                 "id": 1,
                 "user": "Charlie",
                 "content":
-                  "Olivia Davis' Creative Writing Workshop is a nurturing environment for writers. My writing skills have improved significantly."
+                  "El taller de escritura creativa de Olivia Davis es un entorno enriquecedor para escritores. Mis habilidades de escritura han mejorado significativamente."
               },
               {
                 "id": 2,
                 "user": "Diana",
                 "content":
-                  "Olivia's feedback and interactive workshops are invaluable. I've gained confidence in my writing abilities."
+                  "Los comentarios de Olivia y los talleres interactivos son invaluables. He ganado confianza en mis habilidades de escritura."
               }
         ]
     }

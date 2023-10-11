@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Pagination from "../../components/Pagination";
 import { Button } from "react-bootstrap";
-import { commentsStatus } from "../../utils";
 import { fetchComments, selectAllComments } from "./commentsSlice";
 
 import "../../scss/components/comment-list.scss";
@@ -16,8 +14,6 @@ const CommentList = () => {
   const [selectedComment, setSelectedComment] = useState(null);
   const [isOpenCommentModal, setIsOpenCommentModal] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("ALL");
-
-  const { PENDING, RECEIVED, CANCELLED } = commentsStatus;
 
   const toggleCommentModal = (comment) => {
     setIsOpenCommentModal(!isOpenCommentModal);
@@ -55,7 +51,7 @@ const CommentList = () => {
               >
                 <option>Filtrar por</option>
                 <option value="PENDIENTE">Pendientes</option>
-                <option value="RECIBIDO">Aceptador</option>
+                <option value="RECIBIDO">Aceptados</option>
                 <option value="CANCELADO">Rechazados</option>
                 <option value="">Ver todos</option>
               </select>
@@ -169,7 +165,7 @@ const CommentList = () => {
               </div>
             </div>
           </div>
-          <Pagination divClass="pagination justify-content-center mt-5" />
+          {/* <Pagination divClass="pagination justify-content-center mt-5" /> */}
         </div>
       </div>
     </div>

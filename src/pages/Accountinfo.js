@@ -19,7 +19,7 @@ const Accountinfo = () => {
               <div className="card col-md-8 w-100 border-0 bg-white shadow-xs p-0 mb-4">
                 <div className="card-body p-4 w-100 bg-current border-0 d-flex rounded-lg">
                   <h4 className="font-xs text-white fw-600 ml-4 mb-0 mt-2">
-                    Account Details
+                    Detalles de la cuenta
                   </h4>
                 </div>
                 <div className="card-body p-lg-5 p-4 w-100 border-0 ">
@@ -33,7 +33,7 @@ const Accountinfo = () => {
                         />
                       </figure>
                       <h2 className="fw-700 font-sm text-grey-900 mt-3">
-                        John Doe
+                        Mariana
                       </h2>
                       <h4 className="text-grey-500 fw-500 mb-3 font-xsss mb-4">
                         Python Dev
