@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+import { Container, Navbar, Nav } from "react-bootstrap";
 
 import "../scss/components/header.scss";
 
@@ -12,23 +12,32 @@ const Header = () => {
             <div className="w-100">
               <Navbar expand="lg" className="bg-body-tertiary">
                 <Container>
-                  <Navbar.Brand href="/">
+                  <Link to="/">
                     <h1 className="fredoka-font ls-3 fw-700 text-current font-xxl">
                       MarketClass
                       <span className="d-block font-xsssss ls-1 text-grey-500 open-font ">
                         El camino hacia el éxito comienza aquí
                       </span>
                     </h1>
-                  </Navbar.Brand>
+                  </Link>
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                  <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                      <Nav.Link href="/about">Sobre nosotros</Nav.Link>
-                      <Nav.Link href="/courses-grid">Todos los cursos</Nav.Link>
-                      <Nav.Link href="/contact">Contacto</Nav.Link>
-                      <Nav.Link href="/login" className="account-navlink">
+                  <Navbar.Collapse id="basic-navbar-nav" className="ml-3">
+                    <Nav className="me-auto header-navbar">
+                      <NavLink to="/about" className="text-dark">
+                        Sobre nosotros
+                      </NavLink>
+                      <NavLink to="/courses-grid" className="text-dark">
+                        Todos los cursos
+                      </NavLink>
+                      <NavLink to="/contact" className="text-dark">
+                        Contacto
+                      </NavLink>
+                      <NavLink
+                        to="/login"
+                        className="account-navlink text-dark"
+                      >
                         <b>Cuenta</b>
-                      </Nav.Link>
+                      </NavLink>
                     </Nav>
                   </Navbar.Collapse>
                 </Container>

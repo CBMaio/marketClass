@@ -28,7 +28,6 @@ const Register = () => {
                 </Link>
                 <h2 className="fw-700 display1-size display2-md-size mb-4">
                   Crea tu cuenta <br />
-                  
                 </h2>
                 {/* Fitst step */}
                 {step === 0 && (
@@ -102,11 +101,12 @@ const Register = () => {
                       </div>
                       <div className="form-group icon-input mb-3">
                         <i className="font-sm ti-user text-grey-500 pr-0"></i>
-                        <input
-                          type="text"
-                          className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
+                        <textarea
+                          className="pl-5 form-control text-grey-900 font-xsss fw-600"
+                          required
+                          rows="2"
                           placeholder="Experiencia Profesional"
-                        />
+                        ></textarea>
                       </div>
                     </form>
 

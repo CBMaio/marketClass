@@ -128,7 +128,7 @@ const About = () => {
                 href="/register"
                 className="ml-1 mr-1 rounded-lg bg-light-green text-green font-xss border-size-md border-0 fw-600 open-font p-3 w200 btn"
               >
-                Comienza hoy!
+                Quiero dar clases
               </a>
             </div>
           </div>
