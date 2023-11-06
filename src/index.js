@@ -4,34 +4,30 @@ import store from "./app/store";
 
 import "./main.scss";
 
-import Adminproductlist from "./pages/Adminproductlist";
-import AddCoursePage from "./pages/AddCoursePage";
-import EditCoursePage from "./pages/EditCoursePage";
-import AdminDraftList from "./pages/AdminDraftList";
-import Adminreview from "./pages/Adminreview";
-import WelcomeAdmin from "./pages/WelcomeAdmin";
-
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Forgot from "./pages/Forgot";
-import Notfound from "./pages/Notfound";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-
-import Coursesgridone from "./pages/Coursesgrid";
-
-import AuthorProfile from "./pages/AuthorProfile";
-import Coursedetails from "./pages/Coursedetails";
-
-import Accountinfo from "./pages/Accountinfo";
-import Password from "./pages/Password";
-import Home from "./pages/Home";
-import CourseRegistration from "./pages/CourseRegistration";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
-import { Provider } from "react-redux";
-import ScrollToTop from "./components/ScrollToTop";
+import About from "./pages/About";
+import Accountinfo from "./pages/Accountinfo";
+import AddCoursePage from "./pages/AddCoursePage";
+import AdminDraftList from "./pages/AdminDraftList";
+import Adminproductlist from "./pages/Adminproductlist";
 import AdminRequests from "./pages/AdminRequests";
+import Adminreview from "./pages/Adminreview";
+import AuthorProfile from "./pages/AuthorProfile";
+import Contact from "./pages/Contact";
+import CourseRegistration from "./pages/CourseRegistration";
+import Coursedetails from "./pages/Coursedetails";
+import Coursesgridone from "./pages/Coursesgrid";
+import EditCoursePage from "./pages/EditCoursePage";
+import Forgot from "./pages/Forgot";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Notfound from "./pages/Notfound";
+import Password from "./pages/Password";
+import Register from "./pages/Register";
+import ScrollToTop from "./components/ScrollToTop";
+import WelcomeAdmin from "./pages/WelcomeAdmin";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 
 class Root extends Component {
   render() {
