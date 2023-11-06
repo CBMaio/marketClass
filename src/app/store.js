@@ -3,6 +3,7 @@ import coursesReducer from "../features/courses/coursesSlice";
 import authorsReducer from "../features/authors/authorsSlice";
 import commentsReducer from "../features/comments/commentsSlice";
 import requestsReducer from "../features/requests/requestsSlice";
+import userReducer from "../features/user/userSlice";
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     authors: authorsReducer,
     comments: commentsReducer,
     requests: requestsReducer,
+    user: userReducer,
   },
 });

@@ -2,10 +2,14 @@ import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../scss/pages/login-register.scss";
 import "../scss/variables.scss";
+import { useDispatch } from "react-redux";
+import { login } from "../features/user/userSlice";
 
 const Login = () => {
   const navigate = useNavigate();
   const [showError, setShowError] = useState(false);
+
+  const dispatch = useDispatch();
 
   const validateUser = (e) => {
     e.preventDefault();
@@ -23,6 +27,13 @@ const Login = () => {
       return;
     }
 
+    dispatch(
+      login({
+        email,
+        password,
+        loggedIn: true,
+      })
+    );
     navigate("/welcome-admin");
   };
 
