@@ -6,8 +6,11 @@ import { Card } from "react-bootstrap";
 
 import "../scss/pages/home.scss";
 import CourseList from "../features/courses/CourseList";
+import { useSelector } from "react-redux";
+import { isAuthenticated } from "../features/auth/authSlice";
 
 const Home = () => {
+  const isAuth = useSelector(isAuthenticated);
   const categoryList = [
     {
       name: "Programación",
@@ -191,10 +194,10 @@ const Home = () => {
                   </div>
                   <div className="col-6">
                     <a
-                      href="/register"
+                      href={isAuth ? "/welcome-admin" : "/register"}
                       className="w-100 btn bg-current text-white font-xssss fw-600 ls-3  p-0 border-0 text-uppercase create-account-btn"
                     >
-                      Crear una cuenta
+                      {!isAuth ? "Crear una cuenta" : "Ir a tu cuenta"}
                     </a>
                   </div>
                 </div>

@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
 import "../scss/components/header.scss";
+import { isAuthenticated } from "../features/auth/authSlice";
 
 const Header = () => {
+  const isAuth = useSelector(isAuthenticated);
   return (
     <div className={`header-wrapper pt-3 pb-3 shadow-xss`}>
       <div className="container">
@@ -46,11 +49,13 @@ const Header = () => {
           </div>
           <div className="col-lg-3 text-right account-container">
             <Link
-              to="/login"
+              to={isAuth ? "/welcome-admin" : "/login"}
               className={`float-right d-none d-lg-block text-center mt-1 ml-4 text-grey-800`}
             >
               <i className="ti-user font-lg"></i>
-              <span className="font-xssss fw-500 d-block lh-1">Account</span>
+              <span className="font-xssss fw-500 d-block lh-1">
+                {isAuth ? "Cuenta" : "Inicia Sesión"}
+              </span>
             </Link>
           </div>
         </div>

@@ -1,11 +1,13 @@
 import React, { Fragment, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../features/user/userSlice";
 import "../scss/pages/login-register.scss";
 import "../scss/variables.scss";
-import { useDispatch } from "react-redux";
-import { login } from "../features/user/userSlice";
+import { isAuthenticated } from "../features/auth/authSlice";
 
 const Login = () => {
+  const isAuth = useSelector(isAuthenticated);
   const navigate = useNavigate();
   const [showError, setShowError] = useState(false);
 
@@ -37,6 +39,9 @@ const Login = () => {
     navigate("/welcome-admin");
   };
 
+  if (isAuth) {
+    return <Navigate to="/welcome-admin" />;
+  }
   return (
     <Fragment>
       <div className="main-wrap">

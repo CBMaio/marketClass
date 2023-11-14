@@ -7,13 +7,6 @@ const AdminTopnav = () => {
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow-xs ">
       <ul className="navbar-nav ml-auto">
-        {/* <li className="nav-item dropdown no-arrow mx-1 mr-4">
-          <Link to="/admin-review" className="navi-link dropdown-toggle">
-            <i className="feather-bell black-icon"></i>
-            <span className="badge badge-danger badge-counter">3+</span>
-          </Link>
-        </li> */}
-
         <li className="nav-item dropdown no-arrow">
           <Link to="/account-information" className="navi-link dropdown-toggle">
             <img
