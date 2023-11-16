@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { API_URL } from "../features/auth/constants";
 
 import { isAuthenticated } from "../features/auth/authSlice";
 
@@ -45,8 +46,25 @@ const Register = () => {
     return true;
   };
 
-  const registerUser = () => {
-    console.log(userData);
+  const registerUser = async () => {
+    try {
+      const response = await fetch(`${API_URL}/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...userData }),
+      });
+
+      console.log(response);
+      if (response.ok) {
+        console.log("user created");
+      } else {
+        console.log("Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const togglePw = (elementId) => {

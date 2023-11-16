@@ -56,7 +56,7 @@ const DraftCoursesList = () => {
                   <b>{value.title}</b>
                 </td>
 
-                <td>
+                <td className="price-cell">
                   $ <b>{value.price}</b>
                 </td>
                 <td>
@@ -69,7 +69,7 @@ const DraftCoursesList = () => {
                 <td>
                   <b>{value.frequency}</b>
                 </td>
-                <td className="product-remove text-right">
+                <td className="product-remove text-right btn-actions">
                   <Button className="bg-transparent border-0 pr-0 course-action">
                     <i className="ti-export mr-1 font-xs text-grey-500" />
                     <span className="button-legend">Publicar</span>

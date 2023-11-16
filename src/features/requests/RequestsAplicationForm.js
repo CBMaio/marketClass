@@ -61,7 +61,8 @@ const RequestAplicationForm = ({ setFormStatus, courseId }) => {
             />
           </div>
         </div>
-        <div className="col-12">
+
+        <div className="col-lg-6 col-md-12">
           <div className="form-group mb-3">
             <input
               required
@@ -69,6 +70,17 @@ const RequestAplicationForm = ({ setFormStatus, courseId }) => {
               name="availability"
               className="form-control style2-input bg-color-none text-grey-700"
               placeholder="Horario de contacto de preferencia"
+            />
+          </div>
+        </div>
+        <div className="col-lg-6 col-md-12">
+          <div className="form-group mb-3">
+            <input
+              required
+              type="number"
+              name="number"
+              className="form-control style2-input bg-color-none text-grey-700"
+              placeholder="Número de contacto"
             />
           </div>
         </div>

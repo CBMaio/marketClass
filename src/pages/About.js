@@ -261,24 +261,15 @@ const About = () => {
                 <div className="row justify-content-center">
                   <div className="col-lg-10 text-center">
                     <h2 className="fw-700 text-white display2-size lh-3 mb-2 display2-md-size">
-                      Suscribite a nuestro boletín informativo
+                      Gracias por ser parte
                     </h2>
                   </div>
                   <div className="col-lg-8 text-center">
                     <p className="font-xsss lh-28 text-white mb-0 d-none-xs">
-                      Enviaremos semanalmente el boletín de noticias, para que
-                      estes informado de todas las novedades.
+                      Nos basamos en las reseñas de nuestros seguidores para
+                      poder bridar el mejor servicio. Queremos que encuentres tu
+                      clase ideal
                     </p>
-                  </div>
-                  <div className="col-lg-6 text-center mt-4 mb-3">
-                    <div className="form-group icon-right-input style2-input mb-0">
-                      <input
-                        type="text"
-                        placeholder="Correo electrónico"
-                        className="form-control style2 rounded-xl bg-greylight border-0 font-xsss fw-500 pl-3"
-                      />
-                      <i className="feather-mail text-dark primary font-lg m-1"></i>
-                    </div>
                   </div>
                 </div>
               </div>

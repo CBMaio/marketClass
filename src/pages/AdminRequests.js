@@ -5,6 +5,8 @@ import AdminTopnav from "../components/AdminTopnav";
 import Adminfooter from "../components/Adminfooter";
 import RequestsList from "../features/requests/RequestsList";
 
+import "../scss/pages/admin-requests.scss";
+
 const AdminRequests = () => {
   return (
     <Fragment>
@@ -14,7 +16,9 @@ const AdminRequests = () => {
         <div id="content-wrapper" className="d-flex flex-column">
           <div id="content">
             <AdminTopnav />
-            <RequestsList />
+            <div className="requests-container">
+              <RequestsList />
+            </div>
 
             <Adminfooter />
           </div>

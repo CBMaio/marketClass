@@ -35,3 +35,16 @@
     }
   }
 }
+
+.my-course-line {
+  &.desktop-view {
+    .price-cell {
+      padding: 14px 0 !important;
+    }
+    
+    .btn-actions {
+     display: flex;
+     padding-right: 0 !important;
+    }
+  }
+}

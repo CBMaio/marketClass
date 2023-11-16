@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
-import Sidebartoggle from "../components/Sidebartoggle";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/auth/authSlice";
 
 import "../scss/components/admin-top-nav.scss";
 
 const AdminTopnav = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const closeSession = () => {
+    dispatch(logout());
+    navigate("/");
+  };
+
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow-xs ">
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ml-auto header-icons">
         <li className="nav-item dropdown no-arrow">
           <Link to="/account-information" className="navi-link dropdown-toggle">
             <img
@@ -23,10 +32,10 @@ const AdminTopnav = () => {
           </Link>
         </li>
 
-        <li className="nav-item dropdown no-arrow">
-          <Link to="/" className="navi-link dropdown-toggle">
+        <li className="nav-item dropdown no-arrow logout-icon">
+          <div onClick={closeSession} className="navi-link dropdown-toggle">
             <i className="ms-3 feather-log-out d-none d-lg-block black-icon"></i>
-          </Link>
+          </div>
         </li>
       </ul>
     </nav>

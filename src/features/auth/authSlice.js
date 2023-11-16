@@ -7,13 +7,10 @@ export const authSlice = createSlice({
   },
   reducers: {
     login: (state, action) => {
-      const { user, accessToken } = action.payload;
-      state.user = user;
-      state.token = accessToken;
+      state.isAuthenticated = true;
     },
     logout: (state) => {
-      state.user = null;
-      state.token = null;
+      state.isAuthenticated = false;
     },
   },
 });

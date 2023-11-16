@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/auth/authSlice";
 
 import "../scss/components/admin-sidebar.scss";
 
 const Adminsidebar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [displayCourseOptions, setDisplayCouseOptions] = useState(false);
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
 
@@ -12,6 +17,11 @@ const Adminsidebar = () => {
 
   const toggleNavbar = () => {
     setIsOpenNavbar(!isOpenNavbar);
+  };
+
+  const closeSession = () => {
+    dispatch(logout());
+    navigate("/");
   };
 
   return (
@@ -46,6 +56,11 @@ const Adminsidebar = () => {
           </button>
         </Link>
 
+        <li className="nav-item">
+          <NavLink className="navi-link" to="/">
+            <span>MarketClass</span>
+          </NavLink>
+        </li>
         <li className="nav-item">
           <NavLink className="navi-link" to="/welcome-admin">
             <i className="feather-home mr-2"></i>
@@ -108,10 +123,10 @@ const Adminsidebar = () => {
         </li>
 
         <li className="nav-item mobile-item">
-          <NavLink className="navi-link" to="/">
+          <div onClick={closeSession} className="navi-link">
             <i className="feather-log-out mr-2"></i>
             <span>Salir</span>
-          </NavLink>
+          </div>
         </li>
       </ul>
     </>

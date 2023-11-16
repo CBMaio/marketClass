@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Slider from "react-slick";
@@ -193,12 +194,12 @@ const Home = () => {
                     </a>
                   </div>
                   <div className="col-6">
-                    <a
-                      href={isAuth ? "/welcome-admin" : "/register"}
+                    <Link
+                      to={isAuth ? "/welcome-admin" : "/register"}
                       className="w-100 btn bg-current text-white font-xssss fw-600 ls-3  p-0 border-0 text-uppercase create-account-btn"
                     >
                       {!isAuth ? "Crear una cuenta" : "Ir a tu cuenta"}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

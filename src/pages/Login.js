@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../features/user/userSlice";
+import { login } from "../features/auth/authSlice";
 import "../scss/pages/login-register.scss";
 import "../scss/variables.scss";
 import { isAuthenticated } from "../features/auth/authSlice";
@@ -29,13 +29,7 @@ const Login = () => {
       return;
     }
 
-    dispatch(
-      login({
-        email,
-        password,
-        loggedIn: true,
-      })
-    );
+    dispatch(login());
     navigate("/welcome-admin");
   };
 
