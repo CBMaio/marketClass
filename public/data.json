@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "Introducción al desarrollo web",
+        "type": "Grupal",
         "category": "Desarrollo web",
         "duration": 8,
         "frequency": "Semanal",
@@ -31,6 +32,7 @@
     {
         "id": 2,
         "title": "Programación Python para principiantes",
+        "type": "Grupal",
         "category": "Programación",
         "duration": 10,
         "frequency": "Semanal",
@@ -60,6 +62,7 @@
     {
         "id": 3,
         "title": "Fundamentos del marketing digital",
+        "type": "Grupal",
         "category": "Marketing",
         "duration": 6,
         "frequency": "Mensual",
@@ -89,6 +92,7 @@
     {
         "id": 4,
         "title": "Clase magistral de diseño gráfico",
+        "type": "Grupal",
         "category": "Diseño",
         "duration": 12,
         "frequency": "Semanal",
@@ -118,9 +122,10 @@
     {
         "id": 5,
         "title": "Fundamentos de la ciencia de datos",
+        "type": "Grupal",
         "category": "Ciencia de datos",
         "duration": 8,
-        "frequency": "Cada dos semanas",
+        "frequency": "Unica",
         "author": "John Doe",
         "price": 149.99,
         "image": "course5.jpg",
@@ -144,6 +149,7 @@
     {
         "id": 6,
         "title": "Esenciales de fotografía",
+        "type": "Grupal",
         "category": "Fotografía",
         "duration": 6,
         "frequency": "Semanal",
@@ -173,6 +179,7 @@
     {
         "id": 7,
         "title": "Planificación financiera y presupuestación",
+        "type": "Grupal",
         "category": "Finanzas",
         "duration": 8,
         "frequency": "Mensual",
@@ -202,6 +209,7 @@
     {
         "id": 8,
         "title": "Historia y apreciación del arte.",
+        "type": "Grupal",
         "category": "Arte",
         "duration": 6,
         "frequency": "Mensual",
@@ -231,9 +239,10 @@
     {
         "id": 9,
         "title": "Estrategias de liderazgo empresarial",
+        "type": "Grupal",
         "category": "Negocio",
         "duration": 10,
-        "frequency": "Cada dos semanas",
+        "frequency": "Unica",
         "author": {
             "name": "John Doe",
             "id": 2
@@ -260,6 +269,7 @@
     {
         "id": 10,
         "title": "Yoga y meditación de atención plena",
+        "type": "Grupal",
         "category": "Salud",
         "duration": 6,
         "frequency": "Semanal",
@@ -289,6 +299,7 @@
     {
         "id": 11,
         "title": "Inmersión en lengua francesa",
+        "type": "Grupal",
         "category": "Idioma",
         "duration": 12,
         "frequency": "Semanal",
@@ -318,6 +329,7 @@
     {
         "id": 12,
         "title": "Conceptos básicos de cocina para principiantes",
+        "type": "Grupal",
         "category": "Cocina",
         "duration": 8,
         "frequency": "Semanal",
@@ -347,6 +359,7 @@
     { 
         "id": 13,
         "title": "Sostenibilidad del medio ambiente",
+        "type": "Grupal",
         "category": "Ambiente",
         "duration": 6,
         "frequency": "Mensual",
@@ -376,6 +389,7 @@
     {
         "id": 14,
         "title": "Desarrollo de aplicaciones móviles con React Native",
+        "type": "Grupal",
         "category": "Desarrollo Móvil",
         "duration": 10,
         "frequency": "Semanal",
@@ -405,6 +419,7 @@
     {
         "id": 15,
         "title": "Taller de escritura creativa",
+        "type": "Grupal",
         "category": "Escritura",
         "duration": 8,
         "frequency": "Semanal",

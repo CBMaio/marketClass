@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Container, Navbar, Nav } from "react-bootstrap";
+import { isAuthenticated } from "../features/auth/authSlice";
 
 import "../scss/components/header.scss";
-import { isAuthenticated } from "../features/auth/authSlice";
 
 const Header = () => {
   const isAuth = useSelector(isAuthenticated);
@@ -24,7 +24,10 @@ const Header = () => {
                     </h1>
                   </Link>
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                  <Navbar.Collapse id="basic-navbar-nav" className="ml-3">
+                  <Navbar.Collapse
+                    id="basic-navbar-nav"
+                    className="ml-3 desktop-header"
+                  >
                     <Nav className="me-auto header-navbar">
                       <NavLink to="/about" className="text-dark">
                         Sobre nosotros

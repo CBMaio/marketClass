@@ -9,7 +9,7 @@ import { fetchAuthors } from "../authors/authorsSlice";
 import CourseCard from "../../components/CourseCard";
 import { FETCH_STATUS } from "../../utils";
 
-const CourseList = ({ limit = false, queryFilter, selectedCategory }) => {
+const CourseList = ({ limit = false, queryFilter, filterSelected }) => {
   const { LOADING, SUCCEEDED, IDLE } = FETCH_STATUS;
   const dispatch = useDispatch();
   const [coursesToShow, setCoursesToShow] = useState([]);
@@ -31,18 +31,18 @@ const CourseList = ({ limit = false, queryFilter, selectedCategory }) => {
   useEffect(() => {
     let data = courseData;
     const filter = queryFilter?.toLowerCase() || "";
-    if (selectedCategory === "all" || !selectedCategory) {
-      data = data.filter(({ title }) => title.toLowerCase().includes(filter));
-    } else {
-      data = data.filter(
-        ({ title, category }) =>
-          category === selectedCategory && title.toLowerCase().includes(filter)
-      );
-    }
+    // const filters = Object.entries(filterSelected || {});
+    // filterByItems(data, filters);
+
+    data = data.filter(({ title }) => title.toLowerCase().includes(filter));
 
     setCoursesToShow(data);
-  }, [selectedCategory, queryFilter, courseData]);
+  }, [queryFilter, courseData]);
 
+  // const filterByItems = (data, filters) => {
+  //   debugger;
+  //   const newData = data.map((course) => {});
+  // };
   return coursesStatus === LOADING ? (
     <div className="pl-3">Cargando...</div>
   ) : !coursesToShow.length ? (

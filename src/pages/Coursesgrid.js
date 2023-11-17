@@ -4,16 +4,25 @@ import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Searcharea from "../components/Searcharea";
-import Pagination from "../components/Pagination";
 import CourseList from "../features/courses/CourseList";
+import FiltersModal from "../components/FiltersModal";
 
 const Coursesgrid = () => {
   const [searchProductByQuery, setSearchProductByQuery] = useState(null);
-  const [searchProductByCategory, setSearchProductByCategory] = useState();
+  const [isOpenFiltersModal, setIsOpenFiltersModal] = useState(false);
+  const [filterSelected, setFiltersSelected] = useState({});
 
-  const searchCourse = (query, category) => {
+  const handleModal = (state) => {
+    setIsOpenFiltersModal(state);
+    document.querySelector("body").style.overflow = state ? "hidden" : "auto";
+  };
+
+  const setFilters = (filters) => {
+    setFiltersSelected({ ...filters });
+  };
+
+  const searchCourse = (query) => {
     setSearchProductByQuery(query);
-    setSearchProductByCategory(category);
   };
 
   return (
@@ -24,7 +33,7 @@ const Coursesgrid = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 mb-4">
-              <Searcharea search={searchCourse} />
+              <Searcharea search={searchCourse} handleModal={handleModal} />
             </div>
             <div className="col-lg-12 pt-2 mb-4">
               <h2 className="fw-400 font-lg">Resultados</h2>
@@ -32,12 +41,15 @@ const Coursesgrid = () => {
 
             <CourseList
               queryFilter={searchProductByQuery}
-              selectedCategory={searchProductByCategory}
+              filterSelected={filterSelected}
             />
 
             {/* <div className="col-lg-12">
               <Pagination divClass="pagination justify-content-center d-flex pt-5" />
             </div> */}
+            {isOpenFiltersModal && (
+              <FiltersModal handleModal={handleModal} setFilters={setFilters} />
+            )}
           </div>
         </div>
       </div>

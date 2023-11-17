@@ -1,8 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { FETCH_STATUS } from "../../utils";
+
+const { LOADING, SUCCEEDED, FAILED, IDLE } = FETCH_STATUS;
 
 const initialState = {
   data: [],
-  status: "idle",
+  status: IDLE,
   error: null,
 };
 
@@ -223,10 +226,10 @@ const commentsSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchComments.pending, (state, action) => {
-        state.status = "loading";
+        state.status = LOADING;
       })
       .addCase(fetchComments.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = SUCCEEDED;
         state.data = state.data.concat(action.payload);
       });
   },
@@ -234,4 +237,5 @@ const commentsSlice = createSlice({
 
 export default commentsSlice.reducer;
 
+export const getCommentsStatus = (state) => state.comments.status;
 export const selectAllComments = (state) => state.comments.data;

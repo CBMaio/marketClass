@@ -6,6 +6,7 @@ import { FETCH_STATUS } from "../../utils";
 import { courseUpdated, selectCourseById } from "./coursesSlice";
 
 import "./styles/add-course-form.scss";
+import { CustomAlert } from "../../components/CustomAlert";
 
 const EditCourseForm = () => {
   const { courseId } = useParams();
@@ -44,9 +45,7 @@ const EditCourseForm = () => {
           <div className="card border-0 px-4 pt-4 mt-2 rounded-lg admin-form">
             <div className="card-body d-block">
               {succeededEdit && (
-                <div className="col-12  text-center font-xsss fw-700 p-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-4 mr-1">
-                  <span>Curso editado con éxito!</span>
-                </div>
+                <CustomAlert isSuccess={true} text="Curso editado con éxito!" />
               )}
 
               <h4 className="font-xss text-grey-800 mb-4 mt-0 fw-700">

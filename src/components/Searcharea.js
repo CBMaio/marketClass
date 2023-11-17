@@ -2,23 +2,26 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { categories } from "../utils";
 
-const Searcharea = ({ search }) => {
+import "../scss/components/search-area.scss";
+
+const Searcharea = ({ search, handleModal }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchCategory, setSearchCategory] = useState("all");
 
   const searchCourse = () => {
-    search(searchQuery, searchCategory);
+    search(searchQuery);
   };
+
+  const openFiltersModal = () => handleModal(true);
 
   return (
     <div
-      className="card rounded-xxl p-lg--5 border-0 bg-no-repeat"
+      className="card rounded-xxl p-lg--5 border-0 bg-no-repeat search-area"
       style={{ backgroundColor: `#f3e5f5` }}
     >
       <div className="card-body w-100 p-4">
         <div className="form-group mt-3 p-3 border-light border p-2 bg-white rounded-lg">
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-lg-4">
               <div className="form-group icon-input mb-0">
                 <i className="ti-search font-xs text-grey-400"></i>
                 <input
@@ -29,22 +32,13 @@ const Searcharea = ({ search }) => {
                 />
               </div>
             </div>
-
-            <div className="col-lg-4">
-              <div className="form-group icon-input mb-0">
-                <i className="ti-package font-xs text-grey-400"></i>
-                <select
-                  className="style1-select bg-transparent border-0 pl-5"
-                  onChange={(e) => setSearchCategory(e.target.value)}
-                >
-                  <option value="all">Ver todo</option>
-                  {categories.map(({ id, name }) => (
-                    <option key={id} value={name}>
-                      {name}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            <div className="col-lg-5 mb-3 mb-lg-0">
+              <button
+                onClick={openFiltersModal}
+                className="w-100 d-block btn font-xssss fw-600 ls-3 style1-input p-0 text-uppercase outline-btn"
+              >
+                Ver filtros
+              </button>
             </div>
             <div className="col-lg-3">
               <Button

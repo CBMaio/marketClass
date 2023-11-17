@@ -1,43 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Slider from "react-slick";
 import { Card } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import CourseList from "../features/courses/CourseList";
+import { isAuthenticated } from "../features/auth/authSlice";
+import { categories } from "../utils";
 
 import "../scss/pages/home.scss";
-import CourseList from "../features/courses/CourseList";
-import { useSelector } from "react-redux";
-import { isAuthenticated } from "../features/auth/authSlice";
 
 const Home = () => {
   const isAuth = useSelector(isAuthenticated);
-  const categoryList = [
-    {
-      name: "Programación",
-      img: "assets/images/language.svg",
-      description:
-        "Domina el arte de la programación con nuestros cursos especializados.",
-    },
-    {
-      name: "Diseño Gráfico",
-      img: "assets/images/graphic-design.svg",
-      description:
-        "Desarrolla tu creatividad y habilidades visuales con nuestros cursos de diseño gráfico.",
-    },
-    {
-      name: "Ciberseguridad",
-      img: "assets/images/content-writing.svg",
-      description:
-        "Aprende sobre técnicas de protección y estrategias de seguridad con nuestros cursos.",
-    },
-    {
-      name: "Data Science",
-      img: "assets/images/finance.svg",
-      description:
-        "Adquiere habilidades en análisis de datos, aprendizaje automático y visualización de datos.",
-    },
-  ];
+  const categoryList = categories;
 
   const iconList = [
     {
@@ -63,44 +39,6 @@ const Home = () => {
     },
   ];
 
-  const feedbackList = [
-    {
-      imageUrl: "student1.jpg",
-      name: "Goria Coast",
-      status: "Diseñadora gráfica",
-      des: "MarketClass ha sido una revelación para mí. Los cursos son muy completos y están impartidos por expertos en la industria. Aprendí mucho y ahora me siento más segura en el mundo digital.",
-    },
-    {
-      imageUrl: "student2.jpg",
-      name: "Thomas Smith",
-      status: "Desarrollador de software junior",
-      des: "¡Increíble! Los cursos de MarketClass me ayudaron a conseguir un nuevo empleo en el campo de la programación. La plataforma es fácil de usar y las lecciones son muy informativas.",
-    },
-    {
-      imageUrl: "student3.jpg",
-      name: "Hurin Seary",
-      status: "Analista de datos",
-      des: "Me encanta cómo MarketClass simplifica el aprendizaje en tecnología. Las opciones de filtrado me ayudaron a encontrar el curso perfecto para mis necesidades.",
-    },
-    {
-      imageUrl: "student1.jpg",
-      name: "Goria Coast",
-      status: "Administrador de sistemas",
-      des: "Como profesional de TI, siempre estoy en busca de actualizaciones. MarketClass me mantiene al día con las últimas tendencias y herramientas. ¡Muy recomendado!",
-    },
-    {
-      imageUrl: "student2.jpg",
-      name: "Thomas Smith",
-      status: "Marketing digital",
-      des: "MarketClass no solo ofrece cursos de alta calidad, sino que también fomenta la comunidad. He conocido a personas increíbles a través de los foros de discusión.",
-    },
-    {
-      imageUrl: "student3.jpg",
-      name: "Hurin Seary",
-      status: "Desarrollador web front-end",
-      des: "MarketClass es la clave para avanzar en mi carrera de desarrollo web. Los instructores son apasionados y están comprometidos con el éxito de los estudiantes. ¡No puedo esperar para seguir aprendiendo!",
-    },
-  ];
   const brandsettings = {
     arrows: true,
     dots: false,
@@ -119,36 +57,6 @@ const Home = () => {
       },
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-  const feedbacksettings = {
-    arrows: true,
-    dots: false,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 3,
-    centerMode: false,
-    autoplay: true,
-    variableWidth: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 800,
         settings: {
           slidesToShow: 2,
         },
@@ -340,73 +248,6 @@ const Home = () => {
               <img src="assets/images/reviews.png" alt="students icon" />
               <p>2M +</p>
               <p>Reseñas increíbles</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="feedback-wrapper pb-5 pt-5 pb-lg--7">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 text-left mb-3 pb-0">
-              <h2 className="text-grey-800 fw-700 font-xl lh-2">
-                Nuestros clientes aman lo que hacemos
-              </h2>
-            </div>
-
-            <div className="col-lg-12 p-0">
-              <Slider {...feedbacksettings}>
-                {feedbackList.map((value, index) => (
-                  <div key={index} className="text-center py-4 px-3">
-                    <div className="card w-100 p-3 p-lg-5 text-left border-0 shadow-xss rounded-lg">
-                      <div className="card-body pl-0 pt-0">
-                        <img
-                          src={`assets/images/${value.imageUrl}`}
-                          alt="user"
-                          className="w45 float-left mr-3 rounded-circle"
-                          style={{ height: "45px", objectFit: "cover" }}
-                        />
-                        <h4 className="text-grey-900 fw-700 font-xsss mt-0 pt-1">
-                          {value.name}
-                        </h4>
-                        <h5 className="font-xssss fw-500 mb-1 text-grey-500">
-                          {value.status}
-                        </h5>
-                      </div>
-                      <p className="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0 ">
-                        {value.des}
-                      </p>
-                      {/* <div className="star d-block w-100 text-right mt-4 mb-0">
-                        <img
-                          src="assets/images/star.png"
-                          alt="star"
-                          className="w15 mr-1 float-left mr-2"
-                        />
-                        <img
-                          src="assets/images/star.png"
-                          alt="star"
-                          className="w15 mr-1 float-left mr-2"
-                        />
-                        <img
-                          src="assets/images/star.png"
-                          alt="star"
-                          className="w15 mr-1 float-left mr-2"
-                        />
-                        <img
-                          src="assets/images/star.png"
-                          alt="star"
-                          className="w15 mr-1 float-left mr-2"
-                        />
-                        <img
-                          src="assets/images/star.png"
-                          alt="star"
-                          className="w15 mr-1 float-left mr-2"
-                        />
-                      </div> */}
-                    </div>
-                  </div>
-                ))}
-              </Slider>
             </div>
           </div>
         </div>
