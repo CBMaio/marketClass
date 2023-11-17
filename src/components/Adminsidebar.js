@@ -56,7 +56,7 @@ const Adminsidebar = () => {
           </button>
         </Link>
 
-        <li className="nav-item">
+        <li className="nav-item mobile-item">
           <NavLink className="navi-link" to="/">
             <span>MarketClass</span>
           </NavLink>

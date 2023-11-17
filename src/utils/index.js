@@ -56,7 +56,12 @@ export const categories = [
     name: "Desarrollo Móvil",
   },
 ];
-
+export const FETCH_STATUS = {
+  LOADING: "loading",
+  IDLE: "idle",
+  FAILED: "failed",
+  SUCCEEDED: "succeeded",
+};
 export const BREAKPOIN_SMALL = 1024;
 
 export const commentsStatus = {

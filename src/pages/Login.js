@@ -48,7 +48,7 @@ const Login = () => {
           ></div>
 
           <div className="col-xl-7 vh-lg-100 align-items-center d-flex bg-white rounded-lg overflow-hidden">
-            <div className="card shadow-none border-0 ml-auto mr-auto login-card">
+            <div className="card shadow-none border-0 ml-auto mr-auto login-card col-10">
               <div className="card-body rounded-0 text-left">
                 <Link to="/">
                   <h1 className="fredoka-font ls-3 fw-700 text-current font-xxl">

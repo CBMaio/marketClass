@@ -1,26 +1,32 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { selectAllCourses, fetchCourses } from "./coursesSlice";
+import {
+  selectAllCourses,
+  fetchCourses,
+  getCoursesStatus,
+} from "./coursesSlice";
 import { fetchAuthors } from "../authors/authorsSlice";
 import CourseCard from "../../components/CourseCard";
+import { FETCH_STATUS } from "../../utils";
 
 const CourseList = ({ limit = false, queryFilter, selectedCategory }) => {
-  const [coursesToShow, setCoursesToShow] = useState([]);
+  const { LOADING, SUCCEEDED, IDLE } = FETCH_STATUS;
   const dispatch = useDispatch();
+  const [coursesToShow, setCoursesToShow] = useState([]);
   const courseData = useSelector(selectAllCourses);
+  const coursesStatus = useSelector(getCoursesStatus);
 
-  const coursesStatus = useSelector((state) => state.courses.status);
   const authorsStatus = useSelector((state) => state.authors.status);
 
   useEffect(() => {
-    if (coursesStatus === "idle") {
+    if (coursesStatus === IDLE) {
       dispatch(fetchCourses());
     }
 
-    if (authorsStatus === "idle") {
+    if (authorsStatus === IDLE) {
       dispatch(fetchAuthors());
     }
-  }, [coursesStatus, authorsStatus, dispatch]);
+  }, [coursesStatus, authorsStatus, dispatch, IDLE]);
 
   useEffect(() => {
     let data = courseData;
@@ -37,7 +43,9 @@ const CourseList = ({ limit = false, queryFilter, selectedCategory }) => {
     setCoursesToShow(data);
   }, [selectedCategory, queryFilter, courseData]);
 
-  return !coursesToShow.length ? (
+  return coursesStatus === LOADING ? (
+    <div className="pl-3">Cargando...</div>
+  ) : !coursesToShow.length ? (
     <div className="pl-3">No se encontraron cursos</div>
   ) : (
     coursesToShow

@@ -5,7 +5,6 @@ import { isAuthenticated } from "../features/auth/authSlice";
 
 export default function ProtectedRoute() {
   const isAuth = useSelector(isAuthenticated);
-  console.log(isAuth);
 
   return isAuth ? <Outlet /> : <Navigate to={"/login"} />;
 }

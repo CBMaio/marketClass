@@ -5,29 +5,42 @@ import {
   createSelector,
 } from "@reduxjs/toolkit";
 import axios from "axios";
+import { FETCH_STATUS } from "../../utils";
+
+const { LOADING, IDLE, SUCCEEDED, FAILED } = FETCH_STATUS;
+
+const COURSES_URL = "https://jsonplaceholder.typicode.com/posts";
 
 const initialState = {
   data: [],
-  status: "idle",
+  status: IDLE,
   error: null,
 };
 
 export const fetchCourses = createAsyncThunk(
   "courses/fetchCourses",
   async () => {
-    const response = await axios.get("data.json");
-    return response.data;
+    try {
+      // const response = await axios.get(POST_URL);
+
+      // TODO delete fake response
+      const response = await axios.get("data.json");
+      return [...response.data];
+    } catch (error) {
+      console.error(error);
+    }
   }
 );
 
 export const addNewCourse = createAsyncThunk(
   "courses/addNewCourse",
   async (initialCourse) => {
-    const response = {
-      ...initialCourse,
-      id: nanoid(),
-    };
-    return response;
+    try {
+      const response = await axios.post(COURSES_URL, initialCourse);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 );
 
@@ -47,17 +60,18 @@ const coursesSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchCourses.pending, (state, action) => {
-        state.status = "loading";
+        state.status = LOADING;
       })
       .addCase(fetchCourses.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = SUCCEEDED;
         state.data = state.data.concat(action.payload);
       })
       .addCase(fetchCourses.rejected, (state, action) => {
-        state.status = "failed";
+        state.status = FAILED;
         state.error = action.error.message;
       })
       .addCase(addNewCourse.fulfilled, (state, action) => {
+        state.status = SUCCEEDED;
         state.data.push(action.payload);
       });
   },
@@ -68,9 +82,9 @@ export const { courseAdded, courseUpdated } = coursesSlice.actions;
 export default coursesSlice.reducer;
 
 export const selectAllCourses = (state) => state.courses.data;
-
 export const selectCourseById = (state, courseId) =>
   state.courses.data.find((course) => `${course.id}` === courseId);
+export const getCoursesStatus = (state) => state.courses.status;
 
 export const selectCoursesByAuthor = createSelector(
   [selectAllCourses, (state, authorId) => authorId],

@@ -1,8 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { FETCH_STATUS } from "../../utils";
+
+const { LOADING, IDLE, SUCCEEDED, FAILED } = FETCH_STATUS;
 
 const initialState = {
   data: [],
-  status: "idle",
+  status: IDLE,
   error: null,
 };
 
@@ -100,10 +104,10 @@ const authorsSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchAuthors.pending, (state, action) => {
-        state.status = "loading";
+        state.status = LOADING;
       })
       .addCase(fetchAuthors.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = SUCCEEDED;
         state.data = state.data.concat(action.payload);
       });
   },
