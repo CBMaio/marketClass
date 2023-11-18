@@ -15,6 +15,8 @@ export const fetchComments = createAsyncThunk(
     const response = [
       {
         id: 1,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 101,
           title: "Introducción a la programación",
@@ -29,6 +31,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 2,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 102,
           title: "Fundamentos de desarrollo web",
@@ -42,6 +46,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 3,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 103,
           title: "Fundamentos de Data Science",
@@ -55,6 +61,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 4,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 104,
           title: "JavaScript avanzado",
@@ -69,6 +77,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 5,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 105,
           title: "Introducción a Machine Learning",
@@ -82,6 +92,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 6,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 106,
           title: "Diseño de Bases de Datos",
@@ -96,6 +108,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 7,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 107,
           title: "Fundamentos del Diseño Gráfico",
@@ -109,6 +123,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 8,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 108,
           title: "Introducción a la Ciberseguridad",
@@ -122,6 +138,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 9,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 109,
           title: "Desarrollo Mobile",
@@ -136,6 +154,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 10,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 110,
           title: "Inteligencia Artificial",
@@ -149,6 +169,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 11,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 111,
           title: "Project Management 101",
@@ -162,6 +184,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 12,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 112,
           title: "Estrategias de Digital Marketing",
@@ -176,6 +200,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 13,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 113,
           title: "Ethical Hacking",
@@ -189,6 +215,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 14,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 114,
           title: "UI/UX Design",
@@ -203,6 +231,8 @@ export const fetchComments = createAsyncThunk(
       },
       {
         id: 15,
+        rating: parseInt(Math.random() * 5),
+        date: new Date(),
         course: {
           id: 115,
           title: "Data Analytics",

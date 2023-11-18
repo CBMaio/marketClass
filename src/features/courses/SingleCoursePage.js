@@ -11,6 +11,7 @@ const SingleCoursePage = () => {
   const { courseId } = useParams();
   const [rating, setRating] = useState(0);
   const [emptyFields, setEmptyFields] = useState(false);
+  const [commentSentSucceeded, setCommentSentSucceeded] = useState(false);
 
   const course = useSelector((state) => selectCourseById(state, courseId));
   if (!course) {
@@ -48,10 +49,25 @@ const SingleCoursePage = () => {
       }, 1000);
       return;
     }
+
     //  TODO, SENT COMMENT
+    // trycatch
+
+    window.scrollTo(0, 0);
+    setCommentSentSucceeded(true);
+    setTimeout(() => {
+      setCommentSentSucceeded(false);
+    }, 3000);
+    e.target.reset();
   };
   return (
     <div className="row">
+      {commentSentSucceeded && (
+        <CustomAlert
+          isSuccess={true}
+          text="Comentario enviado correctamente. En caso de ser aprobado podrá verlo en el listado de comentarios"
+        />
+      )}
       <div className="col-12">
         <div className="col-xl-8 col-xxl-9 col-lg-8 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
           <img src="/assets/images/course-default.avif" alt="course-img" />
@@ -120,7 +136,7 @@ const SingleCoursePage = () => {
             </div>
           </div>
 
-          {course.comments?.map(({ id, user, content }) => (
+          {course.comments?.map(({ id, user, content, rating }) => (
             <div className="row mt-2 mb-1" key={id}>
               <div className="col-10 pl-4">
                 <div className="content">
@@ -131,33 +147,16 @@ const SingleCoursePage = () => {
                     {/* TODO add comment date */}
                     26 de Julio 8:20 PM
                   </h6>
-                  {/* <div className="star d-block w-100 text-left">
-                    <img
-                      src="/assets/images/star.png"
-                      alt="star"
-                      className="w10"
-                    />
-                    <img
-                      src="/assets/images/star.png"
-                      alt="star"
-                      className="w10"
-                    />
-                    <img
-                      src="/assets/images/star.png"
-                      alt="star"
-                      className="w10"
-                    />
-                    <img
-                      src="/assets/images/star.png"
-                      alt="star"
-                      className="w10"
-                    />
-                    <img
-                      src="/assets/images/star-disable.png"
-                      alt="star"
-                      className="w10"
-                    />
-                  </div> */}
+                  <div className="star d-block w-100 text-left">
+                    {Array.from(Array(rating).keys()).map((n) => (
+                      <img
+                        key={n}
+                        src="/assets/images/star.png"
+                        alt="star"
+                        className="w10"
+                      />
+                    ))}
+                  </div>
                   <p className="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2">
                     {content}
                   </p>
@@ -190,7 +189,7 @@ const SingleCoursePage = () => {
                   <div className="mt-md-5 form-group mb30">
                     <label className="form-label">Puntuación</label>
                     <div className="App">
-                      <Rating onClick={handleRating} />
+                      <Rating onClick={handleRating} disableFillHover={true} />
                     </div>
                   </div>
                 </div>

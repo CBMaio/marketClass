@@ -18,12 +18,14 @@
             {
                 "id": 1,
                 "user": "Alice",
+                "rating": 3,
                 "content":
                     "Realmente disfruté el curso de Introducción al desarrollo web de John Doe. Es un gran punto de partida para principiantes.!"
                 },
                 {
                 "id": 2,
                 "user": "Bob",
+                "rating": 3,
                 "content":
                     "El curso está bien estructurado y las explicaciones son claras. Lo encontré muy útil."
                 }
@@ -48,12 +50,14 @@
             {
                 "id": 1,
                 "user": "Charlie",
+                "rating": 3,
                 "content":
                   "La programación Python para principiantes con Jane Smith fue una excelente opción para alguien nuevo en la programación."
               },
               {
                 "id": 2,
                 "user": "David",
+                "rating": 3,
                 "content":
                   "Jane explica conceptos complejos de forma sencilla. Estoy emocionado de seguir aprendiendo Python."
               }
@@ -78,12 +82,14 @@
             {
                 "id": 1,
                 "user": "Eva",
+                "rating": 3,
                 "content":
                   "Los Fundamentos del marketing digital con Emily Johnson me brindaron información sobre el mundo del marketing online. ¡Muy recomendable!"
               },
               {
                 "id": 2,
                 "user": "Frank",
+                "rating": 3,
                 "content":
                   "Ahora entiendo la importancia de las estrategias de marketing digital. La experiencia de Emily se destaca en el curso."
               }
@@ -108,12 +114,14 @@
             {
                 "id": 1,
                 "user": "Grace",
+                "rating": 3,
                 "content":
                   "¡La Masterclass de Diseño Gráfico de David Smith es fantástica! He mejorado significativamente mis habilidades de diseño."
               },
               {
                 "id": 2,
                 "user": "Hank",
+                "rating": 3,
                 "content":
                   "Ahora puedo crear gráficos impresionantes gracias a este curso. El estilo de enseñanza de David es atractivo."
               }
@@ -135,12 +143,14 @@
             {
                 "id": 1,
                 "user": "Isabel",
+                "rating": 3,
                 "content":
                   "Data Science Foundations de Sophia Adams es un curso desafiante pero gratificante. Profundizó mi comprensión del análisis de datos."
               },
               {
                 "id": 2,
                 "user": "Jack",
+                "rating": 3,
                 "content":
                   "Las explicaciones de Sofía son muy claras. Este curso es imprescindible para cualquier persona interesada en la ciencia de datos."
               }
@@ -165,12 +175,14 @@
             {
                 "id": 1,
                 "user": "Katie",
+                "rating": 3,
                 "content":
                   "Siempre quise mejorar mis habilidades fotográficas y el curso Photography Essentials de Michael Brown me ayudó a conseguirlo."
               },
               {
                 "id": 2,
                 "user": "Leo",
+                "rating": 3,
                 "content":
                   "Los consejos prácticos y las demostraciones de Michael fueron increíblemente útiles. Estoy capturando mejores fotos ahora."
               }
@@ -195,12 +207,14 @@
             {
                 "id": 1,
                 "user": "Mike",
+                "rating": 3,
                 "content":
                   "Planificación financiera y elaboración de presupuestos con Sarah Wilson es un curso valioso para gestionar las finanzas personales."
               },
               {
                 "id": 2,
                 "user": "Nina",
+                "rating": 3,
                 "content":
                   "Ya no me estreso por mis finanzas gracias a este curso. La orientación de Sarah es práctica y eficaz."
               }
@@ -225,12 +239,14 @@
             {
                 "id": 1,
                 "user": "Oliver",
+                "rating": 3,
                 "content":
                   "Historia y apreciación del arte con Robert Johnson amplió mi comprensión del arte. Ahora aprecio el arte a un nivel más profundo."
               },
               {
                 "id": 2,
                 "user": "Pamela",
+                "rating": 3,
                 "content":
                   "La pasión de Robert por la historia del arte es contagiosa. Este curso es una joya para los entusiastas del arte."
               }
@@ -255,12 +271,14 @@
             {
                 "id": 1,
                 "user": "Quincy",
+                "rating": 3,
                 "content":
                   "Estrategias de liderazgo empresarial con Jennifer Lee es imprescindible para los aspirantes a líderes. Aprendí valiosas habilidades de liderazgo."
               },
               {
                 "id": 2,
                 "user": "Rachel",
+                "rating": 3,
                 "content":
                   "Las ideas de Jennifer sobre el liderazgo fueron reveladoras. Ahora me siento más seguro de mis habilidades de liderazgo."
               }
@@ -285,12 +303,14 @@
             {
                 "id": 1,
                 "user": "Sam",
+                "rating": 3,
                 "content":
                   "El yoga y la meditación de atención plena con Megan Davis mejoraron mi bienestar físico y mental. Estoy más relajado y concentrado."
               },
               {
                 "id": 2,
                 "user": "Tina",
+                "rating": 3,
                 "content":
                   "Las sesiones de yoga de Megan son relajantes y sus prácticas de atención plena son efectivas. Recomiendo mucho este curso."
               }
@@ -315,12 +335,14 @@
             {
                 "id": 1,
                 "user": "Ursula",
+                "rating": 3,
                 "content":
                   "El curso de inmersión en francés de Claire Martin fue una forma divertida de aprender francés. Ahora me siento más seguro hablando francés."
               },
               {
                 "id": 2,
                 "user": "Vince",
+                "rating": 3,
                 "content":
                   "Disfruté las experiencias culturales en este curso. El estilo de enseñanza de Claire hace que aprender francés sea agradable."
               }
@@ -345,12 +367,14 @@
             {
                 "id": 1,
                 "user": "Wendy",
+                "rating": 3,
                 "content":
                   "Conceptos básicos de cocina para principiantes con Daniel Smith me ayudó a convertirme en un mejor cocinero. Ahora puedo preparar comidas deliciosas con confianza."
               },
               {
                 "id": 2,
                 "user": "Xander",
+                "rating": 3,
                 "content":
                   "Las técnicas de cocina de Daniel son fáciles de seguir. Este curso es perfecto para principiantes como yo"
               }
@@ -375,12 +399,14 @@
             {
                 "id": 1,
                 "user": "Yvonne",
+                "rating": 3,
                 "content":
                   "Sostenibilidad ambiental con Emma Johnson es imprescindible para cualquier persona interesada en prácticas ecológicas. Ahora soy más consciente de mi impacto en el medio ambiente."
               },
               {
                 "id": 2,
                 "user": "Zach",
+                "rating": 3,
                 "content":
                   "La pasión de Emma por la sostenibilidad es inspiradora. Este curso te motiva a hacer cambios positivos para el planeta."
               }
@@ -405,12 +431,14 @@
             {
                 "id": 1,
                 "user": "Alex",
+                "rating": 3,
                 "content":
                   "Desarrollo de aplicaciones móviles con React Native de Alex Wilson es un curso completo. Ahora puedo crear aplicaciones móviles con confianza."
               },
               {
                 "id": 2,
                 "user": "Betty",
+                "rating": 3,
                 "content":
                   "Las explicaciones de Alex son claras y los proyectos prácticos son desafiantes pero gratificantes. Un gran curso para aspirantes a desarrolladores de aplicaciones."
               }
@@ -435,12 +463,14 @@
             {
                 "id": 1,
                 "user": "Charlie",
+                "rating": 3,
                 "content":
                   "El taller de escritura creativa de Olivia Davis es un entorno enriquecedor para escritores. Mis habilidades de escritura han mejorado significativamente."
               },
               {
                 "id": 2,
                 "user": "Diana",
+                "rating": 3,
                 "content":
                   "Los comentarios de Olivia y los talleres interactivos son invaluables. He ganado confianza en mis habilidades de escritura."
               }

@@ -11,6 +11,7 @@ const Register = () => {
   const isAuth = useSelector(isAuthenticated);
   const [userData, setUserData] = useState({});
   const [step, setStep] = useState(0);
+  const [existingEmail, setExistingEmail] = useState(false);
 
   if (isAuth) {
     return <Navigate to="/welcome-admin" />;
@@ -24,6 +25,18 @@ const Register = () => {
     const data = Object.fromEntries(formData.entries());
     if (nextStep === 3 && !isValidPassword(data)) {
       return;
+    }
+
+    if (nextStep === 1) {
+      // current stpe = 0
+      const { email } = data;
+      if (!isAvailable(email)) {
+        setExistingEmail(true);
+        setTimeout(() => {
+          setExistingEmail(false);
+        }, 2000);
+        return;
+      }
     }
 
     if (nextStep === 3) {
@@ -70,6 +83,10 @@ const Register = () => {
   const togglePw = (elementId) => {
     const element = document.querySelector(`#${elementId}`);
     element.type = element.type === "password" ? "text" : "password";
+  };
+
+  const isAvailable = () => {
+    // TODO chequear si el email ya está registrado
   };
 
   return (
@@ -130,6 +147,11 @@ const Register = () => {
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
                           placeholder="Tu correo"
                         />
+                        {existingEmail && (
+                          <div className="font-xssss text-danger mb-2">
+                            Email ya existente
+                          </div>
+                        )}
                       </div>
                       <div className="form-group icon-input mb-3">
                         <i className="font-sm ti-face-smile text-grey-500 pr-0"></i>
