@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 
 import "../scss/components/custom-modal.scss";
 
-const Modal = ({ title, description }) => {
+const Modal = ({
+  title,
+  description,
+  secondBtn = false,
+  textSecondBtn = "",
+  action,
+}) => {
   return (
     <div className="custom-modal">
       <div className="col-8 contact-wrap bg-white shadow-lg rounded-lg position-relative top-0 modal-content">
@@ -14,6 +20,20 @@ const Modal = ({ title, description }) => {
             <div className="mb-3 md-mb-2">
               <div className="w-100 p-3 modal-description">{description}</div>
             </div>
+
+            {secondBtn && (
+              <div className="mb-2">
+                <div className="w-100 p-3 modal-description">
+                  {textSecondBtn}
+                </div>
+                <div
+                  onClick={action}
+                  className="m-auto rounded-lg style1-input mb-0 bg-current text-white text-center font-xss fw-500 border-0 p-2 w175"
+                >
+                  Reenviar
+                </div>
+              </div>
+            )}
 
             <div className="form-group mb-0">
               <Link

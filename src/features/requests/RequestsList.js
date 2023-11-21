@@ -27,7 +27,7 @@ const RequestsList = () => {
   }, [requestsStatus, dispatch]);
 
   useEffect(() => {
-    const data = !["PENDIENTE", "RECIBIDO", "CANCELADO"].includes(
+    const data = !["PENDIENTE", "RECIBIDO", "BLOQUEADO"].includes(
       selectedFilter
     )
       ? requests
@@ -54,7 +54,7 @@ const RequestsList = () => {
                 <option>Filtrar por</option>
                 <option value="PENDIENTE">Pendientes</option>
                 <option value="RECIBIDO">Aceptados</option>
-                <option value="CANCELADO">Rechazados</option>
+                <option value="BLOQUEADO">Rechazados</option>
                 <option value="">Ver todos</option>
               </select>
             </div>

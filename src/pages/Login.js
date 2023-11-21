@@ -36,6 +36,11 @@ const Login = () => {
   if (isAuth) {
     return <Navigate to="/welcome-admin" />;
   }
+
+  const togglePw = (elementId) => {
+    const element = document.querySelector(`#${elementId}`);
+    element.type = element.type === "password" ? "text" : "password";
+  };
   return (
     <Fragment>
       <div className="main-wrap">
@@ -76,11 +81,16 @@ const Login = () => {
                     <input
                       type="Password"
                       required
+                      id="password"
                       className="style2-input pl-5 form-control text-grey-900 font-xssss ls-3"
                       placeholder="Contraseña"
                       name="password"
                     />
                     <i className="font-sm ti-lock text-grey-500 pr-0"></i>
+                    <i
+                      onClick={() => togglePw("password")}
+                      className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
+                    ></i>
                   </div>
                   {showError && (
                     <div className="font-xssss text-danger mb-2">
@@ -88,8 +98,8 @@ const Login = () => {
                     </div>
                   )}
 
-                  <div className="form-check text-left mb-3">
-                    <input
+                  <div className="form-check text-left mb-5">
+                    {/* <input
                       type="checkbox"
                       className="form-check-input mt-2"
                       id="saveData"
@@ -99,7 +109,7 @@ const Login = () => {
                       htmlFor="saveData"
                     >
                       Recuérdame
-                    </label>
+                    </label> */}
                     <a
                       href="/forgot"
                       className="fw-600 font-xssss text-grey-700 mt-1 float-right"

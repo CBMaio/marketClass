@@ -45,3 +45,9 @@
   left: auto !important;
   right: 15px;
 }
+
+.number-input::-webkit-outer-spin-button,
+.number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

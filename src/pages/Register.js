@@ -23,7 +23,7 @@ const Register = () => {
     const formData = new FormData(form);
 
     const data = Object.fromEntries(formData.entries());
-    if (nextStep === 3 && !isValidPassword(data)) {
+    if (nextStep === 2 && !isValidPassword(data)) {
       return;
     }
 
@@ -39,7 +39,7 @@ const Register = () => {
       }
     }
 
-    if (nextStep === 3) {
+    if (nextStep === 2) {
       registerUser();
       return;
     }
@@ -87,6 +87,7 @@ const Register = () => {
 
   const isAvailable = () => {
     // TODO chequear si el email ya está registrado
+    return true;
   };
 
   return (
@@ -125,19 +126,10 @@ const Register = () => {
                           type="text"
                           name="name"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
-                          placeholder="Tu Nombre"
+                          placeholder="Nombre y apellido"
                         />
                       </div>
-                      <div className="form-group icon-input mb-3">
-                        <i className="font-sm ti-user text-grey-500 pr-0"></i>
-                        <input
-                          required
-                          type="text"
-                          name="lastName"
-                          className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
-                          placeholder="Tu Apellido"
-                        />
-                      </div>
+
                       <div className="form-group icon-input mb-3">
                         <i className="font-sm ti-email text-grey-500 pr-0"></i>
                         <input
@@ -154,14 +146,43 @@ const Register = () => {
                         )}
                       </div>
                       <div className="form-group icon-input mb-3">
-                        <i className="font-sm ti-face-smile text-grey-500 pr-0"></i>
+                        <i className="font-sm feather-phone text-grey-500 pr-0"></i>
                         <input
                           required
-                          type="number"
                           name="number"
-                          className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
+                          type="number"
+                          className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600 number-input"
                           placeholder="Tu Número"
                         />
+                      </div>
+
+                      <div className="form-group icon-input mb-3">
+                        <input
+                          name="password"
+                          id="password"
+                          type="Password"
+                          className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
+                          placeholder="Contraseña"
+                        />
+                        <i className="font-sm ti-lock text-grey-500 pr-0"></i>
+                        <i
+                          onClick={() => togglePw("password")}
+                          className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
+                        ></i>
+                      </div>
+                      <div className="form-group icon-input mb-1">
+                        <input
+                          name="confirmPassword"
+                          id="confirm-password"
+                          type="Password"
+                          className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
+                          placeholder="Confirmar Contraseña"
+                        />
+                        <i className="font-sm ti-lock text-grey-500 pr-0"></i>
+                        <i
+                          onClick={() => togglePw("confirm-password")}
+                          className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
+                        ></i>
                       </div>
 
                       <div className="col-sm-12 p-0 text-left">
@@ -207,49 +228,6 @@ const Register = () => {
                       </div>
 
                       <div className="col-sm-12 p-0 text-left">
-                        <div className="form-group mb-1">
-                          <button className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">
-                            Siguiente
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </>
-                )}
-
-                {/* Third step */}
-                {step === 2 && (
-                  <>
-                    <form onSubmit={(e) => updateStep(e, 3)}>
-                      <div className="form-group icon-input mb-3">
-                        <input
-                          name="password"
-                          id="password"
-                          type="Password"
-                          className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
-                          placeholder="Contraseña"
-                        />
-                        <i className="font-sm ti-lock text-grey-500 pr-0"></i>
-                        <i
-                          onClick={() => togglePw("password")}
-                          className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
-                        ></i>
-                      </div>
-                      <div className="form-group icon-input mb-1">
-                        <input
-                          name="confirmPassword"
-                          id="confirm-password"
-                          type="Password"
-                          className="style2-input pl-5 form-control text-grey-900 font-xss ls-3"
-                          placeholder="Confirmar Contraseña"
-                        />
-                        <i className="font-sm ti-lock text-grey-500 pr-0"></i>
-                        <i
-                          onClick={() => togglePw("confirm-password")}
-                          className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
-                        ></i>
-                      </div>
-                      <div className="col-sm-12 p-0 text-left mt-3">
                         <div className="form-group mb-1">
                           <button className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">
                             Registrarme

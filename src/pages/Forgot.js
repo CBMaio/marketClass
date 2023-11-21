@@ -20,6 +20,8 @@ const Forgot = () => {
     setSubmittedForm(true);
   };
 
+  const resentEmail = () => {};
+
   return (
     <Fragment>
       {!submittedForm ? (
@@ -78,6 +80,9 @@ const Forgot = () => {
         <Modal
           title={exitMessage.title}
           description={exitMessage.description}
+          secondBtn={true}
+          textSecondBtn="No recibiste el email?"
+          action={resentEmail}
         />
       )}
     </Fragment>

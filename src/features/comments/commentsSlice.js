@@ -56,7 +56,7 @@ export const fetchComments = createAsyncThunk(
           name: "user789",
           email: "user789@gmail.com",
         },
-        status: "CANCELADO",
+        status: "BLOQUEADO",
         content: "Necesito darme de baja",
       },
       {
@@ -118,7 +118,7 @@ export const fetchComments = createAsyncThunk(
           name: "user404",
           email: "user404@gmail.com",
         },
-        status: "CANCELADO",
+        status: "BLOQUEADO",
         content: "Me arrepentí, ya no deseo realizar este curso.",
       },
       {
@@ -179,7 +179,7 @@ export const fetchComments = createAsyncThunk(
           name: "user808",
           email: "user808@gmail.com",
         },
-        status: "CANCELADO",
+        status: "BLOQUEADO",
         content: "Me asignaron otro curso",
       },
       {
@@ -241,7 +241,7 @@ export const fetchComments = createAsyncThunk(
           name: "user212",
           email: "user212@gmail.com",
         },
-        status: "CANCELADO",
+        status: "BLOQUEADO",
         content: "Tengo un problema con los horarios",
       },
     ];

@@ -5,13 +5,23 @@ import { Link } from "react-router-dom";
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
 
+import "../scss/pages/password.scss";
+
 const Password = () => {
+  const togglePw = (elementId) => {
+    const element = document.querySelector(`#${elementId}`);
+    element.type = element.type === "password" ? "text" : "password";
+  };
+
   return (
     <Fragment>
       <div id="wrapper">
         <Adminsidebar />
 
-        <div id="content-wrapper" className="d-flex flex-column">
+        <div
+          id="content-wrapper"
+          className="d-flex flex-column change-pw-section"
+        >
           <div id="content">
             <AdminTopnav />
             <main className="main-section container px-3 py-4">
@@ -30,10 +40,15 @@ const Password = () => {
                             Contraseña Actual
                           </label>
                           <input
-                            type="text"
+                            type="password"
                             name="comment-name"
+                            id="password"
                             className="form-control"
                           />
+                          <i
+                            onClick={() => togglePw("password")}
+                            className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
+                          ></i>
                         </div>
                       </div>
 
@@ -43,10 +58,15 @@ const Password = () => {
                             Contraseña Nueva
                           </label>
                           <input
-                            type="text"
+                            type="password"
                             name="comment-name"
                             className="form-control"
+                            id="new-password"
                           />
+                          <i
+                            onClick={() => togglePw("new-password")}
+                            className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
+                          ></i>
                         </div>
                       </div>
                     </div>
@@ -58,10 +78,15 @@ const Password = () => {
                             Confirmar Contraseña Nueva
                           </label>
                           <input
-                            type="text"
+                            type="password"
                             name="comment-name"
                             className="form-control"
+                            id="confirm-new-password"
                           />
+                          <i
+                            onClick={() => togglePw("confirm-new-password")}
+                            className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
+                          ></i>
                         </div>
                       </div>
                     </div>

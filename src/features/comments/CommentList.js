@@ -27,7 +27,7 @@ const CommentList = () => {
   }, [commentsStatus, dispatch]);
 
   useEffect(() => {
-    const data = !["PENDIENTE", "RECIBIDO", "CANCELADO"].includes(
+    const data = !["PENDIENTE", "RECIBIDO", "BLOQUEADO"].includes(
       selectedFilter
     )
       ? comments
@@ -39,7 +39,7 @@ const CommentList = () => {
   if (!commentsToShow) return <div>No hay comentarios</div>;
 
   return (
-    <div className="container px-3 py-4">
+    <div className="container px-3 py-4 comments-list-container">
       <div className="row">
         <div className="col-lg-12 mt-4">
           <div className="card border-0 mt-2 rounded-10">
@@ -52,8 +52,7 @@ const CommentList = () => {
                 <option>Filtrar por</option>
                 <option value="PENDIENTE">Pendientes</option>
                 <option value="RECIBIDO">Aceptados</option>
-                <option value="CANCELADO">Rechazados</option>
-                <option value="">Ver todos</option>
+                <option value="BLOQUEADO">Bloqueados</option>
               </select>
             </div>
             <div className="card-body p-4">
@@ -65,9 +64,7 @@ const CommentList = () => {
                       <th className="border-0" scope="col">
                         Nombre
                       </th>
-                      <th className="border-0" scope="col">
-                        Email
-                      </th>
+
                       <th className="border-0" scope="col">
                         Estado
                       </th>
@@ -84,7 +81,6 @@ const CommentList = () => {
                           <b>{value.course.title}</b>
                         </td>
                         <td>{value.user.name}</td>
-                        <td>{value.user.email}</td>
                         <td>
                           <span
                             className={`badge rounded-pill font-xsssss fw-700 pl-3 pr-3 lh-24 text-uppercase rounded-3 ls-2 bg-${value.status.toLowerCase()}`}
@@ -129,12 +125,7 @@ const CommentList = () => {
                             <b>{selectedComment.user.name} </b>
                           </span>
                         </div>
-                        <div>
-                          <span>Email: </span>
-                          <span>
-                            <b>{selectedComment.user.email} </b>
-                          </span>
-                        </div>
+
                         <div>
                           <span>Comentario: </span>
                           <span>
@@ -148,16 +139,21 @@ const CommentList = () => {
                           </span>
                         </div>
 
-                        {selectedComment.status === "PENDIENTE" && (
-                          <div className="mt-4 actions-container">
-                            <Button className="col-12 bg-current border-0 action-btn filled-btn">
-                              <span>Aceptar</span>
-                            </Button>
-                            <Button className="col-12 action-btn outline-btn">
-                              <span>Rechazar</span>
-                            </Button>
-                          </div>
-                        )}
+                        <div className="mt-4 actions-container">
+                          <select className="col-12 text-center p-2 bg-current border-0 action-btn filled-btn">
+                            <option value="aceptar">Aceptar</option>
+                            <option value="bloquear">Bloquear</option>
+                            <option value="pendiente">
+                              Mover a pentientes
+                            </option>
+                          </select>
+                          {/*  <Button className="col-12 bg-current border-0 action-btn filled-btn">
+                            <span>Aceptar</span>
+                          </Button>*/}
+                          <Button className="col-12 action-btn outline-btn">
+                            <span>Aceptar cambios</span>
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
