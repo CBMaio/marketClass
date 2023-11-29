@@ -1,15 +1,15 @@
-import React, { Fragment, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { Fragment, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../features/auth/authSlice";
+import { loginUser } from "../features/auth/authActions";
 import "../scss/pages/login-register.scss";
 import "../scss/variables.scss";
 import { isAuthenticated } from "../features/auth/authSlice";
 
 const Login = () => {
-  const isAuth = useSelector(isAuthenticated);
   const navigate = useNavigate();
-  const [showError, setShowError] = useState(false);
+  const { loading, error } = useSelector((state) => state.auth);
+  const isAuth = useSelector(isAuthenticated);
 
   const dispatch = useDispatch();
 
@@ -19,28 +19,21 @@ const Login = () => {
     const form = e.target;
     const formData = new FormData(form);
 
-    const { email, password } = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries());
 
-    if (email !== "admin" || password !== "admin") {
-      setShowError(true);
-      setTimeout(() => {
-        setShowError(false);
-      }, 1000);
-      return;
-    }
-
-    dispatch(login());
+    dispatch(loginUser(data));
     navigate("/welcome-admin");
   };
-
-  if (isAuth) {
-    return <Navigate to="/welcome-admin" />;
-  }
 
   const togglePw = (elementId) => {
     const element = document.querySelector(`#${elementId}`);
     element.type = element.type === "password" ? "text" : "password";
   };
+
+  useEffect(() => {
+    if (isAuth) navigate("/welcome-admin");
+  });
+
   return (
     <Fragment>
       <div className="main-wrap">
@@ -92,24 +85,13 @@ const Login = () => {
                       className="font-sm ti-eye text-grey-500 pr-0 toggle-pw-icon"
                     ></i>
                   </div>
-                  {showError && (
+                  {error && (
                     <div className="font-xssss text-danger mb-2">
                       Usuario o contraseña incorrectos
                     </div>
                   )}
 
                   <div className="form-check text-left mb-5">
-                    {/* <input
-                      type="checkbox"
-                      className="form-check-input mt-2"
-                      id="saveData"
-                    />
-                    <label
-                      className="form-check-label font-xssss text-grey-500"
-                      htmlFor="saveData"
-                    >
-                      Recuérdame
-                    </label> */}
                     <a
                       href="/forgot"
                       className="fw-600 font-xssss text-grey-700 mt-1 float-right"
@@ -123,7 +105,7 @@ const Login = () => {
                         type="submit"
                         className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
                       >
-                        Iniciar sesión
+                        {loading ? "Cargando" : "Iniciar sesión"}
                       </button>
                     </div>
                     <h6 className="text-grey-500 font-xssss fw-500 mt-0 mb-0 lh-32">

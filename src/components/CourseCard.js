@@ -1,10 +1,18 @@
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "../scss/components/course-card.scss";
 
-const CourseCard = ({ course }) => {
-  const { id, category, status, price, title, frequency, author } = course;
+const CourseCard = ({ course = {} }) => {
+  const {
+    _id: id,
+    category,
+    status,
+    price,
+    title,
+    frequency,
+    author,
+    image,
+  } = course;
 
   return (
     <div
@@ -18,7 +26,7 @@ const CourseCard = ({ course }) => {
             className="position-relative d-block"
           >
             <img
-              src="/assets/images/course-default.avif"
+              src={image || "/assets/images/course-default.avif"}
               alt="course"
               className="w-100"
             />
@@ -30,7 +38,7 @@ const CourseCard = ({ course }) => {
               <span
                 className={`font-xsssss fw-700 pr-3 lh-32 text-uppercase rounded-lg ls-2 d-inline-block mr-1 ${status}`}
               >
-                {category}
+                {category?.title}
               </span>
               <span className="font-xss fw-700 pl-3  ls-2 lh-32 d-inline-block float-right">
                 <span className="font-xsssss">$</span> {price}
@@ -45,7 +53,7 @@ const CourseCard = ({ course }) => {
               </Link>
             </h4>
             <h6 className="font-xssss text-grey-500 fw-600 ml-0 mt-2">
-              {frequency}
+              {frequency.toUpperCase()}
             </h6>
             <div className="memberlist mt-3 mb-2 ml-0 d-block">
               <li className="w-auto">

@@ -40,9 +40,9 @@ const CourseList = ({ limit = false, queryFilter, filterSelected }) => {
   }, [queryFilter, courseData]);
 
   // const filterByItems = (data, filters) => {
-  //   debugger;
   //   const newData = data.map((course) => {});
   // };
+
   return coursesStatus === LOADING ? (
     <div className="pl-3">Cargando...</div>
   ) : !coursesToShow.length ? (
@@ -50,7 +50,7 @@ const CourseList = ({ limit = false, queryFilter, filterSelected }) => {
   ) : (
     coursesToShow
       .slice(0, limit || coursesToShow.length)
-      .map((course) => <CourseCard course={course} key={course.id} />)
+      .map((course) => <CourseCard key={course._id} course={course} />)
   );
 };
 
