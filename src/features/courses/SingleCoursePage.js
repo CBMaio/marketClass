@@ -1,22 +1,29 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { selectCourseById } from "./coursesSlice";
+import {
+  selectCourseById,
+  getCoursesStatus,
+  fetchCourses,
+} from "./coursesSlice";
 import { Rating } from "react-simple-star-rating";
+import { FETCH_STATUS } from "../../utils";
 
 import "../../scss/pages/single-course.scss";
 import { CustomAlert } from "../../components/CustomAlert";
 
 const SingleCoursePage = () => {
+  const { LOADING, IDLE } = FETCH_STATUS;
+  const dispatch = useDispatch();
   const { courseId } = useParams();
   const [rating, setRating] = useState(0);
   const [emptyFields, setEmptyFields] = useState(false);
   const [commentSentSucceeded, setCommentSentSucceeded] = useState(false);
 
+  const coursesStatus = useSelector(getCoursesStatus);
   const course = useSelector((state) => selectCourseById(state, courseId));
-  if (!course) {
-    return <section>Course not found!</section>;
-  }
+  console.log(course);
+
   const {
     title,
     author,
@@ -27,7 +34,8 @@ const SingleCoursePage = () => {
     duration,
     price,
     type,
-  } = course;
+    image,
+  } = course || {};
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -60,6 +68,19 @@ const SingleCoursePage = () => {
     }, 3000);
     e.target.reset();
   };
+
+  useEffect(() => {
+    if (coursesStatus === IDLE) {
+      dispatch(fetchCourses());
+    }
+  }, [coursesStatus, IDLE, dispatch]);
+
+  if (coursesStatus === LOADING) {
+    return <section>Cargando...</section>;
+  } else if (!course) {
+    return <section>Course not found!</section>;
+  }
+
   return (
     <div className="row">
       {commentSentSucceeded && (
@@ -70,7 +91,7 @@ const SingleCoursePage = () => {
       )}
       <div className="col-12">
         <div className="col-xl-8 col-xxl-9 col-lg-8 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
-          <img src="/assets/images/course-default.avif" alt="course-img" />
+          <img src={image} alt="course-img" />
         </div>
         <div className="col-6 m-auto align-items-center border-0 pt-4 rounded-10 admin-form">
           <Link

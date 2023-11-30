@@ -94,12 +94,12 @@ const Home = () => {
               <div className="form-group mt-lg-5 p-3 border-light border p-2 bg-white rounded-lg">
                 <div className="row">
                   <div className="col-6">
-                    <a
-                      href="/courses-grid"
+                    <Link
+                      to="/courses-grid"
                       className="w-100 btn font-xssss fw-600 ls-3 banner-btn p-0 border-0 text-uppercase light-btn "
                     >
                       Buscar cursos
-                    </a>
+                    </Link>
                   </div>
                   <div className="col-6">
                     <Link
@@ -216,12 +216,12 @@ const Home = () => {
           </div>
 
           <div className="row justify-content-center pt-5">
-            <a
-              href="/courses-grid"
+            <Link
+              to="/courses-grid"
               className="ml-1 mr-1 rounded-lg font-xss border-size-md fw-600 open-font p-3 w200 btn outline-btn"
             >
               Ver todos los cursos
-            </a>
+            </Link>
           </div>
         </div>
       </div>

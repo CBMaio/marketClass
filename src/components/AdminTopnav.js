@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUserInfo } from "../features/auth/authSlice";
 import { logout } from "../features/auth/authSlice";
 
 import "../scss/components/admin-top-nav.scss";
@@ -7,6 +8,7 @@ import "../scss/components/admin-top-nav.scss";
 const AdminTopnav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const userInfo = useSelector(selectUserInfo);
 
   const closeSession = () => {
     dispatch(logout());
@@ -19,14 +21,14 @@ const AdminTopnav = () => {
         <li className="nav-item dropdown no-arrow">
           <Link to="/account-information" className="navi-link dropdown-toggle">
             <img
-              src="/assets/images/student3.jpg"
+              src={userInfo.picture}
               alt="user"
               className="w45 mt-n1 rounded-circle user-img"
             />
             <span className="d-none d-lg-inline text-grey-600 fw-700 ml-4 mr-4 font-xssss">
-              Mariana
+              {userInfo.name}
               <i className="font-xsssss d-block text-grey-500 fw-500 black-icon">
-                Python Dev
+                {userInfo.degree}
               </i>
             </span>
           </Link>

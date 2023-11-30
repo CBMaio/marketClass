@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import Darkbutton from "../components/Darkbutton";
 
 class Appheader extends Component {
   state = {
@@ -125,7 +124,6 @@ class Appheader extends Component {
               </div>
             </Link>
           </li>
-          {/* <Darkbutton /> */}
 
           <li>
             <Link to="/message">

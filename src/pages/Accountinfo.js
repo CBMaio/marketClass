@@ -1,17 +1,20 @@
 import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
+import { selectUserInfo } from "../features/auth/authSlice";
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
-import { Link } from "react-router-dom";
 
 import "../scss/pages/account-info.scss";
 
 const Accountinfo = () => {
+  const userInfo = useSelector(selectUserInfo);
   const updateAccount = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formattedData = Object.fromEntries(formData.entries());
     console.log(formattedData);
   };
+
   return (
     <Fragment>
       <div id="wrapper">
@@ -32,17 +35,19 @@ const Accountinfo = () => {
                   <div className="row justify-content-center">
                     <div className="col-lg-4 text-center">
                       <figure className="avatar ml-auto mr-auto mb-0 mt-2 w100">
-                        <img
-                          src="/assets/images/student3.jpg"
-                          alt="avater"
-                          className="shadow-sm rounded-lg w-100 account-user-img"
-                        />
+                        {userInfo.picture && (
+                          <img
+                            src={userInfo.picture}
+                            alt="avater"
+                            className="shadow-sm rounded-lg w-100 account-user-img"
+                          />
+                        )}
                       </figure>
                       <h2 className="fw-700 font-sm text-grey-900 mt-3">
-                        Mariana
+                        {userInfo.name}
                       </h2>
                       <h4 className="text-grey-500 fw-500 mb-3 font-xsss mb-4">
-                        Python Dev
+                        {userInfo.degree}
                       </h4>
                     </div>
                   </div>
@@ -61,6 +66,7 @@ const Accountinfo = () => {
                             name="name"
                             type="text"
                             className="form-control"
+                            defaultValue={userInfo.name}
                           />
                         </div>
                       </div>
@@ -79,6 +85,7 @@ const Accountinfo = () => {
                             name="email"
                             type="text"
                             className="form-control"
+                            defaultValue={userInfo.email}
                           />
                         </div>
                       </div>
@@ -95,6 +102,7 @@ const Accountinfo = () => {
                             name="number"
                             type="text"
                             className="form-control"
+                            defaultValue={userInfo.number}
                           />
                         </div>
                       </div>
@@ -113,6 +121,7 @@ const Accountinfo = () => {
                             name="qualifications"
                             type="text"
                             className="form-control"
+                            defaultValue={userInfo.degree}
                           />
                         </div>
                       </div>
@@ -126,6 +135,7 @@ const Accountinfo = () => {
                             name="experience"
                             type="text"
                             className="form-control"
+                            defaultValue={userInfo.experience}
                           />
                         </div>
                       </div>

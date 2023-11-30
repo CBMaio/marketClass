@@ -111,3 +111,5 @@ export const commentsStatus = {
   RECEIVED: "received",
   CANCELLED: "cancelled",
 };
+
+export const isEmptyObject = (obj) => Object.keys(obj).length;

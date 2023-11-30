@@ -1,21 +1,21 @@
-import React, { Fragment, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { API_URL } from "../features/auth/constants";
+import React, { Fragment, useState, useEffect } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { registerUser } from "../features/auth/authActions";
 
 import { isAuthenticated } from "../features/auth/authSlice";
 
 import "../scss/pages/login-register.scss";
 
 const Register = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loading, error, success } = useSelector((state) => state.auth);
   const isAuth = useSelector(isAuthenticated);
+
   const [userData, setUserData] = useState({});
   const [step, setStep] = useState(0);
   const [existingEmail, setExistingEmail] = useState(false);
-
-  if (isAuth) {
-    return <Navigate to="/welcome-admin" />;
-  }
 
   const updateStep = (e, nextStep) => {
     e.preventDefault();
@@ -23,12 +23,12 @@ const Register = () => {
     const formData = new FormData(form);
 
     const data = Object.fromEntries(formData.entries());
-    if (nextStep === 2 && !isValidPassword(data)) {
+    if (nextStep === 1 && !isValidPassword(data)) {
       return;
     }
 
     if (nextStep === 1) {
-      // current stpe = 0
+      // current step = 0
       const { email } = data;
       if (!isAvailable(email)) {
         setExistingEmail(true);
@@ -40,10 +40,11 @@ const Register = () => {
     }
 
     if (nextStep === 2) {
-      registerUser();
+      registrationAction(data);
       return;
     }
 
+    delete data.confirmPassword;
     setUserData({ ...userData, ...data });
     setStep(nextStep);
   };
@@ -59,25 +60,9 @@ const Register = () => {
     return true;
   };
 
-  const registerUser = async () => {
-    try {
-      const response = await fetch(`${API_URL}/signup`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...userData }),
-      });
-
-      console.log(response);
-      if (response.ok) {
-        console.log("user created");
-      } else {
-        console.log("Something went wrong");
-      }
-    } catch (error) {
-      console.error(error);
-    }
+  const registrationAction = async (newData) => {
+    const payload = { ...userData, ...newData };
+    dispatch(registerUser(payload));
   };
 
   const togglePw = (elementId) => {
@@ -89,6 +74,10 @@ const Register = () => {
     // TODO chequear si el email ya está registrado
     return true;
   };
+
+  useEffect(() => {
+    if (isAuth) navigate("/welcome-admin");
+  });
 
   return (
     <Fragment>
@@ -210,7 +199,7 @@ const Register = () => {
                         <i className="font-sm ti-user text-grey-500 pr-0"></i>
                         <input
                           required
-                          name="qualification"
+                          name="degree"
                           type="text"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
                           placeholder="Titulo"

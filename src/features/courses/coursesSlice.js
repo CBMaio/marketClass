@@ -1,31 +1,42 @@
 import {
   createSlice,
   createAsyncThunk,
-  nanoid,
   createSelector,
 } from "@reduxjs/toolkit";
 import axios from "axios";
 import { FETCH_STATUS } from "../../utils";
+import { API_URL } from "../constants";
 
 const { LOADING, IDLE, SUCCEEDED, FAILED } = FETCH_STATUS;
 
-const COURSES_URL = "https://jsonplaceholder.typicode.com/posts";
+const BASE_URL = "course";
 
 const initialState = {
   data: [],
   status: IDLE,
   error: null,
+  courseSelected: null,
 };
 
 export const fetchCourses = createAsyncThunk(
   "courses/fetchCourses",
   async () => {
     try {
-      // const response = await axios.get(POST_URL);
+      const { data } = await axios.get(`${API_URL}/${BASE_URL}/`);
+      return [...data.data];
+    } catch (error) {
+      console.error(error);
+    }
+  }
+);
 
-      // TODO delete fake response
-      const response = await axios.get("data.json");
-      return [...response.data];
+export const getCourseById = createAsyncThunk(
+  "courses/getCourseById",
+  async (id) => {
+    try {
+      const { data } = await axios.get(`${BASE_URL}/${id}`);
+      console.log(data);
+      return [...data.data];
     } catch (error) {
       console.error(error);
     }
@@ -36,7 +47,7 @@ export const addNewCourse = createAsyncThunk(
   "courses/addNewCourse",
   async (initialCourse) => {
     try {
-      const response = await axios.post(COURSES_URL, initialCourse);
+      const response = await axios.post(BASE_URL, initialCourse);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -82,8 +93,10 @@ export const { courseAdded, courseUpdated } = coursesSlice.actions;
 export default coursesSlice.reducer;
 
 export const selectAllCourses = (state) => state.courses.data;
-export const selectCourseById = (state, courseId) =>
-  state.courses.data.find((course) => `${course.id}` === courseId);
+export const selectCourseById = (state, courseId) => {
+  return state.courses.data.find(({ _id: id }) => id === courseId);
+};
+
 export const getCoursesStatus = (state) => state.courses.status;
 
 export const selectCoursesByAuthor = createSelector(
