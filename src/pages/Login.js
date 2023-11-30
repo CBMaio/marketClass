@@ -1,14 +1,14 @@
 import React, { Fragment, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../features/auth/authActions";
+import { loginUser, getUserData } from "../features/auth/authActions";
+import { isAuthenticated } from "../features/auth/authSlice";
 import "../scss/pages/login-register.scss";
 import "../scss/variables.scss";
-import { isAuthenticated } from "../features/auth/authSlice";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { loading, error } = useSelector((state) => state.auth);
+  const { loading, error, userInfo } = useSelector((state) => state.auth);
   const isAuth = useSelector(isAuthenticated);
 
   const dispatch = useDispatch();
@@ -22,7 +22,6 @@ const Login = () => {
     const data = Object.fromEntries(formData.entries());
 
     dispatch(loginUser(data));
-    navigate("/welcome-admin");
   };
 
   const togglePw = (elementId) => {
@@ -31,7 +30,10 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (isAuth) navigate("/welcome-admin");
+    if (isAuth) {
+      navigate("/welcome-admin");
+      dispatch(getUserData(userInfo.loginUser));
+    }
   });
 
   return (

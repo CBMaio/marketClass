@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
+import { selectUserInfo } from "../features/auth/authSlice";
 
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
@@ -6,6 +8,9 @@ import AdminTopnav from "../components/AdminTopnav";
 import "../scss/pages/welcome-admin.scss";
 
 const WelcomeAdmin = () => {
+  const user = useSelector(selectUserInfo);
+
+  if (!user) return;
   return (
     <Fragment>
       <div id="wrapper">
@@ -18,7 +23,7 @@ const WelcomeAdmin = () => {
             <main className="main-section container px-3 py-4">
               <h1 className="col-12 display4-xs-size">
                 Bienvenida,
-                <br /> Mariana!
+                <br /> {user.name}!
               </h1>
               <div className="row">
                 <div className="illustration-container">

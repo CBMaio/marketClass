@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import Slider from 'react-slick';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
 
 const skillList = [
   {
-    skill: 'user.png',
+    skill: "user.png",
   },
   {
-    skill: 'user.png',
+    skill: "user.png",
   },
   {
-    skill: 'user.png',
+    skill: "user.png",
   },
   {
-    skill: 'user.png',
+    skill: "user.png",
   },
   {
-    skill: 'user.png',
+    skill: "user.png",
   },
 ];
 
@@ -101,9 +102,9 @@ class Profile extends Component {
           <div className="col-12 pl-0 mt-4 text-left">
             <h4 className="text-grey-800 font-xsss fw-700 mb-3 d-block">
               Mis habilidades
-              <a href="/">
+              <Link to="/">
                 <i className="ti-angle-right font-xsssss text-grey-700 float-right "></i>
-              </a>
+              </Link>
             </h4>
             <Slider {...skillsettings}>
               {skillList.map((value, index) => (

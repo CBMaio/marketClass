@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_URL } from "../constants";
@@ -5,6 +6,7 @@ import { API_URL } from "../constants";
 const AUTH_API = `${API_URL}/users`;
 const SIGNUP = "signup";
 const LOGIN = "login";
+const USER = "user";
 
 export const registerUser = createAsyncThunk(
   "auth/signup",
@@ -26,6 +28,32 @@ export const registerUser = createAsyncThunk(
   }
 );
 
+export const getUserData = createAsyncThunk(
+  "auth/user",
+  async ({ token }, { rejectWithValue }) => {
+    try {
+      if (!token) return;
+      const response = await axios.get(`${AUTH_API}/${USER}`, {
+        headers: { "x-access-token": token },
+      });
+
+      if (response.status === 200) {
+        const data = JSON.stringify(response?.data?.data);
+
+        localStorage.setItem("userData", data);
+      }
+
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        return rejectWithValue(error.response.data.message);
+      } else {
+        return rejectWithValue(error.message);
+      }
+    }
+  }
+);
+
 export const loginUser = createAsyncThunk(
   "auth/login",
   async (user, { rejectWithValue }) => {
@@ -36,13 +64,12 @@ export const loginUser = createAsyncThunk(
         },
       };
 
-      const response = await axios.post(
+      const { data } = await axios.post(
         `${AUTH_API}/${LOGIN}`,
         { ...user },
         config
       );
 
-      const { data } = response;
       localStorage.setItem("userToken", data.loginUser.token);
       return data;
     } catch (error) {
@@ -54,3 +81,7 @@ export const loginUser = createAsyncThunk(
     }
   }
 );
+
+export const getCurrentUser = () => {
+  return JSON.parse(localStorage.getItem("userToken"));
+};
