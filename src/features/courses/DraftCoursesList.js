@@ -2,15 +2,20 @@ import { useEffect, Fragment, useState } from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { fetchCourses, selectAllCourses } from "./coursesSlice";
+import {
+  fetchMyCoursesUnpublished,
+  getUnpublishedCourses,
+  getUnpublishedCoursesStatus,
+  selectAllCourses,
+} from "./coursesSlice";
 import { BREAKPOIN_SMALL } from "../../utils";
 
 import "../../scss/components/draft-course-list.scss";
 
 const DraftCoursesList = () => {
   const dispatch = useDispatch();
-  const courseData = useSelector(selectAllCourses);
-  const coursesStatus = useSelector((state) => state.courses.status);
+  const coursesStatus = useSelector(getUnpublishedCoursesStatus);
+  const courseData = useSelector(getUnpublishedCourses);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isOpenCourseModal, setIsOpenCourseModal] = useState(false);
 
@@ -31,7 +36,7 @@ const DraftCoursesList = () => {
 
   useEffect(() => {
     if (coursesStatus === "idle") {
-      dispatch(fetchCourses());
+      dispatch(fetchMyCoursesUnpublished());
     }
   }, [coursesStatus, dispatch]);
 
@@ -39,11 +44,11 @@ const DraftCoursesList = () => {
     <>
       {courseData &&
         courseData.map((value) => (
-          <Fragment key={value.id}>
+          <Fragment key={value._id}>
             {!isMobile ? (
               <tr className="my-course-line desktop-view">
                 <td className="product-thumbnail text-start ps-0">
-                  <Link to={`/edit-course/${value.id}`} className="small-icon">
+                  <Link to={`/edit-course/${value._id}`} className="small-icon">
                     <img
                       src="/assets/images/course-default.avif"
                       alt="product"
@@ -63,19 +68,19 @@ const DraftCoursesList = () => {
                   <span
                     className={`font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 d-inline-block mr-1 ${value.status}`}
                   >
-                    {value.category}
+                    {value.category.title}
                   </span>
                 </td>
                 <td>
                   <b>{value.frequency}</b>
                 </td>
-                <td className="product-remove text-right btn-actions">
+                <td className="product-remove text-right btn-actions justify-content-end">
                   <Button className="bg-transparent border-0 pr-0 course-action">
                     <i className="ti-export mr-1 font-xs text-grey-500" />
                     <span className="button-legend">Publicar</span>
                   </Button>
                   <Button className="bg-transparent border-0 pr-0 course-action">
-                    <Link to={`/edit-course/${value.id}`}>
+                    <Link to={`/edit-course/${value._id}`}>
                       <i className="feather-edit mr-1 font-xs text-grey-500"></i>
                       <span className="button-legend">Editar</span>
                     </Link>
@@ -127,7 +132,7 @@ const DraftCoursesList = () => {
               <div>
                 <span>Categoria: </span>
                 <span>
-                  <b>{selectedCourse.category} </b>
+                  <b>{selectedCourse.category.title} </b>
                 </span>
               </div>
               <div>
@@ -141,7 +146,7 @@ const DraftCoursesList = () => {
                 <Button className="col-12 bg-current border-0 action-btn filled-btn">
                   <Link
                     className="text-white"
-                    to={`/edit-course/${selectedCourse.id}`}
+                    to={`/edit-course/${selectedCourse._id}`}
                   >
                     <span>Editar</span>
                   </Link>

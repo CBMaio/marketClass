@@ -11,6 +11,7 @@ import { FETCH_STATUS } from "../../utils";
 
 import "../../scss/pages/single-course.scss";
 import { CustomAlert } from "../../components/CustomAlert";
+import { addComment } from "../comments/commentsSlice";
 
 const SingleCoursePage = () => {
   const { LOADING, IDLE } = FETCH_STATUS;
@@ -22,7 +23,6 @@ const SingleCoursePage = () => {
 
   const coursesStatus = useSelector(getCoursesStatus);
   const course = useSelector((state) => selectCourseById(state, courseId));
-  console.log(course);
 
   const {
     title,
@@ -41,6 +41,7 @@ const SingleCoursePage = () => {
     setRating(rate);
   };
   const canSave = (data) => Object.values(data).every(Boolean);
+
   const sendComment = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -48,6 +49,7 @@ const SingleCoursePage = () => {
     const finalData = {
       ...formattedData,
       rating,
+      course: course._id,
     };
 
     if (!canSave(finalData)) {
@@ -58,8 +60,7 @@ const SingleCoursePage = () => {
       return;
     }
 
-    //  TODO, SENT COMMENT
-    // trycatch
+    dispatch(addComment(finalData));
 
     window.scrollTo(0, 0);
     setCommentSentSucceeded(true);
@@ -81,6 +82,7 @@ const SingleCoursePage = () => {
     return <section>Course not found!</section>;
   }
 
+  console.log(course);
   return (
     <div className="row">
       {commentSentSucceeded && (
@@ -90,12 +92,12 @@ const SingleCoursePage = () => {
         />
       )}
       <div className="col-12">
-        <div className="col-xl-8 col-xxl-9 col-lg-8 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
+        <div className="col-md-4 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
           <img src={image} alt="course-img" />
         </div>
         <div className="col-6 m-auto align-items-center border-0 pt-4 rounded-10 admin-form">
           <Link
-            to={`/course-registration/${course.id}`}
+            to={`/course-registration/${course._id}`}
             className="col-12 form-control text-center style2-input text-white fw-600 bg-current border-0 p-0 "
           >
             Inscribirme
@@ -157,8 +159,8 @@ const SingleCoursePage = () => {
             </div>
           </div>
 
-          {course.comments?.map(({ id, user, content, rating }) => (
-            <div className="row mt-2 mb-1" key={id}>
+          {course.comments?.map(({ _id: id, user, content, rating }) => (
+            <div key={id} className="row mt-2 mb-1">
               <div className="col-10 pl-4">
                 <div className="content">
                   <h6 className="author-name font-xssss fw-600 mb-0 text-grey-800">
@@ -218,7 +220,7 @@ const SingleCoursePage = () => {
                   <div className="form-group">
                     <label className="form-label">Comentario</label>
                     <textarea
-                      name="comment"
+                      name="description"
                       className="form-control h150"
                       required
                       rows="6"

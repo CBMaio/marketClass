@@ -58,10 +58,10 @@ const CourseCard = ({ course = {} }) => {
             <div className="memberlist mt-3 mb-2 ml-0 d-block">
               <li className="w-auto">
                 <Link
-                  to={`/author-profile/${author.id}`}
+                  to={`/author-profile/${author?.id}`}
                   className="fw-500 text-grey-500 font-xssss"
                 >
-                  Profesor: {author.name}
+                  Profesor: {author?.name}
                 </Link>
               </li>
             </div>

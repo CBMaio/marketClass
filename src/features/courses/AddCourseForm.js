@@ -1,15 +1,20 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNewCourse } from "./coursesSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FETCH_STATUS } from "../../utils";
 import "./styles/add-course-form.scss";
 import { CustomAlert } from "../../components/CustomAlert";
+import { fetchCategories } from "../categories/categorySlice";
+import { getCategories } from "../categories/categorySlice";
 
 const AddCourseForm = () => {
   const dispatch = useDispatch();
   const { IDLE, SUCCEEDED, LOADING } = FETCH_STATUS;
   const [addRequestStatus, setAddRequestStatus] = useState(IDLE);
   const [succeededAdded, setSucceededAdded] = useState(false);
+  const categories = useSelector(getCategories);
+
+  const { status: statusCategory } = useSelector((state) => state.category);
 
   const canSave = (values) =>
     Object.values(values).every(Boolean) && addRequestStatus === IDLE;
@@ -34,6 +39,11 @@ const AddCourseForm = () => {
     }
   };
 
+  useEffect(() => {
+    if (statusCategory === IDLE) {
+      dispatch(fetchCategories());
+    }
+  });
   return (
     <div className="row">
       <div className="col-lg-12 ">
@@ -69,15 +79,19 @@ const AddCourseForm = () => {
                 </div>
                 <div className="col-md-6">
                   <div className="form-group mb30">
-                    <label htmlFor="product_sku" className="form-label">
-                      Categoría
-                    </label>
-                    <input
+                    <label className="form-label">Categoría</label>
+                    <select
                       name="category"
+                      required
                       className="form-control form_control"
-                      type="text"
-                      placeholder="Categoría"
-                    />
+                    >
+                      {categories.map(({ _id: id, title }) => (
+                        <option key={id} value={id}>
+                          {" "}
+                          {title}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -95,29 +109,29 @@ const AddCourseForm = () => {
                 </div>
                 <div className="col-md-6">
                   <div className="form-group mb30">
-                    <label htmlFor="product_sku" className="form-label">
-                      Frecuencia
-                    </label>
-                    <input
-                      name="frecuency"
-                      className="form-control form_control"
-                      type="text"
-                      placeholder="Ej: 1 vez por semana"
+                    <label className="form-label">Frecuencia</label>
+                    <select
+                      name="frequency"
                       required
-                    />
+                      className="form-control form_control"
+                    >
+                      <option value="unica">Unica</option>
+                      <option value="semanal">Semanal</option>
+                      <option value="mensual">Mensual</option>
+                    </select>
                   </div>
                 </div>
                 <div className="col-sm-12">
                   <div className="form-group mb30">
-                    <label htmlFor="product_sku" className="form-label">
-                      Tipo de curso
-                    </label>
-                    <input
+                    <label className="form-label">Tipo de curso</label>
+                    <select
                       name="type"
+                      required
                       className="form-control form_control"
-                      type="text"
-                      placeholder="Individual o grupal"
-                    />
+                    >
+                      <option value="individual">Individual</option>
+                      <option value="grupal">Grupal</option>
+                    </select>
                   </div>
                 </div>
                 <div className="col-sm-12">
@@ -192,7 +206,7 @@ const AddCourseForm = () => {
           </div>
           <div className="card align-items-center border-0 p-4 mt-3 rounded-10 admin-form">
             <button className="col-md-6 form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">
-              Guardar
+              {addRequestStatus === LOADING ? "Cargando" : "Guardar"}
             </button>
           </div>
         </form>

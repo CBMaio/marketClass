@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerUser, loginUser, getUserData } from "./authActions";
+import {
+  registerUser,
+  loginUser,
+  getUserData,
+  updateUser,
+} from "./authActions";
 
 const userToken = localStorage.getItem("userToken")
   ? localStorage.getItem("userToken")
@@ -43,6 +48,7 @@ export const authSlice = createSlice({
         state.loading = false;
         state.userToken = payload.userToken;
         state.isAuthenticated = true;
+        state.success = true;
         state.userInfo = payload;
       })
       .addCase(loginUser.rejected, (state, { payload }) => {
@@ -57,7 +63,6 @@ export const authSlice = createSlice({
       .addCase(registerUser.fulfilled, (state) => {
         state.loading = false;
         state.success = true;
-        state.isAuthenticated = true;
       })
       .addCase(registerUser.rejected, (state, { payload }) => {
         state.loading = false;
@@ -66,6 +71,17 @@ export const authSlice = createSlice({
       //user data
       .addCase(getUserData.fulfilled, (state, { payload }) => {
         state.userInfo = payload.data;
+      })
+      .addCase(updateUser.fulfilled, (state, { payload }) => {
+        debugger;
+        const user = payload[1];
+        state.userInfo = user;
+        state.success = true;
+        state.loading = false;
+      })
+      .addCase(updateUser.pending, (state, { payload }) => {
+        state.loading = true;
+        state.success = false;
       });
   },
 });

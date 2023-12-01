@@ -1,18 +1,54 @@
-import React, { Fragment } from "react";
-import { useSelector } from "react-redux";
+import React, { Fragment, useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { selectUserInfo } from "../features/auth/authSlice";
+import { updateUser } from "../features/auth/authActions";
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
 
 import "../scss/pages/account-info.scss";
 
 const Accountinfo = () => {
+  const dispatch = useDispatch();
   const userInfo = useSelector(selectUserInfo);
+  const { loading } = useSelector((state) => state.auth);
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const updateAccount = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formattedData = Object.fromEntries(formData.entries());
-    console.log(formattedData);
+    let finalData = formattedData;
+
+    if (selectedImage) {
+      finalData = { ...formattedData, picture: selectedImage };
+    }
+
+    dispatch(updateUser(finalData));
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFile = async (event) => {
+    const file = event.target.files[0];
+    const base64 = await convertBase64(file);
+    setSelectedImage(base64);
+  };
+
+  const deleteImg = () => {
+    setSelectedImage(null);
   };
 
   return (
@@ -37,14 +73,31 @@ const Accountinfo = () => {
                       <figure className="avatar ml-auto mr-auto mb-0 mt-2 w100">
                         {userInfo.picture && (
                           <img
-                            src={userInfo.picture}
+                            src={selectedImage || userInfo.picture}
+                            id="imageProfile"
                             alt="avater"
                             className="shadow-sm rounded-lg w-100 account-user-img"
                           />
                         )}
+
+                        <input
+                          className="account-input-file"
+                          type="file"
+                          name="myImage"
+                          onChange={(event) => handleFile(event)}
+                        />
                       </figure>
+                      {selectedImage && (
+                        <div
+                          className="mt-3 text-danger font-xssss delete-img-text"
+                          onClick={deleteImg}
+                        >
+                          Eliminar Imagen
+                        </div>
+                      )}
+
                       <h2 className="fw-700 font-sm text-grey-900 mt-3">
-                        {userInfo.name}
+                        {userInfo.name}{" "}
                       </h2>
                       <h4 className="text-grey-500 fw-500 mb-3 font-xsss mb-4">
                         {userInfo.degree}
@@ -82,6 +135,7 @@ const Accountinfo = () => {
                             Email
                           </label>
                           <input
+                            disabled
                             name="email"
                             type="text"
                             className="form-control"
@@ -118,7 +172,7 @@ const Accountinfo = () => {
                             Título
                           </label>
                           <input
-                            name="qualifications"
+                            name="degree"
                             type="text"
                             className="form-control"
                             defaultValue={userInfo.degree}
@@ -147,7 +201,7 @@ const Accountinfo = () => {
                           type="submit"
                           className="bg-current border-0 text-center text-white font-xsss fw-600 p-3 w175 rounded-lg d-inline-block outline-none w-100"
                         >
-                          Guardar
+                          {loading ? "Cargando" : "Guardar"}
                         </button>
                       </div>
                     </div>

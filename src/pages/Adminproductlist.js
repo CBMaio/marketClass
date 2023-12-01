@@ -3,7 +3,6 @@ import React, { Fragment, useState } from "react";
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
 import Adminfooter from "../components/Adminfooter";
-import Pagination from "../components/Pagination";
 import MyCoursesList from "../features/courses/MyCoursesList";
 import { BREAKPOIN_SMALL } from "../utils";
 
@@ -85,7 +84,6 @@ const Adminproductlist = () => {
                       )}
                     </div>
                   </div>
-                  {/* <Pagination divClass="pagination justify-content-center mt-5" /> */}
                 </div>
               </div>
             </div>

@@ -1,39 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { fetchCategories, getCategories } from "../categories/categorySlice";
 import { FETCH_STATUS } from "../../utils";
 
-import { courseUpdated, selectCourseById } from "./coursesSlice";
+import {
+  fetchMyCourseById,
+  selectedCourse,
+  updateMyCourseById,
+} from "./coursesSlice";
 
 import "./styles/add-course-form.scss";
 import { CustomAlert } from "../../components/CustomAlert";
 
 const EditCourseForm = () => {
-  const { courseId } = useParams();
   const { IDLE, SUCCEEDED, LOADING } = FETCH_STATUS;
-  const course = useSelector((state) => selectCourseById(state, courseId));
+  const { courseId } = useParams();
+  const course = useSelector(selectedCourse);
+  const { status: statusCategory } = useSelector((state) => state.category);
+  const categories = useSelector(getCategories);
 
-  const [title, setTile] = useState(course?.title || "");
-  const [description, setDescription] = useState(course?.description || "");
   const [succeededEdit, setSucceededEdit] = useState(false);
+  const [addRequestStatus, setAddRequestStatus] = useState(IDLE);
 
-  const dispath = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const saveCourse = () => {
-    if (title && description) {
-      dispath(
-        courseUpdated({
-          id: courseId,
-          title,
-          description,
-        })
-      );
+  const canSave = (values) =>
+    Object.values(values).every(Boolean) && addRequestStatus === IDLE;
+
+  const saveCourse = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formattedData = Object.fromEntries(formData.entries());
+
+    if (!canSave(Object.values(formattedData))) return;
+
+    try {
+      setAddRequestStatus(LOADING);
+      const data = { ...formattedData, _id: courseId };
+      dispatch(updateMyCourseById(data)).unwrap();
       setSucceededEdit(true);
+      e.target.reset();
+    } catch (error) {
+      console.error("Failed to save the course: ", error);
+    } finally {
+      setAddRequestStatus(IDLE);
       window.scrollTo(0, 0);
     }
   };
 
+  useEffect(() => {
+    dispatch(fetchMyCourseById(courseId));
+
+    if (statusCategory === IDLE) {
+      dispatch(fetchCategories());
+    }
+  }, [courseId, dispatch, IDLE, statusCategory]);
+
+  if (!course) return;
   return (
     <div className="row">
       <div className="col-lg-12">
@@ -64,21 +88,25 @@ const EditCourseForm = () => {
                       type="text"
                       required
                       placeholder="Título"
+                      defaultValue={course.title}
                     />
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="form-group mb30">
-                    <label htmlFor="product_sku" className="form-label">
-                      Categoría
-                    </label>
-                    <input
+                    <label className="form-label">Categoría</label>
+                    <select
                       name="category"
                       required
                       className="form-control form_control"
-                      type="text"
-                      placeholder="Categoría"
-                    />
+                    >
+                      {categories.map(({ _id: id, title }) => (
+                        <option key={id} value={id}>
+                          {" "}
+                          {title}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -92,34 +120,37 @@ const EditCourseForm = () => {
                       type="text"
                       placeholder="Duración (Semanas)"
                       required
+                      defaultValue={course.duration}
                     />
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="form-group mb30">
-                    <label htmlFor="product_sku" className="form-label">
-                      Frecuencia
-                    </label>
-                    <input
-                      name="frecuency"
-                      className="form-control form_control"
-                      type="text"
-                      placeholder="Ej: 1 vez por semana"
+                    <label className="form-label">Frecuencia</label>
+                    <select
+                      name="frequency"
                       required
-                    />
+                      className="form-control form_control"
+                      defaultValue={course.frequency}
+                    >
+                      <option value="unica">Unica</option>
+                      <option value="semanal">Semanal</option>
+                      <option value="mensual">Mensual</option>
+                    </select>
                   </div>
                 </div>
                 <div className="col-sm-12">
                   <div className="form-group mb30">
-                    <label htmlFor="product_sku" className="form-label">
-                      Tipo de curso
-                    </label>
-                    <input
+                    <label className="form-label">Tipo de curso</label>
+                    <select
                       name="type"
+                      required
                       className="form-control form_control"
-                      type="text"
-                      placeholder="Individual o grupal"
-                    />
+                      defaultValue={course.type}
+                    >
+                      <option value="individual">Individual</option>
+                      <option value="grupal">Grupal</option>
+                    </select>
                   </div>
                 </div>
                 <div className="col-sm-12">
@@ -133,6 +164,7 @@ const EditCourseForm = () => {
                       className="form-control h150"
                       rows="6"
                       placeholder="Descripción del curso"
+                      defaultValue={course.description}
                     ></textarea>
                   </div>
                 </div>
@@ -148,6 +180,7 @@ const EditCourseForm = () => {
                       className="form-control h150"
                       rows="6"
                       placeholder="Requisitos del curso"
+                      defaultValue={course.requirements}
                     ></textarea>
                   </div>
                 </div>
@@ -188,6 +221,7 @@ const EditCourseForm = () => {
                       className="form-control form_control"
                       type="text"
                       placeholder="($)"
+                      defaultValue={course.price}
                     />
                   </div>
                 </div>

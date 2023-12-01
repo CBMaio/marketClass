@@ -20,6 +20,19 @@ const CommentList = () => {
     comment && setSelectedComment(comment);
   };
 
+  const getCommentState = (state) => {
+    switch (state) {
+      case "draft":
+        return "PENDIENTE";
+      case "published":
+        return "ACEPTADO";
+      case "unpublished":
+        return "BLOQUEADO";
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
     if (commentsStatus === "idle") {
       dispatch(fetchComments());
@@ -27,11 +40,13 @@ const CommentList = () => {
   }, [commentsStatus, dispatch]);
 
   useEffect(() => {
-    const data = !["PENDIENTE", "RECIBIDO", "BLOQUEADO"].includes(
+    const data = !["PENDIENTE", "ACEPTADO", "BLOQUEADO"].includes(
       selectedFilter
     )
       ? comments
-      : comments.filter(({ status }) => status === selectedFilter);
+      : comments.filter(
+          ({ state }) => getCommentState(state) === selectedFilter
+        );
 
     setCommentsToShow(data);
   }, [selectedFilter, comments]);
@@ -51,7 +66,7 @@ const CommentList = () => {
               >
                 <option>Filtrar por</option>
                 <option value="PENDIENTE">Pendientes</option>
-                <option value="RECIBIDO">Aceptados</option>
+                <option value="ACEPTADO">Aceptados</option>
                 <option value="BLOQUEADO">Bloqueados</option>
               </select>
             </div>
@@ -76,16 +91,18 @@ const CommentList = () => {
                   </thead>
                   <tbody>
                     {commentsToShow.map((value) => (
-                      <tr key={value.id}>
+                      <tr key={value._id}>
                         <td>
-                          <b>{value.course.title}</b>
+                          <b>value.course.title</b>
                         </td>
-                        <td>{value.user.name}</td>
+                        <td>{value.name}</td>
                         <td>
                           <span
-                            className={`badge rounded-pill font-xsssss fw-700 pl-3 pr-3 lh-24 text-uppercase rounded-3 ls-2 bg-${value.status.toLowerCase()}`}
+                            className={`badge rounded-pill font-xsssss fw-700 pl-3 pr-3 lh-24 text-uppercase rounded-3 ls-2 bg-${getCommentState(
+                              value.state
+                            ).toLowerCase()}`}
                           >
-                            {value.status}
+                            {getCommentState(value.state)}
                           </span>
                         </td>
                         <td className="product-remove text-end comments-actions">
@@ -115,37 +132,40 @@ const CommentList = () => {
                       </div>
                       <div className="course-title pt-3">
                         <h1 className="text-grey-900 fw-700 mb-3 lh-3 text-center">
-                          {selectedComment.course.title}
+                          selectedComment.course.title
                         </h1>
                       </div>
                       <div className="course-modal-body">
                         <div>
                           <span>Usuario: </span>
                           <span>
-                            <b>{selectedComment.user.name} </b>
+                            <b>{selectedComment.name} </b>
                           </span>
                         </div>
 
                         <div>
                           <span>Comentario: </span>
                           <span>
-                            <b>{selectedComment.content} </b>
+                            <b>{selectedComment.description} </b>
                           </span>
                         </div>
                         <div>
                           <span>Estado del comentario: </span>
                           <span>
-                            <b>{selectedComment.status} </b>
+                            <b>{getCommentState(selectedComment.state)} </b>
                           </span>
                         </div>
 
                         <div className="mt-4 actions-container">
-                          <select className="col-12 text-center p-2 bg-current border-0 action-btn filled-btn">
-                            <option value="aceptar">Aceptar</option>
-                            <option value="bloquear">Bloquear</option>
-                            <option value="pendiente">
-                              Mover a pentientes
-                            </option>
+                          <select
+                            defaultValue={getCommentState(
+                              selectedComment.value
+                            )}
+                            className="col-12 text-center p-2 bg-current border-0 action-btn filled-btn"
+                          >
+                            <option value="aceptado">Aceptar</option>
+                            <option value="bloqueado">Bloquear</option>
+                            <option value="pendiente">Pendiente</option>
                           </select>
                           {/*  <Button className="col-12 bg-current border-0 action-btn filled-btn">
                             <span>Aceptar</span>

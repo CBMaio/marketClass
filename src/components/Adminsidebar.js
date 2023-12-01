@@ -76,7 +76,7 @@ const Adminsidebar = () => {
             <ul className="submenu active">
               <li className="nav-item">
                 <NavLink className="navi-link" to="/admin-productlist">
-                  Ver todos
+                  Ver cursos publicados
                 </NavLink>
               </li>
               <li className="nav-item">

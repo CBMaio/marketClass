@@ -1,7 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { FETCH_STATUS } from "../../utils";
+import axios from "axios";
+import { API_URL } from "../constants";
+import axiosInstance from "../../services/AxiosInstance";
 
 const { LOADING, SUCCEEDED, FAILED, IDLE } = FETCH_STATUS;
+const COMMENT_URL = `${API_URL}/comment`;
 
 const initialState = {
   data: [],
@@ -12,240 +16,23 @@ const initialState = {
 export const fetchComments = createAsyncThunk(
   "comments/fetchComments",
   async () => {
-    const response = [
-      {
-        id: 1,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 101,
-          title: "Introducción a la programación",
-        },
-        user: {
-          name: "user123",
-          email: "user123@gmail.com",
-        },
-        status: "PENDIENTE",
-        content:
-          "Este curso de introducción a la programación fue excelente para principiantes. Los conceptos se presentaron de manera clara y fácil de entender, lo que me ayudó a sentar una base sólida en la programación",
-      },
-      {
-        id: 2,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 102,
-          title: "Fundamentos de desarrollo web",
-        },
-        user: {
-          name: "user456",
-          email: "user123@gmail.com",
-        },
-        status: "RECIBIDO",
-        content: "Completé el curso!",
-      },
-      {
-        id: 3,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 103,
-          title: "Fundamentos de Data Science",
-        },
-        user: {
-          name: "user789",
-          email: "user789@gmail.com",
-        },
-        status: "BLOQUEADO",
-        content: "Necesito darme de baja",
-      },
-      {
-        id: 4,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 104,
-          title: "JavaScript avanzado",
-        },
-        user: {
-          name: "user101",
-          email: "user101@gmail.com",
-        },
-        status: "PENDIENTE",
-        content:
-          "El curso de JavaScript avanzado me ayudó a llevar mis habilidades de programación al siguiente nivel. Los proyectos prácticos y desafiantes realmente consolidaron mis conocimientos.",
-      },
-      {
-        id: 5,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 105,
-          title: "Introducción a Machine Learning",
-        },
-        user: {
-          name: "user202",
-          email: "user202@gmail.com",
-        },
-        status: "RECIBIDO",
-        content: "Tengo algunas dudas sobre lo aprendido...",
-      },
-      {
-        id: 6,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 106,
-          title: "Diseño de Bases de Datos",
-        },
-        user: {
-          name: "user303",
-          email: "user303@gmail.com",
-        },
-        status: "PENDIENTE",
-        content:
-          "El curso de Diseño de Bases de Datos fue una experiencia increíble. Aprendí a crear estructuras de datos eficientes y bien diseñadas que son fundamentales para cualquier proyecto de software.",
-      },
-      {
-        id: 7,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 107,
-          title: "Fundamentos del Diseño Gráfico",
-        },
-        user: {
-          name: "user404",
-          email: "user404@gmail.com",
-        },
-        status: "BLOQUEADO",
-        content: "Me arrepentí, ya no deseo realizar este curso.",
-      },
-      {
-        id: 8,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 108,
-          title: "Introducción a la Ciberseguridad",
-        },
-        user: {
-          name: "user505",
-          email: "user505@gmail.com",
-        },
-        status: "RECIBIDO",
-        content: "Hay una segunda parte?",
-      },
-      {
-        id: 9,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 109,
-          title: "Desarrollo Mobile",
-        },
-        user: {
-          name: "user606",
-          email: "user606@gmail.com",
-        },
-        status: "PENDIENTE",
-        content:
-          "El curso de Desarrollo Mobile fue emocionante y relevante. Aprendí a crear aplicaciones móviles de alta calidad desde cero, y ahora tengo las habilidades para desarrollar en iOS y Android.",
-      },
-      {
-        id: 10,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 110,
-          title: "Inteligencia Artificial",
-        },
-        user: {
-          name: "user707",
-          email: "user707@gmail.com",
-        },
-        status: "RECIBIDO",
-        content: "Tengo problemas para ver el material del curso",
-      },
-      {
-        id: 11,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 111,
-          title: "Project Management 101",
-        },
-        user: {
-          name: "user808",
-          email: "user808@gmail.com",
-        },
-        status: "BLOQUEADO",
-        content: "Me asignaron otro curso",
-      },
-      {
-        id: 12,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 112,
-          title: "Estrategias de Digital Marketing",
-        },
-        user: {
-          name: "user909",
-          email: "user909@gmail.com",
-        },
-        status: "PENDIENTE",
-        content:
-          "Este curso de Estrategias de Digital Marketing me proporcionó una comprensión profunda de cómo impulsar el éxito en línea. Aprendí a diseñar campañas efectivas y atraer a la audiencia adecuada.",
-      },
-      {
-        id: 13,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 113,
-          title: "Ethical Hacking",
-        },
-        user: {
-          name: "user010",
-          email: "user010@gmail.com",
-        },
-        status: "RECIBIDO",
-        content: "Completé la certificación!",
-      },
-      {
-        id: 14,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 114,
-          title: "UI/UX Design",
-        },
-        user: {
-          name: "user111",
-          email: "user111@gmail.com",
-        },
-        status: "PENDIENTE",
-        content:
-          "El curso proporcionó ejemplos del mundo real y casos de estudio que lo hicieron muy aplicable. Lo considero un recurso invaluable para quienes trabajan en el área",
-      },
-      {
-        id: 15,
-        rating: parseInt(Math.random() * 5),
-        date: new Date(),
-        course: {
-          id: 115,
-          title: "Data Analytics",
-        },
-        user: {
-          name: "user212",
-          email: "user212@gmail.com",
-        },
-        status: "BLOQUEADO",
-        content: "Tengo un problema con los horarios",
-      },
-    ];
-    return response;
+    try {
+      const response = await axiosInstance.get("/comment");
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+);
+
+export const addComment = createAsyncThunk(
+  "comments/addComment",
+  async (comment) => {
+    try {
+      await axios.post(COMMENT_URL, comment);
+    } catch (error) {
+      console.error(error);
+    }
   }
 );
 
@@ -260,7 +47,7 @@ const commentsSlice = createSlice({
       })
       .addCase(fetchComments.fulfilled, (state, action) => {
         state.status = SUCCEEDED;
-        state.data = state.data.concat(action.payload);
+        state.data = state.data.concat(action.payload.data);
       });
   },
 });

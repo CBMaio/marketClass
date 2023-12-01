@@ -4,6 +4,7 @@ import authorsReducer from "../features/authors/authorsSlice";
 import commentsReducer from "../features/comments/commentsSlice";
 import requestsReducer from "../features/requests/requestsSlice";
 import authReducer from "../features/auth/authSlice";
+import categoryReducer from "../features/categories/categorySlice";
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     comments: commentsReducer,
     requests: requestsReducer,
     auth: authReducer,
+    category: categoryReducer,
   },
 });

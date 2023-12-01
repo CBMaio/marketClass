@@ -2,17 +2,18 @@ import { useEffect, Fragment, useState } from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { fetchCourses, selectAllCourses } from "./coursesSlice";
+import { fetchCourses, fetchMyCourses, deleteCourse } from "./coursesSlice";
 import { BREAKPOIN_SMALL } from "../../utils";
+import { de } from "date-fns/locale";
 
 const MyCoursesList = () => {
   const dispatch = useDispatch();
-  const courseData = useSelector(selectAllCourses);
-  const coursesStatus = useSelector((state) => state.courses.status);
+  const { myCourses } = useSelector((state) => state.courses);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isOpenCourseModal, setIsOpenCourseModal] = useState(false);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < BREAKPOIN_SMALL);
+  const { status: coursesStatus, data: courseData } = myCourses;
 
   const onResizeScrren = () => {
     setIsMobile(window.innerWidth < BREAKPOIN_SMALL);
@@ -27,9 +28,23 @@ const MyCoursesList = () => {
 
   const closeCourseModal = () => setIsOpenCourseModal(false);
 
+  const deleteCourseAction = (courseId) => {
+    dispatch(deleteCourse(courseId));
+    if (isOpenCourseModal) {
+      setIsOpenCourseModal(false);
+    }
+  };
+
+  const unpublishCourse = (courseId) => {
+    dispatch(unpublishCourse(courseId));
+    if (isOpenCourseModal) {
+      setIsOpenCourseModal(false);
+    }
+  };
+
   useEffect(() => {
     if (coursesStatus === "idle") {
-      dispatch(fetchCourses());
+      dispatch(fetchMyCourses());
     }
   }, [coursesStatus, dispatch]);
 
@@ -37,11 +52,11 @@ const MyCoursesList = () => {
     <>
       {courseData &&
         courseData.map((value) => (
-          <Fragment key={value.id}>
+          <Fragment key={value._id}>
             {!isMobile ? (
               <tr className="my-course-line desktop-view">
                 <td className="product-thumbnail text-start ps-0">
-                  <Link to={`/edit-course/${value.id}`} className="small-icon">
+                  <Link to={`/edit-course/${value._id}`} className="small-icon">
                     <img
                       src="/assets/images/course-default.avif"
                       alt="product"
@@ -61,20 +76,30 @@ const MyCoursesList = () => {
                   <span
                     className={`font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 d-inline-block mr-1 ${value.status}`}
                   >
-                    {value.category}
+                    {value.category.title}
                   </span>
                 </td>
                 <td>
                   <b>{value.frequency}</b>
                 </td>
                 <td className="product-remove text-right">
+                  <Button
+                    className="bg-transparent border-0 course-action"
+                    onClick={() => unpublishCourse(value._id)}
+                  >
+                    <i className="ti-close  font-xs text-danger"></i>
+                    <span className="button-legend">Despublicar</span>
+                  </Button>
                   <Button className="bg-transparent border-0 pr-0 course-action">
-                    <Link to={`/edit-course/${value.id}`}>
+                    <Link to={`/edit-course/${value._id}`}>
                       <i className="feather-edit mr-1 font-xs text-grey-500"></i>
                       <span className="button-legend">Editar</span>
                     </Link>
                   </Button>
-                  <Button className="bg-transparent border-0 course-action">
+                  <Button
+                    className="bg-transparent border-0 course-action"
+                    onClick={() => deleteCourseAction(value._id)}
+                  >
                     <i className="ti-trash  font-xs text-danger"></i>
                     <span className="button-legend">Eliminar</span>
                   </Button>
@@ -121,7 +146,7 @@ const MyCoursesList = () => {
               <div>
                 <span>Categoria: </span>
                 <span>
-                  <b>{selectedCourse.category} </b>
+                  <b>{selectedCourse.category.title} </b>
                 </span>
               </div>
               <div>
@@ -135,12 +160,21 @@ const MyCoursesList = () => {
                 <Button className="col-12 bg-current border-0 action-btn filled-btn">
                   <Link
                     className="text-white"
-                    to={`/edit-course/${selectedCourse.id}`}
+                    to={`/edit-course/${selectedCourse._id}`}
                   >
                     <span>Editar</span>
                   </Link>
                 </Button>
-                <Button className="col-12 action-btn outline-btn">
+                <Button
+                  onClick={() => unpublishCourse(selectedCourse._id)}
+                  className="col-12 action-btn outline-btn"
+                >
+                  <span>Despublicar</span>
+                </Button>
+                <Button
+                  onClick={() => deleteCourseAction(selectedCourse._id)}
+                  className="col-12 action-btn outline-btn"
+                >
                   <span>Eliminar</span>
                 </Button>
               </div>

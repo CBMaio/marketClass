@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { registerUser } from "../features/auth/authActions";
+import { getUserInfo } from "../features/auth/authActions";
 
 import { isAuthenticated } from "../features/auth/authSlice";
 
@@ -63,6 +64,11 @@ const Register = () => {
   const registrationAction = async (newData) => {
     const payload = { ...userData, ...newData };
     dispatch(registerUser(payload));
+    setTimeout(() => {
+      if (!loading && !error) {
+        navigate("/login");
+      }
+    }, 1000);
   };
 
   const togglePw = (elementId) => {
@@ -74,10 +80,6 @@ const Register = () => {
     // TODO chequear si el email ya está registrado
     return true;
   };
-
-  useEffect(() => {
-    if (isAuth) navigate("/welcome-admin");
-  });
 
   return (
     <Fragment>
@@ -219,7 +221,7 @@ const Register = () => {
                       <div className="col-sm-12 p-0 text-left">
                         <div className="form-group mb-1">
                           <button className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">
-                            Registrarme
+                            {loading ? "Cargando" : "Registrarme"}
                           </button>
                         </div>
                       </div>
