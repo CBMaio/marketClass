@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
-import { fetchRequests, selectAllRequests } from "./requestsSlice";
+import {
+  deleteRequest,
+  fetchRequests,
+  handleRequest,
+  selectAllRequests,
+} from "./requestsSlice";
+import { FETCH_STATUS } from "../../utils";
 
 import "../../scss/components/comment-list.scss";
 
@@ -10,33 +16,55 @@ const RequestsList = () => {
   const requests = useSelector(selectAllRequests);
   const requestsStatus = useSelector((state) => state.requests.status);
 
-  const [commentsToShow, setCommentsToShow] = useState([]);
+  const [requestsToShow, setRequestsToShow] = useState([]);
   const [selectedComment, setSelectedComment] = useState(null);
   const [isOpenCommentModal, setIsOpenCommentModal] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("ALL");
+
+  const { LOADING, IDLE } = FETCH_STATUS;
 
   const toggleCommentModal = (comment) => {
     setIsOpenCommentModal(!isOpenCommentModal);
     comment && setSelectedComment(comment);
   };
 
+  const getRequestState = (state) => {
+    switch (state) {
+      case "pending":
+        return "PENDIENTE";
+      case "accepted":
+        return "ACEPTADO";
+      case "rejected":
+        return "RECHAZADO";
+      default:
+        return "PENDIENTE";
+    }
+  };
+
+  const handleRequestFunction = (id, state) => {
+    dispatch(handleRequest({ id, state }));
+    setIsOpenCommentModal(false);
+  };
+
+  const deleteRequestAction = (id) => {
+    dispatch(deleteRequest(id));
+  };
+
   useEffect(() => {
-    if (requestsStatus === "idle") {
+    if (requestsStatus === IDLE) {
       dispatch(fetchRequests());
     }
-  }, [requestsStatus, dispatch]);
+  }, [requestsStatus, dispatch, IDLE]);
 
   useEffect(() => {
-    const data = !["PENDIENTE", "RECIBIDO", "BLOQUEADO"].includes(
-      selectedFilter
-    )
+    const data = !["pending", "accepted", "rejected"].includes(selectedFilter)
       ? requests
-      : requests.filter(({ status }) => status === selectedFilter);
+      : requests.filter(({ state }) => state === selectedFilter);
 
-    setCommentsToShow(data);
+    setRequestsToShow(data);
   }, [selectedFilter, requests]);
 
-  if (!commentsToShow) return <div>No hay comentarios</div>;
+  if (!requests) return <div>No hay contrataciones</div>;
 
   return (
     <div className="container px-3 py-4">
@@ -52,10 +80,9 @@ const RequestsList = () => {
                 onChange={(e) => setSelectedFilter(e.target.value)}
               >
                 <option>Filtrar por</option>
-                <option value="PENDIENTE">Pendientes</option>
-                <option value="RECIBIDO">Aceptados</option>
-                <option value="BLOQUEADO">Rechazados</option>
-                <option value="">Ver todos</option>
+                <option value="pending">Pendientes</option>
+                <option value="accepted">Aceptados</option>
+                <option value="rejected">Rechazados</option>
               </select>
             </div>
             <div className="card-body p-4">
@@ -84,18 +111,20 @@ const RequestsList = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {commentsToShow.map((value) => (
-                        <tr key={value.id}>
+                      {requestsToShow.map((value) => (
+                        <tr key={value._id}>
                           <td>
-                            <b>{value.course.title}</b>
+                            <b>{value.course}</b>
                           </td>
-                          <td>{value.user.name}</td>
-                          <td>{value.user.email}</td>
+                          <td>{value.name}</td>
+                          <td>{value.email}</td>
                           <td>
                             <span
-                              className={`badge rounded-pill font-xsssss fw-700 pl-3 pr-3 lh-24 text-uppercase rounded-3 ls-2 bg-${value.status.toLowerCase()}`}
+                              className={`badge rounded-pill font-xsssss fw-700 pl-3 pr-3 lh-24 text-uppercase rounded-3 ls-2 bg-${getRequestState(
+                                value.state
+                              ).toLowerCase()}`}
                             >
-                              {value.status}
+                              {getRequestState(value.state)}
                             </span>
                           </td>
                           <td className="product-remove text-end comments-actions">
@@ -105,10 +134,13 @@ const RequestsList = () => {
                             >
                               <i className="ti-comment mr-1 font-xs text-grey-500"></i>
                               <span className="button-legend review-comment">
-                                Revisar comentario
+                                Revisar petición
                               </span>
                             </Button>
-                            <Button className="bg-transparent border-0 course-action">
+                            <Button
+                              className="bg-transparent border-0 course-action"
+                              onClick={() => deleteRequestAction(value._id)}
+                            >
                               <i className="ti-trash  font-xs text-danger"></i>
                               <span className="button-legend">Eliminar</span>
                             </Button>
@@ -125,45 +157,72 @@ const RequestsList = () => {
                         </div>
                         <div className="course-title pt-3">
                           <h1 className="text-grey-900 fw-700 mb-3 lh-3 text-center">
-                            {selectedComment.course.title}
+                            {selectedComment.course}
                           </h1>
                         </div>
                         <div className="course-modal-body">
                           <div>
                             <span>Usuario: </span>
                             <span>
-                              <b>{selectedComment.user.name} </b>
+                              <b>{selectedComment.name} </b>
                             </span>
                           </div>
                           <div>
                             <span>Email: </span>
                             <span>
-                              <b>{selectedComment.user.email} </b>
+                              <b>{selectedComment.email} </b>
                             </span>
                           </div>
                           <div>
                             <span>Comentario: </span>
                             <span>
-                              <b>{selectedComment.content} </b>
+                              <b>{selectedComment.message} </b>
                             </span>
                           </div>
                           <div>
                             <span>Estado del comentario: </span>
                             <span>
-                              <b>{selectedComment.status} </b>
+                              <b>{getRequestState(selectedComment.state)} </b>
                             </span>
                           </div>
 
-                          {selectedComment.status === "PENDIENTE" && (
+                          {
                             <div className="mt-4 actions-container">
-                              <Button className="col-12 bg-current border-0 action-btn filled-btn">
+                              <Button
+                                onClick={() =>
+                                  handleRequestFunction(
+                                    selectedComment._id,
+                                    "accepted"
+                                  )
+                                }
+                                className="col-12 bg-current border-0 action-btn filled-btn"
+                              >
                                 <span>Aceptar</span>
                               </Button>
-                              <Button className="col-12 action-btn outline-btn">
+                              <Button
+                                onClick={() =>
+                                  handleRequestFunction(
+                                    selectedComment._id,
+                                    "pending"
+                                  )
+                                }
+                                className="col-12 action-btn outline-btn"
+                              >
+                                <span>Pendiente</span>
+                              </Button>
+                              <Button
+                                onClick={() =>
+                                  handleRequestFunction(
+                                    selectedComment._id,
+                                    "rejected"
+                                  )
+                                }
+                                className="col-12 action-btn outline-btn"
+                              >
                                 <span>Rechazar</span>
                               </Button>
                             </div>
-                          )}
+                          }
                         </div>
                       </div>
                     </div>

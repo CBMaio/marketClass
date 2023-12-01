@@ -29,6 +29,7 @@ import Password from "./pages/Password";
 import Register from "./pages/Register";
 import ScrollToTop from "./components/ScrollToTop";
 import WelcomeAdmin from "./pages/WelcomeAdmin";
+import Reset from "./pages/Reset";
 
 import ProtectedRoute from "./pages/ProtectedRoute";
 
@@ -102,6 +103,12 @@ class Root extends Component {
               exact
               path={`${process.env.PUBLIC_URL}/course-registration/:courseId`}
               element={<CourseRegistration />}
+            />
+
+            <Route
+              exact
+              path={`${process.env.PUBLIC_URL}/reset`}
+              element={<Reset />}
             />
 
             {/* privates routes */}

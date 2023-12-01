@@ -161,6 +161,19 @@ export const unpublishCourseAction = createAsyncThunk(
   }
 );
 
+export const publishCourseAction = createAsyncThunk(
+  "courses/publish",
+  async (id) => {
+    try {
+      const data = { state: "published" };
+      const response = await axiosInstance.put(`/course/${id}`, data);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+);
+
 const coursesSlice = createSlice({
   name: "courses",
   initialState,
@@ -172,7 +185,7 @@ const coursesSlice = createSlice({
       })
       .addCase(fetchCourses.fulfilled, (state, action) => {
         state.status = SUCCEEDED;
-        state.data = state.data.concat(action.payload);
+        state.data = action.payload;
       })
       .addCase(fetchCourses.rejected, (state, action) => {
         state.status = FAILED;
@@ -212,6 +225,18 @@ const coursesSlice = createSlice({
       .addCase(fetchMyCoursesUnpublished.fulfilled, (state, { payload }) => {
         state.myCourses.unpublishedCourses.data = payload.data;
         state.myCourses.unpublishedCourses.status = SUCCEEDED;
+      })
+      .addCase(unpublishCourseAction.pending, (state) => {
+        state.myCourses.status = LOADING;
+      })
+      .addCase(unpublishCourseAction.fulfilled, (state) => {
+        state.myCourses.status = IDLE;
+      })
+      .addCase(publishCourseAction.pending, (state) => {
+        state.myCourses.unpublishedCourses.status = LOADING;
+      })
+      .addCase(publishCourseAction.fulfilled, (state) => {
+        state.myCourses.unpublishedCourses.status = IDLE;
       });
   },
 });
@@ -232,9 +257,12 @@ export const getUnpublishedCoursesStatus = (state) =>
   state.courses.myCourses.unpublishedCourses.status;
 export const getUnpublishedCourses = (state) =>
   state.courses.myCourses.unpublishedCourses.data;
+export const selectCoursesByAuthor = (state, authorId) => {
+  return state.courses.data.filter(({ author }) => author._id === authorId);
+};
 
-export const selectCoursesByAuthor = createSelector(
-  [selectAllCourses, (state, authorId) => authorId],
-  (courses, authorId) =>
-    courses.filter((course) => `${course.author.id}` === authorId)
-);
+// export const selectCoursesByAuthor = createSelector(
+//   [selectAllCourses, (state, authorId) => authorId],
+//   (courses, authorId) =>
+//     courses.filter((course) => `${course.author.id}` === authorId)
+// );

@@ -2,9 +2,14 @@ import { useEffect, Fragment, useState } from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { fetchCourses, fetchMyCourses, deleteCourse } from "./coursesSlice";
-import { BREAKPOIN_SMALL } from "../../utils";
-import { de } from "date-fns/locale";
+import {
+  fetchCourses,
+  fetchMyCourses,
+  deleteCourse,
+  unpublishCourseAction,
+} from "./coursesSlice";
+import { BREAKPOIN_SMALL, FETCH_STATUS } from "../../utils";
+import { FetcherWithComponents } from "react-router-dom";
 
 const MyCoursesList = () => {
   const dispatch = useDispatch();
@@ -14,6 +19,7 @@ const MyCoursesList = () => {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < BREAKPOIN_SMALL);
   const { status: coursesStatus, data: courseData } = myCourses;
+  const { LOADING, IDLE } = FETCH_STATUS;
 
   const onResizeScrren = () => {
     setIsMobile(window.innerWidth < BREAKPOIN_SMALL);
@@ -36,17 +42,17 @@ const MyCoursesList = () => {
   };
 
   const unpublishCourse = (courseId) => {
-    dispatch(unpublishCourse(courseId));
+    dispatch(unpublishCourseAction(courseId));
     if (isOpenCourseModal) {
       setIsOpenCourseModal(false);
     }
   };
 
   useEffect(() => {
-    if (coursesStatus === "idle") {
+    if (coursesStatus === IDLE) {
       dispatch(fetchMyCourses());
     }
-  }, [coursesStatus, dispatch]);
+  }, [coursesStatus, dispatch, IDLE]);
 
   return (
     <>
@@ -58,7 +64,7 @@ const MyCoursesList = () => {
                 <td className="product-thumbnail text-start ps-0">
                   <Link to={`/edit-course/${value._id}`} className="small-icon">
                     <img
-                      src="/assets/images/course-default.avif"
+                      src={value.image}
                       alt="product"
                       className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
                     />
@@ -112,7 +118,7 @@ const MyCoursesList = () => {
               >
                 <div className="product-thumbnail text-start ps-0 course-image-container">
                   <img
-                    src="/assets/images/course-default.avif"
+                    src={value.image}
                     alt="product"
                     className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
                   />

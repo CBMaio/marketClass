@@ -1,8 +1,11 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sendEmailForReset } from "../features/auth/authActions";
 import Modal from "../components/Modal";
 
 const Forgot = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [submittedForm, setSubmittedForm] = useState(false);
   const [exitMessage, setExitMessage] = useState({
@@ -12,6 +15,7 @@ const Forgot = () => {
 
   const sendForm = () => {
     if (!email) return;
+    dispatch(sendEmailForReset(email));
     setExitMessage({
       title: "Petición enviada correctamente!",
       description:
@@ -19,8 +23,6 @@ const Forgot = () => {
     });
     setSubmittedForm(true);
   };
-
-  const resentEmail = () => {};
 
   return (
     <Fragment>
@@ -59,18 +61,19 @@ const Forgot = () => {
                       />
                       <i className="font-sm ti-email text-grey-500 pr-0"></i>
                     </div>
-                  </form>
 
-                  <div className="col-sm-12 p-0 text-left">
-                    <div className="form-group mb-1">
-                      <button
-                        onClick={sendForm}
-                        className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
-                      >
-                        Enviar
-                      </button>
+                    <div className="col-sm-12 p-0 text-left">
+                      <div className="form-group mb-1">
+                        <button
+                          type="submit"
+                          onClick={sendForm}
+                          className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "
+                        >
+                          Enviar
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -80,9 +83,6 @@ const Forgot = () => {
         <Modal
           title={exitMessage.title}
           description={exitMessage.description}
-          secondBtn={true}
-          textSecondBtn="No recibiste el email?"
-          action={resentEmail}
         />
       )}
     </Fragment>

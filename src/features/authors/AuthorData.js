@@ -1,26 +1,36 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Tab, Tabs } from "react-bootstrap";
 import { selectCoursesByAuthor } from "../courses/coursesSlice";
-import { selectAuthorById } from "./authorsSlice";
+import {
+  selectAuthorById,
+  selectAuthorStatus,
+  fetchAuthors,
+} from "./authorsSlice";
 import CourseCard from "../../components/CourseCard";
 
 const AuthorData = () => {
   const { authorId } = useParams();
-  const author = useSelector((state) =>
-    selectAuthorById(state, Number(authorId))
-  );
+  const authorStatus = useSelector(selectAuthorStatus);
+  const author = useSelector((state) => selectAuthorById(state, authorId));
+  const dispatch = useDispatch();
 
   const coursesForAuthor = useSelector((state) =>
     selectCoursesByAuthor(state, authorId)
   );
 
+  useEffect(() => {
+    if (authorStatus === "idle") {
+      dispatch(fetchAuthors());
+    }
+  });
+
   if (!author) {
     return <section>Autor no encontrado!</section>;
   }
 
-  const { name, email, key, experience, qualifications, interests, image } =
-    author;
+  const { name, email, experience, degree, picture } = author;
 
   return (
     <div className="course-details pb-lg--7 pt-4 pb-5">
@@ -36,10 +46,10 @@ const AuthorData = () => {
                       <figure className="avatar ml-0 mb-4 position-relative w100 z-index-1">
                         <img
                           src={`${
-                            image || "/assets/images/learn-illustration.svg"
+                            picture || "/assets/images/learn-illustration.svg"
                           }`}
                           alt="avater"
-                          className="float-right p-1 bg-white rounded-circle w-100"
+                          className="float-right p-1 bg-white w-100"
                         />
                       </figure>
                     </div>
@@ -51,9 +61,6 @@ const AuthorData = () => {
                         {email}
                       </span>
                       <span className="dot ml-2 mr-2 d-inline-block btn-round-xss bg-grey"></span>
-                      <span className="font-xssss fw-600 text-grey-500 d-inline-block ml-1">
-                        {key}
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -78,10 +85,7 @@ const AuthorData = () => {
                             {experience}
                           </p>
                           <p className="font-xssss fw-600 lh-28 text-grey-500 pl-0">
-                            {qualifications}
-                          </p>
-                          <p className="font-xssss fw-600 lh-28 text-grey-500 pl-0">
-                            {interests}
+                            {degree}
                           </p>
                         </div>
                       </div>
@@ -98,7 +102,7 @@ const AuthorData = () => {
                     <div className="card-body pb-0">
                       <div className="row">
                         {coursesForAuthor.map((value) => (
-                          <CourseCard course={value} key={value.id} />
+                          <CourseCard course={value} key={value._id} />
                         ))}
                       </div>
                     </div>

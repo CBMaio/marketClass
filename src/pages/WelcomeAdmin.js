@@ -22,7 +22,7 @@ const WelcomeAdmin = () => {
 
             <main className="main-section container px-3 py-4">
               <h1 className="col-12 display4-xs-size">
-                Bienvenida,
+                Bienvenido/a,
                 <br /> {user.name}!
               </h1>
               <div className="row">

@@ -3,6 +3,7 @@ import { FETCH_STATUS } from "../../utils";
 import axios from "axios";
 import { API_URL } from "../constants";
 import axiosInstance from "../../services/AxiosInstance";
+import { da } from "date-fns/locale";
 
 const { LOADING, SUCCEEDED, FAILED, IDLE } = FETCH_STATUS;
 const COMMENT_URL = `${API_URL}/comment`;
@@ -36,6 +37,28 @@ export const addComment = createAsyncThunk(
   }
 );
 
+export const updateComment = createAsyncThunk(
+  "comments/update",
+  async (data) => {
+    try {
+      const response = await axiosInstance.put(`/comment/${data.id}`, {
+        state: data.state,
+      });
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+);
+
+export const deleteComment = createAsyncThunk("comment/delete", async (id) => {
+  try {
+    await axiosInstance.delete(`/comment/${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 const commentsSlice = createSlice({
   name: "comments",
   initialState,
@@ -47,7 +70,19 @@ const commentsSlice = createSlice({
       })
       .addCase(fetchComments.fulfilled, (state, action) => {
         state.status = SUCCEEDED;
-        state.data = state.data.concat(action.payload.data);
+        state.data = action.payload.data;
+      })
+      .addCase(updateComment.pending, (state) => {
+        state.status = LOADING;
+      })
+      .addCase(updateComment.fulfilled, (state) => {
+        state.status = IDLE;
+      })
+      .addCase(deleteComment.pending, (state) => {
+        state.status = LOADING;
+      })
+      .addCase(deleteComment.fulfilled, (state) => {
+        state.status = IDLE;
       });
   },
 });

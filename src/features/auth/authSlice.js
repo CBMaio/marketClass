@@ -73,7 +73,6 @@ export const authSlice = createSlice({
         state.userInfo = payload.data;
       })
       .addCase(updateUser.fulfilled, (state, { payload }) => {
-        debugger;
         const user = payload[1];
         state.userInfo = user;
         state.success = true;

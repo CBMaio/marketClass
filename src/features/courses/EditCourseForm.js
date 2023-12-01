@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchCategories, getCategories } from "../categories/categorySlice";
 import { FETCH_STATUS } from "../../utils";
+import { convertBase64 } from "../../utils";
 
 import {
   fetchMyCourseById,
@@ -22,8 +23,15 @@ const EditCourseForm = () => {
 
   const [succeededEdit, setSucceededEdit] = useState(false);
   const [addRequestStatus, setAddRequestStatus] = useState(IDLE);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const dispatch = useDispatch();
+
+  const handleFile = async (event) => {
+    const file = event.target.files[0];
+    const base64 = await convertBase64(file);
+    setSelectedImage(base64);
+  };
 
   const canSave = (values) =>
     Object.values(values).every(Boolean) && addRequestStatus === IDLE;
@@ -32,13 +40,19 @@ const EditCourseForm = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formattedData = Object.fromEntries(formData.entries());
+    let finalData = formattedData;
 
     if (!canSave(Object.values(formattedData))) return;
 
     try {
       setAddRequestStatus(LOADING);
       const data = { ...formattedData, _id: courseId };
-      dispatch(updateMyCourseById(data)).unwrap();
+      if (selectedImage) {
+        finalData = { ...data, image: selectedImage };
+      } else {
+        finalData = data;
+      }
+      dispatch(updateMyCourseById(finalData)).unwrap();
       setSucceededEdit(true);
       e.target.reset();
     } catch (error) {
@@ -198,7 +212,7 @@ const EditCourseForm = () => {
                     name="course-image"
                     className="upload-file-input"
                     type="file"
-                    id="course-image"
+                    onChange={(event) => handleFile(event)}
                   />
                 </div>
               </div>

@@ -6,6 +6,7 @@ import "./styles/add-course-form.scss";
 import { CustomAlert } from "../../components/CustomAlert";
 import { fetchCategories } from "../categories/categorySlice";
 import { getCategories } from "../categories/categorySlice";
+import { convertBase64 } from "../../utils";
 
 const AddCourseForm = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const AddCourseForm = () => {
   const [addRequestStatus, setAddRequestStatus] = useState(IDLE);
   const [succeededAdded, setSucceededAdded] = useState(false);
   const categories = useSelector(getCategories);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const { status: statusCategory } = useSelector((state) => state.category);
 
@@ -23,12 +25,16 @@ const AddCourseForm = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formattedData = Object.fromEntries(formData.entries());
+    let finalData = formattedData;
 
     if (!canSave(Object.values(formattedData))) return;
 
     try {
       setAddRequestStatus(LOADING);
-      dispatch(addNewCourse({ ...formattedData })).unwrap();
+      if (selectedImage) {
+        finalData = { ...formattedData, image: selectedImage };
+      }
+      dispatch(addNewCourse({ ...finalData })).unwrap();
       setSucceededAdded(true);
       e.target.reset();
     } catch (error) {
@@ -37,6 +43,12 @@ const AddCourseForm = () => {
       setAddRequestStatus(IDLE);
       window.scrollTo(0, 0);
     }
+  };
+
+  const handleFile = async (event) => {
+    const file = event.target.files[0];
+    const base64 = await convertBase64(file);
+    setSelectedImage(base64);
   };
 
   useEffect(() => {
@@ -176,6 +188,7 @@ const AddCourseForm = () => {
                     className="upload-file-input"
                     type="file"
                     id="course-image"
+                    onChange={(event) => handleFile(event)}
                   />
                 </div>
               </div>

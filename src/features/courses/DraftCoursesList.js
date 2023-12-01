@@ -6,6 +6,7 @@ import {
   fetchMyCoursesUnpublished,
   getUnpublishedCourses,
   getUnpublishedCoursesStatus,
+  publishCourseAction,
   selectAllCourses,
 } from "./coursesSlice";
 import { BREAKPOIN_SMALL } from "../../utils";
@@ -34,6 +35,13 @@ const DraftCoursesList = () => {
 
   const closeCourseModal = () => setIsOpenCourseModal(false);
 
+  const publishCourse = (id) => {
+    dispatch(publishCourseAction(id));
+    if (isOpenCourseModal) {
+      setIsOpenCourseModal(false);
+    }
+  };
+
   useEffect(() => {
     if (coursesStatus === "idle") {
       dispatch(fetchMyCoursesUnpublished());
@@ -50,7 +58,7 @@ const DraftCoursesList = () => {
                 <td className="product-thumbnail text-start ps-0">
                   <Link to={`/edit-course/${value._id}`} className="small-icon">
                     <img
-                      src="/assets/images/course-default.avif"
+                      src={value.image}
                       alt="product"
                       className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
                     />
@@ -75,7 +83,10 @@ const DraftCoursesList = () => {
                   <b>{value.frequency}</b>
                 </td>
                 <td className="product-remove text-right btn-actions justify-content-end">
-                  <Button className="bg-transparent border-0 pr-0 course-action">
+                  <Button
+                    className="bg-transparent border-0 pr-0 course-action"
+                    onClick={() => publishCourse(value._id)}
+                  >
                     <i className="ti-export mr-1 font-xs text-grey-500" />
                     <span className="button-legend">Publicar</span>
                   </Button>
@@ -98,7 +109,7 @@ const DraftCoursesList = () => {
               >
                 <div className="product-thumbnail text-start ps-0 course-image-container">
                   <img
-                    src="/assets/images/course-default.avif"
+                    src={value.image}
                     alt="product"
                     className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
                   />
@@ -151,7 +162,10 @@ const DraftCoursesList = () => {
                     <span>Editar</span>
                   </Link>
                 </Button>
-                <Button className="col-12 action-btn light-filled-btn">
+                <Button
+                  className="col-12 action-btn light-filled-btn"
+                  onClick={() => publishCourse(selectedCourse._id)}
+                >
                   <span>Publicar</span>
                 </Button>
                 <Button className="col-12 action-btn outline-btn">

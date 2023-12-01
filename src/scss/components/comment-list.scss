@@ -5,13 +5,19 @@
     color: #844d19;
   }
 
-  &-recibido {
+  &-aceptado {
     background-color: #cff7e4;
     border-color: #bcf4d9;
     color: #08703d;
   }
 
   &-bloqueado {
+    background-color: #facccc;
+    border-color: #f8b8b8;
+    color: #770101;
+  }
+
+  &-rechazado {
     background-color: #facccc;
     border-color: #f8b8b8;
     color: #770101;

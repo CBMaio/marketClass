@@ -35,9 +35,9 @@ const Header = () => {
                       <NavLink to="/courses-grid" className="text-dark">
                         Todos los cursos
                       </NavLink>
-                      <NavLink to="/contact" className="text-dark">
+                      {/* <NavLink to="/contact" className="text-dark">
                         Contacto
-                      </NavLink>
+                      </NavLink> */}
                       <NavLink
                         to="/login"
                         className="account-navlink text-dark"

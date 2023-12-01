@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
-import { fetchComments, selectAllComments } from "./commentsSlice";
+import {
+  fetchComments,
+  selectAllComments,
+  updateComment,
+  deleteComment,
+} from "./commentsSlice";
+import { FETCH_STATUS } from "../../utils";
 
 import "../../scss/components/comment-list.scss";
 
 const CommentList = () => {
+  const { LOADING, IDLE } = FETCH_STATUS;
   const dispatch = useDispatch();
   const comments = useSelector(selectAllComments);
   const commentsStatus = useSelector((state) => state.comments.status);
@@ -14,6 +21,7 @@ const CommentList = () => {
   const [selectedComment, setSelectedComment] = useState(null);
   const [isOpenCommentModal, setIsOpenCommentModal] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("ALL");
+  const [selectedState, setSelectedState] = useState();
 
   const toggleCommentModal = (comment) => {
     setIsOpenCommentModal(!isOpenCommentModal);
@@ -29,15 +37,15 @@ const CommentList = () => {
       case "unpublished":
         return "BLOQUEADO";
       default:
-        break;
+        return "PENDIENTE";
     }
   };
 
   useEffect(() => {
-    if (commentsStatus === "idle") {
+    if (commentsStatus === IDLE) {
       dispatch(fetchComments());
     }
-  }, [commentsStatus, dispatch]);
+  }, [commentsStatus, dispatch, IDLE]);
 
   useEffect(() => {
     const data = !["PENDIENTE", "ACEPTADO", "BLOQUEADO"].includes(
@@ -51,6 +59,17 @@ const CommentList = () => {
     setCommentsToShow(data);
   }, [selectedFilter, comments]);
 
+  const handleComment = () => {
+    const newState = selectedState || selectedComment.state;
+    dispatch(updateComment({ state: newState, id: selectedComment._id }));
+    setIsOpenCommentModal(false);
+  };
+
+  const deleteCommentFunction = (id) => {
+    dispatch(deleteComment(id));
+    setIsOpenCommentModal(false);
+  };
+
   if (!commentsToShow) return <div>No hay comentarios</div>;
 
   return (
@@ -59,7 +78,9 @@ const CommentList = () => {
         <div className="col-lg-12 mt-4">
           <div className="card border-0 mt-2 rounded-10">
             <div className="card-body d-flex p-4 pb-0">
-              <h4 className="font-xss text-grey-800 mt-3 fw-700">Review</h4>
+              <h4 className="font-xss text-grey-800 mt-3 fw-700">
+                Comentarios
+              </h4>
               <select
                 className="form-select ml-auto float-right border-0 font-xssss fw-600 text-grey-700 bg-transparent"
                 onChange={(e) => setSelectedFilter(e.target.value)}
@@ -93,7 +114,7 @@ const CommentList = () => {
                     {commentsToShow.map((value) => (
                       <tr key={value._id}>
                         <td>
-                          <b>value.course.title</b>
+                          <b>{value.course_name}</b>
                         </td>
                         <td>{value.name}</td>
                         <td>
@@ -115,7 +136,10 @@ const CommentList = () => {
                               Revisar comentario
                             </span>
                           </Button>
-                          <Button className="bg-transparent border-0 course-action">
+                          <Button
+                            className="bg-transparent border-0 course-action"
+                            onClick={() => deleteCommentFunction(value._id)}
+                          >
                             <i className="ti-trash  font-xs text-danger"></i>
                             <span className="button-legend">Eliminar</span>
                           </Button>
@@ -132,7 +156,7 @@ const CommentList = () => {
                       </div>
                       <div className="course-title pt-3">
                         <h1 className="text-grey-900 fw-700 mb-3 lh-3 text-center">
-                          selectedComment.course.title
+                          {selectedComment.course_name}
                         </h1>
                       </div>
                       <div className="course-modal-body">
@@ -158,20 +182,26 @@ const CommentList = () => {
 
                         <div className="mt-4 actions-container">
                           <select
-                            defaultValue={getCommentState(
-                              selectedComment.value
-                            )}
+                            onChange={(e) => setSelectedState(e.target.value)}
+                            defaultValue={selectedComment.state}
                             className="col-12 text-center p-2 bg-current border-0 action-btn filled-btn"
                           >
-                            <option value="aceptado">Aceptar</option>
-                            <option value="bloqueado">Bloquear</option>
-                            <option value="pendiente">Pendiente</option>
+                            <option value="published">Aceptar</option>
+                            <option value="unpublished">Bloquear</option>
+                            <option value="draft">Pendiente</option>
                           </select>
                           {/*  <Button className="col-12 bg-current border-0 action-btn filled-btn">
                             <span>Aceptar</span>
                           </Button>*/}
-                          <Button className="col-12 action-btn outline-btn">
-                            <span>Aceptar cambios</span>
+                          <Button
+                            className="col-12 action-btn outline-btn"
+                            onClick={handleComment}
+                          >
+                            <span>
+                              {commentsStatus === LOADING
+                                ? "Cargando"
+                                : "Aceptar cambios"}
+                            </span>
                           </Button>
                         </div>
                       </div>

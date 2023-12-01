@@ -55,7 +55,6 @@ const Adminsidebar = () => {
             <i className="ti-close text-white font-sm text-grey-100 "></i>
           </button>
         </Link>
-
         <li className="nav-item mobile-item">
           <NavLink className="navi-link" to="/">
             <span>MarketClass</span>
@@ -93,7 +92,6 @@ const Adminsidebar = () => {
             <span>Sin publicar</span>
           </Link>
         </li>
-
         <li className="nav-item">
           <NavLink className="navi-link" to="/admin-review">
             <i className="feather-message-circle mr-2"></i>
@@ -106,21 +104,19 @@ const Adminsidebar = () => {
             <span>Contrataciones</span>
           </NavLink>
         </li>
-
         <div className="sidebar-heading">Mi cuenta</div>
-
         <li className="nav-item">
           <NavLink className="navi-link" to="/account-information">
             <i className="feather-user mr-2"></i>
             <span>Cuenta</span>
           </NavLink>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink className="navi-link" to="/password">
             <i className="feather-lock mr-2"></i>
             <span>Cambiar contraseña</span>
           </NavLink>
-        </li>
+        </li> */}
 
         <li className="nav-item mobile-item">
           <div onClick={closeSession} className="navi-link">

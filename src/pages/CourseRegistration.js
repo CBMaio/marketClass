@@ -1,14 +1,22 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { selectCourseById } from "../features/courses/coursesSlice";
+import { useDispatch } from "react-redux";
+import {
+  selectCourseById,
+  getCoursesStatus,
+  fetchCourses,
+} from "../features/courses/coursesSlice";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import Modal from "../components/Modal";
 import RequestsAplicationForm from "../features/requests/RequestsAplicationForm";
+import { FETCH_STATUS } from "../utils";
 
 const CourseRegistration = () => {
+  const { LOADING, IDLE, SUCCEEDED } = FETCH_STATUS;
   const { courseId } = useParams();
+  const dispatch = useDispatch();
   const [submittedForm, setSubmittedForm] = useState(false);
   const [exitMessage, setExitMessage] = useState({
     title: "",
@@ -18,6 +26,13 @@ const CourseRegistration = () => {
   const selectedCourse = useSelector((state) =>
     selectCourseById(state, courseId)
   );
+  const coursesStatus = useSelector(getCoursesStatus);
+
+  useEffect(() => {
+    if (coursesStatus === IDLE) {
+      dispatch(fetchCourses());
+    }
+  }, [coursesStatus, IDLE, dispatch]);
 
   if (!selectedCourse) return <div>Course not found!</div>;
 
@@ -31,7 +46,7 @@ const CourseRegistration = () => {
       setExitMessage({
         title: "Formulario enviado correctamente",
         description:
-          "Muchas gracias por el interes en nuestros cursos. Su mensaje ha sido enviado correctamente. Muy pronto el titular se estará comunicando con usted vía mail! ",
+          "Muchas gracias por el interes en nuestros cursos. Su mensaje ha sido enviado correctamente. Muy pronto el titular se estará comunicando con usted! ",
       });
     }
 

@@ -4,6 +4,7 @@ import { selectUserInfo } from "../features/auth/authSlice";
 import { updateUser } from "../features/auth/authActions";
 import Adminsidebar from "../components/Adminsidebar";
 import AdminTopnav from "../components/AdminTopnav";
+import { convertBase64 } from "../utils";
 
 import "../scss/pages/account-info.scss";
 
@@ -24,21 +25,6 @@ const Accountinfo = () => {
     }
 
     dispatch(updateUser(finalData));
-  };
-
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
   };
 
   const handleFile = async (event) => {

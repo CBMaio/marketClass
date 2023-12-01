@@ -92,7 +92,7 @@ const SingleCoursePage = () => {
         />
       )}
       <div className="col-12">
-        <div className="col-md-4 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
+        <div className="col-md-6 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
           <img src={image} alt="course-img" />
         </div>
         <div className="col-6 m-auto align-items-center border-0 pt-4 rounded-10 admin-form">
@@ -107,7 +107,7 @@ const SingleCoursePage = () => {
           <div className="row">
             <div className="col-10">
               <h2 className="fw-700 font-md d-block lh-4 mb-2">{title}</h2>
-              <Link to={`/author-profile/${author.id}`}>
+              <Link to={`/author-profile/${author._id}`}>
                 <span className="font-xssss fw-700 text-grey-900 d-inline-block ml-0 text-dark">
                   {author.name}
                 </span>
@@ -159,34 +159,36 @@ const SingleCoursePage = () => {
             </div>
           </div>
 
-          {course.comments?.map(({ _id: id, user, content, rating }) => (
-            <div key={id} className="row mt-2 mb-1">
-              <div className="col-10 pl-4">
-                <div className="content">
-                  <h6 className="author-name font-xssss fw-600 mb-0 text-grey-800">
-                    {user}
-                  </h6>
-                  <h6 className="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0">
-                    {/* TODO add comment date */}
-                    26 de Julio 8:20 PM
-                  </h6>
-                  <div className="star d-block w-100 text-left">
-                    {Array.from(Array(rating).keys()).map((n) => (
-                      <img
-                        key={n}
-                        src="/assets/images/star.png"
-                        alt="star"
-                        className="w10"
-                      />
-                    ))}
+          {course.comments?.map(
+            ({ _id: id, name, description, rating, created_at: date }) => (
+              <div key={id} className="row mt-2 mb-1">
+                <div className="col-10 pl-4">
+                  <div className="content">
+                    <h6 className="author-name font-xssss fw-600 mb-0 text-grey-800">
+                      {name}
+                    </h6>
+                    <h6 className="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0">
+                      {/* TODO add comment date */}
+                      {/* {new Date(date).toString()} */}
+                    </h6>
+                    <div className="star d-block w-100 text-left">
+                      {Array.from(Array(rating).keys()).map((n) => (
+                        <img
+                          key={n}
+                          src="/assets/images/star.png"
+                          alt="star"
+                          className="w10"
+                        />
+                      ))}
+                    </div>
+                    <p className="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2">
+                      {description}
+                    </p>
                   </div>
-                  <p className="comment-text lh-24 fw-500 font-xssss text-grey-500 mt-2">
-                    {content}
-                  </p>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
 
         <div className="card w-100 border-0 mt-4 mb-4 p-4 shadow-xss position-relative rounded-lg bg-white">

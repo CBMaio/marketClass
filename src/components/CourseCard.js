@@ -21,8 +21,8 @@ const CourseCard = ({ course = {} }) => {
     >
       <div className="card course-card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
         <div className="card-image w-100 mb-3">
-          <Link
-            to={`/course-detail/${id}`}
+          <a
+            href={`/course-detail/${id}`}
             className="position-relative d-block"
           >
             <img
@@ -30,7 +30,7 @@ const CourseCard = ({ course = {} }) => {
               alt="course"
               className="w-100"
             />
-          </Link>
+          </a>
         </div>
         <div className="card-body pt-0">
           <div className="card-body-top">
@@ -58,7 +58,7 @@ const CourseCard = ({ course = {} }) => {
             <div className="memberlist mt-3 mb-2 ml-0 d-block">
               <li className="w-auto">
                 <Link
-                  to={`/author-profile/${author?.id}`}
+                  to={`/author-profile/${author?._id}`}
                   className="fw-500 text-grey-500 font-xssss"
                 >
                   Profesor: {author?.name}
