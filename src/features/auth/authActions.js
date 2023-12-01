@@ -133,6 +133,18 @@ export const resetPassword = createAsyncThunk("users/resetPw", async (data) => {
   }
 });
 
+export const verifyUser = createAsyncThunk("user/verify", async (email) => {
+  try {
+    const response = await axios.get(
+      `${AUTH_API_COMPLETE}/verify?email=${email}`
+    );
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 export const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("userToken"));
 };

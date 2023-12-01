@@ -213,6 +213,9 @@ const coursesSlice = createSlice({
           state.myCourses.myCourseSelected = action.payload.data[0];
         }
       })
+      .addCase(updateMyCourseById.pending, (state, action) => {
+        state.myCourses.status = LOADING;
+      })
       .addCase(updateMyCourseById.fulfilled, (state, action) => {
         state.myCourses.status = IDLE;
       })

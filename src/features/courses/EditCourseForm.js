@@ -18,6 +18,7 @@ const EditCourseForm = () => {
   const { IDLE, SUCCEEDED, LOADING } = FETCH_STATUS;
   const { courseId } = useParams();
   const course = useSelector(selectedCourse);
+  const status = useSelector((state) => state.courses.myCourses.status);
   const { status: statusCategory } = useSelector((state) => state.category);
   const categories = useSelector(getCategories);
 
@@ -64,12 +65,14 @@ const EditCourseForm = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchMyCourseById(courseId));
+    if (status === IDLE) {
+      dispatch(fetchMyCourseById(courseId));
+    }
 
     if (statusCategory === IDLE) {
       dispatch(fetchCategories());
     }
-  }, [courseId, dispatch, IDLE, statusCategory]);
+  }, [courseId, dispatch, IDLE, statusCategory, status]);
 
   if (!course) return;
   return (

@@ -1,8 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 import { registerUser } from "../features/auth/authActions";
 import { getUserInfo } from "../features/auth/authActions";
+import { API_URL } from "../features/constants";
 
 import { isAuthenticated } from "../features/auth/authSlice";
 
@@ -18,7 +20,7 @@ const Register = () => {
   const [step, setStep] = useState(0);
   const [existingEmail, setExistingEmail] = useState(false);
 
-  const updateStep = (e, nextStep) => {
+  const updateStep = async (e, nextStep) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
@@ -31,7 +33,8 @@ const Register = () => {
     if (nextStep === 1) {
       // current step = 0
       const { email } = data;
-      if (!isAvailable(email)) {
+      const invalidEmail = await isInvalidEmail(email);
+      if (invalidEmail) {
         setExistingEmail(true);
         setTimeout(() => {
           setExistingEmail(false);
@@ -76,9 +79,17 @@ const Register = () => {
     element.type = element.type === "password" ? "text" : "password";
   };
 
-  const isAvailable = () => {
-    // TODO chequear si el email ya está registrado
-    return true;
+  const isInvalidEmail = async (email) => {
+    const AUTH_API_COMPLETE = `${API_URL}/users`;
+    try {
+      const response = await axios.get(
+        `${AUTH_API_COMPLETE}/verify?email=${email}`
+      );
+
+      return response.data.message;
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

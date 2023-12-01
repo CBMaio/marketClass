@@ -20,7 +20,7 @@ const Searcharea = ({ search, handleModal }) => {
     >
       <div className="card-body w-100 p-4">
         <div className="form-group mt-3 p-3 border-light border p-2 bg-white rounded-lg">
-          <div className="row">
+          <div className="row justify-content-between">
             <div className="col-lg-4">
               <div className="form-group icon-input mb-0">
                 <i className="ti-search font-xs text-grey-400"></i>
@@ -45,7 +45,7 @@ const Searcharea = ({ search, handleModal }) => {
                 onClick={searchCourse}
                 className="w-100 d-block btn bg-current text-white font-xssss fw-600 ls-3 style1-input p-0 border-0 text-uppercase "
               >
-                Search
+                Buscar
               </Button>
             </div>
           </div>
