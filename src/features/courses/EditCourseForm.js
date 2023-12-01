@@ -18,6 +18,7 @@ const EditCourseForm = () => {
   const { IDLE, SUCCEEDED, LOADING } = FETCH_STATUS;
   const { courseId } = useParams();
   const course = useSelector(selectedCourse);
+  console.log(course);
   const status = useSelector((state) => state.courses.myCourses.status);
   const { status: statusCategory } = useSelector((state) => state.category);
   const categories = useSelector(getCategories);
@@ -65,16 +66,14 @@ const EditCourseForm = () => {
   };
 
   useEffect(() => {
-    if (status === IDLE) {
-      dispatch(fetchMyCourseById(courseId));
-    }
+    dispatch(fetchMyCourseById(courseId));
 
     if (statusCategory === IDLE) {
       dispatch(fetchCategories());
     }
   }, [courseId, dispatch, IDLE, statusCategory, status]);
 
-  if (!course) return;
+  if (!course && status !== IDLE) return;
   return (
     <div className="row">
       <div className="col-lg-12">
@@ -234,7 +233,7 @@ const EditCourseForm = () => {
                       Precio
                     </label>
                     <input
-                      name="form_name"
+                      name="price"
                       className="form-control form_control"
                       type="text"
                       placeholder="($)"

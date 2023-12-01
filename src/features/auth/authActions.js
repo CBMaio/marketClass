@@ -125,9 +125,6 @@ export const resetPassword = createAsyncThunk("users/resetPw", async (data) => {
       { password: data.password },
       config
     );
-    console.log(response);
-
-    debugger;
   } catch (error) {
     console.error(error);
   }

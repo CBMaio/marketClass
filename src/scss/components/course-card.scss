@@ -25,4 +25,10 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .card-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+  }
 }
