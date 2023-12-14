@@ -61,6 +61,7 @@ const DraftCoursesList = () => {
                       src={value.image}
                       alt="product"
                       className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
+                      style={{ height: "60px", objectFit: "cover" }}
                     />
                   </Link>
                 </td>
@@ -111,6 +112,7 @@ const DraftCoursesList = () => {
                   <img
                     src={value.image}
                     alt="product"
+                    style={{ height: "60px", objectFit: "cover" }}
                     className="d-inline-block p-0 bg-greylight rounded-lg overflow-hidden course-image"
                   />
                 </div>

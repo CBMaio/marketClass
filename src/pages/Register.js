@@ -136,7 +136,7 @@ const Register = () => {
                         <i className="font-sm ti-email text-grey-500 pr-0"></i>
                         <input
                           required
-                          type="text"
+                          type="email"
                           name="email"
                           className="style2-input pl-5 form-control text-grey-900 font-xsss fw-600"
                           placeholder="Tu correo"

@@ -93,7 +93,12 @@ const SingleCoursePage = () => {
       )}
       <div className="col-12">
         <div className="col-md-6 card border-0 mb-0 rounded-lg overflow-hidden m-auto">
-          <img src={image} alt="course-img" />
+          <img
+            src={image}
+            alt="course-img"
+            className="single-course-main-img"
+            style={{ height: "300px", objectFit: "contain" }}
+          />
         </div>
         <div className="col-6 m-auto align-items-center border-0 pt-4 rounded-10 admin-form">
           <Link

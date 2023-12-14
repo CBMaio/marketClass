@@ -26,6 +26,7 @@ const Searcharea = ({ search, handleModal }) => {
                 <i className="ti-search font-xs text-grey-400"></i>
                 <input
                   type="text"
+                  value={searchQuery}
                   className="style1-input border-0 pl-5 font-xsss mb-0 text-grey-500 fw-500 bg-transparent"
                   placeholder="Buscar cursos online..."
                   onChange={(e) => setSearchQuery(e.target.value)}

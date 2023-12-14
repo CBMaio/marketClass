@@ -17,7 +17,7 @@ import { CustomAlert } from "../../components/CustomAlert";
 const EditCourseForm = () => {
   const { IDLE, SUCCEEDED, LOADING } = FETCH_STATUS;
   const { courseId } = useParams();
-  const course = useSelector(selectedCourse);
+  let course = useSelector(selectedCourse);
   console.log(course);
   const status = useSelector((state) => state.courses.myCourses.status);
   const { status: statusCategory } = useSelector((state) => state.category);
@@ -74,6 +74,7 @@ const EditCourseForm = () => {
   }, [courseId, dispatch, IDLE, statusCategory, status]);
 
   if (!course && status !== IDLE) return;
+  if (!course) course = {};
   return (
     <div className="row">
       <div className="col-lg-12">
@@ -115,10 +116,10 @@ const EditCourseForm = () => {
                       name="category"
                       required
                       className="form-control form_control"
+                      defaultValue={course.category?._id}
                     >
                       {categories.map(({ _id: id, title }) => (
                         <option key={id} value={id}>
-                          {" "}
                           {title}
                         </option>
                       ))}

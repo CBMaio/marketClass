@@ -28,7 +28,7 @@ const Adminproductlist = () => {
           <div id="content" className="admin-product-list-main">
             <AdminTopnav />
 
-            <div className="container px-3 py-4">
+            <div className="container min-height-container px-3 py-4">
               <div className="row">
                 <div className="col-lg-12 mt-4">
                   <div className="card border-0 mt-2 rounded-10">

@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { FETCH_STATUS } from "../../utils";
 import "./styles/add-course-form.scss";
 import { CustomAlert } from "../../components/CustomAlert";
-import { fetchCategories } from "../categories/categorySlice";
-import { getCategories } from "../categories/categorySlice";
+import { fetchCategories, getCategories } from "../categories/categorySlice";
 import { convertBase64 } from "../../utils";
 
 const AddCourseForm = () => {
@@ -113,8 +112,8 @@ const AddCourseForm = () => {
                     </label>
                     <input
                       name="duration"
-                      className="form-control form_control"
-                      type="text"
+                      className="number-input form-control form_control"
+                      type="number"
                       placeholder="Duración (Semanas)"
                     />
                   </div>

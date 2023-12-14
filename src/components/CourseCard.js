@@ -23,7 +23,7 @@ const CourseCard = ({ course = {} }) => {
         <div className="card-image w-100 mb-3">
           <a
             href={`/course-detail/${id}`}
-            className="position-relative d-block"
+            className="position-relative d-block img-link"
           >
             <img
               src={image || "/assets/images/course-default.avif"}

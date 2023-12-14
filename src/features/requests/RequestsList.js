@@ -114,7 +114,7 @@ const RequestsList = () => {
                       {requestsToShow.map((value) => (
                         <tr key={value._id}>
                           <td>
-                            <b>{value.course}</b>
+                            <b>{value.course.title}</b>
                           </td>
                           <td>{value.name}</td>
                           <td>{value.email}</td>
@@ -157,7 +157,7 @@ const RequestsList = () => {
                         </div>
                         <div className="course-title pt-3">
                           <h1 className="text-grey-900 fw-700 mb-3 lh-3 text-center">
-                            {selectedComment.course}
+                            {selectedComment.course.title}
                           </h1>
                         </div>
                         <div className="course-modal-body">

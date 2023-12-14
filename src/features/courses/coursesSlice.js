@@ -240,6 +240,7 @@ const coursesSlice = createSlice({
       })
       .addCase(publishCourseAction.fulfilled, (state) => {
         state.myCourses.unpublishedCourses.status = IDLE;
+        state.myCourses.status = IDLE;
       });
   },
 });
