@@ -25,6 +25,7 @@ const SingleCoursePage = () => {
   const course = useSelector((state) => selectCourseById(state, courseId));
 
   const {
+    avg_rating,
     title,
     author,
     description,
@@ -82,7 +83,6 @@ const SingleCoursePage = () => {
     return <section>Course not found!</section>;
   }
 
-  console.log(course);
   return (
     <div className="row">
       {commentSentSucceeded && (
@@ -112,6 +112,17 @@ const SingleCoursePage = () => {
           <div className="row">
             <div className="col-10">
               <h2 className="fw-700 font-md d-block lh-4 mb-2">{title}</h2>
+              <div className="star d-block w-100 text-left">
+                {avg_rating &&
+                  Array.from(Array(avg_rating).keys()).map((n) => (
+                    <img
+                      key={n}
+                      src="/assets/images/star.png"
+                      alt="star"
+                      className="w10"
+                    />
+                  ))}
+              </div>
               <Link to={`/author-profile/${author._id}`}>
                 <span className="font-xssss fw-700 text-grey-900 d-inline-block ml-0 text-dark">
                   {author.name}
@@ -171,10 +182,6 @@ const SingleCoursePage = () => {
                   <div className="content">
                     <h6 className="author-name font-xssss fw-600 mb-0 text-grey-800">
                       {name}
-                    </h6>
-                    <h6 className="d-block font-xsssss fw-500 text-grey-500 mt-2 mb-0">
-                      {/* TODO add comment date */}
-                      {/* {new Date(date).toString()} */}
                     </h6>
                     <div className="star d-block w-100 text-left">
                       {Array.from(Array(rating).keys()).map((n) => (

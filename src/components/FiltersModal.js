@@ -5,7 +5,7 @@ import {
   fetchCategories,
   getCategories,
 } from "../features/categories/categorySlice";
-import { categories, FETCH_STATUS } from "../utils";
+import { FETCH_STATUS } from "../utils";
 
 import "../scss/components/custom-modal.scss";
 import "../scss/components/filters-modal.scss";
@@ -21,8 +21,6 @@ const FiltersModal = ({ handleModal, setFilters }) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formattedData = Object.fromEntries(formData.entries());
-    console.log(formattedData);
-    debugger;
     setFilters(formattedData);
     closeModal();
   };
@@ -78,7 +76,7 @@ const FiltersModal = ({ handleModal, setFilters }) => {
                         <option value="">Frecuencia</option>
                         <option value="unica">Unica</option>
                         <option value="semanal">Semanal</option>
-                        <option value="menusal">Mensual</option>
+                        <option value="mensual">Mensual</option>
                       </select>
                     </div>
                     <div className="form-group icon-input mb-0">

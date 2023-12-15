@@ -4,6 +4,7 @@ import "../scss/components/course-card.scss";
 
 const CourseCard = ({ course = {} }) => {
   const {
+    avg_rating,
     _id: id,
     category,
     status,
@@ -55,6 +56,17 @@ const CourseCard = ({ course = {} }) => {
             <h6 className="font-xssss text-grey-500 fw-600 ml-0 mt-2">
               {frequency.toUpperCase()}
             </h6>
+            <span>
+              {avg_rating &&
+                Array.from(Array(avg_rating).keys()).map((n) => (
+                  <img
+                    key={n}
+                    src="/assets/images/star.png"
+                    alt="star"
+                    className="w10"
+                  />
+                ))}
+            </span>
             <div className="memberlist mt-3 mb-2 ml-0 d-block">
               <li className="w-auto">
                 <Link

@@ -44,9 +44,6 @@ const Coursesgrid = () => {
               filterSelected={filterSelected}
             />
 
-            {/* <div className="col-lg-12">
-              <Pagination divClass="pagination justify-content-center d-flex pt-5" />
-            </div> */}
             {isOpenFiltersModal && (
               <FiltersModal handleModal={handleModal} setFilters={setFilters} />
             )}

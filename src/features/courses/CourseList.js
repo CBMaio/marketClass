@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux/";
+import axios from "axios";
 import {
   selectAllCourses,
   fetchCourses,
@@ -8,6 +9,7 @@ import {
 import { fetchAuthors } from "../authors/authorsSlice";
 import CourseCard from "../../components/CourseCard";
 import { FETCH_STATUS } from "../../utils";
+import { API_URL } from "../constants";
 
 const CourseList = ({ limit = false, queryFilter, filterSelected }) => {
   const { LOADING, SUCCEEDED, IDLE } = FETCH_STATUS;
@@ -29,19 +31,35 @@ const CourseList = ({ limit = false, queryFilter, filterSelected }) => {
   }, [coursesStatus, authorsStatus, dispatch, IDLE]);
 
   useEffect(() => {
-    let data = courseData;
-    const filter = queryFilter?.toLowerCase() || "";
-    // const filters = Object.entries(filterSelected || {});
-    // filterByItems(data, filters);
+    const getProducts = async () => {
+      let data = courseData;
+      const filter = queryFilter?.toLowerCase() || "";
+      const filteredData = await filterByItems(filterSelected);
+      if (filteredData) {
+        data = filteredData;
+      }
 
-    data = data.filter(({ title }) => title.toLowerCase().includes(filter));
+      data = data.filter(({ title }) => title.toLowerCase().includes(filter));
+      console.log(data);
+      setCoursesToShow(data);
+    };
 
-    setCoursesToShow(data);
-  }, [queryFilter, courseData]);
+    getProducts();
+  }, [queryFilter, courseData, filterSelected]);
 
-  // const filterByItems = (data, filters) => {
-  //   const newData = data.map((course) => {});
-  // };
+  const filterByItems = async (filters) => {
+    console.log(filters);
+    if (!filters) {
+      return null;
+    }
+    const { category = "", frequency = "", ranking = "", type = "" } = filters;
+    const params = `type=${type}&frequency=${frequency}&category=${category}&avg_rating=${ranking}`;
+    const response = await axios.get(`${API_URL}/course?${params}`);
+
+    if (response.status === 200) {
+      return response.data.data;
+    }
+  };
 
   return coursesStatus === LOADING ? (
     <div className="pl-3">Cargando...</div>
